@@ -7,12 +7,12 @@
 aux_read_fwf(f, dic)
 }
 \arguments{
-\item{f}{A fixed-width file (fwf).}
+\item{f}{A fixed-width file (fwf) (normally a .txt file).}
 
-\item{dic}{A data.frame}
+\item{dic}{A data.frame, containing the import dictionary, including the variables: var_name, int_pos, fin_pos, decima_places (optional)}
 }
 \value{
-a data.frame containing the data.
+a data.frame containing the imported data.
 }
 \description{
 Reads fixed-width file (fwf) file based on dictionary.

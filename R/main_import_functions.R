@@ -3,10 +3,10 @@
 
 
 #' Reads fixed-width file (fwf) file based on dictionary.
-#' @param f A fixed-width file (fwf).
-#' @param dic A data.frame
-#' @return a data.frame containing the data.
-
+#'
+#' @param f A fixed-width file (fwf) (normally a .txt file).
+#' @param dic A data.frame, containing the import dictionary, including the variables: var_name, int_pos, fin_pos, decima_places (optional)
+#' @return a data.frame containing the imported data.
 #'
 #' @examples
 #' aux_read_fwf(filename.txt,dicionary_name)
@@ -25,11 +25,28 @@ aux_read_fwf <- function(f,dic){
 }
 
 
+#' Reads files (fwf or csv).
+#'
+#' Main import function. Parses metadata and import diciontaries (in case of fwf files) to obtain import parameters for the desired subdataset and year. Then imports based on those parameters. Should not be aceessed directly, unless you are trying to extend the package, but rather though the wrapper funtions (read_CENSO, read_PNAD, etc).
+#' @param f file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')
+#' @param i period. Normally year in YYY format.
+#' @param metadata a data.frame containing one row per period and columns indicating: period, type (fwf, csv) download location, directory structure of the source data, hamonized file and dictionary names for subdataset (ft).
+#' @param dic_list a list containing import dictionary data.frames for each year and subdataset (ft). Only necessary if data is in fwf format
+#' @param var_translator (optional) a data.frame containing a subdataset (ft) specific renaming dictionary. Rows indicate the variable and the columuns the periods.
+#' @param root_path (optional) a path to the directory where dataset was downloaded
+#'
+#' @examples
+#' CSV data:
+#' read_data('escola',2014,CensoEscolar_metadata)
+#' read_data('escola',2014,CensoEscolar_metadata,CensoEscolar_escola_varname_harmonization)
+#'
+#' FWF data: dictionary is mandatory
+#' read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)
 
 #' @import dplyr
 #' @import data.table
 #' @export
-read_data <- function(ft,i,metadata,dic_list,var_translator=NULL,root_path=NULL){
+read_data <- function(ft,i,metadata,dic_list=NULL,var_translator=NULL,root_path=NULL){
   #root_path seria o local onde se encontra a pasta com os arquivos
 print(i)
   #Extracting Parameters
