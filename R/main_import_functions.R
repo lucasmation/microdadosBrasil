@@ -1,6 +1,25 @@
 # This file contains the main import functions
 
 
+read_metadata <- function(dataset){
+  read.csv2(system.file("extdata",
+                        paste0(dataset,'_files_metadata_harmonization.csv'),
+                        package = "microdadosBrasil"),
+            stringsAsFactors = FALSE)
+
+}
+
+read_var_translator <- function(dataset, ft){
+  read.csv2(system.file("extdata",
+                        paste0(dataset,'_',ft,'_varname_harmonization.csv'),
+                        package = "microdadosBrasil"), stringsAsFactors = FALSE)
+}
+dataset <- 'CensoEscolar'
+ft <- 'escola'
+read_var_translator(dataset, ft)
+
+var_translator <-
+
 
 #' Reads fixed-width file (fwf) file based on dictionary.
 #'
@@ -23,6 +42,9 @@ aux_read_fwf <- function(f,dic){
   }
   return(d)
 }
+
+
+
 
 
 #' Reads files (fwf or csv).
