@@ -1,0 +1,2 @@
+year;download_path;format;path;inputs_folder;data_folder;ft_domicilios;ft_pessoas
+2000;-;fwf;;;;INPUT_SAS_DOM.txt&Dom[0-9]{2}.txt;INPUT_SAS_PESSOAS.txt&Pes[0-9]{2}.txt

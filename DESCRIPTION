@@ -1,0 +1,30 @@
+Package: microdadosBrasil
+Type: Package
+Title:Reads most common Brazilian public microdata (CENSO, PNAD, etc) easy and fast
+Version: 0.0.0.9000
+Date: 2016-05-29
+Authors@R: as.person(c(
+    "Lucas Mation <lucas.mation@ipea.gov.br> [aut, cre]",
+    "Nicolas XX [ctb]"
+    ))
+Description: A set of simple functions to read most commonly used public microdata on Brazil.
+    Downloads and reads the main datasets from IBGE, INEP and MTE for
+    all years available on-line. Handles csv and fixed width format (fwf) data, for
+    which it includes dictionaries. The core "read_data" function is based on dplyr
+    (for fwf) and data.table (for csv), thus is fast. Metadata harmonization tables
+    for and wrapper functions, such as read_CENSO, read_PNAD, read_CensoEscolar and
+    read_RAIS, handle the details of each dataset-year and make this package easily
+    extendable. See the website for microdadosBrasil on github for more details.License: CC0
+Depends: R (>= 3.1.3)
+Imports:
+    readr,
+    dplyr,
+    magrittr,
+    data.table,
+    stringi
+LazyData: TRUE
+License: GPL-3
+LazyData: true
+URL: https://github.com/lucasmation/microdadosBrasil
+BugReports: https://github.com/lucasmation/microdadosBrasil/issues
+RoxygenNote: 5.0.1
