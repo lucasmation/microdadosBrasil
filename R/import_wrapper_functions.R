@@ -1,10 +1,19 @@
 #This file contains the wrapper functions, specific for reading each dataset
 
 
-
-#' Reads fixed-width file (fwf) file based on dictionary.
+#' Functions to read most common Brazillian dataset
 #'
-#' @param f A fixed-width file (fwf) (normally a .txt file).
+#' The funtions read_DatasetName read each dataset easily and quickly. The functions gather the import parameters from the DatasetName_metadata_file_harmonization.csv files (availabe at folder extdata) and import dictionaries (available at folder data). Base on this dictionaries and parameters it dispatches the read_data function that reads the file
+#'
+#' @param ft file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')
+#' @param i period. Normally year in YYY format.
+#' @param harmonize_varnames Should variable names be harmonized over the years of the subdataset (ft)
+#'
+#' @return a data.frame containing the imported data.
+#' @name read_
+NULL
+
+#' @rdname read_
 #' @import dplyr
 #' @import magrittr
 read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
@@ -30,7 +39,7 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
 
 
 
-
+#' @rdname read_
 read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
   metadata <-  read_metadata('CensoEducacaoSuperior')
 #   dic<- readRDS(system.file("data","CensoEducacaoSuperior_dics.rds",
@@ -45,7 +54,7 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
   return(data)
 }
 
-
+#' @rdname read_
 read_CensoIBGE<- function(ft,i,root_path){
   metadata <-  read_metadata('CensoIBGE')
 
@@ -66,7 +75,7 @@ read_CensoIBGE<- function(ft,i,root_path){
 
 
 
-
+#' @rdname read_
 read_POF <- function(ft,i, root_path){
   metadata <-  read_metadata('POF')
   data("POF_dics")

@@ -14,11 +14,8 @@ read_var_translator <- function(dataset, ft){
                         paste0(dataset,'_',ft,'_varname_harmonization.csv'),
                         package = "microdadosBrasil"), stringsAsFactors = FALSE)
 }
-dataset <- 'CensoEscolar'
-ft <- 'escola'
-read_var_translator(dataset, ft)
 
-var_translator <-
+
 
 
 #' Reads fixed-width file (fwf) file based on dictionary.
@@ -50,7 +47,7 @@ aux_read_fwf <- function(f,dic){
 #' Reads files (fwf or csv).
 #'
 #' Main import function. Parses metadata and import diciontaries (in case of fwf files) to obtain import parameters for the desired subdataset and year. Then imports based on those parameters. Should not be aceessed directly, unless you are trying to extend the package, but rather though the wrapper funtions (read_CENSO, read_PNAD, etc).
-#' @param f file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')
+#' @param ft file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')
 #' @param i period. Normally year in YYY format.
 #' @param metadata a data.frame containing one row per period and columns indicating: period, type (fwf, csv) download location, directory structure of the source data, hamonized file and dictionary names for subdataset (ft).
 #' @param dic_list a list containing import dictionary data.frames for each year and subdataset (ft). Only necessary if data is in fwf format
