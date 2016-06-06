@@ -1,12 +1,30 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-bla bal bla
+microadadosBrasil
+=================
 
-afasfdasfas
-===========
+this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macroregions (regiões). And filenames can vary, for the same dataset overtime. microdadoBrasil handles all these indissioncrasies for you.
 
-asdfas
+Currently the package includes import functions for:
 
-asdfasdfs
----------
+-   CENSO DEMOGRÁFICO: 2010
+-   POF
+-   CENSO ESCOLAR, all years
+-   CENSO DA EDUCAçÃO SUPERIOR, all years
+
+To be added soon:
+
+-   RAIS, deidentified version,
+-   download functions
+-   variable name hamonization
+
+Installation
+------------
+
+devtools::install\_github("lucasmation/microdadosBrasil")
 
 asfdsfd
+
+Design principle
+----------------
+
+The main design principle in creating the package was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the of original data - into metadata tables (saved as csv files at extdata). The elements in these tables, along with list of import dicionaries extracted from the SAS import instruction for the data provider, serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.
