@@ -2,9 +2,9 @@
 % Please edit documentation in R/import_wrapper_functions.R
 \name{read_}
 \alias{read_}
+\alias{read_CENSO}
 \alias{read_CensoEducacaoSuperior}
 \alias{read_CensoEscolar}
-\alias{read_CensoIBGE}
 \alias{read_POF}
 \title{Functions to read most common Brazillian dataset}
 \usage{
@@ -12,7 +12,7 @@ read_CensoEscolar(ft, i, harmonize_varnames = F, root_path = NULL)
 
 read_CensoEducacaoSuperior(ft, i, root_path = NULL)
 
-read_CensoIBGE(ft, i, root_path)
+read_CENSO(ft, i, root_path)
 
 read_POF(ft, i, root_path)
 }

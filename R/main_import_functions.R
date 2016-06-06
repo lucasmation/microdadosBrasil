@@ -1,6 +1,6 @@
 # This file contains the main import functions
 
-
+#' @export
 read_metadata <- function(dataset){
   read.csv2(system.file("extdata",
                         paste0(dataset,'_files_metadata_harmonization.csv'),
@@ -9,6 +9,7 @@ read_metadata <- function(dataset){
 
 }
 
+#' @export
 read_var_translator <- function(dataset, ft){
   read.csv2(system.file("extdata",
                         paste0(dataset,'_',ft,'_varname_harmonization.csv'),
