@@ -21,7 +21,7 @@ Imports:
     dplyr,
     magrittr,
     data.table,
-    stringi
+    stringr
 LazyData: TRUE
 License: GPL-3
 LazyData: true

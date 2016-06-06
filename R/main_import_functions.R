@@ -64,6 +64,7 @@ aux_read_fwf <- function(f,dic){
 
 #' @import dplyr
 #' @import data.table
+#' @import stringr
 #' @export
 read_data <- function(ft,i,metadata,dic_list=NULL,var_translator=NULL,root_path=NULL){
   #root_path seria o local onde se encontra a pasta com os arquivos
