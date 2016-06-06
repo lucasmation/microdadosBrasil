@@ -26,7 +26,11 @@ knitr::opts_chunk$set(
 # Description
 
 
+<<<<<<< HEAD
 this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). And filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data.  Therefore reading is reasonably fast. 
+=======
+this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). And filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast. 
+>>>>>>> 166f4519d10a502f84146fd9dd802e0ed35c07bc
 
 Currently the package includes import functions for:
   
