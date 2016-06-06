@@ -55,7 +55,7 @@ d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 Related efforts
 ---------------
 
-This package is highly influenced by similar efforts, which are great time savers, vastly used often unrecognized:
+This package is highly influenced by similar efforts, which are great time savers, vastly used and often unrecognized:
 
 -   Anthony Damico's [scripts to read most IBGE surveys](http://www.asdfree.com/). Great if you your data does not fit into memory and you want speed when working with complex survey design data.
 -   [Data Zoom](http://www.econ.puc-rio.br/datazoom/) by Gustavo Gonzaga, Claudio Ferraz and Juliano Assunção. Similar ease of use and harmonization of Brazilian microdada for Stata.
