@@ -10,14 +10,14 @@
 #' @param harmonize_varnames Should variable names be harmonized over the years of the subdataset (ft)
 #'
 #' @return a data.frame containing the imported data.
-#' @name read_
+#' @export
+#' @name read_dataset
 NULL
 
-#' @rdname read_
+#' @rdname read_dataset
 #' @import dplyr
 #' @import magrittr
 #' @import stringr
-#' @export
 read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
   metadata <-  read_metadata('CensoEscolar')
   data("CensoEscolar_dics")
@@ -41,8 +41,7 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
 
 
 
-#' @rdname read_
-#' @export
+#' @rdname read_dataset
 read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
   metadata <-  read_metadata('CensoEducacaoSuperior')
 #   dic<- readRDS(system.file("data","CensoEducacaoSuperior_dics.rds",
@@ -57,8 +56,7 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
   return(data)
 }
 
-#' @rdname read_
-#' @export
+#' @rdname read_dataset
 read_CENSO<- function(ft,i,root_path){
   metadata <-  read_metadata('CensoIBGE')
 
@@ -79,8 +77,7 @@ read_CENSO<- function(ft,i,root_path){
 
 
 
-#' @rdname read_
-#' @export
+#' @rdname read_dataset
 read_POF <- function(ft,i, root_path){
   metadata <-  read_metadata('POF')
   data("POF_dics")
