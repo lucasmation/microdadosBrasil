@@ -33,12 +33,14 @@ Usage
 ``` r
 #Censo Demográfico 2000
 #after having downloaded the data to the root directory, and unziped to root run
-d <- read_CensoEscolar('escola',2005)
+d <- read_CENSO('domicilios',2005)
+d <- read_CENSO('pessoas',2005)
 
 
 # Censo Escolar
 #download_CensoEscolar(2005) . Not yet available. In the future will download and unzip ( .rar files still need manual descompactation)
-d <- read_CensoEscolar('escola',2005)
+d <- read_CensoEscolar('matriculas',2005)
+d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 ```
 
 Design principle

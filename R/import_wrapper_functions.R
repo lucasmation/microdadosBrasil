@@ -56,7 +56,7 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
 }
 
 #' @rdname read_
-read_CensoIBGE<- function(ft,i,root_path){
+read_CENSO<- function(ft,i,root_path){
   metadata <-  read_metadata('CensoIBGE')
 
 #   dic<- readRDS(system.file("data","CensoIBGE_dics.rds",
