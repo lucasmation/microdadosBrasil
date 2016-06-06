@@ -13,11 +13,11 @@
 #' @name read_dataset
 NULL
 
-#' @export
 #' @rdname read_dataset
 #' @import dplyr
 #' @import magrittr
 #' @import stringr
+#' @export
 read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
   metadata <-  read_metadata('CensoEscolar')
   data("CensoEscolar_dics")
@@ -39,8 +39,8 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
 
 
 
-#' @export
 #' @rdname read_dataset
+#' @export
 read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
   metadata <-  read_metadata('CensoEducacaoSuperior')
 #   dic<- readRDS(system.file("data","CensoEducacaoSuperior_dics.rds",
@@ -55,8 +55,8 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
   return(data)
 }
 
-#' @export
 #' @rdname read_dataset
+#' @export
 read_CENSO<- function(ft,i,root_path){
   metadata <-  read_metadata('CensoIBGE')
 
@@ -75,8 +75,8 @@ read_CENSO<- function(ft,i,root_path){
 
 
 
-#' @export
 #' @rdname read_dataset
+#' @export
 read_POF <- function(ft,i, root_path){
   metadata <-  read_metadata('POF')
   data("POF_dics")
