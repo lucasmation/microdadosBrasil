@@ -33,7 +33,8 @@ d <- data.frame(
   Source=c('IBGE','IBGE','IBGE','INEP','INEP'),
   Dataset=c('PNAD','Censo Demográfico','POF','Censo Escolar','Censo da Educação Superior'),
   Import_function=c('read_PNAD','read_CENSO','read_POF','read_CensoEscolar','read_CensoEducSuperior'),
-  Period=c('2002 to 2012','2000','2008','1995 to 2014','1995 to 2014')
+  Period=c('2002 to 2012','2000','2008','1995 to 2014','1995 to 2014'),
+  Subdataset=c('domicilios, pessoas','domicilios, pessoas','several, see details','escolas, ..., see detials','see detials')
   )
 library(printr)
 d

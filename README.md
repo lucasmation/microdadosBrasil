@@ -15,13 +15,13 @@ this package contains functions to read most commonly used Brazilian microdata e
 
 Currently the package includes import functions for:
 
-| Source | Dataset                    | Import\_function        | Period       |
-|:-------|:---------------------------|:------------------------|:-------------|
-| IBGE   | PNAD                       | read\_PNAD              | 2002 to 2012 |
-| IBGE   | Censo Demográfico          | read\_CENSO             | 2000         |
-| IBGE   | POF                        | read\_POF               | 2008         |
-| INEP   | Censo Escolar              | read\_CensoEscolar      | 1995 to 2014 |
-| INEP   | Censo da Educação Superior | read\_CensoEducSuperior | 1995 to 2014 |
+| Source | Dataset                    | Import\_function        | Period       | Subdataset                |
+|:-------|:---------------------------|:------------------------|:-------------|:--------------------------|
+| IBGE   | PNAD                       | read\_PNAD              | 2002 to 2012 | domicilios, pessoas       |
+| IBGE   | Censo Demográfico          | read\_CENSO             | 2000         | domicilios, pessoas       |
+| IBGE   | POF                        | read\_POF               | 2008         | several, see details      |
+| INEP   | Censo Escolar              | read\_CensoEscolar      | 1995 to 2014 | escolas, ..., see detials |
+| INEP   | Censo da Educação Superior | read\_CensoEducSuperior | 1995 to 2014 | see detials               |
 
 To be added soon:
 
