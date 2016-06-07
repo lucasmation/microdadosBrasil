@@ -15,6 +15,7 @@ Description
 
 Currently the package includes import functions for:
 
+-   PNAD 2002 to 2012 (2013 and 2014 soon)
 -   CENSO DEMOGRÁFICO: 2000 (soon to be expanded to 2010 and 1991)
 -   POF
 -   CENSO ESCOLAR, all years
