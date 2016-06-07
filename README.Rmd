@@ -17,20 +17,14 @@ knitr::opts_chunk$set(
 
 # microadadosBrasil
 
-
-# work in progress 
+## work in progress 
 
 * under revision for typos
 * vignettes and Portuguese documentation soon
 
-# Description
+## Description 
 
-
-<<<<<<< HEAD
-this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). And filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data.  Therefore reading is reasonably fast. 
-=======
-this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). And filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast. 
->>>>>>> 166f4519d10a502f84146fd9dd802e0ed35c07bc
+this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). And filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
 
 Currently the package includes import functions for:
   
@@ -77,7 +71,7 @@ This package is highly influenced by similar efforts, which are great time saver
 
 * Anthony Damico's [scripts to read most IBGE surveys](http://www.asdfree.com/). Great if you your data does not fit into memory and you want speed when working with complex survey design data. 
 * [Data Zoom](http://www.econ.puc-rio.br/datazoom/) by Gustavo Gonzaga, Claudio Ferraz and Juliano Assunção.  Similar ease of use and harmonization of Brazilian microdada for Stata. 
-* [dicionariosIBGE](https://cran.r-project.org/web/packages/dicionariosIBGE/index.html), by 	Alexandre Rademaker. A set of data.frame containing the information from SAS import dictionaries for IBGE datasets.
+* [dicionariosIBGE](https://cran.r-project.org/web/packages/dicionariosIBGE/index.html), by 	Alexandre Rademaker. A set of data.frames containing the information from SAS import dictionaries for IBGE datasets.
 * [IPUMS](https://international.ipums.org/international/). Harmonization of Census data from several countries, including Brasil. Import functions for R, Stata, SAS and SPSS. 
 
 `microdadosBrasil` differs from those packages in that it: 
