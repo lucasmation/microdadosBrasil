@@ -94,14 +94,3 @@ The main design principle was separating details of each dataset in each year - 
 
 ergonomics over speed (develop)
 
-
-
-## test
-
-
-
-* PNAD 2002 to 2012 (2013 and 2014 soon)
-* CENSO DEMOGRÁFICO: 2000 (soon to be expanded to 2010 and 1991)
-* POF
-* CENSO ESCOLAR,  all years
-* CENSO DA EDUCAÇÃO SUPERIOR, all years

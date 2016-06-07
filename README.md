@@ -78,12 +78,3 @@ Design principles
 The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the of original data - into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with list of import dictionaries extracted from the SAS import instructions from the data provider, serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.
 
 ergonomics over speed (develop)
-
-test
-----
-
--   PNAD 2002 to 2012 (2013 and 2014 soon)
--   CENSO DEMOGRÁFICO: 2000 (soon to be expanded to 2010 and 1991)
--   POF
--   CENSO ESCOLAR, all years
--   CENSO DA EDUCAÇÃO SUPERIOR, all years
