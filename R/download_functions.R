@@ -1,7 +1,7 @@
 
 
 #' @export
-get_sourceData <- function(dataset, i, unzip=T){
+download_sourceData <- function(dataset, i, unzip=T, ft=NULL){
   dataset_list <- c('PNAD','CENSO','POF','CensoEscolar','CensoEducacaoSuperior')
   if( !(dataset %in% dataset_list ) ) {
     stop(paste0("Invalid dataset. Must one of the following: ",paste(ft_list2, collapse=", ")) ) }
