@@ -15,14 +15,17 @@ this package contains functions to read most commonly used Brazilian microdata e
 
 Currently the package includes import functions for:
 
--   PNAD 2002 to 2012 (2013 and 2014 soon)
--   CENSO DEMOGRÁFICO: 2000 (soon to be expanded to 2010 and 1991)
--   POF
--   CENSO ESCOLAR, all years
--   CENSO DA EDUCAÇÃO SUPERIOR, all years
+| Source | Dataset                    | Import\_function        | Period       |
+|:-------|:---------------------------|:------------------------|:-------------|
+| IBGE   | PNAD                       | read\_PNAD              | 2002 to 2012 |
+| IBGE   | Censo Demográfico          | read\_CENSO             | 2000         |
+| IBGE   | POF                        | read\_POF               | 2008         |
+| INEP   | Censo Escolar              | read\_CensoEscolar      | 1995 to 2014 |
+| INEP   | Censo da Educação Superior | read\_CensoEducSuperior | 1995 to 2014 |
 
 To be added soon:
 
+-   Censo 2010 and 1991
 -   RAIS, de-identified version,
 -   download functions
 -   variable name harmonization
@@ -48,8 +51,8 @@ d <- read_CENSO('pessoas',2005)
 
 
 # Censo Escolar
-#download_CensoEscolar(2005) . Not yet available. In the future will download and unzip ( .rar files still need manual descompactation)
-d <- read_CensoEscolar('matriculas',2005)
+download_sourceData('CensoEscolar', 2005, unzip=T)
+d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 ```
 
@@ -75,3 +78,12 @@ Design principles
 The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the of original data - into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with list of import dictionaries extracted from the SAS import instructions from the data provider, serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.
 
 ergonomics over speed (develop)
+
+test
+----
+
+-   PNAD 2002 to 2012 (2013 and 2014 soon)
+-   CENSO DEMOGRÁFICO: 2000 (soon to be expanded to 2010 and 1991)
+-   POF
+-   CENSO ESCOLAR, all years
+-   CENSO DA EDUCAÇÃO SUPERIOR, all years

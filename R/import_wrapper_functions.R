@@ -27,7 +27,7 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
 
 
   #selecting dictionaries
-  data_path <- paste0(metadata[metadata$ano==i,'path'],'/',metadata[metadata$ano==i,'data_folder'])
+  data_path <- paste0(metadata[metadata$year==i,'path'],'/',metadata[metadata$year==i,'data_folder'])
   #Variable names hamonization
   if (harmonize_varnames==T) {
     var_translator <- read_var_translator('CensoEscolar','escola')
@@ -44,7 +44,7 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
 
 #' @rdname read_dataset
 #' @export
-read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
+read_CensoEducSuperior<- function(ft,i,root_path=NULL){
   metadata <-  read_metadata('CensoEducacaoSuperior')
 #   dic<- readRDS(system.file("data","CensoEducacaoSuperior_dics.rds",
 #                             package = "microdadosBrasil"))
