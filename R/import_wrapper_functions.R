@@ -14,50 +14,6 @@
 NULL
 
 
-#' @rdname read_dataset
-#' @export
-read_CENSO<- function(ft,i,root_path){
-  metadata <-  read_metadata('CensoIBGE')
-
-  #   dic<- readRDS(system.file("data","CensoIBGE_dics.rds",
-  #                             package = "microdadosBrasil"))[[as.character(i)]][[paste0("dic_",ft,"_",i)]]
-
-  data("CensoIBGE_dics")
-
-
-
-  data<-read_data(ft = ft,i = i,metadata = metadata, dic_list  = CensoIBGE_dics,root_path = root_path)
-
-
-  return(data)
-}
-
-
-
-#' @rdname read_dataset
-#' @export
-read_PNAD<- function(ft,i,root_path=NULL){
-  metadata <-  read_metadata('PNAD')
-
-  data("PNAD_dics")
-
-  data<-read_data(ft, i, metadata, dic = PNAD_reponderado_dics,root_path =  root_path)
-
-  return(data)
-}
-
-
-#' @rdname read_dataset
-#' @export
-read_POF <- function(ft,i, root_path){
-  metadata <-  read_metadata('POF')
-  data("POF_dics")
-
-
-  data<- read_data(ft = ft,i = i,metadata = metadata,dic = POF_dics, root_path = root_path)
-  return(data)
-}
-
 
 
 #' @rdname read_dataset
@@ -103,3 +59,42 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
 }
 
 
+
+#' @rdname read_dataset
+#' @export
+read_CENSO<- function(ft,i,root_path){
+  metadata <-  read_metadata('CensoIBGE')
+
+  data("CensoIBGE_dics")
+
+  data<-read_data(ft = ft,i = i,metadata = metadata, dic_list  = CensoIBGE_dics,root_path = root_path)
+
+
+  return(data)
+}
+
+
+
+#' @rdname read_dataset
+#' @export
+read_PNAD<- function(ft,i,root_path=NULL){
+  metadata <-  read_metadata('PNAD')
+
+  data("PNAD_dics")
+
+  data<-read_data(ft, i, metadata, dic = PNAD_reponderado_dics,root_path =  root_path)
+
+  return(data)
+}
+
+
+#' @rdname read_dataset
+#' @export
+read_POF <- function(ft,i, root_path){
+  metadata <-  read_metadata('POF')
+  data("POF_dics")
+
+
+  data<- read_data(ft = ft,i = i,metadata = metadata,dic = POF_dics, root_path = root_path)
+  return(data)
+}
