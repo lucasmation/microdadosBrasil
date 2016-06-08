@@ -35,7 +35,8 @@ Installation
 ------------
 
 ``` r
-# install.packages("devtools")
+install.packages("devtools")
+install.packages("stringi") 
 devtools::install_github("lucasmation/microdadosBrasil")
 library('microdadosBrasil')
 ```

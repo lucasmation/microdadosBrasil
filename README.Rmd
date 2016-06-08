@@ -52,7 +52,8 @@ To be added soon:
 ## Installation
 
 ```{r eval=FALSE}
-# install.packages("devtools")
+install.packages("devtools")
+install.packages("stringi") 
 devtools::install_github("lucasmation/microdadosBrasil")
 library('microdadosBrasil')
 ```
