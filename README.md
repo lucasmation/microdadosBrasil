@@ -45,11 +45,14 @@ Usage
 -----
 
 ``` r
-#Censo Demográfico 2000
+# Censo Demográfico 2000
 #after having downloaded the data to the root directory, and unziped to root run
 d <- read_CENSO('domicilios',2005)
 d <- read_CENSO('pessoas',2005)
 
+# PNAD 2002
+download_sourceData("PNAD", 2002, unzip = T)
+d <- read_PNAD("domicilios", 2002)
 
 # Censo Escolar
 download_sourceData('CensoEscolar', 2005, unzip=T)
