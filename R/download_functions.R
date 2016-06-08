@@ -11,7 +11,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
 
   md <- metadata %>% filter(year==i)
   link <- md$download_path
-  if(is.na(md)){stop("Can't download dataset, there are no information about the source")}
+  if(is.na(link)){stop("Can't download dataset, there are no information about the source")}
   filename <- link %>% gsub(pattern = ".+/", replacement = "")
   file_dir <- filename %>% gsub( pattern = "\\.zip", replacement = "")
   print(link)
@@ -33,9 +33,9 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
     r7z_files<- intern_files[grepl(pattern = "\\.7z$",x = intern_files)]
     if(length(r7z_files)>0){warning(paste0("There are files in .7z format inside the main folder, please unzip manually: ",paste(r7z_files,collapse = ", ")))}
     if(length(rar_files)>0){warning(paste0("There are files in .rar format inside the main folder, please unzip manually: ",paste(r7z_files,collapse = ", ")))}
-    for(zipped in zip_files){
+    for(zip_file in zip_files){
       exdir<- zip_file %>% gsub(pattern = "\\.zip", replacement = "")
-      unzip(zipfile = zipped,exdir = exdir )
+      unzip(zipfile = zip_file,exdir = exdir )
     }
 
 
