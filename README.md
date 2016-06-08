@@ -21,7 +21,7 @@ Currently the package includes import functions for:
 | IBGE   | Censo Demográfico          | read\_CENSO             | 2000         | domicilios, pessoas       |
 | IBGE   | POF                        | read\_POF               | 2008         | several, see details      |
 | INEP   | Censo Escolar              | read\_CensoEscolar      | 1995 to 2014 | escolas, ..., see detials |
-| INEP   | Censo da Educação Superior | read\_CensoEducSuperior | 1995 to 2014 | see detials               |
+| INEP   | Censo da Educação Superior | read\_CensoEducSuperior | 1995 to 2014 | see details               |
 
 To be added soon:
 
