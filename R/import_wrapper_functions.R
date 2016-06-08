@@ -82,7 +82,7 @@ read_PNAD<- function(ft,i,root_path=NULL){
 
   data("PNAD_dics")
 
-  data<-read_data(ft, i, metadata, dic = PNAD_reponderado_dics,root_path =  root_path)
+  data<-read_data(ft, i, metadata, dic = PNAD_dics,root_path =  root_path)
 
   return(data)
 }
