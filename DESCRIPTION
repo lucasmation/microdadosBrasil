@@ -20,7 +20,7 @@ Imports:
     data.table,
     dplyr,
     magrittr,
-    Rccp,
+    Rcpp,
     readr,
     stringr
 License: GPL-3
