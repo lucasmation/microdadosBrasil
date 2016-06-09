@@ -27,7 +27,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
     #Unzipping main source file:
     unzip(paste(c(dest,filename),collapse = "/") ,exdir = paste(c(dest,file_dir),collapse = "/"))
     # #unzipping the data files (in case not unziped above)
-    intern_files<- list.files(paste(c(dest,file_dir),collapse = "/"), recursive = TRUE,all.files = TRUE)
+    intern_files<- list.files(paste(c(dest,file_dir),collapse = "/"), recursive = TRUE,all.files = TRUE, full.names = TRUE)
     zip_files<- intern_files[grepl(pattern = "\\.zip$",x = intern_files)]
     rar_files<- intern_files[grepl(pattern = "\\.rar$",x = intern_files)]
     r7z_files<- intern_files[grepl(pattern = "\\.7z$",x = intern_files)]
