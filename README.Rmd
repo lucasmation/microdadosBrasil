@@ -68,7 +68,8 @@ d <- read_CENSO('pessoas',2005)
 
 # PNAD 2002
 download_sourceData("PNAD", 2002, unzip = T)
-d <- read_PNAD("domicilios", 2002)
+d  <- read_PNAD("domicilios", 2002)
+d2 <- read_PNAD("pessoas", 2002)
 
 # Censo Escolar
 download_sourceData('CensoEscolar', 2005, unzip=T)
