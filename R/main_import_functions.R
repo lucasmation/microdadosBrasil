@@ -97,11 +97,7 @@ print(str(vt))
     delim <- unlist(strsplit(a, split='&'))[1]  # for csv files
     format <- md %>% select_(.dots = 'format') %>% collect %>% .[['format']]
     # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
-    data_path <-  paste0(root_path,
-                         md %>% with(paste0(ifelse(!is.null(root_path) & (!is.na(path)),"/",""),
-                                          ifelse(is.na(path),"",path),
-                                          ifelse(is.na(path),"","/"),
-                                          ifelse(is.na(data_folder),"",data_folder))) )
+    data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/")
 
 print(file_name)
 print(data_path)
