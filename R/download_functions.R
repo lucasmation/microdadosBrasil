@@ -3,7 +3,10 @@
 
 #' @export
 download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
-  dataset_list <- c('PNAD','CENSO','POF','CensoEscolar','CensoEducacaoSuperior')
+  system.file("extdata", package = "microdadosBrasil") %>%
+    list.files(pattern = "files") %>%
+    gsub(pattern = "_.+", replacement = "")
+
   if( !(dataset %in% dataset_list ) ) {
     stop(paste0("Invalid dataset. Must one of the following: ",paste(dataset_list, collapse=", ")) ) }
   metadata <-  read_metadata(dataset)
