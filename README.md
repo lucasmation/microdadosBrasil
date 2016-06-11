@@ -5,8 +5,8 @@ microdadosBrasil
 work in progress
 ----------------
 
--   under revision for typos
 -   vignettes and Portuguese documentation soon
+-   RAIS, CAGED, PNAD\_Continua soon
 
 Description
 -----------

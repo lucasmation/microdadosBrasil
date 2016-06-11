@@ -19,8 +19,8 @@ knitr::opts_chunk$set(
 
 ## work in progress 
 
-* under revision for typos
 * vignettes and Portuguese documentation soon
+* RAIS, CAGED, PNAD_Continua soon
 
 ## Description 
 
