@@ -3,7 +3,7 @@
 
 #' @export
 download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
-  system.file("extdata", package = "microdadosBrasil") %>%
+ dataset_list<- system.file("extdata", package = "microdadosBrasil") %>%
     list.files(pattern = "files") %>%
     gsub(pattern = "_.+", replacement = "")
 
