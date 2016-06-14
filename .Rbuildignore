@@ -2,3 +2,7 @@
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^README-.*\.png$
+teste_PNAD.R$
+^SAStoR.R$
+^testes\.+?$
+
