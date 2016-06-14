@@ -2,7 +2,7 @@
 % Please edit documentation in R/import_wrapper_functions.R
 \name{read_dataset}
 \alias{read_CENSO}
-\alias{read_CensoEducSuperior}
+\alias{read_CensoEducacaoSuperior}
 \alias{read_CensoEscolar}
 \alias{read_PNAD}
 \alias{read_POF}
@@ -11,7 +11,7 @@
 \usage{
 read_CensoEscolar(ft, i, harmonize_varnames = F, root_path = NULL)
 
-read_CensoEducSuperior(ft, i, root_path = NULL)
+read_CensoEducacaoSuperior(ft, i, root_path = NULL)
 
 read_CENSO(ft, i, root_path)
 
