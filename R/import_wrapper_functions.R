@@ -73,6 +73,13 @@ read_CENSO<- function(ft,i,root_path){
   return(data)
 }
 
+read_RAIS<- function(ft,i,root_path){
+
+  metadata<- read_metadata("RAIS")
+  data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
+
+}
+
 
 
 #' @rdname read_dataset
