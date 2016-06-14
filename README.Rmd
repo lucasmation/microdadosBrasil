@@ -63,8 +63,8 @@ library('microdadosBrasil')
 ```{r eval=FALSE}
 # Censo Demográfico 2000
 #after having downloaded the data to the root directory, and unziped to root run
-d <- read_CENSO('domicilios',2005)
-d <- read_CENSO('pessoas',2005)
+d <- read_CENSO('domicilios',2000)
+d <- read_CENSO('pessoas',2000)
 
 # PNAD 2002
 download_sourceData("PNAD", 2002, unzip = T)

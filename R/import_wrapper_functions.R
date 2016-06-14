@@ -44,7 +44,7 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
 
 #' @rdname read_dataset
 #' @export
-read_CensoEducSuperior<- function(ft,i,root_path=NULL){
+read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
   metadata <-  read_metadata('CensoEducacaoSuperior')
 #   dic<- readRDS(system.file("data","CensoEducacaoSuperior_dics.rds",
 #                             package = "microdadosBrasil"))
@@ -69,6 +69,14 @@ read_CENSO<- function(ft,i,root_path){
 
   data<-read_data(ft = ft,i = i,metadata = metadata, dic_list  = CensoIBGE_dics,root_path = root_path)
 
+
+  return(data)
+}
+
+read_RAIS<- function(ft,i,root_path){
+
+  metadata<- read_metadata("RAIS")
+  data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
 
   return(data)
 }
