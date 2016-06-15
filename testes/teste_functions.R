@@ -48,7 +48,7 @@ test_read <- function(dataset,folder,years = NULL){
   metadata<- read_metadata(dataset)
 
   if(is.null(years)){
-    years <- metadata$years
+    years <- metadata$year
     warnings("As the ' years ' argument was not inserted all years  available in metadata will be tested , it may take a few minutes")
   }
 
