@@ -6,7 +6,7 @@ test_download<- function(dataset,folder,years = NULL){
 
 
   if(list.files(folder,full.names = TRUE) %>% length() > 0){
-    warning(paste0("The folder ",folder,"is not empty, all files will be deleted!"))}
+    stop(paste0("The folder ",folder,"is not empty, all files will be deleted!"))}
 
   metadata<- read_metadata(dataset)
 
@@ -15,7 +15,7 @@ test_download<- function(dataset,folder,years = NULL){
     warnings("As the ' years ' argument was not inserted all years  available in metadata will be tested , it may take a few minutes")
              }
 
-  unlink(list.files(folder, full.names = TRUE), recursive = TRUE)
+
   results<- data.frame()
 
   for(i in years){
