@@ -8,7 +8,7 @@ work in progress
 ### NEW:
 
 -   Censo 2010
--   Don't know R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
+-   Don't use R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
 ### COMMING SOON:
 
