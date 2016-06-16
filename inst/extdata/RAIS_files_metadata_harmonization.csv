@@ -1,4 +1,4 @@
-year;format;download_path;path;inputs_folder;data_folder;ft_ESTABELECIMENTOS;ft_AC;ft_AL;ft_AP;ft_AM;ft_DF;ft_CE;ft_DF;ft_ES;ft_GO;ft_MA;ft_MT;ft_MS;ft_MG;ft_PA;ft_PB;ft_PR;ft_PE;ft_PI;ft_RJ;ft_RN;ft_RS;ft_RO;ft_RR;ft_SC;ft_SP;ft_SE;ft_TO
+period;format;download_path;path;inputs_folder;data_folder;ft_ESTABELECIMENTOS;ft_AC;ft_AL;ft_AP;ft_AM;ft_DF;ft_CE;ft_DF;ft_ES;ft_GO;ft_MA;ft_MT;ft_MS;ft_MG;ft_PA;ft_PB;ft_PR;ft_PE;ft_PI;ft_RJ;ft_RN;ft_RS;ft_RO;ft_RR;ft_SC;ft_SP;ft_SE;ft_TO
 1998;csv;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
 1999;csv;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
 2000;csv;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
