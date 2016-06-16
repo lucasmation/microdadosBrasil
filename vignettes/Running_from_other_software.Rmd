@@ -13,7 +13,7 @@ If you are not an R user, but still want to take advantage of `microdadosBrasil`
 
 The basic structure for running `microdadosBrasil` from a different statistical program is:
 
-1. Install R
+1. Install R version 3.2 or higher
     + For Windows [download here](https://cran.r-project.org/bin/windows/base/) then install
 2. Get the location of the R executable (`R.exe`) is
     + Usually it will be: `C:\Program Files\R\R-3.2.2\bin\R.exe`
