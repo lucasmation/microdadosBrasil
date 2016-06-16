@@ -38,23 +38,36 @@ cd "`C:\user\my_working_diretory"
 * OBS: when seting the working directory bellow, function `setwd()` (equevalent to Stata's `cd` command), replace backslashes (\) with forwardslashes (/)
 
 file open rcode using  my_Rcode.R, write replace
-file write rcode ///
-    `"setwd("`C:/user/my_working_diretory") #remember to change \ for /  "' _newline ///
-    `"                                                                   "' _newline ///
-    `"install.packages('microdadosBrasil')                               "' _newline ///
-    `"install.packages('haven')                                          "' _newline ///
-    `"library(microdasdosBrasil)                                         "' _newline ///
-    `"library(haven)                                                     "' _newline ///
-    `"                                                                   "' _newline ///
-    `"download_sourceData("PNAD", 2002, unzip = T)                       "' _newline ///
-    `"d  <- read_PNAD("domicilios", 2002)                                "' _newline ///
-    `"                                                                   "' _newline ///
-    `"write_dta(d,file='PNAD_2002_domicilios.dta')                           "' _newline ///
+
+file write rcode                                           ///
+`""setwd("C:/user/my_working_diretory") #remember to change \ for / "' _newline ///
+`"install.packages('microdadosBrasil')                              "' _newline ///
+`"install.packages('haven')                                         "' _newline ///
+`"library(microdasdosBrasil)                                        "' _newline ///
+`"library(haven)                                                    "' _newline ///
+`"                                                                  "' _newline ///
+`"download_sourceData("PNAD", 2002, unzip = T)                      "' _newline ///
+`"d  <- read_PNAD("domicilios", 2002)                               "' _newline ///
+`"                                                                  "' _newline ///
+`"write_dta(d,file='PNAD_2002_domicilios.dta')                      "'
 file close rcode
 
-*Now just read in the file:
+*Now run the avobe R code:
+shell "C:\Program Files\R\R-3.2.2\bin\R.exe" CMD BATCH my_Rcode.R
+
+*The above code should generate a .dta file. Now just read in the file:
 use PNAD_2002_domicilios.dta, clear
 ```
+
+In the above code, only the following lines relate to microdadosBrasil: 
+
+```
+`"download_sourceData("PNAD", 2002, unzip = T)                      "' _newline ///
+`"d  <- read_PNAD("domicilios", 2002)                               "' _newline ///
+```
+
+Just update those to the dataset-subdataset-year you need
+
 
 For a more in depth explanation see [Robert Fornango's post](https://statlore.wordpress.com/2013/01/21/how-to-call-r-from-stata/). 
 
