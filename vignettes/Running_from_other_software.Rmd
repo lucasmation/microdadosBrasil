@@ -66,7 +66,7 @@ In the above code, only the following lines relate to microdadosBrasil:
 `"d  <- read_PNAD("domicilios", 2002)                               "' _newline ///
 ```
 
-Just update those to the dataset-subdataset-year you need. Also don't forget to rename the export file in the write_dta and use commands. 
+Just update those to the dataset-subdataset-year you need. Also don't forget to rename the export file in the `write_dta` and `use` commands. 
 
 
 For a more in depth explanation see [Robert Fornango's post](https://statlore.wordpress.com/2013/01/21/how-to-call-r-from-stata/). 
