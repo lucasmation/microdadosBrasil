@@ -15,8 +15,8 @@ import_SASdictionary <- function(dataset, i, ft){
   ft_list<- names(dics[[as.character(i)]]) %>% gsub(pattern = "dic_", replacement  = "") %>% gsub( pattern = paste0("_",i), replacement = "")
   ft_list<- ft_list[!is.na(dics[[as.character(i)]])]
 
-  if(!i %in% names(dics)){ stop(paste0("The available years for this dataset are these: ", paste(names(dics),collapse =", ")),call. = FALSE)}
-  if(!ft %in% ft_list){ stop(paste0("The available dictionaries for this year and this dataset are these:  : ", paste(ft_list, collapse = ", ")),call. = FALSE)}
+  if(!i %in% names(dics)){ stop(paste0("The available periods for this dataset are these: ", paste(names(dics),collapse =", ")),call. = FALSE)}
+  if(!ft %in% ft_list){ stop(paste0("The available dictionaries for this period and this dataset are these:  : ", paste(ft_list, collapse = ", ")),call. = FALSE)}
 
   return(dics[[as.character(i)]][[paste0("dic_",ft,"_",i)]])
 }

@@ -12,7 +12,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
   metadata <-  read_metadata(dataset)
   #Test if parameters are valid
 
-  md <- metadata %>% filter(year==i)
+  md <- metadata %>% filter(period==i)
   link <- md$download_path
   if(is.na(link)){stop("Can't download dataset, there are no information about the source")}
   filename <- link %>% gsub(pattern = ".+/", replacement = "")
