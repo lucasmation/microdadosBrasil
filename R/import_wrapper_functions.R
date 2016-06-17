@@ -109,17 +109,15 @@ read_POF <- function(ft,i, root_path){
 
 #' @rdname read_dataset
 #' @export
-read_PnadContinua<- function(ft,i,root_path=NULL){
+read_PNADContinua<- function(ft,i,root_path=NULL){
 
   metadata <-  read_metadata('PnadContinua')
-  #   dic<- readRDS(system.file("data","CensoEducacaoSuperior_dics.rds",
-  #                             package = "microdadosBrasil"))
 
-  data("PnadContinua_dics")
+  data("PNADContinua_dics")
 
 
 
-  data<-read_data(ft, i, metadata, dic = PnadContinua_dics,root_path =  root_path)
+  data<-read_data(ft, i, metadata, dic = PNADContinua_dics,root_path =  root_path)
 
   return(data)
 }

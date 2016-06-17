@@ -5,8 +5,8 @@
 \alias{read_CensoEducacaoSuperior}
 \alias{read_CensoEscolar}
 \alias{read_PNAD}
+\alias{read_PNADContinua}
 \alias{read_POF}
-\alias{read_PnadContinua}
 \alias{read_dataset}
 \title{Functions to read most common Brazillian dataset}
 \usage{
@@ -20,7 +20,7 @@ read_PNAD(ft, i, root_path = NULL)
 
 read_POF(ft, i, root_path)
 
-read_PnadContinua(ft, i, root_path = NULL)
+read_PNADContinua(ft, i, root_path = NULL)
 }
 \arguments{
 \item{ft}{file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')}
