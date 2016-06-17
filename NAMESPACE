@@ -2,7 +2,7 @@
 
 export(aux_read_fwf)
 export(download_sourceData)
-export(import_SASdictionary)
+export(get_dictionary)
 export(read_CENSO)
 export(read_CensoEducacaoSuperior)
 export(read_CensoEscolar)
