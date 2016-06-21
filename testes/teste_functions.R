@@ -1,24 +1,24 @@
-
 #Carefull! Function test_download() will delete all files previous inside 'folder'
 
 
-test_download<- function(dataset,folder,years = NULL){
+test_download<- function(dataset,folder,periods = NULL){
 
 
   if(list.files(folder,full.names = TRUE) %>% length() > 0){
     stop(paste0("The folder ",folder,"is not empty, all files will be deleted!"))}
 
+
   metadata<- read_metadata(dataset)
 
-  if(is.null(years)){
-    years <- metadata$year
-    warnings("As the ' years ' argument was not inserted all years  available in metadata will be tested , it may take a few minutes")
-             }
+  if(is.null(periods)){
+    periods <- metadata$period
+    warnings("As the ' periods ' argument was not inserted all periods  available in metadata will be tested , it may take a few minutes")
+  }
 
 
   results<- data.frame()
 
-  for(i in years){
+  for(i in periods){
 
     d<- NA
 
@@ -29,7 +29,7 @@ test_download<- function(dataset,folder,years = NULL){
 
 
 
-    results_temp<- data.frame(year =i,
+    results_temp<- data.frame(period =i,
                               time_download = difftime(t1,t0, units = "secs"),
                               error_download = !is.null(d))
 
@@ -42,26 +42,28 @@ test_download<- function(dataset,folder,years = NULL){
 
 }
 
-test_read <- function(dataset,folder,years = NULL){
+test_read <- function(dataset,folder,periods = NULL){
 
   results<-data.frame()
-  metadata<- read_metadata(dataset)
+  dataset2<- ifelse(dataset == "CENSO", "CensoIBGE",dataset)
 
-  if(is.null(years)){
-    years <- metadata$year
-    warnings("As the ' years ' argument was not inserted all years  available in metadata will be tested , it may take a few minutes")
+  metadata<- read_metadata(dataset2)
+
+  if(is.null(periods)){
+    periods <- metadata$period
+    warnings("As the ' periods ' argument was not inserted all periods  available in metadata will be tested , it may take a few minutes")
   }
 
 
-  for(i in years){
+  for(i in periods){
 
     r<- NA
     gc()
 
     ft_list  <- names(metadata)[grep("ft_", names(metadata))]
     ft_list2 <- gsub("ft_","",names(metadata)[grep("ft_", names(metadata))])
-    results_temp<- data.frame(year = i)
-    names_temp<- c("year")
+    results_temp<- data.frame(period = i)
+    names_temp<- c("period")
 
     for(ft in ft_list2){
 
@@ -75,10 +77,11 @@ test_read <- function(dataset,folder,years = NULL){
       results_temp<- bind_cols(results_temp,
                                data.frame(
                                  difftime(t1,t0, unit = "secs"),
+                                 object.size(r) %>% format(unit = "Mb"),
                                  !is.data.frame(r)))
 
       names_temp<- c(names_temp,
-                     paste0("time_",ft),paste0("error_",ft))
+                     paste0("time_",ft),paste0("size_",ft),paste0("error_",ft))
     }
 
     names(results_temp)<- names_temp
@@ -90,6 +93,3 @@ test_read <- function(dataset,folder,years = NULL){
   }
   return(results)
 }
-
-
-
