@@ -93,3 +93,18 @@ test_read <- function(dataset,folder,periods = NULL){
   }
   return(results)
 }
+
+correct_missing<- function(test_read_results, metadata){
+
+  names(metadata) %>% .[grepl(pattern = "ft_",.)] -> ft_list
+  ft_list2<- paste0("error_",ft_list %>% gsub(pattern = "ft_",replacement = ""))
+
+
+  test_read_results[,ft_list2][is.na(metadata[,ft_list])] <- NA
+
+  return(test_read_results)
+
+
+}
+
+
