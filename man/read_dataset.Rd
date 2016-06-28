@@ -5,6 +5,7 @@
 \alias{read_CensoEducacaoSuperior}
 \alias{read_CensoEscolar}
 \alias{read_PNAD}
+\alias{read_PNADContinua}
 \alias{read_POF}
 \alias{read_dataset}
 \title{Functions to read most common Brazillian dataset}
@@ -18,13 +19,15 @@ read_CENSO(ft, i, root_path)
 read_PNAD(ft, i, root_path = NULL)
 
 read_POF(ft, i, root_path)
+
+read_PNADContinua(ft, i, root_path = NULL)
 }
 \arguments{
 \item{ft}{file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')}
 
-\item{i}{period. Normally year in YYY format.}
+\item{i}{period. Normally period in YYY format.}
 
-\item{harmonize_varnames}{Should variable names be harmonized over the years of the subdataset (ft)}
+\item{harmonize_varnames}{Should variable names be harmonized over the periods of the subdataset (ft)}
 }
 \value{
 a data.frame containing the imported data.

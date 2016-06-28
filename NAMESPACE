@@ -2,11 +2,12 @@
 
 export(aux_read_fwf)
 export(download_sourceData)
-export(import_SASdictionary)
+export(get_dictionary)
 export(read_CENSO)
 export(read_CensoEducacaoSuperior)
 export(read_CensoEscolar)
 export(read_PNAD)
+export(read_PNADContinua)
 export(read_POF)
 export(read_data)
 export(read_metadata)

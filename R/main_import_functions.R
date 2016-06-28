@@ -48,11 +48,11 @@ aux_read_fwf <- function(f,dic){
 
 #' Reads files (fwf or csv).
 #'
-#' Main import function. Parses metadata and import diciontaries (in case of fwf files) to obtain import parameters for the desired subdataset and year. Then imports based on those parameters. Should not be aceessed directly, unless you are trying to extend the package, but rather though the wrapper funtions (read_CENSO, read_PNAD, etc).
+#' Main import function. Parses metadata and import diciontaries (in case of fwf files) to obtain import parameters for the desired subdataset and period. Then imports based on those parameters. Should not be aceessed directly, unless you are trying to extend the package, but rather though the wrapper funtions (read_CENSO, read_PNAD, etc).
 #' @param ft file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')
-#' @param i period. Normally year in YYY format.
+#' @param i period. Normally period in YYY format.
 #' @param metadata a data.frame containing one row per period and columns indicating: period, type (fwf, csv) download location, directory structure of the source data, hamonized file and dictionary names for subdataset (ft).
-#' @param dic_list a list containing import dictionary data.frames for each year and subdataset (ft). Only necessary if data is in fwf format
+#' @param dic_list a list containing import dictionary data.frames for each period and subdataset (ft). Only necessary if data is in fwf format
 #' @param var_translator (optional) a data.frame containing a subdataset (ft) specific renaming dictionary. Rows indicate the variable and the columuns the periods.
 #' @param root_path (optional) a path to the directory where dataset was downloaded
 #'
@@ -73,19 +73,19 @@ read_data <- function(ft,i,metadata,dic_list=NULL,var_translator=NULL,root_path=
 
 print(i)
   #Extracting Parameters
-    i_min    <- min(metadata$year)
-    i_max    <- max(metadata$year)
+    i_min    <- min(metadata$period)
+    i_max    <- max(metadata$period)
     ft2      <- paste0("ft_",ft)
     ft_list  <- names(metadata)[grep("ft_", names(metadata))]
     ft_list2 <- gsub("ft_","",names(metadata)[grep("ft_", names(metadata))])
     var_list <- names(metadata)[ !(names(metadata) %in% ft_list)]
     #Checking if parameters are valid
-    if (!(i %in% metadata$year)) { stop(paste0("Year must be between ", i_min," and ", i_max )) }
+    if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
     if (!(ft %in% ft_list2 ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list2, collapse=", "),
-                                               '. See table of valid file types for each year at XXX'))  }
+                                               '. See table of valid file types for each period at XXX'))  }
 
     #subseting metadata and var_translator
-    md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(year==i) %>% rename_(.dots=setNames(ft2,ft))
+    md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
     if (!is.null(var_translator)) {
       vt <- var_translator %>% rename_( old_varname = as.name(paste0('varname',i))) %>%
         select(std_varname ,old_varname ) %>% filter(!is.na(old_varname))
@@ -106,9 +106,9 @@ print(data_path)
 print(files)
 
   #Checking if parameters are valid
-    if (!(i %in% metadata$year)) { stop(paste0("Year must be between ", i_min," and ", i_max )) }
+    if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
     if (!(ft %in% ft_list2 ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list2, collapse=", "),
-                                          '. See table of valid file types for each year at XXX'))  }
+                                          '. See table of valid file types for each period at XXX'))  }
     if (!file.exists(files)) { stop("Data not found. Check if you have unziped the data" )  }
 
   #Importing
