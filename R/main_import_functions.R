@@ -26,7 +26,8 @@ read_var_translator <- function(dataset, ft){
 #' @return a data.frame containing the imported data.
 #'
 #' @examples
-#' aux_read_fwf(filename.txt,dicionary_name)
+#' \dontrun{aux_read_fwf(filename.txt,dicionary_name)}
+#'
 #' @import readr
 #' @export
 aux_read_fwf <- function(f,dic){
