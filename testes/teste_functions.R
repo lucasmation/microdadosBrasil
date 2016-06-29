@@ -65,8 +65,20 @@ test_read <- function(dataset,folder,periods = NULL){
     results_temp<- data.frame(period = i)
     names_temp<- c("period")
 
+
     for(ft in ft_list2){
 
+      if(is.na(metadata[metadata$period == i,paste0("ft_",ft)])){
+
+        results_temp<- bind_cols(results_temp,
+                                 data.frame(
+                                   NA,
+                                   NA,
+                                   NA))
+        names_temp<- c(names_temp,
+                       paste0("time_",ft),paste0("size_",ft),paste0("error_",ft))
+
+      }else{
       t0<- Sys.time()
       read_dataset<- get(paste0("read_",dataset))
 
@@ -82,6 +94,7 @@ test_read <- function(dataset,folder,periods = NULL){
 
       names_temp<- c(names_temp,
                      paste0("time_",ft),paste0("size_",ft),paste0("error_",ft))
+      }
     }
 
     names(results_temp)<- names_temp
@@ -93,3 +106,18 @@ test_read <- function(dataset,folder,periods = NULL){
   }
   return(results)
 }
+
+correct_missing<- function(test_read_results, metadata){
+
+  names(metadata) %>% .[grepl(pattern = "ft_",.)] -> ft_list
+  ft_list2<- paste0("error_",ft_list %>% gsub(pattern = "ft_",replacement = ""))
+
+
+  test_read_results[,ft_list2][is.na(metadata[,ft_list])] <- NA
+
+  return(test_read_results)
+
+
+}
+
+
