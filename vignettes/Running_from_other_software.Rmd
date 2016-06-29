@@ -1,0 +1,104 @@
+---
+title: "Running microdadosBrasil from other software"
+author: "Lucas Mation"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+If you are not an R user, but still want to take advantage of `microdadosBrasil` import capability this is vignette if for you. I will show you how to get the best of the package without almost any R knowledge. Bellow we provide examples for Python and Stata (SAS and SPSS may come in the future).
+
+The basic structure for running `microdadosBrasil` from a different statistical program is:
+
+1. Install R (version 3.2 or higher) and Rtools (33 or higher)
+    + R: For Windows [download here](https://cran.r-project.org/bin/windows/base/) then install
+    + Rtools: [download here](https://cran.r-project.org/bin/windows/Rtools/)
+2. Get the location of the R executable (`R.exe`) is
+    + Usually it will be: `C:\Program Files\R\R-3.2.2\bin\R.exe`
+3. Create an R batch program (`my_Rcode.R`) containing 
+    + pointer to the working directory, where data will be downloaded
+    + `microdadosBrasil` import functions
+    + an export function to your packages preferred data format
+4. From your package, run a `shell` command to run the commands in `my_Rcode.R` in  R (`R.exe`) 
+
+If you are a novice to (statistical) programming this may seem a bit scary. Persevere. It is easier than it sounds at first. Skim the examples bellow and you will probably understand the R code, even if you never learn R before. 
+
+
+## Stata
+
+In a do-file include the codes bellow and run:
+
+```
+*change diretory to the folder you want to download the data to
+cd "`C:\user\my_working_diretory"
+
+*Create an R batch file (R equivalent to a do-file) containing: 
+* OBS: when seting the working directory bellow, function `setwd()` (equevalent to Stata's `cd` command), replace backslashes (\) with forwardslashes (/)
+
+file open rcode using  my_Rcode.R, write replace
+
+file write rcode                                           ///
+`""setwd("C:/user/my_working_diretory") #remember to change \ for / "' _newline ///
+`"install.packages('microdadosBrasil')                              "' _newline ///
+`"install.packages('haven')                                         "' _newline ///
+`"library(microdadosBrasil)                                        "' _newline ///
+`"library(haven)                                                    "' _newline ///
+`"                                                                  "' _newline ///
+`"download_sourceData("PNAD", 2002, unzip = T)                      "' _newline ///
+`"d  <- read_PNAD("domicilios", 2002)                               "' _newline ///
+`"                                                                  "' _newline ///
+`"write_dta(d,file='PNAD_2002_domicilios.dta')                      "'
+file close rcode
+
+*Now run the avobe R code:
+shell "C:\Program Files\R\R-3.2.2\bin\R.exe" CMD BATCH my_Rcode.R
+
+*The above code should generate a .dta file. Now just read in the file:
+use PNAD_2002_domicilios.dta, clear
+```
+
+In the above code, only the following lines relate to microdadosBrasil: 
+
+```
+`"download_sourceData("PNAD", 2002, unzip = T)                      "' _newline ///
+`"d  <- read_PNAD("domicilios", 2002)                               "' _newline ///
+```
+
+Just update those to the dataset-subdataset-year you need. Also don't forget to rename the export file in the `write_dta` and `use` commands. 
+
+
+For a more in depth explanation see [Robert Fornango's post](https://statlore.wordpress.com/2013/01/21/how-to-call-r-from-stata/). 
+
+## Python:
+
+
+```
+import os
+import subprocess
+import pandas as pd
+
+os.chdir("C:/user/my_working_diretory")
+
+f = open("my_Rcode.R","w") #opens file with name of "test.txt"
+f.write('setwd("C:/user/my_working_diretory") #remember to change \ for /  \n')
+f.write('install.packages("microdadosBrasil")                              \n')
+f.write('install.packages("haven")                                         \n')
+f.write('library(microdadosBrasil)                                        \n')
+f.write('library(haven)                                                    \n')
+f.write('                                                                  \n')
+f.write('download_sourceData("PNAD", 2002, unzip = T)                      \n')
+f.write('d  <- read_PNAD("domicilios", 2002)                               \n')
+f.write('                                                                  \n')
+f.write('write_csv2(d, file="PNAD_2002_domicilios.csv, row.names = F")     \n')
+f.close()
+
+subprocess.call('"C:\Program Files\R\R-3.2.2\bin\R.exe" CMD BATCH my_Rcode.R', shell=True)
+
+mun_list = pd.read_csv("PNAD_2002_domicilios.csv", header=0, sep=";", decimal=",")
+```
+
+
+
