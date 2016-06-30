@@ -22,13 +22,13 @@ dic_folder<- "C:/..."
 path<- "C:/.../PNADContinua"
 
 setwd(path)
-metadata<- read_metadata("PNADContinua")
+metadata<- read_metadata("PNADcontinua")
 get_all_dics(metadata)
 
-PNADContinua<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
-names(PNADContinua_dics)<- metadata$period
+PNADcontinua_dics<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
+names(PNADcontinua_dics)<- metadata$period
 
-save(PNADContinua_dics, file = paste0(dic_folder, "/PNADcontinua_dics.rda"))
+save(PNADcontinua_dics, file = paste0(dic_folder, "/PNADcontinua_dics.rda"))
 
 
 
