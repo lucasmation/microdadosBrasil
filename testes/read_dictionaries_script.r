@@ -22,13 +22,13 @@ dic_folder<- "C:/..."
 path<- "C:/.../PNADContinua"
 
 setwd(path)
-metadata<- read_metadata("PNADContinua")
+metadata<- read_metadata("PNADcontinua")
 get_all_dics(metadata)
 
-PNADContinua<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
-names(PNADContinua_dics)<- metadata$period
+PNADcontinua_dics<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
+names(PNADcontinua_dics)<- metadata$period
 
-save(PNADContinua_dics, file = paste0(dic_folder, "/PNADcontinua_dics.rda"))
+save(PNADcontinua_dics, file = paste0(dic_folder, "/PNADcontinua_dics.rda"))
 
 
 
@@ -45,7 +45,7 @@ get_all_dics(metadata)
 CensoEscolar_dics<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
 names(CensoEscolar_dics)<- metadata$period
 
-save(CensoEscolar, file = paste0(dic_folder, "/CensoEscolar_dics.rda"))
+save(CensoEscolar_dics, file = paste0(dic_folder, "/CensoEscolar_dics.rda"))
 
 
 ###################### CENSO EDUCACAO SUPERIOR ####################################################
@@ -60,7 +60,7 @@ get_all_dics(metadata)
 CensoEducacaoSuperior_dics<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
 names(CensoEducacaoSuperior_dics)<- metadata$period
 
-save(CensoEducacaoSuperior, file = paste0(dic_folder, "/CensoEducacaoSuperior_dics.rda"))
+save(CensoEducacaoSuperior_dics, file = paste0(dic_folder, "/CensoEducacaoSuperior_dics.rda"))
 
 ################### PNAD #########################################################################
 
@@ -73,7 +73,7 @@ get_all_dics(metadata)
 PNAD_dics<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
 names(PNAD_dics)<- metadata$period
 
-save(PNAD, file = paste0(dic_folder, "/PNAD_dics.rda"))
+save(PNAD_dics, file = paste0(dic_folder, "/PNAD_dics.rda"))
 
 str(PNAD_dics)
 
