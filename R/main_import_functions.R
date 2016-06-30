@@ -97,6 +97,7 @@ print(str(vt))
     dic   <- unlist(strsplit(a, split='&'))[1] # for fwf files
     delim <- unlist(strsplit(a, split='&'))[1]  # for csv files
     format <- md %>% select_(.dots = 'format') %>% collect %>% .[['format']]
+    missing_symbol <- md %>% select_(.dots = 'missing_symbol') %>% collect %>% .[['missing_symbol']]
     # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
     data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/")
 
@@ -122,7 +123,7 @@ print(files)
     }
     if(format=='csv'){
       print('b')
-      lapply(files,data.table::fread, sep = delim) %>% rbindlist(use.names=T) -> d
+      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
       #     lapply(files,read_delim, delim = delim) -> d2
       #     d2 %>% bind_rows -> d
       # d <- (csv_file, )
