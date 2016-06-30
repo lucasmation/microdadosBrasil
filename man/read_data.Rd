@@ -24,11 +24,11 @@ read_data(ft, i, metadata, dic_list = NULL, var_translator = NULL,
 Main import function. Parses metadata and import diciontaries (in case of fwf files) to obtain import parameters for the desired subdataset and period. Then imports based on those parameters. Should not be aceessed directly, unless you are trying to extend the package, but rather though the wrapper funtions (read_CENSO, read_PNAD, etc).
 }
 \examples{
-CSV data:
+\dontrun{CSV data:
 read_data('escola',2014,CensoEscolar_metadata)
 read_data('escola',2014,CensoEscolar_metadata,CensoEscolar_escola_varname_harmonization)
 
 FWF data: dictionary is mandatory
-read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)
+read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)}
 }
 
