@@ -14,9 +14,9 @@ get_import_dictionary(dataset, i, ft)
 \item{ft}{file type.}
 }
 \description{
-The dictionaries used in this package are stored in lists. get_dictionary() is a wrapper to search dictionaries based on dataset name, period and file type.
+The dictionaries used in this package are stored in lists. get_import_dictionary() is a wrapper to search dictionaries based on dataset name, period and file type.
 }
 \examples{
-get_dictionary(dataset = "CensoEscolar", i = 1996, ft = "escola")
+\dontrun{get_import_dictionary(dataset = "CensoEscolar", i = 1996, ft = "escola")}
 }
 
