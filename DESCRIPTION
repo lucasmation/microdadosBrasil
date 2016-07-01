@@ -16,7 +16,7 @@ Description: A set of simple functions to read most commonly used public microda
     read_RAIS, handle the details of each dataset-year and make this package easily
     extendable. See the website for microdadosBrasil on github for more details.License: CC0
 Depends: R (>= 3.1.3)
-Imports: 
+Imports:
     data.table,
     dplyr,
     magrittr,
@@ -32,3 +32,4 @@ LazyData: true
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
+Encoding: UTF-8
