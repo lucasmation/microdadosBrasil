@@ -57,12 +57,13 @@ aux_read_fwf <- function(f,dic){
 #' @param root_path (optional) a path to the directory where dataset was downloaded
 #'
 #' @examples
+#' \dontrun{
 #' CSV data:
 #' read_data('escola',2014,CensoEscolar_metadata)
 #' read_data('escola',2014,CensoEscolar_metadata,CensoEscolar_escola_varname_harmonization)
 #'
 #' FWF data: dictionary is mandatory
-#' read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)
+#' read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)}
 
 #' @import dplyr
 #' @import data.table
@@ -99,7 +100,7 @@ print(str(vt))
     format <- md %>% select_(.dots = 'format') %>% collect %>% .[['format']]
     missing_symbol <- md %>% select_(.dots = 'missing_symbols') %>% collect %>% .[['missing_symbols']]
     # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
-    data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/")
+    data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/") %>% ifelse(. == "", getwd(),.)
 
 print(file_name)
 print(data_path)
