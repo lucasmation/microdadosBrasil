@@ -18,6 +18,7 @@ a data.frame containing the imported data.
 Reads fixed-width file (fwf) file based on dictionary.
 }
 \examples{
-aux_read_fwf(filename.txt,dicionary_name)
+\dontrun{aux_read_fwf(filename.txt,dicionary_name)}
+
 }
 
