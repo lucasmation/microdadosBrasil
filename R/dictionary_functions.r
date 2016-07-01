@@ -11,7 +11,7 @@
 #' get_dictionary(dataset = "CensoEscolar", i = 1996, ft = "escola")
 
 #' @export
-get_dictionary <- function(dataset, i, ft){
+get_import_dictionary <- function(dataset, i, ft){
   x<- environment()
 
   datasets_list<- list.files(system.file("data",package  = "microdadosBrasil"),pattern = "\\.rda") %>%
