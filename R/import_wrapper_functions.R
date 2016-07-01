@@ -81,7 +81,10 @@ read_CENSO<- function(ft,i,root_path = NULL, UF = NULL){
   return(data)
 }
 
-read_RAIS<- function(ft,i,root_path){
+#' @rdname read_dataset
+#' @export
+
+read_RAIS<- function(ft,i,root_path = NULL){
 
   metadata<- read_metadata("RAIS")
   data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
@@ -93,6 +96,7 @@ read_RAIS<- function(ft,i,root_path){
 
 #' @rdname read_dataset
 #' @export
+#'
 read_PNAD<- function(ft,i,root_path=NULL){
   metadata <-  read_metadata('PNAD')
 
