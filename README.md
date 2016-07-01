@@ -31,7 +31,7 @@ Currently the package includes import functions for:
 | Source | Dataset                 | Import\_function            | Period       | Subdataset                |
 |:-------|:------------------------|:----------------------------|:-------------|:--------------------------|
 | IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014 | domicilios, pessoas       |
-| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000         | domicilios, pessoas       |
+| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000 and 2010| domicilios, pessoas       |
 | IBGE   | POF                     | read\_POF                   | 2008         | several, see details      |
 | INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014 | escolas, ..., see detials |
 | INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014 | see details               |
