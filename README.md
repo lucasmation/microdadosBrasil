@@ -7,13 +7,14 @@ work in progress
 
 ### NEW:
 
+-   PNAD\_Continua
 -   Censo 2010
--   Don't use R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
+-   
 
 ### COMMING SOON:
 
 -   vignettes and Portuguese documentation
--   RAIS and CAGED (public versions) , PNAD\_Continua
+-   CAGED (public versions) ,
 -   Censo 1991, PNADs before 2001
 -   Support for data not fitting into memory.
 
@@ -28,13 +29,15 @@ this package contains functions to read most commonly used Brazilian microdata e
 
 Currently the package includes import functions for:
 
-| Source | Dataset                 | Import\_function            | Period       | Subdataset                |
-|:-------|:------------------------|:----------------------------|:-------------|:--------------------------|
-| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014 | domicilios, pessoas       |
-| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000         | domicilios, pessoas       |
-| IBGE   | POF                     | read\_POF                   | 2008         | several, see details      |
-| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014 | escolas, ..., see detials |
-| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014 | see details               |
+| Source | Dataset                 | Import\_function            | Period           | Subdataset                |
+|:-------|:------------------------|:----------------------------|:-----------------|:--------------------------|
+| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014     | domicilios, pessoas       |
+| IBGE   | PNAD Contínua           | read\_PNADcontinua          | 2012.1 to 2016.1 | pessoas                   |
+| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000,2010        | domicilios, pessoas       |
+| IBGE   | POF                     | read\_POF                   | 2008             | vínculos                  |
+| MTE    | RAIS                    | read\_RAIS                  | 1997 to 2014     | several, see details      |
+| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014     | escolas, ..., see detials |
+| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014     | see details               |
 
 The package includes internally a list of import dictionaries for each dataset-subdataset-year. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function.
 
@@ -64,11 +67,17 @@ download_sourceData("PNAD", 2002, unzip = T)
 d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
 
+# PNAD Contínua, 2nd trimestrer, 2014
+download_sourceData("PNADcontinua", 2014.2, unzip = T)
+d <- read_PNADContinua("pessoas", 2014.2)
+
 # Censo Escolar
 download_sourceData('CensoEscolar', 2005, unzip=T)
 d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 ```
+
+Don't use R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
 Related efforts
 ---------------
