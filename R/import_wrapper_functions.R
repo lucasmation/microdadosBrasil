@@ -92,6 +92,18 @@ read_RAIS<- function(ft,i,root_path = NULL){
   return(data)
 }
 
+#' @rdname read_dataset
+#' @export
+
+read_CAGED<- function(ft,i,root_path = NULL){
+
+  metadata<- read_metadata("CAGED")
+  data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
+
+  return(data)
+}
+
+
 
 
 #' @rdname read_dataset
