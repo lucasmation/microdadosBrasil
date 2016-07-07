@@ -98,7 +98,7 @@ print(str(vt))
     dic   <- unlist(strsplit(a, split='&'))[1] # for fwf files
     delim <- unlist(strsplit(a, split='&'))[1]  # for csv files
     format <- md %>% select_(.dots = 'format') %>% collect %>% .[['format']]
-    missing_symbol <- md %>% select_(.dots = 'missing_symbols') %>% collect %>% .[['missing_symbols']] %>% strsplit("&") %>% unlist
+    missing_symbol <- md %>% select_(.dots = 'missing_symbols') %>% collect %>% .[['missing_symbols']] %>% ifelse(test = is.na(.), no = strsplit(x = .,split = "&")) %>% unlist
     # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
     data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/") %>% ifelse(. == "", getwd(),.)
 
