@@ -5,6 +5,7 @@
 teste_PNAD.R$
 ^SAStoR.R$
 ^testes\.+?$
+^testes$
 create_dic_CENSO.r
 dics_to_list.R
 

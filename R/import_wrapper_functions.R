@@ -62,8 +62,16 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
 
 #' @rdname read_dataset
 #' @export
-read_CENSO<- function(ft,i,root_path){
+read_CENSO<- function(ft,i,root_path = NULL, UF = NULL){
+
   metadata <-  read_metadata('CensoIBGE')
+
+  root_path<- ifelse(is.null(UF),
+                     root_path,
+                     paste0(ifelse(is.null(root_path),getwd(),root_path),"/",UF))
+  if(!file.exists(root_path)){
+    stop("Data not found, check if you provide a valid root_path or stored the data in your current working directory.")
+  }
 
   data("CensoIBGE_dics")
 
@@ -73,7 +81,10 @@ read_CENSO<- function(ft,i,root_path){
   return(data)
 }
 
-read_RAIS<- function(ft,i,root_path){
+#' @rdname read_dataset
+#' @export
+
+read_RAIS<- function(ft,i,root_path = NULL){
 
   metadata<- read_metadata("RAIS")
   data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
@@ -81,10 +92,23 @@ read_RAIS<- function(ft,i,root_path){
   return(data)
 }
 
+#' @rdname read_dataset
+#' @export
+
+read_CAGED<- function(ft,i,root_path = NULL){
+
+  metadata<- read_metadata("CAGED")
+  data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
+
+  return(data)
+}
+
+
 
 
 #' @rdname read_dataset
 #' @export
+#'
 read_PNAD<- function(ft,i,root_path=NULL){
   metadata <-  read_metadata('PNAD')
 
@@ -110,6 +134,7 @@ read_POF <- function(ft,i, root_path){
 #' @rdname read_dataset
 #' @export
 read_PNADcontinua<- function(ft,i,root_path=NULL){
+
 
   metadata <-  read_metadata('Pnadcontinua')
 

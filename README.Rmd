@@ -21,14 +21,13 @@ knitr::opts_chunk$set(
 
 ### NEW:
 
-* PNAD_Continua
 * Censo 2010
--   
+-   Don't use R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
 ### COMMING SOON:
 
 * vignettes and Portuguese documentation
-* CAGED (public versions) , 
+* RAIS and CAGED (public versions) , PNAD_Continua
 * Censo 1991, PNADs before 2001 
 * Support for data not fitting into memory.
 
@@ -46,11 +45,11 @@ Currently the package includes import functions for:
   
 ```{r echo=FALSE}
 d <- data.frame(
-  Source=c('IBGE','IBGE','IBGE','IBGE','MTE','INEP','INEP'),
-  Dataset=c('PNAD','PNAD Contínua','Censo Demográfico','POF','RAIS','Censo Escolar','Censo da Educ. Superior'),
-  Import_function=c('read_PNAD','read_PNADcontinua','read_CENSO','read_POF','read_RAIS','read_CensoEscolar','read_CensoEducacaoSuperior'),
-  Period=c('2001 to 2014','2012.1 to 2016.1','2000,2010','2008','1997 to 2014','1995 to 2014','1995 to 2014'),
-  Subdataset=c('domicilios, pessoas','pessoas','domicilios, pessoas','vínculos','several, see details','escolas, ..., see detials','see details')
+  Source=c('IBGE','IBGE','IBGE','INEP','INEP'),
+  Dataset=c('PNAD','Censo Demográfico','POF','Censo Escolar','Censo da Educ. Superior'),
+  Import_function=c('read_PNAD','read_CENSO','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior'),
+  Period=c('2001 to 2014','2000','2008','1995 to 2014','1995 to 2014'),
+  Subdataset=c('domicilios, pessoas','domicilios, pessoas','several, see details','escolas, ..., see detials','see details')
   )
 library(printr)
 d
@@ -83,17 +82,11 @@ download_sourceData("PNAD", 2002, unzip = T)
 d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
 
-# PNAD Contínua, 2nd trimestrer, 2014
-download_sourceData("PNADcontinua", 2014.2, unzip = T)
-d <- read_PNADContinua("pessoas", 2014.2)
-
 # Censo Escolar
 download_sourceData('CensoEscolar', 2005, unzip=T)
 d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 ```
-
-Don't use R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
 ## Related efforts
 

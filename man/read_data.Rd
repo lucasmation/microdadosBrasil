@@ -30,6 +30,6 @@ read_data('escola',2014,CensoEscolar_metadata)
 read_data('escola',2014,CensoEscolar_metadata,CensoEscolar_escola_varname_harmonization)
 
 FWF data: dictionary is mandatory
-read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)
-}}
+read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)}
+}
 

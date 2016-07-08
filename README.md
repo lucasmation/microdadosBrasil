@@ -29,6 +29,7 @@ this package contains functions to read most commonly used Brazilian microdata e
 
 Currently the package includes import functions for:
 
+
 | Source | Dataset                 | Import\_function            | Period           | Subdataset                |
 |:-------|:------------------------|:----------------------------|:-----------------|:--------------------------|
 | IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014     | domicilios, pessoas       |
@@ -38,6 +39,7 @@ Currently the package includes import functions for:
 | MTE    | RAIS                    | read\_RAIS                  | 1997 to 2014     | several, see details      |
 | INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014     | escolas, ..., see detials |
 | INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014     | see details               |
+
 
 The package includes internally a list of import dictionaries for each dataset-subdataset-year. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function.
 
