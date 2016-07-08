@@ -39,7 +39,7 @@ parses_SAS_import_dic <- function(file){
 
   names(dic_sas) <- 'a'
   dic_sas %>% filter(grepl("^@",a)) %>%
-    extract(a, into=c('int_pos', 'var_name', 'x', 'label'),
+    tidyr::extract(a, into=c('int_pos', 'var_name', 'x', 'label'),
             "[[:punct:]\\s+](\\d+)\\s+(\\S+)(?:\\s+([[:graph:]$]+)())?")  %>%
     mutate(int_pos=int_pos %>% as.numeric,
            length=gregexpr("[[:digit:]]+(?=\\.)",x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric,
