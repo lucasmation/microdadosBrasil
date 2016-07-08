@@ -152,7 +152,7 @@ read_POF <- function(ft,i, root_path){
 read_PNADcontinua<- function(ft,i,root_path=NULL){
 
 
-  metadata <-  read_metadata('Pnadcontinua')
+  metadata <-  read_metadata('PNADcontinua')
 
   data("PNADcontinua_dics")
 
