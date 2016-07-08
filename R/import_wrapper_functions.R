@@ -119,6 +119,22 @@ read_PNAD<- function(ft,i,root_path=NULL){
   return(data)
 }
 
+#' @rdname read_dataset
+#' @export
+read_PME <- function(ft,i, root_path){
+
+  if(!is.character(i)|!grepl(pattern = "^[0-9]{4}\\.[0-9]{2}$", x = i)){
+    stop(paste0("The argument i must be a character in the format YYYY.MM"))
+
+  }
+  metadata <-  read_metadata('PME')
+  data("PME_dics")
+
+
+  data<- read_data(ft = ft,i = i,metadata = metadata,dic = PME_dics, root_path = root_path)
+  return(data)
+}
+
 
 #' @rdname read_dataset
 #' @export
