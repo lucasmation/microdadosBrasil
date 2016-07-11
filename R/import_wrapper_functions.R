@@ -70,7 +70,7 @@ read_CENSO<- function(ft,i,root_path = NULL, UF = NULL){
                      root_path,
                      paste0(ifelse(is.null(root_path),getwd(),root_path),"/",UF))
   if(!file.exists(root_path)){
-    stop("Data not found, check if you provide a valid root_path or stored the data in your current working directory.")
+    stop("Data not found, check if you provided a valid root_path or stored the data in your current working directory.")
   }
 
   data("CensoIBGE_dics")
@@ -84,9 +84,24 @@ read_CENSO<- function(ft,i,root_path = NULL, UF = NULL){
 #' @rdname read_dataset
 #' @export
 
-read_RAIS<- function(ft,i,root_path = NULL){
+read_RAIS<- function(ft, i,root_path = NULL,UF = NULL){
 
-  metadata<- read_metadata("RAIS")
+  metadata <-  read_metadata('RAIS')
+
+
+  if(!is.null(UF)){
+    UF <- paste0("(",paste(UF, collapse = "|"),")")
+    metadata$ft_vinculos <- metadata$ft_vinculos %>%
+      gsub(pattern = "[A-Z]{2}", replacement = UF, fixed = TRUE)}
+
+  if(is.null(ft)){
+    ft<-   names(metadata)[grepl("ft_", names(metadata))] %>%
+     gsub(pattern = "ft_", replacement = "") %>% .[-1]
+  }
+
+  if(length(ft)>1){
+    data<- lapply(X = ft,FUN = read_data, i = i, metadata = metadata, dic_list = NULL, root_path = root_path) %>% bind_rows
+  }
   data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
 
   return(data)
