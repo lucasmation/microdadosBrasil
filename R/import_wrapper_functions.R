@@ -121,7 +121,7 @@ read_PNAD<- function(ft,i,root_path=NULL){
 
 #' @rdname read_dataset
 #' @export
-read_PME <- function(ft,i, root_path){
+read_PME <- function(ft,i, root_path = NULL){
 
   if(!is.character(i)|!grepl(pattern = "^[0-9]{4}\\.[0-9]{2}$", x = i)){
     stop(paste0("The argument i must be a character in the format YYYY.MM"))
@@ -131,7 +131,7 @@ read_PME <- function(ft,i, root_path){
   data("PME_dics")
 
 
-  data<- read_data(ft = ft,i = i,metadata = metadata,dic = PME_dics, root_path = root_path)
+  data<- read_data(ft = ft,i = i,metadata = metadata,dic = PME_dics, root_path = NULL)
   return(data)
 }
 
@@ -152,7 +152,7 @@ read_POF <- function(ft,i, root_path){
 read_PNADcontinua<- function(ft,i,root_path=NULL){
 
 
-  metadata <-  read_metadata('Pnadcontinua')
+  metadata <-  read_metadata('PNADcontinua')
 
   data("PNADcontinua_dics")
 
