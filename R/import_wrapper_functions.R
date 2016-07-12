@@ -146,7 +146,7 @@ read_PME <- function(ft,i, root_path = NULL){
   data("PME_dics")
 
 
-  data<- read_data(ft = ft,i = i,metadata = metadata,dic = PME_dics, root_path = NULL)
+  data<- read_data(ft = ft,i = i,metadata = metadata,dic = PME_dics, root_path = root_path)
   return(data)
 }
 
