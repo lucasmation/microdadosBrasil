@@ -11,7 +11,7 @@ Trabalho em andamento
 -   Censo 2010
 -   Não usa R? Veja: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
-### COMMING SOON:
+### EM BREVE:
 
 -   vignettes and Portuguese documentation
 -   Censo 1991, PNADs before 2001
@@ -21,8 +21,8 @@ IN near the future:
 
 -   variable name harmonization
 
-Description
------------
+DESCRIÇÃO
+---------
 
 this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). Also, filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
 
@@ -40,8 +40,8 @@ The package includes internally a list of import dictionaries for each dataset-s
 
 The package also harmonizes folder names, folder structure and file name that change overtime through a metadata table.It also unifies data that comes subdivides by regional subgroups (UF or região) into a single data file.
 
-Installation
-------------
+INSTALAÇÃO
+----------
 
 ``` r
 install.packages("devtools")
@@ -50,8 +50,8 @@ devtools::install_github("lucasmation/microdadosBrasil")
 library('microdadosBrasil')
 ```
 
-Usage
------
+UTILIZAÇÃO
+----------
 
 ``` r
 # Censo Demográfico 2000
@@ -70,8 +70,8 @@ d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 ```
 
-Related efforts
----------------
+ESFORÇOS RELACIONADOS
+---------------------
 
 This package is highly influenced by similar efforts, which are great time savers, vastly used and often unrecognized:
 
@@ -86,8 +86,8 @@ This package is highly influenced by similar efforts, which are great time saver
 -   includes non-IBGE data, such as INEP Education Census and MTE RAIS (de-identified)
 -   separates import code from dataset specific metadata, as explained bellow.
 
-How the package works
----------------------
+COMO O PACOTE FUNCIONA
+----------------------
 
 ### Traditional Import Workflow
 
