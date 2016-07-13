@@ -33,7 +33,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
     filenames <- paste(link, filenames, sep = "")
     for(file in filenames){
       print(paste(c(dest,file),collapse = "/"))
-    download.file(file,destfile = paste(c(dest,gsub(pattern = ".+?/", replacement = "", file)),collapse = "/"))
+  try(download.file(file,destfile = paste(c(dest,gsub(pattern = ".+?/", replacement = "", file)),collapse = "/")))
     }
   }else{
 
@@ -41,7 +41,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
     print(filename)
     print(file_dir)
 
-  download.file(link,destfile = paste(c(dest,filename),collapse = "/"))
+  try(download.file(link,destfile = paste(c(dest,filename),collapse = "/")))
   }
   if (unzip==T){
     #Unzipping main source file:
