@@ -7,12 +7,24 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
     list.files(pattern = "files") %>%
     gsub(pattern = "_.+", replacement = "")
 
+
+
+ #Test if parameters are valid
+
   if( !(dataset %in% dataset_list ) ) {
     stop(paste0("Invalid dataset. Must be one of the following: ",paste(dataset_list, collapse=", ")) ) }
-  metadata <-  read_metadata(dataset)
-  #Test if parameters are valid
 
-  md <- metadata %>% filter(period==i)
+ metadata <-  read_metadata(dataset)
+
+
+ i_min    <- min(metadata$period)
+ i_max    <- max(metadata$period)
+
+ if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
+
+
+    md <- metadata %>% filter(period==i)
+
   link <- md$download_path
   if(is.na(link)){stop("Can't download dataset, there are no information about the source")}
   filename <- link %>% gsub(pattern = ".+/", replacement = "")
