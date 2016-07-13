@@ -139,9 +139,8 @@ print('aaa')
       # d <- d %>% rename_(.dots = one_of(as.character(vt$old_varname), vt$new_varname))
       #names(d)[names(d) %in% vt$old_varname] <- vt$std_varname
       #d <- d %>% data.table::setnames(old = vt$old_varname, new = vt$new_varname)
-      test_old_vars<- names(d) %in% vt$old_varname
-      test_new_vars <- vt$old_varname %in% names(d)
-      names(d)[test_old_vars]<- vt$old_varname[test_new_vars]
+      old_vars<- names(d) %in% vt$old_varname
+      names(d)[old_vars]<- vt$std_varname
     }
 
   return(d)
