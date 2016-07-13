@@ -8,7 +8,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
     gsub(pattern = "_.+", replacement = "")
 
   if( !(dataset %in% dataset_list ) ) {
-    stop(paste0("Invalid dataset. Must be one of the following: ",paste(dataset_list, collapse=", ")) ) }
+    stop(paste0("Invalid dataset. Must one of the following: ",paste(dataset_list, collapse=", ")) ) }
   metadata <-  read_metadata(dataset)
   #Test if parameters are valid
 
@@ -17,32 +17,15 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL){
   if(is.na(link)){stop("Can't download dataset, there are no information about the source")}
   filename <- link %>% gsub(pattern = ".+/", replacement = "")
   file_dir <- filename %>% gsub( pattern = "\\.zip", replacement = "")
-
+  print(link)
+  print(filename)
+  print(file_dir)
 
   if(!is.null(dest)){
     if(!file.exists(dest)){
       stop(paste0("Can't find ",dest))
     }}
-
-  if(md$download_mode == "ftp"){
-
-    filenames <- getURL(link, ftp.use.epsv = FALSE, ftplistonly = TRUE,
-                       crlf = TRUE)
-
-    filenames<- strsplit(filenames, "\r*\n")[[1]]
-    filenames <- paste(link, filenames, sep = "")
-    for(file in filenames){
-      print(paste(c(dest,file),collapse = "/"))
-    download.file(file,destfile = paste(c(dest,gsub(pattern = ".+?/", replacement = "", file)),collapse = "/"))
-    }
-  }else{
-
-    print(link)
-    print(filename)
-    print(file_dir)
-
   download.file(link,destfile = paste(c(dest,filename),collapse = "/"))
-  }
   if (unzip==T){
     #Unzipping main source file:
     unzip(paste(c(dest,filename),collapse = "/") ,exdir = paste(c(dest,file_dir),collapse = "/"))
