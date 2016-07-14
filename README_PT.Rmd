@@ -18,6 +18,10 @@ knitr::opts_chunk$set(
 ### NOVIDADES:
 
 * Censo 2010
+* RAIS
+* CAGED
+* PME
+
 -   Não usa R? Veja: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
 ### EM BREVE:
@@ -39,10 +43,10 @@ Atualmente, o pacote inclui funções de importação para as seguintes bases de
   
 ```{r echo=FALSE}
 d <- data.frame(
-  Source=c('IBGE','IBGE','IBGE','INEP','INEP'),
-  Dataset=c('PNAD','Censo Demográfico','POF','Censo Escolar','Censo da Educ. Superior'),
-  Import_function=c('read_PNAD','read_CENSO','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior'),
-  Period=c('2001 to 2014','2000','2008','1995 to 2014','1995 to 2014'),
+  Fonte=c('IBGE','IBGE','IBGE','INEP','INEP'),
+  `Dataset`=c('PNAD','Censo Demográfico','POF','Censo Escolar','Censo da Educ. Superior'),
+  Função=c('read_PNAD','read_CENSO','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior'),
+  Período=c('2001 to 2014','2000 e 2010','2008','1995 to 2014','1995 to 2014'),
   Subdataset=c('domicilios, pessoas','domicilios, pessoas','several, see details','escolas, ..., see detials','see details')
   )
 library(printr)
@@ -94,7 +98,8 @@ d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 
 This package is highly influenced by similar efforts, which are great time savers, vastly used  and often unrecognized:
 
-Esse pacote foi muito influenciado pro esforços similares, ?which are great time savers?, vastly used  and often unrecognized:?
+Esse pacote foi altamente influenciado por esforços similares, que são grande poupadores de tempo, muito utilizados e, algumas vezes, não reconhecidos:
+
 
 * Anthony Damico's [scripts to read most IBGE surveys](http://www.asdfree.com/). Great if you your data does not fit into memory and you want speed when working with complex survey design data. 
 * [Data Zoom](http://www.econ.puc-rio.br/datazoom/) by Gustavo Gonzaga, Cláudio Ferraz and Juliano Assunção.  Similar ease of use and harmonization of Brazilian microdada for Stata. 
@@ -107,13 +112,19 @@ Esse pacote foi muito influenciado pro esforços similares, ?which are great tim
 * includes non-IBGE data, such as INEP Education Census and MTE RAIS (de-identified)
 * separates import code from dataset specific metadata, as explained bellow.
 
+`microdadosBrasil` Se diferencia de outros pacotes por: 
 
+* Trazer opções de importação para períodos mais recentes
+* Incluir dados de outras fontes, além do IBGE, como o Censo Escolar do INEP
+* Separar código pra importação e os metadados específicos de cada base de dados, como exeplicado abaixo:
 
 ## COMO O PACOTE FUNCIONA
 
 ### Traditional Import Workflow
 
 Nowadays packages are normally provided on-line (or in a physical CD for the older IBGE publications) as .zip files with the following structure:
+
+Atualmente, mircrodados são normalmente disponibilizados on-line(Ou em CDs, no caso das publicações mais antigas do IBGE) com arquivos compactados em .zip, seguindo a seguinte estrutura:
 
 dataset_year.zip
 
@@ -130,6 +141,7 @@ dataset_year.zip
 
 Users then normally manually reconstruct the import dictionaries in R by hand. Then, using this dictionary, run the import function, pointing to the DATA folder. Larger datasets (such as CENSUS or RAIS) come subdivided by state (or region), so the function must be repeated for all states. Then if the user needs more than one year of the dataset, the user repeats all the above, adjuting for changes fine and folder names. 
 
+Usuários então reconstrõem dicipnários de importação no R manualmente, e roda a função de importação   apontando para o local onde os arquivos .txt estão salvos. Base de dados maior (como CENSO e RAIS) vem divididas por estado,  então o procedimento tem de ser repetido para todos os estados. E ainda, se o usuário precisa de dados para mais de um ano, o processo acima tem de ser repetido ajustando para mudança nos nomes dos arquivos, dicionários e estrutura da pasta.
 
 ### microdadosBrasil aproach
 
@@ -138,5 +150,7 @@ Users then normally manually reconstruct the import dictionaries in R by hand. T
 #### Design principles
 
 The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the of original data - into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with list of import dictionaries extracted from the SAS import instructions from the data provider,  serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.   
+
+O principal princípio utilizado na construção do pacote foi separar os detalhes de cada base de dados, como a estrutura de pastas e nome de arquivos em tabelas de metadados(salvos como arquivos .csv na pasta `extdata`). O conteúdo dessas tabelas, assim como uma lista contendo os dicionários de importação extraídos dos dicionários oficiais em formato SAS, seve como parâmetro para a importação dos microdados para cada ano. Essa separação entre detalhes específicos de cada base de dados e código torna o código mais simples e generalizável, facilitando a extensão para novas base de dados.
 
 ergonomics over speed (develop)
