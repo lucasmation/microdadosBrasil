@@ -51,9 +51,12 @@ d
 
 The package includes internally a list of import dictionaries for each dataset-subdataset-year. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function. 
 
+O pacote inclui dicionários para cada base de dados. Esses dicionários foram criados com a função `import_SASdictionary()`, que pode ser utilizado pelo usuário para construir, a partir de um dicionário SAS, dicionários não incluídos no pacote. Dicionário incluídos no pacote podem ser acessados com a função `get_import_dictionary`.
+
 The package also harmonizes folder names, folder structure and  file name that change overtime through a metadata table.It also unifies data that comes subdivides by regional subgroups (UF or região) into a single data file.  
 
 
+O pacote também harmoniza nomes de arquivos e a estrutura das pastas ao longo tempo, através de uma tabela de metadatas, tornando possível a importação de bases de dados que usualmente vem dividadas em subgroupos regionais em um único objeto(?).
 ## INSTALAÇÃO
 
 ```{r eval=FALSE}
@@ -67,9 +70,14 @@ library('microdadosBrasil')
 
 ```{r eval=FALSE}
 # Censo Demográfico 2000
-#after having downloaded the data to the root directory, and unziped to root run
+#Depois de ter baixado e descompactado os arquivos em seu diretório de trabalho , rode:
 d <- read_CENSO('domicilios',2000)
 d <- read_CENSO('pessoas',2000)
+
+#Para importar os dados a partir de uma pasta diferente de seu atual diretório de trabalho, use :
+d <- read_CENSO('domicilios',2000, root_path ="C:/....")
+#Para restringir a importação para apenas uma UF, use:
+d <- read_CENSO('pessoas',2000, UF = "DF")
 
 # PNAD 2002
 download_sourceData("PNAD", 2002, unzip = T)
@@ -85,6 +93,8 @@ d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 ## ESFORÇOS RELACIONADOS
 
 This package is highly influenced by similar efforts, which are great time savers, vastly used  and often unrecognized:
+
+Esse pacote foi muito influenciado pro esforços similares, ?which are great time savers?, vastly used  and often unrecognized:?
 
 * Anthony Damico's [scripts to read most IBGE surveys](http://www.asdfree.com/). Great if you your data does not fit into memory and you want speed when working with complex survey design data. 
 * [Data Zoom](http://www.econ.puc-rio.br/datazoom/) by Gustavo Gonzaga, Cláudio Ferraz and Juliano Assunção.  Similar ease of use and harmonization of Brazilian microdada for Stata. 
