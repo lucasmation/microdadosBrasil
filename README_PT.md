@@ -13,20 +13,19 @@ Trabalho em andamento
 
 ### EM BREVE:
 
--   vignettes and Portuguese documentation
--   Censo 1991, PNADs before 2001
--   Support for data not fitting into memory.
-
-IN near the future:
-
--   variable name harmonization
+-   Suporte para leitura de dados fora da memória RAM
+-   Harmonização do nome de variáveis ao longo dos anos
 
 DESCRIÇÃO
 ---------
 
 this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). Also, filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
 
+Esse pacote disponibiliza funções para importar as bases brasileiras de microdados mais comuns. Importar microdados brasileiros pode ser tedioso. A maior parte dos dados é disponibilizada em fixed width files(.fwf) e contém, geralmente, scripts para importação somente para SAS e SPSS. Os dados vem, usualmente, divididos por UF ou Região. Além disso, nomes de arquivos e variáveis variam com frequência ao longo do tempo. `microdadoBrasil` cuida desses detalhes pra você. Internamente o pacote está rodando `readr` para fixed width files e `data.table` para dados separados por delimitadores e armazenados em .csv. Assim, a importação é rápida.
+
 Currently the package includes import functions for:
+
+Atualmente, o pacote inclui funções de importação para as seguintes bases de dados:
 
 | Source | Dataset                 | Import\_function            | Period       | Subdataset                |
 |:-------|:------------------------|:----------------------------|:-------------|:--------------------------|
