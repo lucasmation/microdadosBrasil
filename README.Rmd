@@ -39,7 +39,7 @@ IN near the future:
 
 ## Description 
 
-this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). Also, filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
+this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing these microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. The Data sometimes comes subdivided into serveral files, by state or macro regions. Also, it is common for file and variable names of the same dataset to vary overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
 
 Currently the package includes import functions for:
   
@@ -55,9 +55,9 @@ library(printr)
 d
 ```
 
-The package includes internally a list of import dictionaries for each dataset-subdataset-year. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function. 
+For the datasets in fwf format, the package includes, internally, a list of import dictionaries. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function. 
 
-The package also harmonizes folder names, folder structure and  file name that change overtime through a metadata table.It also unifies data that comes subdivides by regional subgroups (UF or região) into a single data file.  
+The package also harmonizes folder names, folder structure and  file name that change overtime through a metadata table.It also unifies data that comes subdivides by regional subgroups (UF or região) into a single data object.   
 
 
 ## Installation
@@ -72,11 +72,19 @@ library('microdadosBrasil')
 ## Usage
 
 ```{r eval=FALSE}
+##############
 # Censo Demográfico 2000
-#after having downloaded the data to the root directory, and unziped to root run
+download_sourceData("CENSO", 2000, unzip = T)
 d <- read_CENSO('domicilios',2000)
 d <- read_CENSO('pessoas',2000)
 
+#To import data from a specific path in your machine use:
+d <- read_CENSO('domicilios',2000, root_path ="C:/....")
+#To restrict the import to only one State use:
+d <- read_CENSO('pessoas',2000, UF = "DF")
+
+
+##############
 # PNAD 2002
 download_sourceData("PNAD", 2002, unzip = T)
 d  <- read_PNAD("domicilios", 2002)
