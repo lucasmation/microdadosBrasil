@@ -23,7 +23,9 @@ Imports:
     Rcpp,
     readr,
     stringi,
-    stringr
+    stringr,
+    RCurl,
+    MonetDBLite
 License: GPL-3
 URL: https://github.com/lucasmation/microdadosBrasil
 BugReports: https://github.com/lucasmation/microdadosBrasil/issues
