@@ -18,7 +18,6 @@ read_var_translator <- function(dataset, ft){
 
 
 
-
 #' Reads fixed-width file (fwf) file based on dictionary.
 #'
 #' @param f A fixed-width file (fwf) (normally a .txt file).
@@ -41,6 +40,69 @@ aux_read_fwf <- function(f,dic){
   }
   return(d)
 }
+
+
+
+
+#Private functions
+
+#' creates table in MonetDB for all files:
+
+
+
+file2MonetDB_Table <- function(file,table_name){
+
+  #importing file into R:
+  if(format=='csv') {
+    file %>% data.table::fread(sep = delim,na.strings = c("NA",missing_symbol) ) -> d
+  } else if(format=='fwf') {
+    dic <- dic_list[[as.character(i)]][[paste0("dic_",ft,"_",i)]]
+    file %>% aux_read_fwf(dic=dic) -> d
+  }
+
+  if(dbExistsTable(con,table_name)==F) {
+    dbWriteTable(con,table_name,d)
+  }else{
+    dbWriteTable(con,table_name,d,append=TRUE)
+
+}
+
+
+
+import2MonetDB_Table <- function(files,table_name){
+  #connection parameters:
+  if (is.null(root_path)) {
+    dbdir <- getwd()
+  } else {
+    dbdir <- root_path
+  }
+  con <- dbConnect(MonetDBLite::MonetDBLite(), dbdir)
+
+  #Checking if table already exists
+  if(dbExistsTable(con,table_name)==T & replace==F) {
+    Stop(Paste0('Table ',table_name,' already exists. If you want replace it plese add the argument replace=T to your function'))
+  }
+  if( dbExistsTable(con,table_name)==T & replace==T) {
+    dbRemoveTable(con, table_name )
+  }
+
+  #Creating the table
+  lapply(files, file2MonetDB_Table)
+
+}
+
+
+#adjusting var names
+if (!is.null(var_translator)) {
+  print('aaa')
+  # d <- d %>% rename_(.dots = one_of(as.character(vt$old_varname), vt$new_varname))
+  #names(d)[names(d) %in% vt$old_varname] <- vt$std_varname
+  #d <- d %>% data.table::setnames(old = vt$old_varname, new = vt$new_varname)
+  old_vars<- names(d) %in% vt$old_varname
+  names(d)[old_vars]<- vt$std_varname
+}
+
+
 
 
 
@@ -70,7 +132,7 @@ aux_read_fwf <- function(f,dic){
 #' @import stringr
 #' @import stringi
 #' @export
-read_data <- function(ft,i,metadata,dic_list=NULL,var_translator=NULL,root_path=NULL){
+read_data <- function(dataset, ft,i,metadata,dic_list=NULL,var_translator=NULL,root_path=NULL){
 
 print(i)
   #Extracting Parameters
@@ -83,7 +145,7 @@ print(i)
     #Checking if parameters are valid
     if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
     if (!(ft %in% ft_list2 ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list2, collapse=", "),
-                                               '. See table of valid file types for each period at XXX'))  }
+                                              '. See table of valid file types for each period at XXX'))  }
 
     #subseting metadata and var_translator
     md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
@@ -102,10 +164,11 @@ print(str(vt))
     # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
     data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/") %>% ifelse(. == "", getwd(),.)
 
-print(file_name)
-print(data_path)
+
     files <- paste0(data_path,'/',list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE))
-print(files)
+
+
+    table_name <- paste0(dataset,"_",ft,"_",i)
 
   #Checking if parameters are valid
     if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
@@ -116,35 +179,16 @@ print(files)
   #Importing
     print(format)
     t0 <- Sys.time()
-    if(format=='fwf'){
-      print('a')
-      dic <- dic_list[[as.character(i)]][[paste0("dic_",ft,"_",i)]]
-      #dic <- get(paste('dic',ft,i,sep='_'))
-      lapply(files,aux_read_fwf, dic=dic) %>% bind_rows -> d
-    }
-    if(format=='csv'){
-      print('b')
-      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
-      #     lapply(files,read_delim, delim = delim) -> d2
-      #     d2 %>% bind_rows -> d
-      # d <- (csv_file, )
-    }
+
+    import2MonetDB_Table(files,table_name)
+
     t1 <- Sys.time()
     print(t1-t0)
-    print(object.size(d), units = "Gb")
+#    print(object.size(d), units = "Gb")
 
-  #adjusting var names
-    if (!is.null(var_translator)) {
-print('aaa')
-      # d <- d %>% rename_(.dots = one_of(as.character(vt$old_varname), vt$new_varname))
-      #names(d)[names(d) %in% vt$old_varname] <- vt$std_varname
-      #d <- d %>% data.table::setnames(old = vt$old_varname, new = vt$new_varname)
-      old_vars<- names(d) %in% vt$old_varname
-      names(d)[old_vars]<- vt$std_varname
-    }
 
-  return(d)
 }
+
 
 
 
