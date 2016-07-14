@@ -14,10 +14,15 @@
 get_import_dictionary <- function(dataset, i, ft){
   x<- environment()
 
-  datasets_list<- list.files(system.file("data",package  = "microdadosBrasil"),pattern = "\\.rda") %>%
-                  gsub(pattern = "_dics\\.rda", replacement = "")
+#   datasets_list<- list.files(system.file("data",package  = "microdadosBrasil"),pattern = "\\.rda") %>%
+#                   gsub(pattern = "_dics\\.rda", replacement = "")
 
-  if(!dataset %in% datasets_list){stop( paste0("The available datasets are these: ",paste(datasets_list,collapse = ", ")),call. = FALSE)}
+
+  datasets_list<-c(
+  "CensoEducacaoSuperior" ,"CensoEscolar"        ,  "CensoIBGE"       ,      "PME"    ,
+   "PNAD"   ,               "PNADcontinua"      ,    "POF" )
+
+   if(!dataset %in% datasets_list){stop( paste0("The available datasets are these: ",paste(datasets_list,collapse = ", ")),call. = FALSE)}
 
 
   ref <- paste0(dataset,"_dics")

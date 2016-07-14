@@ -1,4 +1,4 @@
-period;format;download_path;download_mode;path;missing_symbols;inputs_folder;data_folder;ft_PME
+period;format;download_path;download_mode;path;missing_symbols;inputs_folder;data_folder;ft_vinculos
 2002.01;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Mensal_de_Emprego/Microdados_reponderados/PMEnova_2002.zip;source;NA;NA;Documentacao/documentacao/Layout;PMEnova_2002;INPUT.txt&PMEnova.012002.txt
 2002.02;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Mensal_de_Emprego/Microdados_reponderados/PMEnova_2002.zip;source;NA;NA;Documentacao/documentacao/Layout;PMEnova_2002;INPUT.txt&PMEnova.022002.txt
 2002.03;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Mensal_de_Emprego/Microdados_reponderados/PMEnova_2002.zip;source;NA;NA;Documentacao/documentacao/Layout;PMEnova_2002;INPUT.txt&PMEnova.032002.txt
