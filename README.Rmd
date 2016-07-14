@@ -45,11 +45,11 @@ Currently the package includes import functions for:
   
 ```{r echo=FALSE}
 d <- data.frame(
-  Source=c('IBGE','IBGE','IBGE','INEP','INEP'),
-  Dataset=c('PNAD','Censo Demográfico','POF','Censo Escolar','Censo da Educ. Superior'),
-  Import_function=c('read_PNAD','read_CENSO','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior'),
-  Period=c('2001 to 2014','2000','2008','1995 to 2014','1995 to 2014'),
-  Subdataset=c('domicilios, pessoas','domicilios, pessoas','several, see details','escolas, ..., see detials','see details')
+  Source=c('IBGE','IBGE','IBGE','IBGE','INEP','INEP','MTE','MTE'),
+  Dataset=c('PNAD','Censo Demográfico','PME','POF','Censo Escolar','Censo da Educ. Superior','CAGED','RAIS'),
+  Import_function=c('read_PNAD','read_CENSO','read_PME','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior','read_CAGED','read_RAIS'),
+  Period=c('2001 to 2014','2000','2002.01 to 2015.12','2008','1995 to 2014','1995 to 2014','2009.01 to 2016.05','1998 to 2014'),
+  Subdataset=c('domicilios, pessoas','domicilios, pessoas','vinculos','several, see details','escolas, ..., see details','see details','vinculos','estabelecimentos,vinculos')
   )
 library(printr)
 d

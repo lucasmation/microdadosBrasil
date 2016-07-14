@@ -28,13 +28,16 @@ this package contains functions to read most commonly used Brazilian microdata e
 
 Currently the package includes import functions for:
 
-| Source | Dataset                 | Import\_function            | Period       | Subdataset                |
-|:-------|:------------------------|:----------------------------|:-------------|:--------------------------|
-| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014 | domicilios, pessoas       |
-| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000         | domicilios, pessoas       |
-| IBGE   | POF                     | read\_POF                   | 2008         | several, see details      |
-| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014 | escolas, ..., see detials |
-| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014 | see details               |
+| Source | Dataset                 | Import\_function            | Period             | Subdataset                |
+|:-------|:------------------------|:----------------------------|:-------------------|:--------------------------|
+| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014       | domicilios, pessoas       |
+| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000               | domicilios, pessoas       |
+| IBGE   | PME                     | read\_PME                   | 2002.01 to 2015.12 | vinculos                  |
+| IBGE   | POF                     | read\_POF                   | 2008               | several, see details      |
+| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014       | escolas, ..., see details |
+| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014       | see details               |
+| MTE    | CAGED                   | read\_CAGED                 | 2009.01 to 2016.05 | vinculos                  |
+| MTE    | RAIS                    | read\_RAIS                  | 1998 to 2014       | estabelecimentos,vinculos |
 
 For the datasets in fwf format, the package includes, internally, a list of import dictionaries. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function.
 
