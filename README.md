@@ -7,14 +7,13 @@ work in progress
 
 ### NEW:
 
--   PNAD\_Continua
 -   Censo 2010
--   
+-   Don't use R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
 ### COMMING SOON:
 
 -   vignettes and Portuguese documentation
--   CAGED (public versions) ,
+-   RAIS and CAGED (public versions) , PNAD\_Continua
 -   Censo 1991, PNADs before 2001
 -   Support for data not fitting into memory.
 
@@ -25,25 +24,21 @@ IN near the future:
 Description
 -----------
 
-this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing Brazilian microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. Data usually comes subdivided by state (UF) or macro regions (regiões). Also, filenames can vary, for the same dataset overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
+this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing these microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. The Data sometimes comes subdivided into serveral files, by state or macro regions. Also, it is common for file and variable names of the same dataset to vary overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
 
 Currently the package includes import functions for:
 
+| Source | Dataset                 | Import\_function            | Period       | Subdataset                |
+|:-------|:------------------------|:----------------------------|:-------------|:--------------------------|
+| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014 | domicilios, pessoas       |
+| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000         | domicilios, pessoas       |
+| IBGE   | POF                     | read\_POF                   | 2008         | several, see details      |
+| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014 | escolas, ..., see detials |
+| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014 | see details               |
 
-| Source | Dataset                 | Import\_function            | Period           | Subdataset                |
-|:-------|:------------------------|:----------------------------|:-----------------|:--------------------------|
-| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014     | domicilios, pessoas       |
-| IBGE   | PNAD Contínua           | read\_PNADcontinua          | 2012.1 to 2016.1 | pessoas                   |
-| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000,2010        | domicilios, pessoas       |
-| IBGE   | POF                     | read\_POF                   | 2008             | vínculos                  |
-| MTE    | RAIS                    | read\_RAIS                  | 1997 to 2014     | several, see details      |
-| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014     | escolas, ..., see detials |
-| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014     | see details               |
+For the datasets in fwf format, the package includes, internally, a list of import dictionaries. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function.
 
-
-The package includes internally a list of import dictionaries for each dataset-subdataset-year. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function.
-
-The package also harmonizes folder names, folder structure and file name that change overtime through a metadata table.It also unifies data that comes subdivides by regional subgroups (UF or região) into a single data file.
+The package also harmonizes folder names, folder structure and file name that change overtime through a metadata table.It also unifies data that comes subdivides by regional subgroups (UF or região) into a single data object.
 
 Installation
 ------------
@@ -59,27 +54,29 @@ Usage
 -----
 
 ``` r
+##############
 # Censo Demográfico 2000
-#after having downloaded the data to the root directory, and unziped to root run
+download_sourceData("CENSO", 2000, unzip = T)
 d <- read_CENSO('domicilios',2000)
 d <- read_CENSO('pessoas',2000)
 
+#To import data from a specific path in your machine use:
+d <- read_CENSO('domicilios',2000, root_path ="C:/....")
+#To restrict the import to only one State use:
+d <- read_CENSO('pessoas',2000, UF = "DF")
+
+
+##############
 # PNAD 2002
 download_sourceData("PNAD", 2002, unzip = T)
 d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
-
-# PNAD Contínua, 2nd trimestrer, 2014
-download_sourceData("PNADcontinua", 2014.2, unzip = T)
-d <- read_PNADContinua("pessoas", 2014.2)
 
 # Censo Escolar
 download_sourceData('CensoEscolar', 2005, unzip=T)
 d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 ```
-
-Don't use R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
 Related efforts
 ---------------
