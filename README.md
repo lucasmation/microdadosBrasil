@@ -28,13 +28,16 @@ this package contains functions to read most commonly used Brazilian microdata e
 
 Currently the package includes import functions for:
 
-| Source | Dataset                 | Import\_function            | Period       | Subdataset                |
-|:-------|:------------------------|:----------------------------|:-------------|:--------------------------|
-| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014 | domicilios, pessoas       |
-| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000         | domicilios, pessoas       |
-| IBGE   | POF                     | read\_POF                   | 2008         | several, see details      |
-| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014 | escolas, ..., see detials |
-| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014 | see details               |
+| Source | Dataset                 | Import\_function            | Period             | Subdataset                |
+|:-------|:------------------------|:----------------------------|:-------------------|:--------------------------|
+| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014       | domicilios, pessoas       |
+| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000               | domicilios, pessoas       |
+| IBGE   | PME                     | read\_PME                   | 2002.01 to 2015.12 | vinculos                  |
+| IBGE   | POF                     | read\_POF                   | 2008               | several, see details      |
+| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014       | escolas, ..., see details |
+| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014       | see details               |
+| MTE    | CAGED                   | read\_CAGED                 | 2009.01 to 2016.05 | vinculos                  |
+| MTE    | RAIS                    | read\_RAIS                  | 1998 to 2014       | estabelecimentos,vinculos |
 
 For the datasets in fwf format, the package includes, internally, a list of import dictionaries. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function.
 
@@ -72,10 +75,28 @@ download_sourceData("PNAD", 2002, unzip = T)
 d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
 
+##############
 # Censo Escolar
 download_sourceData('CensoEscolar', 2005, unzip=T)
 d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
+
+##############
+#RAIS
+#It will download files for all states and the selected year
+download_sourceData("RAIS", i = "2000")
+#To import data from all UFs in a single data.frame
+d<- read_RAIS('vinculos', i = 2000)
+#To import data from a selected group of UFs
+d<- read_RAIS('vinculos', i = 2000, UF = c("DF","GO"))
+
+##############
+#PME
+
+#It will download files for all months and the selected year:
+download_sourceData("PME", i = "2012.01")
+#'Period' argument should with quotes and formated as "YYYY.MM"
+d <- read_PME("vinculos", "2012.01")
 ```
 
 Related efforts

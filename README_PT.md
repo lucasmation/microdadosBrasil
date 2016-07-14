@@ -27,13 +27,16 @@ Esse pacote disponibiliza funções para importar as bases mais comuns de microd
 
 Atualmente, o pacote inclui funções de importação para as seguintes bases de dados:
 
-| Fonte | Dataset                 | Função                      | Período      | Subdataset                 |
-|:------|:------------------------|:----------------------------|:-------------|:---------------------------|
-| IBGE  | PNAD                    | read\_PNAD                  | 2001 to 2014 | domicilios, pessoas        |
-| IBGE  | Censo Demográfico       | read\_CENSO                 | 2000 e 2010  | domicilios, pessoas        |
-| IBGE  | POF                     | read\_POF                   | 2008         | several, ver detalhes      |
-| INEP  | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014 | escolas, ..., ver detalhes |
-| INEP  | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014 | ver detalhes               |
+| Fonte | Dataset                 | Função                      | Período            | Subdataset                 |
+|:------|:------------------------|:----------------------------|:-------------------|:---------------------------|
+| IBGE  | PNAD                    | read\_PNAD                  | 2001 to 2014       | domicilios, pessoas        |
+| IBGE  | Censo Demográfico       | read\_CENSO                 | 2000               | domicilios, pessoas        |
+| IBGE  | PME                     | read\_PME                   | 2002.01 to 2015.12 | vinculos                   |
+| IBGE  | POF                     | read\_POF                   | 2008               | several, ver detalhes      |
+| INEP  | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014       | escolas, ..., ver detalhes |
+| INEP  | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014       | ver detalhes               |
+| MTE   | CAGED                   | read\_CAGED                 | 2009.01 to 2016.05 | vinculos                   |
+| MTE   | RAIS                    | read\_RAIS                  | 1998 to 2014       | estabelecimentos, vinculos |
 
 Para os dados em formato fwf, o pacote inclui, internamente, dicionários de importação. Esses dicionários foram criados com a função `import_SASdictionary()`, que pode ser utilizado pelo usuário para construir, a partir de um dicionário SAS, dicionários não incluídos no pacote. Dicionário incluídos no pacote podem ser acessados com a função `get_import_dictionary`.
 
@@ -72,6 +75,21 @@ d2 <- read_PNAD("pessoas", 2002)
 download_sourceData('CensoEscolar', 2005, unzip=T)
 d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
+
+#RAIS
+#Para tentar baixar os dados de todo o ano de 2000 e todas as UFs
+download_sourceData("RAIS", i = "2000")
+#Para ler os dados de todas as UFs:
+d<- read_RAIS('vinculos', i = 2000)
+#Para ler os dados de UFs selecionadas:
+d<- read_RAIS('vinculos', i = 2000, UF = c("DF","GO"))
+
+#PME
+
+#Irá baixar os dados para todo o ano de 2012, pois estes vem em um único arquivo:
+download_sourceData("PME", i = "2012.01")
+#O período deve ser inserido entre aspas e no formato YYYY.MM
+d <- read_PME("vinculos", "2012.01")
 ```
 
 ESFORÇOS RELACIONADOS
