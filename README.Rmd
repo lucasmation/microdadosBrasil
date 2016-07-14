@@ -45,11 +45,11 @@ Currently the package includes import functions for:
   
 ```{r echo=FALSE}
 d <- data.frame(
-  Source=c('IBGE','IBGE','IBGE','INEP','INEP'),
-  Dataset=c('PNAD','Censo Demográfico','POF','Censo Escolar','Censo da Educ. Superior'),
-  Import_function=c('read_PNAD','read_CENSO','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior'),
-  Period=c('2001 to 2014','2000','2008','1995 to 2014','1995 to 2014'),
-  Subdataset=c('domicilios, pessoas','domicilios, pessoas','several, see details','escolas, ..., see detials','see details')
+  Source=c('IBGE','IBGE','IBGE','IBGE','INEP','INEP','MTE','MTE'),
+  Dataset=c('PNAD','Censo Demográfico','PME','POF','Censo Escolar','Censo da Educ. Superior','CAGED','RAIS'),
+  Import_function=c('read_PNAD','read_CENSO','read_PME','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior','read_CAGED','read_RAIS'),
+  Period=c('2001 to 2014','2000','2002.01 to 2015.12','2008','1995 to 2014','1995 to 2014','2009.01 to 2016.05','1998 to 2014'),
+  Subdataset=c('domicilios, pessoas','domicilios, pessoas','vinculos','several, see details','escolas, ..., see details','see details','vinculos','estabelecimentos,vinculos')
   )
 library(printr)
 d
@@ -90,10 +90,30 @@ download_sourceData("PNAD", 2002, unzip = T)
 d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
 
+##############
 # Censo Escolar
 download_sourceData('CensoEscolar', 2005, unzip=T)
 d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
+
+##############
+#RAIS
+#It will download files for all states and the selected year
+download_sourceData("RAIS", i = "2000")
+#To import data from all UFs in a single data.frame
+d<- read_RAIS('vinculos', i = 2000)
+#To import data from a selected group of UFs
+d<- read_RAIS('vinculos', i = 2000, UF = c("DF","GO"))
+
+##############
+#PME
+
+#It will download files for all months and the selected year:
+download_sourceData("PME", i = "2012.01")
+#'Period' argument should with quotes and formated as "YYYY.MM"
+d <- read_PME("vinculos", "2012.01")
+
+
 ```
 
 ## Related efforts

@@ -39,11 +39,11 @@ Atualmente, o pacote inclui funções de importação para as seguintes bases de
   
 ```{r echo=FALSE}
 d <- data.frame(
-  Fonte=c('IBGE','IBGE','IBGE','INEP','INEP'),
-  `Dataset`=c('PNAD','Censo Demográfico','POF','Censo Escolar','Censo da Educ. Superior'),
-  Função=c('read_PNAD','read_CENSO','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior'),
-  Período=c('2001 to 2014','2000 e 2010','2008','1995 to 2014','1995 to 2014'),
-  Subdataset=c('domicilios, pessoas','domicilios, pessoas','several, ver detalhes','escolas, ..., ver detalhes','ver detalhes')
+  Fonte=c('IBGE','IBGE','IBGE','IBGE','INEP','INEP','MTE','MTE'),
+  Dataset=c('PNAD','Censo Demográfico','PME','POF','Censo Escolar','Censo da Educ. Superior','CAGED','RAIS'),
+  Função=c('read_PNAD','read_CENSO','read_PME','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior','read_CAGED','read_RAIS'),
+  Período=c('2001 to 2014','2000','2002.01 to 2015.12','2008','1995 to 2014','1995 to 2014','2009.01 to 2016.05','1998 to 2014'),
+  Subdataset=c('domicilios, pessoas','domicilios, pessoas','vinculos','several, ver detalhes','escolas, ..., ver detalhes','ver detalhes','vinculos','estabelecimentos, vinculos')
   )
 library(printr)
 d
@@ -85,6 +85,22 @@ d2 <- read_PNAD("pessoas", 2002)
 download_sourceData('CensoEscolar', 2005, unzip=T)
 d <- read_CensoEscolar('escola',2005)
 d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
+
+#RAIS
+#Para tentar baixar os dados de todo o ano de 2000 e todas as UFs
+download_sourceData("RAIS", i = "2000")
+#Para ler os dados de todas as UFs:
+d<- read_RAIS('vinculos', i = 2000)
+#Para ler os dados de UFs selecionadas:
+d<- read_RAIS('vinculos', i = 2000, UF = c("DF","GO"))
+
+#PME
+
+#Irá baixar os dados para todo o ano de 2012, pois estes vem em um único arquivo:
+download_sourceData("PME", i = "2012.01")
+#O período deve ser inserido entre aspas e no formato YYYY.MM
+d <- read_PME("vinculos", "2012.01")
+
 ```
 
 ## ESFORÇOS RELACIONADOS
