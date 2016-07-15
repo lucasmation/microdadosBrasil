@@ -67,7 +67,7 @@ file2MonetDB_Table <- function(file,table_name){
 
 }
 
-
+#teste
 
 import2MonetDB_Table <- function(files,table_name){
   #connection parameters:
