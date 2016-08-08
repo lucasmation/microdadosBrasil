@@ -34,8 +34,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
 
   link <- md$download_path
   if(is.na(link)){stop("Can't download dataset, there are no information about the source")}
-  filename <- link %>% gsub(pattern = ".+/", replacement = "")
-  file_dir <- filename %>% gsub( pattern = "\\.zip", replacement = "")
+
 
 
   if(!is.null(dest)){
@@ -47,25 +46,33 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
 
     filenames <- getURL(link, ftp.use.epsv = FALSE, ftplistonly = TRUE,
                         crlf = TRUE)
-
+    file_dir<- gsub(link, pattern = "/$", replacement = "", perl = TRUE) %>% gsub(pattern = ".+/", replacement = "")
+    dir.create(paste(c(dest,file_dir), collapse = "/"))
     filenames<- strsplit(filenames, "\r*\n")[[1]]
-    filenames <- paste(link, filenames, sep = "")
-    for(file in filenames){
-      exists.data(file)
-      print(paste(c(dest,file),collapse = "/"))
-      try(download.file(file,destfile = paste(c(dest,gsub(pattern = ".+?/", replacement = "", file)),collapse = "/")))
+    file_links <- paste(link, filenames, sep = "")
+    for(y in seq_along(filenames)){
+
+      print(paste(c(dest,file_dir,filenames[y]),collapse = "/"))
+      print(file_links[y])
+      try(download.file(file_links[y],destfile = paste(c(dest,file_dir, filenames[y]),collapse = "/")))
     }
   }else{
-    exists.data(filename)
+
+    filename <- link %>% gsub(pattern = ".+/", replacement = "")
+    file_dir <- filename %>% gsub( pattern = "\\.zip", replacement = "")
+
     print(link)
     print(filename)
     print(file_dir)
 
     try(download.file(link,destfile = paste(c(dest,filename),collapse = "/")))
+
+    if (unzip==T){
+      #Unzipping main source file:
+      unzip(paste(c(dest,filename),collapse = "/") ,exdir = paste(c(dest,file_dir),collapse = "/"))
+    }
   }
-  if (unzip==T){
-    #Unzipping main source file:
-    unzip(paste(c(dest,filename),collapse = "/") ,exdir = paste(c(dest,file_dir),collapse = "/"))
+    if (unzip==T){
     # #unzipping the data files (in case not unziped above)
     intern_files<- list.files(paste(c(dest,file_dir),collapse = "/"), recursive = TRUE,all.files = TRUE, full.names = TRUE)
     zip_files<- intern_files[grepl(pattern = "\\.zip$",x = intern_files)]
@@ -78,14 +85,14 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
       unzip(zipfile = zip_file,exdir = exdir )
     }
 
-
+}
     # check data_path for compressed files: .zip, .7z , .rar
     # Unzip the .zip ones
     # Issue warning for unzipping manually the .7z and .rar files
     #
     # }
   }
-}
+
 
 
 
