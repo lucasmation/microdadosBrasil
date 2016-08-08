@@ -7,14 +7,8 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
     list.files(pattern = "files") %>%
     gsub(pattern = "_.+", replacement = "")
 
-  exists.data <- function(dataset, replace = FALSE) {
-    if (replace) {
-      if( any(dataset %in% dir() ) == TRUE ) {
-        stop(paste0("this data was already downloaded. If you want to overwride add
-                    replace=T to the function call"))
-      }
-    }
-  }
+
+
 
   #Test if parameters are valid
 
@@ -22,6 +16,18 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
     stop(paste0("Invalid dataset. Must be one of the following: ",paste(dataset_list, collapse=", ")) ) }
 
   metadata <-  read_metadata(dataset)
+  ft_list  <- names(metadata)[grep("ft_", names(metadata))]
+  data_file_names<- metadata %>% filter(period == i ) %>% select_(.dots =c(ft_list)) %>% unlist(use.names = FALSE) %>% gsub(pattern = ".+?&", replacement = "")
+
+  if (!replace) {
+    if(any(grepl(pattern = paste0(data_file_names,collapse = "|"), x = list.files(recursive = TRUE, path = ifelse(is.null(dest), ".", dest))))) {
+      stop(paste0("This data was already downloaded.(check:\n",
+                  paste(list.files(pattern = paste0(data_file_names,collapse = "|"),
+                             recursive = TRUE,path = ifelse(is.null(dest), ".", dest), full.names = TRUE), collapse = "\n"),
+                  ")\n\nIf you want to overwrite the previous files add replace=T to the function call."))
+
+    }
+  }
 
 
   i_min    <- min(metadata$period)
@@ -33,6 +39,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
   md <- metadata %>% filter(period==i)
 
   link <- md$download_path
+  data_file_names<- md
   if(is.na(link)){stop("Can't download dataset, there are no information about the source")}
 
 
