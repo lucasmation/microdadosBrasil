@@ -10,3 +10,5 @@ create_dic_CENSO.r
 dics_to_list.R
 
 ^README_PT\.rmd$
+^README_PT\.md$
+^.RDataTmp$
