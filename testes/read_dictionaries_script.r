@@ -81,3 +81,18 @@ str(PNAD_dics)
 
 
 
+########################## PME ######################################################
+
+
+path<- "C:/.../PME"
+
+setwd(path)
+metadata<- read_metadata("PME")
+get_all_dics(metadata)
+
+PME_dics<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
+names(PME_dics)<- metadata$period
+
+save(PME_dics, file = paste0(dic_folder, "/PME_dics.rda"))
+
+
