@@ -1,7 +1,7 @@
 #Carefull! Function test_download() will delete all files previous inside 'folder'
 
 
-test_download<- function(dataset,folder,periods = NULL){
+test_download<- function(dataset,folder,periods = NULL, unzip = F){
 
 
   if(list.files(folder,full.names = TRUE) %>% length() > 0){
@@ -12,7 +12,7 @@ test_download<- function(dataset,folder,periods = NULL){
 
   if(is.null(periods)){
     periods <- metadata$period
-    warnings("As the ' periods ' argument was not inserted all periods  available in metadata will be tested , it may take a few minutes")
+    message("As the ' periods ' argument was not inserted all periods  available in metadata will be tested , it may take a few minutes")
   }
 
 
@@ -23,7 +23,7 @@ test_download<- function(dataset,folder,periods = NULL){
     d<- NA
 
     t0<- Sys.time()
-    try({ d<- download_sourceData(dataset,i = i,unzip = T,dest = folder)})
+    try({ d<- download_sourceData(dataset,i = i,unzip = unzip,dest = folder)})
     t1<- Sys.time()
 
 
