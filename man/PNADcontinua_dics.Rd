@@ -20,16 +20,20 @@
 \url{http://www.ibge.gov.br/home/estatistica/indicadores/trabalhoerendimento/pnad_continua/default_microdados.shtm}
 }
 \usage{
-data(PNADcontinua_dics)
+PNADcontinua_dics
+}
+\description{
+A list containing IBGE import dictionaries for PNAD Continua from 2012.1 to 2016.1 translated into data frames.
+}
+\examples{
+\dontrun{data(PNADcontinua_dics)
 
 ## Acess pessoas dictionary for 2012.1:
 (PNADcontinua_dics$`2012.1`$`dic_pessoas_2012.1`)
 
 ## Alternatively, use the wrapper function
-get_import_dictionary("PNADcontinua", "2012.1", "pessoas")
-}
-\description{
-A list containing IBGE import dictionaries for PNAD Continua from 2012.1 to 2016.1 translated into data frames.
+get_import_dictionary("PNADcontinua", "2012.1", "pessoas")}
+
 }
 \keyword{datasets}
 

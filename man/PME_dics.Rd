@@ -20,16 +20,20 @@
 \url{http://www.ibge.gov.br/home/estatistica/indicadores/trabalhoerendimento/pme_nova/defaultmicro.shtm}
 }
 \usage{
-data(PME_dics)
-
-## Acess escolas dictionary for 2000:
-(PME_dics$`2012.1`$`dic_PME_2012.1`)
-
-## Alternatively, use the wrapper function
-get_import_dictionary("PME", 2012.1, "PME")
+PME_dics
 }
 \description{
 A list containing IBGE import dictionaries for PME from 2002.1 to 2015.2 translated into data frames.
+}
+\examples{
+\dontrun{ data(PME_dics)
+
+## Acess escolas dictionary for 2000:
+PME_dics$`2012.1`$`dic_PME_2012.1`
+
+## Alternatively, use the wrapper function
+get_import_dictionary("PME", 2012.1, "PME")}
+
 }
 \keyword{datasets}
 

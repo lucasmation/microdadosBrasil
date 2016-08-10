@@ -20,16 +20,20 @@
 \url{http://portal.inep.gov.br/basica-levantamentos-acessar}
 }
 \usage{
-data(CensoEducacaoSuperior_dics)
+CensoEducacaoSuperior_dics
+}
+\description{
+A list containing INEP import dictionaries for Censo da Educação Superior from 1995 to 2012 translated into data frames.
+}
+\examples{
+\dontrun{data(CensoEducacaoSuperior_dics)
 
 ## Acess ies dictionary for 2010:
 CensoEducacaoSuperior_dics$`2010`$`dic_ies_2010`
 
 ## Alternatively, use the wrapper function
-get_import_dictionary("CensoEducacaoSuperior", 2010, "ies")
-}
-\description{
-A list containing INEP import dictionaries for Censo da Educação Superior from 1995 to 2012 translated into data frames.
+get_import_dictionary("CensoEducacaoSuperior", 2010, "ies")}
+
 }
 \keyword{datasets}
 

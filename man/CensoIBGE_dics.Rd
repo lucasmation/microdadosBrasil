@@ -20,16 +20,20 @@
 \url{http://www.ibge.gov.br/home/estatistica/populacao/censo2000/default_microdados.shtm}
 }
 \usage{
-data(CensoIBGE_dics)
-
-## Acess escolas dictionary for 2000:
-(CensoIBGE_dics$`2000`$`dic_pessoas_2000`)
-
-## Alternatively, use the wrapper function
-get_import_dictionary("CensoIBGE", 2000, "pessoas")
+CensoIBGE_dics
 }
 \description{
 A list containing IBGE import dictionaries for Censo from 2000 translated into data frames.
+}
+\examples{
+\dontrun{data(CensoIBGE_dics)
+
+## Acess escolas dictionary for 2000:
+CensoIBGE_dics$`2000`$`dic_pessoas_2000`
+
+## Alternatively, use the wrapper function
+get_import_dictionary("CensoIBGE", 2000, "pessoas")}
+
 }
 \keyword{datasets}
 

@@ -20,16 +20,20 @@
 \url{http://www.ibge.gov.br/home/estatistica/populacao/trabalhoerendimento/pnad2014/microdados.shtm}
 }
 \usage{
-data(PNAD_dics)
+PNAD_dics
+}
+\description{
+A list containing IBGE dictionaries for PNAD from 2001 to 2014 translated into data frames.
+}
+\examples{
+\dontrun{data(PNAD_dics)
 
 ## Acess pessoas dictionary for 2014:
 PNAD_dics$`2014`$`dic_pessoas_2014`
 
 ## Alternatively, use the wrapper function
-get_import_dictionary("PNAD", 2014, "pessoas")
-}
-\description{
-A list containing IBGE dictionaries for PNAD from 2001 to 2014 translated into data frames.
+get_import_dictionary("PNAD", 2014, "pessoas")}
+
 }
 \keyword{datasets}
 
