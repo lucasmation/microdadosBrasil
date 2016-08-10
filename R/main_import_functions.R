@@ -117,9 +117,9 @@ print(files)
     print(format)
     t0 <- Sys.time()
     if(format=='fwf'){
-      print('a')
+
       dic <- dic_list[[as.character(i)]][[paste0("dic_",ft,"_",i)]]
-      #dic <- get(paste('dic',ft,i,sep='_'))
+
       lapply(files,aux_read_fwf, dic=dic) %>% bind_rows -> d
     }
     if(format=='csv'){
@@ -135,7 +135,7 @@ print(files)
 
   #adjusting var names
     if (!is.null(var_translator)) {
-print('aaa')
+
       # d <- d %>% rename_(.dots = one_of(as.character(vt$old_varname), vt$new_varname))
       #names(d)[names(d) %in% vt$old_varname] <- vt$std_varname
       #d <- d %>% data.table::setnames(old = vt$old_varname, new = vt$new_varname)
