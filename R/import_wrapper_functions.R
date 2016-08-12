@@ -20,7 +20,7 @@ NULL
 #' @export
 read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
   metadata <-  read_metadata('CensoEscolar')
-  data("CensoEscolar_dics")
+  data("CensoEscolar_dics", envir = environment())
 
 
   #selecting dictionaries
@@ -46,7 +46,7 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
 #   dic<- readRDS(system.file("data","CensoEducacaoSuperior_dics.rds",
 #                             package = "microdadosBrasil"))
 
-  data("CensoEducacaoSuperior_dics")
+  data("CensoEducacaoSuperior_dics",envir = environment())
 
 
 
@@ -70,7 +70,7 @@ read_CENSO<- function(ft,i,root_path = NULL, UF = NULL){
     stop("Data not found, check if you provided a valid root_path or stored the data in your current working directory.")
   }
 
-  data("CensoIBGE_dics")
+  data("CensoIBGE_dics", envir = environment())
 
   data<-read_data(ft = ft,i = i,metadata = metadata, dic_list  = CensoIBGE_dics,root_path = root_path)
 
@@ -124,7 +124,7 @@ read_CAGED<- function(ft,i,root_path = NULL){
 read_PNAD<- function(ft,i,root_path=NULL){
   metadata <-  read_metadata('PNAD')
 
-  data("PNAD_dics")
+  data("PNAD_dics", envir = environment())
 
   data<-read_data(ft, i, metadata, dic = PNAD_dics,root_path =  root_path)
 
@@ -140,7 +140,7 @@ read_PME <- function(ft,i, root_path = NULL){
 
   }
   metadata <-  read_metadata('PME')
-  data("PME_dics")
+  data("PME_dics", envir = environment())
 
 
   data<- read_data(ft = ft,i = i,metadata = metadata,dic = PME_dics, root_path = root_path)
@@ -152,7 +152,7 @@ read_PME <- function(ft,i, root_path = NULL){
 #' @export
 read_POF <- function(ft,i, root_path){
   metadata <-  read_metadata('POF')
-  data("POF_dics")
+  data("POF_dics", envir = environment())
 
 
   data<- read_data(ft = ft,i = i,metadata = metadata,dic = POF_dics, root_path = root_path)
@@ -166,7 +166,7 @@ read_PNADcontinua<- function(ft,i,root_path=NULL){
 
   metadata <-  read_metadata('PNADcontinua')
 
-  data("PNADcontinua_dics")
+  data("PNADcontinua_dics", envir = environment())
 
 
 
