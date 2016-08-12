@@ -17,9 +17,6 @@ NULL
 
 
 #' @rdname read_dataset
-#' @import dplyr
-#' @import magrittr
-#' @import stringr
 #' @export
 read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
   metadata <-  read_metadata('CensoEscolar')

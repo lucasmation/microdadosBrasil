@@ -1,6 +1,6 @@
 
 
-
+#' @importFrom RCurl getURL
 #' @export
 download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, replace = FALSE){
   dataset_list<- system.file("extdata", package = "microdadosBrasil") %>%
