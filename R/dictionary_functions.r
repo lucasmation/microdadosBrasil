@@ -34,17 +34,19 @@ get_import_dictionary <- function(dataset, i, ft){
   return(dics[[as.character(i)]][[paste0("dic_",ft,"_",i)]])
 }
 
+#' @importFrom stringr str_trim
+
 parses_SAS_import_dic <- function(file){
   dic_sas   <- readLines(file) %>% sapply(FUN = remove_comments) %>% sapply(str_trim) %>% as.data.frame(stringsAsFactors = FALSE)
 
 
   names(dic_sas) <- 'a'
   dic_sas %>% filter(grepl("^@",a)) %>%
-    tidyr::extract(a, into=c('int_pos', 'var_name', 'x', 'label'),
+    tidyr::extract_("a", into=c('int_pos', 'var_name', 'x', 'label'),
             "[[:punct:]\\s+](\\d+)\\s+(\\S+)(?:\\s+([[:graph:]$]+)())?")  %>%
-    mutate(int_pos=int_pos %>% as.numeric,
-           length=gregexpr("[[:digit:]]+(?=\\.)",x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric,
-           decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
+    mutate_(int_pos= ~as.numeric(int_pos),
+           length=gregexpr("[[:digit:]]+(?=\\.)",~x,perl = TRUE) %>% regmatches(x = ~x) %>% as.numeric,
+           decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",~x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
   dic %>% mutate(
     decimal_places=ifelse(is.na(decimal_places),0,decimal_places),
     fin_pos= int_pos+length -1,
