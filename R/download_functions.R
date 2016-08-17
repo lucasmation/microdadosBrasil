@@ -1,6 +1,6 @@
 
 
-#' @importFrom RCurl getURL
+
 #' @export
 download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, replace = FALSE){
   dataset_list<- system.file("extdata", package = "microdadosBrasil") %>%
@@ -51,7 +51,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
 
   if(md$download_mode == "ftp"){
 
-    filenames <- getURL(link, ftp.use.epsv = FALSE, ftplistonly = TRUE,
+    filenames <- RCurl::getURL(link, ftp.use.epsv = FALSE, ftplistonly = TRUE,
                         crlf = TRUE)
     file_dir<- gsub(link, pattern = "/$", replacement = "", perl = TRUE) %>% gsub(pattern = ".+/", replacement = "")
     dir.create(paste(c(dest,file_dir), collapse = "/"))
