@@ -26,7 +26,7 @@ PNADcontinua_dics
 A list containing IBGE import dictionaries for PNAD Continua from 2012.1 to 2016.1 translated into data frames.
 }
 \examples{
-\dontrun{data(PNADcontinua_dics)
+\dontrun{ data(PNADcontinua_dics)
 
 ## Acess pessoas dictionary for 2012.1:
 (PNADcontinua_dics$`2012.1`$`dic_pessoas_2012.1`)

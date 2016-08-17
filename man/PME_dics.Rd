@@ -29,7 +29,7 @@ A list containing IBGE import dictionaries for PME from 2002.1 to 2015.2 transla
 \dontrun{ data(PME_dics)
 
 ## Acess escolas dictionary for 2000:
-PME_dics$`2012.1`$`dic_PME_2012.1`
+(PME_dics$`2012.1`$`dic_PME_2012.1`)
 
 ## Alternatively, use the wrapper function
 get_import_dictionary("PME", 2012.1, "PME")}

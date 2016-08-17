@@ -26,7 +26,7 @@ PNAD_dics
 A list containing IBGE dictionaries for PNAD from 2001 to 2014 translated into data frames.
 }
 \examples{
-\dontrun{data(PNAD_dics)
+\dontrun{ data(PNAD_dics)
 
 ## Acess pessoas dictionary for 2014:
 PNAD_dics$`2014`$`dic_pessoas_2014`

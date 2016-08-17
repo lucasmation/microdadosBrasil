@@ -26,13 +26,15 @@ CensoIBGE_dics
 A list containing IBGE import dictionaries for Censo from 2000 translated into data frames.
 }
 \examples{
-\dontrun{data(CensoIBGE_dics)
+\dontrun{
+
+data(CensoIBGE_dics)
 
 ## Acess escolas dictionary for 2000:
-CensoIBGE_dics$`2000`$`dic_pessoas_2000`
+(CensoIBGE_dics$`2000`$`dic_pessoas_2000`)
 
 ## Alternatively, use the wrapper function
-get_import_dictionary("CensoIBGE", 2000, "pessoas")}
+get_import_dictionary("CensoIBGE", 2000, "pessoas") }
 
 }
 \keyword{datasets}

@@ -26,13 +26,13 @@ POF_dics
 A list containing IBGE import dictionaries for POF from 2008/2009 translated into data frames.
 }
 \examples{
- \dontrun{data(POF_dics)
+\dontrun{ data(POF_dics)
 
 ## Acess T_DESPESA_90DIAS_S dictionary for 2008:
-POF_dics$`2008`$`dic_T_DESPESA_90DIAS_S_2008`
+(POF_dics$`2008`$`dic_T_DESPESA_90DIAS_S_2008`)
 
 ## Alternatively, use the wrapper function
-get_import_dictionary("POF", "2008", "T_DESPESA_90DIAS_S")}
+get_import_dictionary("POF", "2008", "T_DESPESA_90DIAS_S") }
 
 }
 \keyword{datasets}
