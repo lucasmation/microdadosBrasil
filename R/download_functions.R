@@ -57,12 +57,35 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
     dir.create(paste(c(dest,file_dir), collapse = "/"))
     filenames<- strsplit(filenames, "\r*\n")[[1]]
     file_links <- paste(link, filenames, sep = "")
-    for(y in seq_along(filenames)){
+
+    download_sucess <- rep(FALSE, length(filenames))
+
+    max_loops  = 20
+    loop_counter = 1
+
+    while(!all(download_sucess) & loop_counter< max_loops){
+
+    print(paste0("loop counter = ", loop_counter))
+
+    for(y in seq_along(filenames)[!download_sucess]){
 
       print(paste(c(dest,file_dir,filenames[y]),collapse = "/"))
       print(file_links[y])
-      try(download.file(file_links[y],destfile = paste(c(dest,file_dir, filenames[y]),collapse = "/")))
+      download_sucess[y] = FALSE
+      try({
+          download.file(file_links[y],destfile = paste(c(dest,file_dir, filenames[y]),collapse = "/"))
+          download_sucess[y] = TRUE
+
+
+        })
     }
+
+      loop_counter = loop_counter + 1
+    }
+
+    if(!all(download_sucess)){ message(paste0("The download of the following files failed:\n"),
+                                       paste(filenames[!download_sucess], collapse = "\n"))}
+
   }else{
 
     filename <- link %>% gsub(pattern = ".+/", replacement = "")
