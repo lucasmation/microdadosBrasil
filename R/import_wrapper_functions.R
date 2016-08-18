@@ -17,20 +17,21 @@ NULL
 
 
 #' @rdname read_dataset
+#' @import dplyr
+#' @import magrittr
+#' @import stringr
 #' @export
-read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
-  metadata <-  read_metadata('CensoEscolar')
-  data("CensoEscolar_dics", envir = environment())
+read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = file){
 
 
   #selecting dictionaries
-  data_path <- paste0(metadata[metadata$period==i,'path'],'/',metadata[metadata$period==i,'data_folder'])
+  #data_path <- paste0(metadata[metadata$period==i,'path'],'/',metadata[metadata$period==i,'data_folder'])
   #Variable names hamonization
   if (harmonize_varnames==T) {
     var_translator <- read_var_translator('CensoEscolar','escola')
     read_data(ft, i, metadata, var_translator,root_path, dic_list = CensoEscolar_dics)
   } else {
-    read_data(ft, i, metadata, root_path = root_path, dic_list = CensoEscolar_dics)
+    read_data(dataset = "CensoEscolar",ft, i,root_path = root_path, file = file)
   }
 
 }
@@ -41,16 +42,13 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL){
 
 #' @rdname read_dataset
 #' @export
-read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
+read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL, file = NULL){
   metadata <-  read_metadata('CensoEducacaoSuperior')
-#   dic<- readRDS(system.file("data","CensoEducacaoSuperior_dics.rds",
-#                             package = "microdadosBrasil"))
-
-  data("CensoEducacaoSuperior_dics",envir = environment())
 
 
 
-   data<-read_data(ft, i, metadata, dic = CensoEducacaoSuperior_dics,root_path =  root_path)
+
+   data<-read_data(dataset = "CensoEducacaoSuperior",ft, i,root_path =  root_path, file = file)
 
   return(data)
 }
@@ -59,20 +57,22 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL){
 
 #' @rdname read_dataset
 #' @export
-read_CENSO<- function(ft,i,root_path = NULL, UF = NULL){
+read_CENSO<- function(ft,i,root_path = NULL, file = NULL, UF = NULL){
 
   metadata <-  read_metadata('CensoIBGE')
 
+  if(is.null(file)){
   root_path<- ifelse(is.null(UF),
                      root_path,
                      paste0(ifelse(is.null(root_path),getwd(),root_path),"/",UF))
   if(!file.exists(root_path)){
     stop("Data not found, check if you provided a valid root_path or stored the data in your current working directory.")
   }
+  }
 
-  data("CensoIBGE_dics", envir = environment())
 
-  data<-read_data(ft = ft,i = i,metadata = metadata, dic_list  = CensoIBGE_dics,root_path = root_path)
+
+  data<-read_data(dataset = "CENSO", ft = ft,i = i, root_path = root_path,file = file)
 
 
   return(data)
@@ -81,7 +81,7 @@ read_CENSO<- function(ft,i,root_path = NULL, UF = NULL){
 #' @rdname read_dataset
 #' @export
 
-read_RAIS<- function(ft, i,root_path = NULL,UF = NULL){
+read_RAIS<- function(ft, i,root_path = NULL,file = NULL,UF = NULL){
 
   metadata <-  read_metadata('RAIS')
 
@@ -99,7 +99,7 @@ read_RAIS<- function(ft, i,root_path = NULL,UF = NULL){
   if(length(ft)>1){
     data<- lapply(X = ft,FUN = read_data, i = i, metadata = metadata, dic_list = NULL, root_path = root_path) %>% bind_rows
   }
-  data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
+  data<- read_data(dataset = "RAIS",ft = ft, i = i, metadata = metadata, root_path = root_path,file = file)
 
   return(data)
 }
@@ -107,10 +107,10 @@ read_RAIS<- function(ft, i,root_path = NULL,UF = NULL){
 #' @rdname read_dataset
 #' @export
 
-read_CAGED<- function(ft,i,root_path = NULL){
+read_CAGED<- function(ft,i,root_path = NULL,file = NULL){
 
-  metadata<- read_metadata("CAGED")
-  data<- read_data(ft = ft, i = i, metadata = metadata, dic_list = NULL, root_path = root_path)
+
+  data<- read_data(dataset = "CAGED",ft = ft, i = i, dic_list = NULL, root_path = root_path, file = file)
 
   return(data)
 }
@@ -121,56 +121,47 @@ read_CAGED<- function(ft,i,root_path = NULL){
 #' @rdname read_dataset
 #' @export
 #'
-read_PNAD<- function(ft,i,root_path=NULL){
-  metadata <-  read_metadata('PNAD')
+read_PNAD<- function(ft,i,root_path=NULL,file = NULL){
 
-  data("PNAD_dics", envir = environment())
 
-  data<-read_data(ft, i, metadata, dic = PNAD_dics,root_path =  root_path)
+
+  data<-read_data(dataset = "PNAD", ft, i, root_path =  root_path, file = file)
 
   return(data)
 }
 
 #' @rdname read_dataset
 #' @export
-read_PME <- function(ft,i, root_path = NULL){
+read_PME <- function(ft,i, root_path = NULL,file = NULL){
 
   if(!is.character(i)|!grepl(pattern = "^[0-9]{4}\\.[0-9]{2}$", x = i)){
-    stop(paste0("The argument i must be a character in the format YYYY.MM"))
+    stop(paste0("The argument 'i' must be a character in the format YYYY.MM"))
 
   }
-  metadata <-  read_metadata('PME')
-  data("PME_dics", envir = environment())
 
 
-  data<- read_data(ft = ft,i = i,metadata = metadata,dic = PME_dics, root_path = root_path)
+
+  data<- read_data(dataset = "PME", ft = ft,i = i, root_path = root_path, file = file)
   return(data)
 }
 
 
 #' @rdname read_dataset
 #' @export
-read_POF <- function(ft,i, root_path){
-  metadata <-  read_metadata('POF')
-  data("POF_dics", envir = environment())
+read_POF <- function(ft,i, root_path = NULL,file = NULL){
 
 
-  data<- read_data(ft = ft,i = i,metadata = metadata,dic = POF_dics, root_path = root_path)
+  data<- read_data(dataset= "POF", ft = ft,i = i, root_path = root_path,file = file)
   return(data)
 }
 
 #' @rdname read_dataset
 #' @export
-read_PNADcontinua<- function(ft,i,root_path=NULL){
-
-
-  metadata <-  read_metadata('PNADcontinua')
-
-  data("PNADcontinua_dics", envir = environment())
+read_PNADcontinua<- function(ft,i,root_path=NULL,file = NULL){
 
 
 
-  data<-read_data(ft, i, metadata, dic = PNADcontinua_dics,root_path =  root_path)
+  data<-read_data(dataset = "PNADcontinua",ft, i,root_path =  root_path, file = file)
 
   return(data)
 }
