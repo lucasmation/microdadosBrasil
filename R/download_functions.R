@@ -65,7 +65,6 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
 
     while(!all(download_sucess) & loop_counter< max_loops){
 
-    print(paste0("loop counter = ", loop_counter))
 
     for(y in seq_along(filenames)[!download_sucess]){
 
