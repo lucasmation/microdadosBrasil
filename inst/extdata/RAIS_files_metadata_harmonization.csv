@@ -15,4 +15,4 @@ period;format;download_path;download_mode;path;inputs_folder;data_folder;missing
 2011;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2011/;ftp;NA;NA;NA;{ñ;";&ESTB2011.txt";";&[A-Z]{2}2011.txt"
 2012;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2012/;ftp;NA;NA;NA;{ñ;";&ESTB2012.txt";";&[A-Z]{2}2012.txt"
 2013;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2013/;ftp;NA;NA;NA;{ñ;";&ESTB2013.txt";";&[A-Z]{2}2013.txt"
-2014;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2014//;ftp;NA;NA;NA;{ñ;";&ESTB2014 com UF e CEP.txt";";&[A-Z]{2}2014.txt"
+2014;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2014/;ftp;NA;NA;NA;{ñ;";&ESTB2014 com UF e CEP.txt";";&[A-Z]{2}2014.txt"
