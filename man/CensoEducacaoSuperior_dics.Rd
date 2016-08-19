@@ -26,7 +26,7 @@ CensoEducacaoSuperior_dics
 A list containing INEP import dictionaries for Censo da Educação Superior from 1995 to 2012 translated into data frames.
 }
 \examples{
-\dontrun{data(CensoEducacaoSuperior_dics)
+\dontrun{ data(CensoEducacaoSuperior_dics)
 
 ## Acess ies dictionary for 2010:
 CensoEducacaoSuperior_dics$`2010`$`dic_ies_2010`

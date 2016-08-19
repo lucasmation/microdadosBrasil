@@ -65,9 +65,7 @@ aux_read_fwf <- function(f,dic){
 #' read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)}
 
 #' @import dplyr
-#' @import data.table
-#' @import stringr
-#' @import stringi
+#' @importFrom data.table data.table setnames rbindlist
 #' @export
 read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL){
 
