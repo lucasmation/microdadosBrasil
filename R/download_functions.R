@@ -53,7 +53,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
 
     filenames <- RCurl::getURL(link, ftp.use.epsv = FALSE, ftplistonly = TRUE,
                         crlf = TRUE)
-    file_dir<- gsub(link, pattern = "/$", replacement = "", perl = TRUE) %>% gsub(pattern = ".+/", replacement = "")
+    file_dir<- gsub(link, pattern = "/+$", replacement = "", perl = TRUE) %>% gsub(pattern = ".+/", replacement = "")
     dir.create(paste(c(dest,file_dir), collapse = "/"))
     filenames<- strsplit(filenames, "\r*\n")[[1]]
     file_links <- paste(link, filenames, sep = "")
