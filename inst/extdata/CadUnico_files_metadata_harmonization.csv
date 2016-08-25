@@ -1,0 +1,7 @@
+period;format;download_path;download_mode;path;inputs_folder;data_folder;missing_symbols;ft_domicilios;ft_pessoas;ft_propriedade_rural
+2007;fwf;NA;NA;NA;NA;NA;NA;NA;";&[A-Z]{2}1998.txt";
+2008;fwf;NA;NA;NA;NA;NA;NA;NA;";&[A-Z]{2}1999.txt";
+2009;fwf;NA;NA;NA;NA;NA;NA;NA;";&[A-Z]{2}2000.txt";
+2010;fwf;NA;NA;NA;NA;NA;NA;NA;";&[A-Z]{2}2001.txt";
+2013;csv;NA;NA;2013;NA;19012013/mensal;NA;";&RECORDTYPE_01_2013-01-25_1500.txt$";;NA
+2015;csv;NA;NA;NA;NA;19122015;NA;";&TB_DOMICILIO_BRASIL.csv$";";&TB_PESSOA_BRASIL.csv$";NA
