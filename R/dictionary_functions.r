@@ -145,6 +145,37 @@ get_period_dics<- function(i, metadata){
 }
 
 
+parses_SQL_import_dic <- function(file){
+  dic_sql   <- readLines(file) %>% sapply(FUN = remove_comments) %>% sapply(str_trim) %>% as.data.frame(stringsAsFactors = FALSE)
+
+
+  names(dic_sql) <- 'a'
+  dic_sql %>% filter(grepl("position",a)) %>%
+    tidyr::extract_("a", into=c('var_name','int_pos', 'fin_pos'),
+                    "^(.+?)\\s+?position\\s+?[\\(](\\d+):(\\d+)[\\)]") %>%
+    mutate_(int_pos= ~as.numeric(int_pos),
+            fin_pos= ~as.numeric(fin_pos),
+            length= ~fin_pos - int_pos + 1) -> dic
+#             decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",~x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
+#   dic %>% mutate(
+#     decimal_places=ifelse(is.na(decimal_places),0,decimal_places),
+#     fin_pos= int_pos+length -1,
+#     col_type=ifelse(is.na(x),'c',
+#                     ifelse(grepl("\\$",x),'c',
+#                            ifelse(length<=9 & decimal_places==0,'i','d'))) ,
+#     CHAR=ifelse(grepl("\\$",x),TRUE,FALSE)
+#   ) -> dic
+
+  #ALGUNS DICIONARIOS N?O MOSTRAM O TAMANHO PARA ALGUNS CAMPOS, APENAS A POSI??O INICIAL E FINAL
+#   estimated_length<- dic$int_pos %>% diff %>% c(0)
+#   dic$length[is.na(dic$length)]<- estimated_length
+#   estimated_final<- dic$int_pos + dic$length
+#   dic$fin_pos[is.na(dic$fin_pos)]<- estimated_final[is.na(dic$fin_pos)]
+#
+  dic %>% return
+}
+
+
 #Creation of Dataset_dics.rda example
 # setwd(path)
 # metadatas<- read_metadata("PNADContinua")
