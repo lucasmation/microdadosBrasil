@@ -1,0 +1,4 @@
+period;format;download_path;download_mode;missing_symbols;path;inputs_folder;data_folder;ft_domicilios;ft_pessoas
+2001;fwf/csv;link1;source/ftp;NA;PNAD_reponderado_2001/2001;Input;Dados;INPUT DOM2001.txt&DOM2001.txt;INPUT PES2001.txt&PES2001.txt
+2002;fwf/csv;link2;source/ftp;NA;PNAD_reponderado_2002/2002;Input;Dados;INPUT DOM2002.txt&DOM2002.txt;INPUT PES2002.txt&PES2002.txt
+2003;fwf/csv;link3;source/ftp;NA;PNAD_reponderado_2003_20150814/2003;Input;Dados;INPUT DOM2003.txt&DOM2003.txt;INPUT PES2003.txt&PES2003.txt
