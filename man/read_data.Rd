@@ -4,17 +4,15 @@
 \alias{read_data}
 \title{Reads files (fwf or csv).}
 \usage{
-read_data(ft, i, metadata, dic_list = NULL, var_translator = NULL,
-  root_path = NULL)
+read_data(dataset, ft, i, metadata = NULL, var_translator = NULL,
+  root_path = NULL, file = NULL)
 }
 \arguments{
+\item{dataset}{.}
+
 \item{ft}{file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')}
 
 \item{i}{period. Normally period in YYY format.}
-
-\item{metadata}{a data.frame containing one row per period and columns indicating: period, type (fwf, csv) download location, directory structure of the source data, hamonized file and dictionary names for subdataset (ft).}
-
-\item{dic_list}{a list containing import dictionary data.frames for each period and subdataset (ft). Only necessary if data is in fwf format}
 
 \item{var_translator}{(optional) a data.frame containing a subdataset (ft) specific renaming dictionary. Rows indicate the variable and the columuns the periods.}
 

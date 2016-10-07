@@ -1,7 +1,7 @@
 library(dplyr);library(devtools)
 
-wdMB <- "//Sbsb2/cadastro_unico_novo/microdadosBrasil-RA/microdadosBrasil-RA"
-wdCadUnico<- "//Sbsb2/cadastro_unico_novo/CadUnico_V7"
+wdMB <- ".../microdadosBrasil-RA/microdadosBrasil-RA"
+wdCadUnico<- ".../cadastro_unico_novo/CadUnico_V7"
 
 setwd(wdMB)
 

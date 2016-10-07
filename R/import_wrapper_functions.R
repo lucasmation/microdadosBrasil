@@ -53,13 +53,15 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL, file = NULL){
   return(data)
 }
 
+#' @rdname read_dataset
+#' @export
 read_SISOB<- function(ft,i,root_path=NULL, file = NULL){
   metadata <-  read_metadata('SISOB')
 
 
 
-
-  data<-read_data(dataset = "SISOB",ft, i,root_path =  root_path, file = file)
+  data<- lapply(X = i,FUN = read_data, dataset = "SISOB", ft = ft, metadata = metadata, root_path = root_path) %>% rbindlist
+  #data<-read_data(dataset = "SISOB",ft, i,root_path =  root_path, file = file)
 
   return(data)
 }
