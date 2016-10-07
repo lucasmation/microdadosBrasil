@@ -53,6 +53,8 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL, file = NULL){
   return(data)
 }
 
+#' @rdname read_dataset
+#' @export
 read_SISOB<- function(ft,i,root_path=NULL, file = NULL){
   metadata <-  read_metadata('SISOB')
 
