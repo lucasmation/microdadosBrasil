@@ -72,7 +72,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
       print(file_links[y])
       download_sucess[y] = FALSE
       try({
-          download.file(file_links[y],destfile = paste(c(dest,file_dir, filenames[y]),collapse = "/"))
+          download.file(file_links[y],destfile = paste(c(dest,file_dir, filenames[y]),collapse = "/"), mode = "wb")
           download_sucess[y] = TRUE
 
 
@@ -94,7 +94,7 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
     print(filename)
     print(file_dir)
 
-    try(download.file(link,destfile = paste(c(dest,filename),collapse = "/")))
+    try(download.file(link,destfile = paste(c(dest,filename),collapse = "/"), mode = "wb"))
 
     if (unzip==T){
       #Unzipping main source file:
