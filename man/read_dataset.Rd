@@ -10,6 +10,7 @@
 \alias{read_PNADcontinua}
 \alias{read_POF}
 \alias{read_RAIS}
+\alias{read_RGP}
 \alias{read_SISOB}
 \alias{read_dataset}
 \title{Functions to read most common Brazillian dataset}
@@ -20,6 +21,8 @@ read_CensoEscolar(ft, i, harmonize_varnames = F, root_path = NULL,
 read_CensoEducacaoSuperior(ft, i, root_path = NULL, file = NULL)
 
 read_SISOB(ft, i, root_path = NULL, file = NULL)
+
+read_RGP(ft, i, root_path = NULL, file = NULL)
 
 read_CENSO(ft, i, root_path = NULL, file = NULL, UF = NULL)
 
