@@ -5,7 +5,7 @@ Version: 0.0.0.9000
 Date: 2016-05-29
 Authors@R: as.person(c(
     "Lucas Mation <lucas.mation@ipea.gov.br> [aut, cre]",
-    "Nicolas XX [ctb]"
+    "Nicolas Pinto<nicolas.pinto@ipea.gov.br> [ctb]"
     ))
 Description: A set of simple functions to read most commonly used public microdata on Brazil.
     Downloads and reads the main datasets from IBGE, INEP and MTE for
@@ -18,6 +18,8 @@ Description: A set of simple functions to read most commonly used public microda
 Depends: R (>= 3.1.3)
 Imports:
     data.table,
+    chron,
+    RCurl,
     dplyr,
     magrittr,
     Rcpp,
