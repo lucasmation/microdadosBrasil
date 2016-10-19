@@ -71,7 +71,7 @@ read_SISOB<- function(ft,i,root_path=NULL, file = NULL){
 #' @export
 read_CENSO<- function(ft,i,root_path = NULL, file = NULL, UF = NULL){
 
-  metadata <-  read_metadata('CensoIBGE')
+  metadata <-  read_metadata('CENSO')
 
   if(is.null(file)){
   root_path<- ifelse(is.null(UF),
