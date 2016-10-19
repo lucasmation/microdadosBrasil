@@ -1,6 +1,5 @@
 
 #' @import RCurl
-#' @import chron
 #' @export
 download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, replace = FALSE){
   dataset_list<- system.file("extdata", package = "microdadosBrasil") %>%
@@ -16,9 +15,16 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
     stop(paste0("Invalid dataset. Must be one of the following: ",paste(dataset_list, collapse=", ")) ) }
 
   metadata <-  read_metadata(dataset)
+
+  i_min    <- min(metadata$period)
+  i_max    <- max(metadata$period)
+
+  if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
+
+
   ft_list  <- names(metadata)[grep("ft_", names(metadata))]
   data_file_names<- metadata %>% filter(period == i ) %>% select_(.dots =c(ft_list)) %>% unlist(use.names = FALSE) %>% gsub(pattern = ".+?&", replacement = "")
-
+  data_file_names<- paste0(data_file_names[!is.na(data_file_names)],"$")
   if (!replace) {
     if(any(grepl(pattern = paste0(data_file_names,collapse = "|"), x = list.files(recursive = TRUE, path = ifelse(is.null(dest), ".", dest))))) {
       stop(paste0("This data was already downloaded.(check:\n",
@@ -30,10 +36,6 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
   }
 
 
-  i_min    <- min(metadata$period)
-  i_max    <- max(metadata$period)
-
-  if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
 
 
   md <- metadata %>% filter(period==i)
@@ -94,12 +96,13 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
     print(filename)
     print(file_dir)
 
-    try(download.file(link,destfile = paste(c(dest,filename),collapse = "/"), mode = "wb"))
+    try({ download.file(link,destfile = paste(c(dest,filename),collapse = "/"), mode = "wb")
 
     if (unzip==T){
       #Unzipping main source file:
       unzip(paste(c(dest,filename),collapse = "/") ,exdir = paste(c(dest,file_dir),collapse = "/"))
     }
+    })
   }
     if (unzip==T){
     # #unzipping the data files (in case not unziped above)
