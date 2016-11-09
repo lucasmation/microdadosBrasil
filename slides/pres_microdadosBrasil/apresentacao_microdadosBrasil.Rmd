@@ -3,7 +3,7 @@ title: "microdadosBrasil"
 author:
 - Lucas F. Mation
 - Nicolas S. Pinto
-date: "julho de 2016"
+date: "novembro de 2016"
 output:
   ioslides_presentation:
     incremental: yes
@@ -11,16 +11,18 @@ output:
     incremental: yes
   slidy_presentation:
     incremental: yes
-subtitle: leitura fácil e rápida dos microdados Brasileiros no R
-css: image.css
+subtitle: leitura fácil e rápida dos microdados brasileiros no R
+css: rmarkdown7.css
 ---
 
 
 
 ```{r setup, include=FALSE}
-library(printr)
+
 library(dplyr)
+library(xtable)
 library(microdadosBrasil)
+library(printr)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -31,22 +33,15 @@ knitr::opts_chunk$set(echo = FALSE)
 - microdadosBrasil: overview
 - Princípios
     - Separação: código x metadados
-    - ambiente de produção
 - microdadosBrasil: Estrutura
-    - Função principal: `read_data` 
     - CSV com Metadados
+    - Função principal: `read_data` 
     - Wrapper functions
     - Funções auxiliares
-
 
 ## Agenda  {.build}
 
 - Criando novas bases no `microdadosBrasil`
-    - Criando metadados
-    - Criando dicionários
-    - Criando a *wrapper*: `read_NovaBase()`
-- Performance
-    - Velocidade de importação 
 - Comparação com outros pacotes
 - Próximos passos
 
@@ -63,7 +58,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 devtools::install_github("lucasmation/microdadosBrasil")
 ```
-
 ## Dificuldades para importar microdados {.build}
 
 ```{r, out.width= "600px"}
@@ -90,16 +84,8 @@ knitr::include_graphics("images/image2.PNG")
     - Ex. RAIS: AC2014.txt,AL2014.txt, AM2014.txt,...
  
  
-## Dificuldades para importar microdados 
- 
-- Passos necessários para importar a PNAD
-    1. Baixar os dados do site oficial
-    2. Encontrar entre os arquivos as larguras de importação
-    3. Encontrar os nomes de pastas e arquivos
-    4. Encontrar os nomes das variáveis
-    5. Escrever em R
 
-## Dificuldades para importar microdados {.build}
+## Método tradicional de importação de microdados {.build}
 
 ### 1. Baixar os dados do site oficial
 
@@ -109,7 +95,7 @@ knitr::include_graphics("images/download_pnad.PNG")
 
 ```
 
-## Dificuldades para importar microdados {.build}
+## Método tradicional de importação de microdados {.build}
 
 ### 2. Encontrar entre os arquivos as larguras de importação
 
@@ -119,7 +105,7 @@ knitr::include_graphics("images/planilha_fwf.png")
 
 ```
 
-## Dificuldades para importar microdados {.build}
+## Método tradicional de importação de microdados
 
 ### 2. Encontrar entre os arquivos as larguras de importação
 ```{r, echo = TRUE}
@@ -142,18 +128,19 @@ vars_width <-
 ```
 
 
-## Dificuldades para importar microdados {.build}
+## Método tradicional de importação de microdados {.build}
 
 ### 3. Encontrar os nomes de pastas e arquivos
 
 ```{r, echo = TRUE}
 
-data_path<- "C:/Users/Nícolas/Documents/PNAD_reponderado_2011_20150814/2011/Dados"
+data_path<- paste0("C:/Users/Nícolas/Documents/",
+                    "PNAD_reponderado_2011_20150814/2011/Dados")
 
 ```
 
 
-## Dificuldades para importar microdados {.build}
+## Método tradicional de importação de microdados {.build}
 
 ### 4. Encontrar os nomes das variáveis
 
@@ -200,7 +187,7 @@ vars<- c("V0101","V0102","V0103","V0301","V0302","V3031","V3032","V3033","V8005"
 ```
 
 
-## Dificuldades para importar microdados {.build}
+## Método tradicional de importação de microdados {.build}
 
 ### 5. Importar no R
 
@@ -213,27 +200,46 @@ d<- read.fwf(file = paste0(data_path, "PES2011.txt"),
 
 ```
 
-- E esperar um bom tempo para carregra os dados
+
 
 ## Dificuldades para importar microdados {.build}
 
-- E se quiseramos importar outro os dados de um período diferente? 
+- E se quiseramos importar dados de um período diferente? 
 - Começe do passo 1 novamente
 
 
-## Deveria ser fácil
+
+## microdadosBrasil: overview
+
+- A importação de microdados deveria ser fácil e simples:
+- Uma função para download e outra para leitura
+
+## microdadosBrasil: overview
+
+### Importação da PNAD
+
+```{r, eval = FALSE, echo = TRUE}
+
+download_sourceData(dataset = "PNAD", i = 2011, unzip = T)
+d<- read_PNAD(ft = "pessoas", i = 2011)
 
 
-
-```{r , eval=FALSE, echo=TRUE}
-#Download
-download_sourceData("PNAD", 2002, unzip = T)
 ```
 
-```{r , eval=FALSE, echo=TRUE}
-#Importando os dados
-d  <- read_PNAD("domicilios", 2002)
+## microdadosBrasil: overview
+
+### Importação da base de escolas do Censo Escolar
+
+```{r, eval = FALSE, echo = TRUE}
+
+download_sourceData(dataset = "CensoEscolar", i = 2000, unzip = T)
+d<- read_CensoEscolar(ft = "escola", i = 2000)
+
+
 ```
+
+
+
 
 ## Separação: código x metadados
 
@@ -269,7 +275,7 @@ knitr::include_graphics("images/Chocolate_cupcakes.JPG")
 
 ```
 
-## Separaçãoo: código x metadados
+## Separação: código x metadados
 
 ```{r, out.width= "600px"}
 
@@ -322,20 +328,66 @@ knitr::include_graphics("images/capcakes_van_choc2.JPG")
 
 ```
 
-## Controle de versão
+## CSV com Metadados {.build}
 
- - Produzido utilizando GitHub
- - Mostrar exemplo
+- Deve ter, em um arquivo só:
+    - Os nomes das pastas e subpastas
+    - Os nomes das bases
+        - Exemplo: "pessoas" e "domicílios" para a PNAD
+    - O tipo de leitura: colunado ou por delimitador
+    - A fonte para download
+        
+
+## CSV com Metadados
+
+```{r echo = FALSE,results="asis", fo}
+
+csv_file<- read.csv("examples/template_csv.csv", sep = ";")
+x<- head(csv_file %>% select(1:5)) %>% xtable(align = rep("c",6))
+print(x, type = "html")
+
+```
+
+## CSV com Metadados
+
+
+```{r echo = FALSE}
+
+csv_file<- read.csv("examples/template_csv.csv", sep = ";")
+knitr::kable(head(csv_file %>% select(6:9)),format = "html")
+
+```
+
+
+## Dicionários: {.build}
+
+- Armazenamento em listas padronizadas
+    - dataset_dics.rda -> ano -> dic_filetype_ano
+    
+```{r, echo = TRUE}
+
+str(PNAD_dics[1:3] ,max.level = 2)
+
+```
+
+## Dicionários:
+```{r, include = FALSE, echo = TRUE, eval = FALSE, include= TRUE}
+
+get_import_dictionary("CensoEscolar", 2000, 'escola')
+
+
+```
+
+```{r, echo =  FALSE, results = 'asis'}
+get_import_dictionary("CensoEscolar", 2000, 'escola') %>% 
+  head  %>% 
+  xtable(digits = 0, align = rep("c",10)) -> x
+print(x, type = "html")
+
+```
 
 
 ## Função principal: `read_data` {.build}
-
-<style type="text/css">
-
-code.r{
-  font-size: 27px;
-}
-</style>
 
 
 
@@ -355,60 +407,47 @@ read_data(dataset, ft, i,
 
 - Parâmetros:
     - *dataset*: Referência básica para a função de importação, procurará o dicionário e os metadados com base nesses nomes.
-    - Arquivo com metadatados: inst/extadata/PNAD_files_harmonization.csv
-    - Arquivos com dicionarios: data/PNAD_dics.rda
-    - O nome da base de dados é suficiente para identificar todos os componentes auxiliares necessários para a leitura
-    
-    
+    - Este parâmetro deve ser suficiente para identificar todos os componentes auxiliares necessários para a leitura
+        - Arquivo com metadatados: inst/extadata/**dataset**_files_harmonization.csv
+        - Arquivos com dicionarios: data/**dataset**_dics.rda
+
+
     
 ## Função principal: `read_data` {.build}
-
-
 
 - Parâmetros:
     - *ft*: Tipo de arquivo que será utilizado(Ex: "matrículas" dentro do Censo Escolar)
     - *i*: Período do arquivo que será utilizado( Ex: 2012)
     - *root_path*: local dos arquivos, se não for fornecido, procurará no Working Directory
-    - *metadata*: data.frame contendo as informações necessárias para a leitura da base de dados, se `NULL` é utilizada a tabela encontrada pelo nome padrão do arquivo `inst/extadata/dataset_files_harmonization.csv`    
-    - *file*: se preenchido, ignora os metadatados e o `root_path` e lê direto o arquivo indicado,
+    - *metadata*: `data.frame` contendo as informações necessárias para a leitura da base de dados, se = `NULL` é utilizada a tabela encontrada pelo nome padrão do arquivo `inst/extadata/dataset_files_harmonization.csv`    
+    - *file*: se preenchido, ignora os metadatados e o `root_path` lê direto o arquivo indicado,
   
 
 ## Wrapper functions {.build}
 
 
-
- - Traduz a função  `read_data` em argumentos mais amigáveis ao usuário.
- - Lidar com exceões
- - perceba que identificador *dataset* é suficiente para encontrar metadados para uma dada pesquisa.
+ - Traduzir a função  `read_data` em argumentos mais amigáveis ao usuário.
+ - Lidar com exceções
+ - O identificador *dataset* é suficiente para encontrar metadados para uma dada pesquisa.
 
 ```{r eval = FALSE, echo = TRUE}
 read_PNAD<- function(ft,i,root_path=NULL,file = NULL){
 
   data<-read_data(dataset = "PNAD", ft, i, root_path =  root_path, file = file)
 
-  r
 ```
 
  
-## CSV com Metadados
 
-```{r echo = FALSE}
+## Funções auxiliares
 
-csv_file<- read.csv("examples/template_csv.csv", sep = ";")
-head(csv_file %>% select(1:5))
-
-```
-
-## CSV com Metadados
-
-
-```{r echo = FALSE}
-
-csv_file<- read.csv("examples/template_csv.csv", sep = ";")
-head(csv_file %>% select(6:9))
+```{r, eval = FALSE, echo = TRUE}
+ 
+ download_sourceData(dataset = "PNAD",
+                     i  = 2012,
+                     unzip = T)  
 
 ```
-
 
 ## Funções auxiliares
 
@@ -419,11 +458,37 @@ head(csv_file %>% select(6:9))
 - Método para traduzir dicionários SAS
 - Facilidade de replicação
 
-## Funções auxiliares 
-```{r, echo =  TRUE}
+## Funções auxiliares
+
+```{r, echo =  TRUE, eval = FALSE}
 get_import_dictionary("CensoEscolar", 2000, 'escola') %>% head
 
 ```
+
+
+```{r, echo = FALSE, results = 'asis'}
+
+get_import_dictionary("CensoEscolar", 2000, 'escola') %>% 
+  head  %>% 
+  xtable(digits = 0, align = rep("c",10)) -> x
+print(x, type = "html")
+
+
+```
+
+
+##Utilização: adaptando novas bases para o microdadosBrasil
+
+1. Criação de um arquivo  "NomeDaBase_files_metadata_harmonzation.csv"
+2. Criação de uma lista "NomeDaBase_dics.rda"
+3. Criação de uma função "read_NomeDaBase()"
+
+
+
+## Controle de versão
+
+ - Produzido utilizando GitHub
+ - Mostrar exemplo
 
 
 ## Velocidade de importação dos dados
@@ -440,7 +505,7 @@ packages
 
 ```
 
-## Comparaão com outros pacotes
+## Comparação com outros pacotes
 
 ```{r, echo = FALSE}
 
@@ -454,7 +519,7 @@ packages
 
 ## Próximos passos
 
-- Tornar o processo de criação de metadados/dicionários mais amigável 
+
 - DADOS > memória RAM: MonetDBLite
 - Desenho amostral complexo( PNAD, PNAD contínua)
 - Inclusão de mais bases
