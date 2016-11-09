@@ -23,6 +23,7 @@ library(dplyr)
 library(xtable)
 library(microdadosBrasil)
 library(printr)
+library(knitr)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -354,6 +355,25 @@ print(x, type = "html")
 ```{r echo = FALSE}
 
 csv_file<- read.csv("examples/template_csv.csv", sep = ";")
+knitr::kable(head(csv_file %>% select(6:7)),format = "html")
+
+```
+## CSV com Metadados
+
+
+```{r echo = FALSE}
+
+csv_file<- read.csv("examples/template_csv.csv", sep = ";")
+knitr::kable(head(csv_file %>% select(8:9)),format = "html")
+
+```
+
+## CSV com Metadados
+
+
+```{r echo = FALSE}
+
+csv_file<- read.csv("examples/template_csv.csv", sep = ";")
 knitr::kable(head(csv_file %>% select(6:9)),format = "html")
 
 ```
@@ -460,21 +480,12 @@ read_PNAD<- function(ft,i,root_path=NULL,file = NULL){
 
 ## Funções auxiliares
 
-```{r, echo =  TRUE, eval = FALSE}
-get_import_dictionary("CensoEscolar", 2000, 'escola') %>% head
+```{r, echo =  TRUE}
+get_import_dictionary("CensoEscolar", 2000, 'escola') %>% head %>% kable(format = "html")
 
 ```
 
 
-```{r, echo = FALSE, results = 'asis'}
-
-get_import_dictionary("CensoEscolar", 2000, 'escola') %>% 
-  head  %>% 
-  xtable(digits = 0, align = rep("c",10)) -> x
-print(x, type = "html")
-
-
-```
 
 
 ##Utilização: adaptando novas bases para o microdadosBrasil
@@ -500,7 +511,7 @@ print(x, type = "html")
 
 packages<- read.csv("examples/comparacao_pacotes.csv", sep = ";", row.names = 1)
 
-packages
+kable(packages, format = "html")
 
 
 ```
@@ -511,7 +522,7 @@ packages
 
 packages<- read.csv("examples/comparacao_pacotes2.csv", sep = ";")
 
-packages
+kable(packages, format = "html")
 
 
 ```
