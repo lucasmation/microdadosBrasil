@@ -69,6 +69,11 @@ aux_read_fwf <- function(f,dic){
 #' @export
 read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL){
 
+   # status:
+   # 0 - Both root_path and file, error
+   # 1 - No root_path ,no file
+   # 2 - Only root_path
+   # 3 - Only file
    status<-  test_path_arguments(root_path, file)
    if(status == 0){ stop()}
 
