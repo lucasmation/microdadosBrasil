@@ -69,57 +69,31 @@ aux_read_fwf <- function(f,dic){
 #' @export
 read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL){
 
-    #Check for inconsistency in parameters
-    if(!is.null(root_path) & !is.null(file)){
-      status = 0
-      stop(paste0("\nPlease, do not specify both the 'root_path' and 'file' parameters to the function. You can:\n",
-              "1) Specify neither the 'root_path' nor the 'file' argument, in this case we will assume that data is in your working directory and the files are named exactly as  they have been downloaded from the source.\n",
-              "2) Specify only the 'root_path' argument, in this case we will assume that data is in the directory specified and it is exactly as it have been downloaded from the source.\n"),
-              "3) Specify only the 'file' argument, in this case we will assume that data is in a .txt or .csv file stored in the adress specified by the 'file' parameter.")
+   status<-  test_path_arguments(root_path, file)
+   if(status == 0){ stop()}
 
 
-    }else{
-      if(is.null(root_path) & is.null(file)){
-        status = 1
-        message(paste0("You haven't specified neither the 'root_path' nor ther 'file' parameters to the function. in this case we will assume that data is in your working directory and the files are named exactly as  they have been downloaded from the source.\n"))
-
-
-      }else{
-      if(is.null(file)){
-        status = 2
-        message(paste0("You have specified only the 'root_path' argument, in this case we will assume that data is in the directory specified and it is exactly as it have been downloaded from the source.\n"))
-
-
-      }else{
-        status = 3
-
-        message(paste0("You have specified only the 'file' argument, in this case we will assume that data is in a .txt or .csv file stored in the adress specified by the 'file' parameter.\n"))
-        if (!file.exists(file)) { stop("Data not found. Check if you have provided a valid adress in the 'file' parameter" )  }
-      }
-      }
-    }
-
-
-print(i)
-  #Extracting Parameters
+    #Extracting Parameters
     if(is.null(metadata)){metadata<- read_metadata(dataset)}
-    i_min    <- min(metadata$period)
-    i_max    <- max(metadata$period)
+
+    i_range<- get_available_periods(dataset)
+    ft_list<- get_available_filetypes(dataset, i)
+
     ft2      <- paste0("ft_",ft)
-    ft_list  <- names(metadata)[grep("ft_", names(metadata))]
-    ft_list2 <- gsub("ft_","",names(metadata)[grep("ft_", names(metadata))])
+    ft_list2 <- paste0("ft_",ft_list)
+
     var_list <- names(metadata)[ !(names(metadata) %in% ft_list)]
     #Checking if parameters are valid
-    if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
-    if (!(ft %in% ft_list2 ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list2, collapse=", "),
-                                               '. See table of valid file types for each period at XXX'))  }
+    if (!(i %in% metadata$period)) { stop(paste0("period must be in ", paste(i_range, collapse = ", "))) }
+    if (!(ft %in% ft_list ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list, collapse=", "),
+                                               '. See table of valid file types for each period at "http://www.github.com/lucasmation/microdadosBrasil'))  }
 
     #subseting metadata and var_translator
     md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
     if (!is.null(var_translator)) {
       vt <- var_translator %>% rename_( old_varname = as.name(paste0('varname',i))) %>%
         select(std_varname ,old_varname ) %>% filter(!is.na(old_varname))
-print(str(vt))
+
     }
 
     a <- md %>% select_(.dots = ft) %>% collect %>% .[[ft]]
@@ -137,7 +111,7 @@ print(files)
 
   #Checking if parameters are valid
     if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
-    if (!(ft %in% ft_list2 ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list2, collapse=", "),
+    if (!(ft %in% ft_list ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list, collapse=", "),
                                           '. See table of valid file types for each period at XXX'))  }
     if (!file.exists(files) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
 
