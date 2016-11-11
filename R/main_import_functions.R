@@ -100,6 +100,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
 
 
     #subseting metadata and var_translator
+    #This line actually does nothing!
     md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
     if (!is.null(var_translator)) {
       vt <- var_translator %>% rename_( old_varname = as.name(paste0('varname',i))) %>%
@@ -115,23 +116,27 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
     # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
     data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/") %>% ifelse(. == "", getwd(),.)
 
-print(file_name)
-print(data_path)
     files <- paste0(data_path,'/',list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE))
-print(files)
 
   #Checking if parameters are valid
-    if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
-    if (!(ft %in% ft_list ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list, collapse=", "),
-                                          '. See table of valid file types for each period at XXX'))  }
-    if (!file.exists(files) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
+
+  # Future improvement: this should be done on test_path_arguments()
+  # Is this right? files should be an vector, there is something strange here.
+  # How to deal with multiple files ( ex: One file exists and other dont)
+  # files came from list.files(), this shouldn't assert that they exist?
+
+    if ((!file.exists(files) & status != 3)) { stop("Data not found. Check if you have unziped the data" )  }
+
+  # Report information
+  # Should report useful information here
+
 
 
   #Importing
-  if(status == 3){
-    files = file
-  }
-    print(format)
+    if(status == 3){
+      files = file
+    }
+
     t0 <- Sys.time()
     if(format=='fwf'){
 
