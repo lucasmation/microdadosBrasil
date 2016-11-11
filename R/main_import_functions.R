@@ -72,21 +72,27 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
    status<-  test_path_arguments(root_path, file)
    if(status == 0){ stop()}
 
+    if (!(dataset %in% get_available_datasets())) {
+        stop(paste0(dataset, " is not a valid dataset. Available datasets are: ", paste(get_available_datasets(), collapse = ", "))) }
 
-    #Extracting Parameters
+
     if(is.null(metadata)){metadata<- read_metadata(dataset)}
 
-    i_range<- get_available_periods(dataset)
-    ft_list<- get_available_filetypes(dataset, i)
 
+    i_range<- get_available_periods(metadata)
+    if (!(i %in% i_range)) { stop(paste0("period must be in ", paste(i_range, collapse = ", "))) }
+
+    ft_list<- get_available_filetypes(metadata, i)
+    if (!(ft %in% ft_list ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list, collapse=", "),
+                                              '. See table of valid file types for each period at "http://www.github.com/lucasmation/microdadosBrasil'))  }
+
+    #names used to subset metadata data.frame
     ft2      <- paste0("ft_",ft)
     ft_list2 <- paste0("ft_",ft_list)
 
     var_list <- names(metadata)[ !(names(metadata) %in% ft_list)]
-    #Checking if parameters are valid
-    if (!(i %in% metadata$period)) { stop(paste0("period must be in ", paste(i_range, collapse = ", "))) }
-    if (!(ft %in% ft_list ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list, collapse=", "),
-                                               '. See table of valid file types for each period at "http://www.github.com/lucasmation/microdadosBrasil'))  }
+
+
 
     #subseting metadata and var_translator
     md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
