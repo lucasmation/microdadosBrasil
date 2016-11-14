@@ -30,15 +30,19 @@ read_var_translator <- function(dataset, ft){
 #'
 #' @import readr
 #' @export
-aux_read_fwf <- function(f,dic){
+aux_read_fwf <- function(f,dic, vars = NULL){
+
+  if(!is.null(vars)){
+    dic<- dic[dic$var_name %in% vars,]
+  }
+
   print(f)
-  f %>% read_fwf(fwf_positions(start=dic$int_pos,end=dic$fin_pos,col_names=dic$var_name),
-                 col_types=paste(dic$col_type,collapse ='')) -> d
-#   for(i in names(d)){
-#     if(dic[dic$var_name==i,"col_type"] != 'c'){
-#       print(i)
-#     }
-#   }
+
+  f %>% read_fwf(fwf_positions(start = dic$int_pos,
+                               end = dic$fin_pos,
+                               col_names=dic$var_name),
+                 col_types = paste(dic$col_type,collapse ='')) -> d
+
   return(d)
 }
 
@@ -67,7 +71,7 @@ aux_read_fwf <- function(f,dic){
 #' @import dplyr
 #' @importFrom data.table data.table setnames rbindlist
 #' @export
-read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL){
+read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL, vars_subset = NULL){
 
    # status:
    # 0 - Both root_path and file, error
@@ -120,7 +124,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
 
   #Checking if parameters are valid
 
-  # Future improvement: this should be done on test_path_arguments()
+
   # Is this right? files should be an vector, there is something strange here.
   # How to deal with multiple files ( ex: One file exists and other dont)
   # files came from list.files(), this shouldn't assert that they exist?
@@ -142,11 +146,13 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
 
       dic <- get_import_dictionary(dataset, i, ft)
 
-      lapply(files,aux_read_fwf, dic=dic) %>% bind_rows -> d
+      lapply(files,aux_read_fwf, dic=dic, vars = vars_subset) %>% bind_rows -> d
     }
     if(format=='csv'){
       print('b')
-      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
+
+
+      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol), select = vars) %>% rbindlist(use.names=T) -> d
       #     lapply(files,read_delim, delim = delim) -> d2
       #     d2 %>% bind_rows -> d
       # d <- (csv_file, )
