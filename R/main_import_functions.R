@@ -149,10 +149,9 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
       lapply(files,aux_read_fwf, dic=dic, vars = vars_subset) %>% bind_rows -> d
     }
     if(format=='csv'){
-      print('b')
 
 
-      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol), select = vars) %>% rbindlist(use.names=T) -> d
+      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names=T) -> d
       #     lapply(files,read_delim, delim = delim) -> d2
       #     d2 %>% bind_rows -> d
       # d <- (csv_file, )
