@@ -101,4 +101,3 @@ get_available_filetypes<- function(dataset, period){
 }
 
 
-
