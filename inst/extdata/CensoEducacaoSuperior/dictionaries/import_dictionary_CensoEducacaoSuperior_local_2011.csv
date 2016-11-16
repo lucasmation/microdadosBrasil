@@ -1,0 +1,8 @@
+"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
+1;"CO_LOCAL_OFERTA_IES";"8.";"";8;0;8;"i";FALSE
+9;"CO_IES";"8.";"";8;0;16;"i";FALSE
+17;"CO_MUNICIPIO";"8.";"";8;0;24;"i";FALSE
+25;"CO_UF";"8.";"";8;0;32;"i";FALSE
+33;"IN_SEDE";"8.";"";8;0;40;"i";FALSE
+41;"CO_CURSO_POLO";"8.";"";8;0;48;"i";FALSE
+49;"CO_CURSO";"8.";"";8;0;56;"i";FALSE
