@@ -8,10 +8,12 @@ check_overlapping <- function(dic){
 
 
 get_available_datasets <- function(){
+  datasets_list<- list.files(system.file("extdata", package = "microdadosBrasil"), full.names = TRUE) %>%
+    (function(x) return(x[dir.exists(x)])) %>%
+    str_replace(pattern = ".+/", replacement = "")
 
-
-  datasets_list<- data(package = "microdadosBrasil")$results[,"Item"] %>%
-    gsub(pattern = "_dics", replacement = "")
+  #datasets_list<- data(package = "microdadosBrasil")$results[,"Item"] %>%
+   #gsub(pattern = "_dics", replacement = "")
 
   return(datasets_list)
 }
