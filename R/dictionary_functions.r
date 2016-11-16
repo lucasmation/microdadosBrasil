@@ -14,24 +14,29 @@
 get_import_dictionary <- function(dataset, i, ft){
   x<- environment()
 
-   datasets_list<- data(package = "microdadosBrasil")$results[,"Item"] %>%
-                   gsub(pattern = "_dics", replacement = "")
+  datasets_list<- get_available_datasets()
 
 
-   if(!dataset %in% datasets_list){stop( paste0("The available datasets are these: ",paste(datasets_list,collapse = ", ")),call. = FALSE)}
+  if(!dataset %in% datasets_list){stop( paste0("Dataset not available. The available datasets are these: ",paste(datasets_list,collapse = ", ")),call. = FALSE)}
 
+  periods_list<- get_available_periods(dataset = dataset, fwfonly = TRUE)
 
-  ref <- paste0(dataset,"_dics")
+  if(!i %in% periods_list){
+    stop( paste0("Period not available. The available periods for this dataset are these: ",
+                 paste(periods_list,collapse = ", ")),call. = FALSE)}
 
-  data(list = list(ref),envir = x)
-  dics<- get(ref,envir = x)
-  ft_list<- names(dics[[as.character(i)]]) %>% gsub(pattern = "dic_", replacement  = "") %>% gsub( pattern = paste0("_",i), replacement = "")
-  ft_list<- ft_list[!is.na(dics[[as.character(i)]])]
+  ft_list<- get_available_filetypes(dataset, i)
 
-  if(!i %in% names(dics)){ stop(paste0("The available periods for this dataset are these: ", paste(names(dics),collapse =", ")),call. = FALSE)}
-  if(!ft %in% ft_list){ stop(paste0("The available dictionaries for this period and this dataset are these:  : ", paste(ft_list, collapse = ", ")),call. = FALSE)}
+  if(!ft %in% ft_list){
+    stop( paste0("File type not available. The available file types for this dataset and this period are these: ",
+                 paste(ft_list,collapse = ", ")),call. = FALSE)}
 
-  return(dics[[as.character(i)]][[paste0("dic_",ft,"_",i)]])
+ dic<-  read.csv2(system.file("extdata", dataset,"dictionaries",
+                        paste0("import_dictionary_",dataset,"_", ft,"_", period, ".csv"),
+                        package = "microdadosBrasil"),
+            stringsAsFactors = FALSE)
+
+  return(dic)
 }
 
 #' @importFrom stringr str_trim
@@ -43,10 +48,10 @@ parses_SAS_import_dic <- function(file){
   names(dic_sas) <- 'a'
   dic_sas %>% filter(grepl("^@",a)) %>%
     tidyr::extract_("a", into=c('int_pos', 'var_name', 'x', 'label'),
-            "[[:punct:]\\s+](\\d+)\\s+(\\S+)(?:\\s+([[:graph:]$]+)())?")  %>%
+                    "[[:punct:]\\s+](\\d+)\\s+(\\S+)(?:\\s+([[:graph:]$]+)())?")  %>%
     mutate_(int_pos= ~as.numeric(int_pos),
-           length=gregexpr("[[:digit:]]+(?=\\.)",~x,perl = TRUE) %>% regmatches(x = ~x) %>% as.numeric,
-           decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",~x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
+            length=gregexpr("[[:digit:]]+(?=\\.)",~x,perl = TRUE) %>% regmatches(x = ~x) %>% as.numeric,
+            decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",~x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
   dic %>% mutate(
     decimal_places=ifelse(is.na(decimal_places),0,decimal_places),
     fin_pos= int_pos+length -1,
@@ -156,22 +161,22 @@ parses_SQL_import_dic <- function(file){
     mutate_(int_pos= ~as.numeric(int_pos),
             fin_pos= ~as.numeric(fin_pos),
             length= ~fin_pos - int_pos + 1) -> dic
-#             decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",~x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
-#   dic %>% mutate(
-#     decimal_places=ifelse(is.na(decimal_places),0,decimal_places),
-#     fin_pos= int_pos+length -1,
-#     col_type=ifelse(is.na(x),'c',
-#                     ifelse(grepl("\\$",x),'c',
-#                            ifelse(length<=9 & decimal_places==0,'i','d'))) ,
-#     CHAR=ifelse(grepl("\\$",x),TRUE,FALSE)
-#   ) -> dic
+  #             decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",~x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
+  #   dic %>% mutate(
+  #     decimal_places=ifelse(is.na(decimal_places),0,decimal_places),
+  #     fin_pos= int_pos+length -1,
+  #     col_type=ifelse(is.na(x),'c',
+  #                     ifelse(grepl("\\$",x),'c',
+  #                            ifelse(length<=9 & decimal_places==0,'i','d'))) ,
+  #     CHAR=ifelse(grepl("\\$",x),TRUE,FALSE)
+  #   ) -> dic
 
   #ALGUNS DICIONARIOS N?O MOSTRAM O TAMANHO PARA ALGUNS CAMPOS, APENAS A POSI??O INICIAL E FINAL
-#   estimated_length<- dic$int_pos %>% diff %>% c(0)
-#   dic$length[is.na(dic$length)]<- estimated_length
-#   estimated_final<- dic$int_pos + dic$length
-#   dic$fin_pos[is.na(dic$fin_pos)]<- estimated_final[is.na(dic$fin_pos)]
-#
+  #   estimated_length<- dic$int_pos %>% diff %>% c(0)
+  #   dic$length[is.na(dic$length)]<- estimated_length
+  #   estimated_final<- dic$int_pos + dic$length
+  #   dic$fin_pos[is.na(dic$fin_pos)]<- estimated_final[is.na(dic$fin_pos)]
+  #
   dic %>% return
 }
 
