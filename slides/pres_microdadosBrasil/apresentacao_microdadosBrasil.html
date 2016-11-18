@@ -337,7 +337,7 @@ d&lt;- read_CensoEscolar(ft = &quot;escola&quot;, i = 2000)</pre>
 
 <!-- html table generated in R 3.3.1 by xtable 1.8-2 package -->
 
-<!-- Wed Nov 09 00:28:00 2016 -->
+<!-- Wed Nov 09 01:04:40 2016 -->
 
 <table border="1">
 
@@ -515,6 +515,162 @@ inputs_folder
 
 </th>
 
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+PNAD_reponderado_2001/2001
+
+</td>
+
+<td style="text-align:left;">
+
+Input
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+PNAD_reponderado_2002/2002
+
+</td>
+
+<td style="text-align:left;">
+
+Input
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+PNAD_reponderado_2003_20150814/2003
+
+</td>
+
+<td style="text-align:left;">
+
+Input
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</article></slide><slide class=''><hgroup><h2>CSV com Metadados</h2></hgroup><article  id="csv-com-metadados-3">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+data_folder
+
+</th>
+
+<th style="text-align:left;">
+
+ft_domicilios
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Dados
+
+</td>
+
+<td style="text-align:left;">
+
+INPUT DOM2001.txt&amp;DOM2001.txt
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Dados
+
+</td>
+
+<td style="text-align:left;">
+
+INPUT DOM2002.txt&amp;DOM2002.txt
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Dados
+
+</td>
+
+<td style="text-align:left;">
+
+INPUT DOM2003.txt&amp;DOM2003.txt
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</article></slide><slide class=''><hgroup><h2>CSV com Metadados</h2></hgroup><article  id="csv-com-metadados-4">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+path
+
+</th>
+
+<th style="text-align:left;">
+
+inputs_folder
+
+</th>
+
 <th style="text-align:left;">
 
 data_folder
@@ -650,7 +806,7 @@ INPUT DOM2003.txt&amp;DOM2003.txt
 
 <!-- html table generated in R 3.3.1 by xtable 1.8-2 package -->
 
-<!-- Wed Nov 09 00:28:00 2016 -->
+<!-- Wed Nov 09 01:04:41 2016 -->
 
 <table border=1>
 
@@ -1163,69 +1319,63 @@ TRUE
 
 </article></slide><slide class=''><hgroup><h2>Funções auxiliares</h2></hgroup><article  id="funcoes-auxiliares-2">
 
-<pre class = 'prettyprint lang-r'>get_import_dictionary(&quot;CensoEscolar&quot;, 2000, &#39;escola&#39;) %&gt;% head</pre>
+<pre class = 'prettyprint lang-r'>get_import_dictionary(&quot;CensoEscolar&quot;, 2000, &#39;escola&#39;) %&gt;% head %&gt;% kable(format = &quot;html&quot;)</pre>
 
-<!-- html table generated in R 3.3.1 by xtable 1.8-2 package -->
+<table>
 
-<!-- Wed Nov 09 00:28:01 2016 -->
-
-<table border=1>
+<thead>
 
 <tr>
 
-<th>
-
-</th>
-
-<th>
+<th style="text-align:right;">
 
 int_pos
 
 </th>
 
-<th>
+<th style="text-align:left;">
 
 var_name
 
 </th>
 
-<th>
+<th style="text-align:left;">
 
 x
 
 </th>
 
-<th>
+<th style="text-align:left;">
 
 label
 
 </th>
 
-<th>
+<th style="text-align:right;">
 
 length
 
 </th>
 
-<th>
+<th style="text-align:right;">
 
 decimal_places
 
 </th>
 
-<th>
+<th style="text-align:right;">
 
 fin_pos
 
 </th>
 
-<th>
+<th style="text-align:left;">
 
 col_type
 
 </th>
 
-<th>
+<th style="text-align:left;">
 
 CHAR
 
@@ -1233,60 +1383,58 @@ CHAR
 
 </tr>
 
+</thead>
+
+<tbody>
+
 <tr>
 
-<td align="center">
+<td style="text-align:right;">
 
 1
 
 </td>
 
-<td align="center">
-
-1
-
-</td>
-
-<td align="center">
+<td style="text-align:left;">
 
 MASCARA
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 <ol class = 'build'>
 <li></td>
 
-<td align="center">
+<td style="text-align:left;">
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 8
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 0
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 8
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 i
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 FALSE
 
@@ -1296,58 +1444,52 @@ FALSE
 
 <tr>
 
-<td align="center">
-
-2
-
-</td>
-
-<td align="center">
+<td style="text-align:right;">
 
 9
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 ANO
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 <ol class = 'build'>
 <li></td>
 
-<td align="center">
+<td style="text-align:left;">
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 5
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 0
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 13
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 i
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 FALSE
 
@@ -1357,59 +1499,53 @@ FALSE
 
 <tr>
 
-<td align="center">
-
-3
-
-</td>
-
-<td align="center">
+<td style="text-align:right;">
 
 14
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 CODMUNIC
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 $CHAR12.
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 12
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 0
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 25
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 c
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 TRUE
 
@@ -1419,59 +1555,53 @@ TRUE
 
 <tr>
 
-<td align="center">
-
-4
-
-</td>
-
-<td align="center">
+<td style="text-align:right;">
 
 26
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 UF
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 $CHAR50.
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 50
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 0
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 75
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 c
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 TRUE
 
@@ -1481,59 +1611,53 @@ TRUE
 
 <tr>
 
-<td align="center">
-
-5
-
-</td>
-
-<td align="center">
+<td style="text-align:right;">
 
 76
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 SIGLA
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 $CHAR2.
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 2
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 0
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 77
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 c
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 TRUE
 
@@ -1543,65 +1667,61 @@ TRUE
 
 <tr>
 
-<td align="center">
-
-6
-
-</td>
-
-<td align="center">
+<td style="text-align:right;">
 
 78
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 MUNIC
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 $CHAR50.
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 50
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 0
 
 </td>
 
-<td align="center">
+<td style="text-align:right;">
 
 127
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 c
 
 </td>
 
-<td align="center">
+<td style="text-align:left;">
 
 TRUE
 
 </td>
 
 </tr>
+
+</tbody>
 
 </table></li>
 </ol></li>
@@ -1626,126 +1746,532 @@ TRUE
 
 </article></slide><slide class=''><hgroup><h2>Comparação com outros pacotes</h2></hgroup><article  id="comparacao-com-outros-pacotes">
 
-<table class = 'rmdtable'>
-<tr class="header">
-<th align="left"></th>
-<th align="left">dicIBGE.</th>
-<th align="left">datazoom</th>
-<th align="left">adsfree</th>
-<th align="left">microdadosBrasil</th>
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+</th>
+
+<th style="text-align:left;">
+
+dicIBGE.
+
+</th>
+
+<th style="text-align:left;">
+
+datazoom
+
+</th>
+
+<th style="text-align:left;">
+
+adsfree
+
+</th>
+
+<th style="text-align:left;">
+
+microdadosBrasil
+
+</th>
+
 </tr>
-<tr class="odd">
-<td align="left">Software</td>
-<td align="left">R</td>
-<td align="left">Stata</td>
-<td align="left">R</td>
-<td align="left">R</td>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Software
+
+</td>
+
+<td style="text-align:left;">
+
+R
+
+</td>
+
+<td style="text-align:left;">
+
+Stata
+
+</td>
+
+<td style="text-align:left;">
+
+R
+
+</td>
+
+<td style="text-align:left;">
+
+R
+
+</td>
+
 </tr>
-<tr class="even">
-<td align="left">Download</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Download
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
 </tr>
-<tr class="odd">
-<td align="left">Dicionários de Importação</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Dicionários de Importação
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
 </tr>
-<tr class="even">
-<td align="left">Função de importação</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Função de importação
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
 </tr>
-<tr class="odd">
-<td align="left">Simplicidade e ergonomicidade</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left">X</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Simplicidade e ergonomicidade
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
 </tr>
-<tr class="even">
-<td align="left">Bases IBGE</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Bases IBGE
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
 </tr>
-<tr class="odd">
-<td align="left">Outras bases INEP - MTE</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Outras bases INEP - MTE
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
 </tr>
-<tr class="even">
-<td align="left">Dados &gt; RAM</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Dados &gt; RAM
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
 </tr>
-<tr class="odd">
-<td align="left">Desenho Amostral Complexo</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Desenho Amostral Complexo
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
 </tr>
-<tr class="even">
-<td align="left">Interface gráfica</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Interface gráfica
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
 </tr>
-<tr class="odd">
-<td align="left">Harmonização de variáveis</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Harmonização de variáveis
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+X
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
+<td style="text-align:left;">
+
+</td>
+
 </tr>
+
+</tbody>
+
 </table>
 
 </article></slide><slide class=''><hgroup><h2>Comparação com outros pacotes</h2></hgroup><article  id="comparacao-com-outros-pacotes-1">
 
-<table class = 'rmdtable'>
-<tr class="header">
-<th align="left">.</th>
-<th align="left">Função</th>
-<th align="right">DataZoom</th>
-<th align="right">microdadosBrasil</th>
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+.
+
+</th>
+
+<th style="text-align:left;">
+
+Função
+
+</th>
+
+<th style="text-align:right;">
+
+DataZoom
+
+</th>
+
+<th style="text-align:right;">
+
+microdadosBrasil
+
+</th>
+
 </tr>
-<tr class="odd">
-<td align="left">Linhas</td>
-<td align="left">programa</td>
-<td align="right">4828</td>
-<td align="right">692</td>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Linhas
+
+</td>
+
+<td style="text-align:left;">
+
+programa
+
+</td>
+
+<td style="text-align:right;">
+
+4828
+
+</td>
+
+<td style="text-align:right;">
+
+692
+
+</td>
+
 </tr>
-<tr class="even">
-<td align="left">Linhas</td>
-<td align="left">metadado</td>
-<td align="right">NA</td>
-<td align="right">191</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Linhas
+
+</td>
+
+<td style="text-align:left;">
+
+metadado
+
+</td>
+
+<td style="text-align:right;">
+
+NA
+
+</td>
+
+<td style="text-align:right;">
+
+191
+
+</td>
+
 </tr>
-<tr class="odd">
-<td align="left">Caracteres</td>
-<td align="left">programa</td>
-<td align="right">257601</td>
-<td align="right">17305</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Caracteres
+
+</td>
+
+<td style="text-align:left;">
+
+programa
+
+</td>
+
+<td style="text-align:right;">
+
+257601
+
+</td>
+
+<td style="text-align:right;">
+
+17305
+
+</td>
+
 </tr>
-<tr class="even">
-<td align="left">Caracteres</td>
-<td align="left">metadado</td>
-<td align="right">NA</td>
-<td align="right">43404</td>
+
+<tr>
+
+<td style="text-align:left;">
+
+Caracteres
+
+</td>
+
+<td style="text-align:left;">
+
+metadado
+
+</td>
+
+<td style="text-align:right;">
+
+NA
+
+</td>
+
+<td style="text-align:right;">
+
+43404
+
+</td>
+
 </tr>
+
+</tbody>
+
 </table>
 
 </article></slide><slide class=''><hgroup><h2>Próximos passos</h2></hgroup><article  id="proximos-passos">

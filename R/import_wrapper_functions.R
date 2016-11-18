@@ -21,7 +21,7 @@ NULL
 #' @import magrittr
 #' @import stringr
 #' @export
-read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = file){
+read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = NULL){
 
 
   #selecting dictionaries
