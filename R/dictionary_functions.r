@@ -32,7 +32,7 @@ get_import_dictionary <- function(dataset, i, ft){
                  paste(ft_list,collapse = ", ")),call. = FALSE)}
 
  dic<-  read.csv2(system.file("extdata", dataset,"dictionaries",
-                        paste0("import_dictionary_",dataset,"_", ft,"_", period, ".csv"),
+                        paste0("import_dictionary_",dataset,"_", ft,"_", i ,".csv"),
                         package = "microdadosBrasil"),
             stringsAsFactors = FALSE)
 

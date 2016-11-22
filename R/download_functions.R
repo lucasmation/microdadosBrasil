@@ -2,22 +2,19 @@
 #' @import RCurl
 #' @export
 download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, replace = FALSE){
-  dataset_list<- system.file("extdata", package = "microdadosBrasil") %>%
-    list.files(pattern = "files") %>%
-    gsub(pattern = "_.+", replacement = "")
 
 
-
+  dataset_list<- get_available_datasets()
 
   #Test if parameters are valid
 
   if( !(dataset %in% dataset_list ) ) {
-    stop(paste0("Invalid dataset. Must be one of the following: ",paste(dataset_list, collapse=", ")) ) }
+  stop(paste0("Invalid dataset. Must be one of the following: ",paste(dataset_list, collapse=", ")) ) }
 
   metadata <-  read_metadata(dataset)
 
-  i_min    <- min(metadata$period)
-  i_max    <- max(metadata$period)
+  i_range<- get_available_periods(metadata)
+  if (!(i %in% i_range)) { stop(paste0("period must be in ", paste(i_range, collapse = ", "))) }
 
   if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
 
