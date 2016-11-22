@@ -1,7 +1,7 @@
 
 #' @import RCurl
 #' @export
-download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, replace = FALSE){
+download_sourceData <- function(dataset, i, unzip=T, ft=NULL, root_path = NULL, replace = FALSE){
 
 
   dataset_list<- get_available_datasets()
@@ -15,8 +15,6 @@ download_sourceData <- function(dataset, i, unzip=T, ft=NULL, dest = NULL, repla
 
   i_range<- get_available_periods(metadata)
   if (!(i %in% i_range)) { stop(paste0("period must be in ", paste(i_range, collapse = ", "))) }
-
-  if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
 
 
   ft_list  <- names(metadata)[grep("ft_", names(metadata))]
