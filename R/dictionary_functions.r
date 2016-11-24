@@ -50,8 +50,8 @@ parses_SAS_import_dic <- function(file){
     tidyr::extract_("a", into=c('int_pos', 'var_name', 'x', 'label'),
                     "[[:punct:]\\s+](\\d+)\\s+(\\S+)(?:\\s+([[:graph:]$]+)())?")  %>%
     mutate_(int_pos= ~as.numeric(int_pos),
-            length=gregexpr("[[:digit:]]+(?=\\.)",~x,perl = TRUE) %>% regmatches(x = ~x) %>% as.numeric,
-            decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",~x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
+            length= ~gregexpr("[[:digit:]]+(?=\\.)",x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric,
+            decimal_places= ~gregexpr("(?<=\\.)[[:digit:]]+",x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
   dic %>% mutate(
     decimal_places=ifelse(is.na(decimal_places),0,decimal_places),
     fin_pos= int_pos+length -1,
