@@ -95,4 +95,17 @@ names(PME_dics)<- metadata$period
 
 save(PME_dics, file = paste0(dic_folder, "/PME_dics.rda"))
 
+########################## ENEM ######################################################
+
+
+path<- "C:/Users/b2826073/Documents/Datasets/ENEM"
+
+
+oldwd<- getwd()
+setwd(path)
+metadata<- read_metadata("ENEM")
+get_all_dics(metadata)
+
+
+
 

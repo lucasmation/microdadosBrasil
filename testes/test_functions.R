@@ -45,9 +45,9 @@ test_download<- function(dataset,folder,periods = NULL, unzip = F){
 test_read <- function(dataset,folder,periods = NULL){
 
   results<-data.frame()
-  dataset2<- ifelse(dataset == "CENSO", "CensoIBGE",dataset)
 
-  metadata<- read_metadata(dataset2)
+
+  metadata<- read_metadata(dataset)
 
   if(is.null(periods)){
     periods <- metadata$period
