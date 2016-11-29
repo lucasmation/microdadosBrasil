@@ -67,7 +67,7 @@ aux_read_fwf <- function(f,dic){
 #' @import dplyr
 #' @importFrom data.table data.table setnames rbindlist
 #' @export
-read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL){
+read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL, vars_subset = NULL){
 
     #Check for inconsistency in parameters
   # status:
@@ -96,7 +96,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   ft2      <- paste0("ft_",ft)
   ft_list2 <- paste0("ft_",ft_list)
 
-  var_list <- names(metadata)[ !(names(metadata) %in% ft_list)]
+  var_list <- names(metadata)[ !(names(metadata) %in% ft_list2)]
 
     #subseting metadata and var_translator
     md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
@@ -132,6 +132,13 @@ print(files)
     if(format=='fwf'){
 
       dic <- get_import_dictionary(dataset, i, ft)
+      if(!is.null(vars_subset)){
+      dic<- dic[dic$var_name %in% vars_subset,]
+      if(dim(dic)[1] == 0){
+
+        stop("There are no valid variables in the provided subset")
+        }
+      }
 
       lapply(files,aux_read_fwf, dic=dic) %>% bind_rows -> d
     }
