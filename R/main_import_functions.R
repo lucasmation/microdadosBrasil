@@ -145,13 +145,18 @@ print(files)
     }
     if(format=='csv'){
 
-      if(!is.null(vars_subset){warning("You provided a subset of variables for a dataset that doesn't have a dictionary, make sure to provide valid variable names.")})
+      if(!is.null(vars_subset)){warning("You provided a subset of variables for a dataset that doesn't have a dictionary, make sure to provide valid variable names.", call. = FALSE)
 
-      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names=T) -> d
-      #     lapply(files,read_delim, delim = delim) -> d2
-      #     d2 %>% bind_rows -> d
-      # d <- (csv_file, )
-    }
+        lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names=T) -> d
+
+        }else{
+        lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
+      }
+
+
+      }
+
+
     t1 <- Sys.time()
     print(t1-t0)
     print(object.size(d), units = "Gb")
