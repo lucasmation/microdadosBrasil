@@ -121,15 +121,8 @@ read_RAIS<- function(ft, i,root_path = NULL,file = NULL, vars_subset = NULL,UF =
     metadata$ft_vinculos <- metadata$ft_vinculos %>%
       gsub(pattern = "[A-Z]{2}", replacement = UF, fixed = TRUE)}
 
-  if(is.null(ft)){
-    ft<-   names(metadata)[grepl("ft_", names(metadata))] %>%
-     gsub(pattern = "ft_", replacement = "") %>% .[-1]
-  }
 
-  if(length(ft)>1){
-    data<- lapply(X = ft,FUN = read_data, i = i, metadata = metadata, dic_list = NULL, root_path = root_path) %>% bind_rows
-  }
-  data<- read_data(dataset = "RAIS",ft = ft, i = i, metadata = metadata, root_path = root_path,file = file, vars_subset = vars_subset)
+  data <- read_data(dataset = "RAIS",ft = ft, i = i, metadata = metadata, root_path = root_path,file = file, vars_subset = vars_subset)
 
   return(data)
 }
