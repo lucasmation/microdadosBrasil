@@ -116,16 +116,17 @@ print(str(vt))
 
 print(file_name)
 print(data_path)
-    files <- paste0(data_path,'/',list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE))
+    files <- list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE, full.names = TRUE)
 print(files)
 
 
-    if (!file.exists(files) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
+    if (!any(file.exists(files)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
 
 
   #Importing
   if(status == 3){
     files = file
+    if (!any(file.exists(file)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
   }
     print(format)
     t0 <- Sys.time()
