@@ -1,0 +1,14 @@
+"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
+1;"LIVRO";"NA";"";6;0;6;"c";TRUE
+7;"FOLHA";"NA";"";5;0;11;"c";TRUE
+12;"TERMO";"NA";"";10;0;21;"c";TRUE
+22;"DT_LAVRATURA";"NA";"";8;0;29;"c";TRUE
+30;"N_BENEF";"NA";"";10;0;39;"c";TRUE
+40;"NOME_SCO";"NA";"";76;0;115;"c";TRUE
+116;"MAE_SCO";"NA";"";32;0;147;"c";TRUE
+148;"DT_NASC_SCO";"NA";"";8;0;155;"c";TRUE
+156;"DT_OBITO";"NA";"";8;0;163;"c";TRUE
+164;"CPF_SCO";"NA";"";11;0;174;"c";TRUE
+175;"NIT_SCO";"NA";"";11;0;185;"c";TRUE
+186;"TP_CART";"NA";"";1;0;186;"c";TRUE
+187;"ID_CART";"NA";"";1;0;187;"c";TRUE
