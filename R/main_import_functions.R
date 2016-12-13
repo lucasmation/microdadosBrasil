@@ -67,7 +67,7 @@ aux_read_fwf <- function(f,dic){
 #' @import dplyr
 #' @importFrom data.table data.table setnames rbindlist
 #' @export
-read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL){
+read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL, vars_subset = NULL){
 
     #Check for inconsistency in parameters
   # status:
@@ -96,7 +96,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   ft2      <- paste0("ft_",ft)
   ft_list2 <- paste0("ft_",ft_list)
 
-  var_list <- names(metadata)[ !(names(metadata) %in% ft_list)]
+  var_list <- names(metadata)[ !(names(metadata) %in% ft_list2)]
 
     #subseting metadata and var_translator
     md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
@@ -116,32 +116,47 @@ print(str(vt))
 
 print(file_name)
 print(data_path)
-    files <- paste0(data_path,'/',list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE))
+    files <- list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE, full.names = TRUE)
 print(files)
 
 
-    if (!file.exists(files) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
+    if (!any(file.exists(files)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
 
 
   #Importing
   if(status == 3){
     files = file
+    if (!any(file.exists(file)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
   }
     print(format)
     t0 <- Sys.time()
     if(format=='fwf'){
 
       dic <- get_import_dictionary(dataset, i, ft)
+      if(!is.null(vars_subset)){
+      dic<- dic[dic$var_name %in% vars_subset,]
+      if(dim(dic)[1] == 0){
+
+        stop("There are no valid variables in the provided subset")
+        }
+      }
 
       lapply(files,aux_read_fwf, dic=dic) %>% bind_rows -> d
     }
     if(format=='csv'){
-      print('b')
-      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
-      #     lapply(files,read_delim, delim = delim) -> d2
-      #     d2 %>% bind_rows -> d
-      # d <- (csv_file, )
-    }
+
+      if(!is.null(vars_subset)){warning("You provided a subset of variables for a dataset that doesn't have a dictionary, make sure to provide valid variable names.", call. = FALSE)
+
+        lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names=T) -> d
+
+        }else{
+        lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
+      }
+
+
+      }
+
+
     t1 <- Sys.time()
     print(t1-t0)
     print(object.size(d), units = "Gb")
