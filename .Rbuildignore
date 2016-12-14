@@ -13,3 +13,4 @@ dics_to_list.R
 ^README_PT\.md$
 ^.RDataTmp$
 slides/
+.travis.yml
