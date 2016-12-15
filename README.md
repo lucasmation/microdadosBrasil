@@ -1,6 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 microdadosBrasil
 ================
+[![Travis-CI Build Status](https://travis-ci.org/nicolassoarespinto/microdadosBrasil.svg?branch=master)](https://travis-ci.org/lucasmation/microdadosBrasil)
 
 work in progress
 ----------------
