@@ -15,25 +15,29 @@
 \title{Functions to read most common Brazillian dataset}
 \usage{
 read_CensoEscolar(ft, i, harmonize_varnames = F, root_path = NULL,
-  file = NULL)
+  file = NULL, vars_subset = NULL)
 
-read_CensoEducacaoSuperior(ft, i, root_path = NULL, file = NULL)
+read_CensoEducacaoSuperior(ft, i, root_path = NULL, file = NULL,
+  vars_subset = NULL)
 
-read_ENEM(ft, i, root_path = NULL, file = NULL)
+read_ENEM(ft, i, root_path = NULL, file = NULL, vars_subset = NULL)
 
-read_CENSO(ft, i, root_path = NULL, file = NULL, UF = NULL)
+read_CENSO(ft, i, root_path = NULL, file = NULL, vars_subset = NULL,
+  UF = NULL)
 
-read_RAIS(ft, i, root_path = NULL, file = NULL, UF = NULL)
+read_RAIS(ft, i, root_path = NULL, file = NULL, vars_subset = NULL,
+  UF = NULL)
 
-read_CAGED(ft, i, root_path = NULL, file = NULL)
+read_CAGED(ft, i, root_path = NULL, file = NULL, vars_subset = NULL)
 
-read_PNAD(ft, i, root_path = NULL, file = NULL)
+read_PNAD(ft, i, root_path = NULL, file = NULL, vars_subset = NULL)
 
-read_PME(ft, i, root_path = NULL, file = NULL)
+read_PME(ft, i, root_path = NULL, file = NULL, vars_subset = NULL)
 
-read_POF(ft, i, root_path = NULL, file = NULL)
+read_POF(ft, i, root_path = NULL, file = NULL, vars_subset = NULL)
 
-read_PNADcontinua(ft, i, root_path = NULL, file = NULL)
+read_PNADcontinua(ft, i, root_path = NULL, file = NULL,
+  vars_subset = NULL)
 }
 \arguments{
 \item{ft}{file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')}
