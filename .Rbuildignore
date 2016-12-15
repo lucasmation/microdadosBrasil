@@ -14,3 +14,4 @@ dics_to_list.R
 ^.RDataTmp$
 slides/
 .travis.yml
+^\.travis\.yml$

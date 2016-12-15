@@ -5,7 +5,7 @@
 \title{Reads files (fwf or csv).}
 \usage{
 read_data(dataset, ft, i, metadata = NULL, var_translator = NULL,
-  root_path = NULL, file = NULL)
+  root_path = NULL, file = NULL, vars_subset = NULL)
 }
 \arguments{
 \item{dataset}{.}

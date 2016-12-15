@@ -102,7 +102,7 @@ read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF
 
 
 
-  data<-read_data(dataset = "CENSO", ft = ft,i = i, root_path = root_path,file = file, vars_subset = vars_subset, vars_subset = vars_subset)
+  data<-read_data(dataset = "CENSO", ft = ft,i = i, root_path = root_path,file = file, vars_subset = vars_subset)
 
 
   return(data)
