@@ -10,7 +10,7 @@ Authors@R: as.person(c(
 Description: A set of simple functions to read most commonly used public microdata on Brazil.
     Downloads and reads the main datasets from IBGE, INEP and MTE for
     all years available on-line. Handles csv and fixed width format (fwf) data, for
-    which it includes dictionaries. The core "read_data" function is based on dplyr
+    which it includes dictionaries. The core "read_data" function is based on readr
     (for fwf) and data.table (for csv), thus is fast. Metadata harmonization tables
     for and wrapper functions, such as read_CENSO, read_PNAD, read_CensoEscolar and
     read_RAIS, handle the details of each dataset-year and make this package easily
@@ -36,6 +36,7 @@ BugReports: https://github.com/lucasmation/microdadosBrasil/issues
 RoxygenNote: 5.0.1
 LazyData: true
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
 Encoding: UTF-8
