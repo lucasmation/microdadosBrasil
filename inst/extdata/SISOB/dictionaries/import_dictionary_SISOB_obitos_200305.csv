@@ -1,0 +1,8 @@
+"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
+1;"NOME_SCO";"NA";"";76;0;76;"c";TRUE
+77;"DT_NASC_SCO";"NA";"";8;0;84;"c";TRUE
+85;"DT_OBITO";"NA";"";8;0;92;"c";TRUE
+93;"N_BENEF";"NA";"";10;0;102;"c";TRUE
+103;"CPF_SCO";"NA";"";11;0;113;"c";TRUE
+114;"MAE_SCO";"NA";"";32;0;145;"c";TRUE
+146;"ID_CART";"NA";"";9;0;154;"c";TRUE

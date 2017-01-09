@@ -2,7 +2,7 @@
 
 #' @export
 read_metadata <- function(dataset){
-  read.csv2(system.file("extdata",
+  read.csv2(system.file("extdata", dataset,
                         paste0(dataset,'_files_metadata_harmonization.csv'),
                         package = "microdadosBrasil"),
             stringsAsFactors = FALSE)
@@ -67,52 +67,36 @@ aux_read_fwf <- function(f,dic){
 #' @import dplyr
 #' @importFrom data.table data.table setnames rbindlist
 #' @export
-read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL){
+read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL, vars_subset = NULL){
 
     #Check for inconsistency in parameters
-    if(!is.null(root_path) & !is.null(file)){
-      status = 0
-      stop(paste0("\nPlease, do not specify both the 'root_path' and 'file' parameters to the function. You can:\n",
-              "1) Specify neither the 'root_path' nor the 'file' argument, in this case we will assume that data is in your working directory and the files are named exactly as  they have been downloaded from the source.\n",
-              "2) Specify only the 'root_path' argument, in this case we will assume that data is in the directory specified and it is exactly as it have been downloaded from the source.\n"),
-              "3) Specify only the 'file' argument, in this case we will assume that data is in a .txt or .csv file stored in the adress specified by the 'file' parameter.")
+  # status:
+  # 0 - Both root_path and file, error
+  # 1 - No root_path ,no file
+  # 2 - Only root_path
+  # 3 - Only file
+  status<-  test_path_arguments(root_path, file)
+  if(status == 0){ stop()}
+
+  if (!(dataset %in% get_available_datasets())) {
+    stop(paste0(dataset, " is not a valid dataset. Available datasets are: ", paste(get_available_datasets(), collapse = ", "))) }
 
 
-    }else{
-      if(is.null(root_path) & is.null(file)){
-        status = 1
-        message(paste0("You haven't specified neither the 'root_path' nor ther 'file' parameters to the function. in this case we will assume that data is in your working directory and the files are named exactly as  they have been downloaded from the source.\n"))
+  if(is.null(metadata)){metadata<- read_metadata(dataset)}
 
 
-      }else{
-      if(is.null(file)){
-        status = 2
-        message(paste0("You have specified only the 'root_path' argument, in this case we will assume that data is in the directory specified and it is exactly as it have been downloaded from the source.\n"))
+  i_range<- get_available_periods(metadata)
+  if (!(i %in% i_range)) { stop(paste0("period must be in ", paste(i_range, collapse = ", "))) }
 
+  ft_list<- get_available_filetypes(metadata, i)
+  if (!(ft %in% ft_list ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list, collapse=", "),
+                                            '. See table of valid file types for each period at "http://www.github.com/lucasmation/microdadosBrasil'))  }
 
-      }else{
-        status = 3
+  #names used to subset metadata data.frame
+  ft2      <- paste0("ft_",ft)
+  ft_list2 <- paste0("ft_",ft_list)
 
-        message(paste0("You have specified only the 'file' argument, in this case we will assume that data is in a .txt or .csv file stored in the adress specified by the 'file' parameter.\n"))
-        if (!file.exists(file)) { stop("Data not found. Check if you have provided a valid adress in the 'file' parameter" )  }
-      }
-      }
-    }
-
-
-print(i)
-  #Extracting Parameters
-    if(is.null(metadata)){metadata<- read_metadata(dataset)}
-    i_min    <- min(metadata$period)
-    i_max    <- max(metadata$period)
-    ft2      <- paste0("ft_",ft)
-    ft_list  <- names(metadata)[grep("ft_", names(metadata))]
-    ft_list2 <- gsub("ft_","",names(metadata)[grep("ft_", names(metadata))])
-    var_list <- names(metadata)[ !(names(metadata) %in% ft_list)]
-    #Checking if parameters are valid
-    if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
-    if (!(ft %in% ft_list2 ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list2, collapse=", "),
-                                               '. See table of valid file types for each period at XXX'))  }
+  var_list <- names(metadata)[ !(names(metadata) %in% ft_list2)]
 
     #subseting metadata and var_translator
     md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
@@ -132,35 +116,47 @@ print(str(vt))
 
 print(file_name)
 print(data_path)
-    files <- paste0(data_path,'/',list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE))
+    files <- list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE, full.names = TRUE)
 print(files)
 
-  #Checking if parameters are valid
-    if (!(i %in% metadata$period)) { stop(paste0("period must be between ", i_min," and ", i_max )) }
-    if (!(ft %in% ft_list2 ))    { stop(paste0('ft (file type) must be one of these: ',paste(ft_list2, collapse=", "),
-                                          '. See table of valid file types for each period at XXX'))  }
-    if (!file.exists(files) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
+
+    if (!any(file.exists(files)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
 
 
   #Importing
   if(status == 3){
     files = file
+    if (!any(file.exists(file)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
   }
     print(format)
     t0 <- Sys.time()
     if(format=='fwf'){
 
       dic <- get_import_dictionary(dataset, i, ft)
+      if(!is.null(vars_subset)){
+      dic<- dic[dic$var_name %in% vars_subset,]
+      if(dim(dic)[1] == 0){
+
+        stop("There are no valid variables in the provided subset")
+        }
+      }
 
       lapply(files,aux_read_fwf, dic=dic) %>% bind_rows -> d
     }
     if(format=='csv'){
-      print('b')
-      lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
-      #     lapply(files,read_delim, delim = delim) -> d2
-      #     d2 %>% bind_rows -> d
-      # d <- (csv_file, )
-    }
+
+      if(!is.null(vars_subset)){warning("You provided a subset of variables for a dataset that doesn't have a dictionary, make sure to provide valid variable names.", call. = FALSE)
+
+        lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names=T) -> d
+
+        }else{
+        lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
+      }
+
+
+      }
+
+
     t1 <- Sys.time()
     print(t1-t0)
     print(object.size(d), units = "Gb")
