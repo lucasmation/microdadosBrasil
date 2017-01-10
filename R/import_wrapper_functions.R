@@ -190,3 +190,15 @@ read_PNADcontinua<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL
 }
 
 
+#' @rdname read_dataset
+#' @export
+read_PNS<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL){
+
+
+
+  data<-read_data(dataset = "PNS",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset)
+
+  return(data)
+}
+
+
