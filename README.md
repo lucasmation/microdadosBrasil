@@ -1,20 +1,17 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 microdadosBrasil
 ================
-[![Travis-CI Build Status](https://travis-ci.org/lucasmation/microdadosBrasil.svg?branch=master)](https://travis-ci.org/lucasmation/microdadosBrasil)
 
 work in progress
 ----------------
 
 ### NEW:
 
--   Censo 2010
 -   Don't use R? See: [using the package from Stata and Python](https://github.com/lucasmation/microdadosBrasil/blob/master/vignettes/Running_from_other_software.Rmd)
 
 ### COMMING SOON:
 
 -   vignettes and Portuguese documentation
--   RAIS and CAGED (public versions) , PNAD\_Continua
 -   Censo 1991, PNADs before 2001
 -   Support for data not fitting into memory.
 
@@ -54,8 +51,8 @@ devtools::install_github("lucasmation/microdadosBrasil")
 library('microdadosBrasil')
 ```
 
-Usage
------
+Basic Usage
+-----------
 
 ``` r
 ##############
@@ -100,6 +97,40 @@ download_sourceData("PME", i = "2012.01")
 d <- read_PME("vinculos", "2012.01")
 ```
 
+Other options
+-------------
+
+### Subsetting datasets
+
+To read only a selected subset of the data, use the argument `vars_subset`, the default is `vars_subset = NULL`, this would result in no subseting.
+
+Example, To read only sex and *percapita* income variable of PNAD 2014, type:
+
+``` r
+
+d<- read_PNAD("pessoas",i = 2014, root_path = path.expand("~/Datasets/PNAD"), 
+              vars_subset =  c("V0302","V4750"))
+```
+
+### Ignore metadata and read the dataset directly from selected file
+
+If for some reason you renamed a file or folder, our metadata won't work for you and you will need to use the argument `file` to point wich file is to be imported.
+
+In this situation, the command would look like this:
+
+### Get import dictionaries
+
+If you only need the import dictionaries and don't want to use the import functions of the package. Use the function `get_import_dictionary`
+
+``` r
+
+pnad_dic<- get_import_dictionary(dataset = "PNAD",i = 2014, ft = "pessoas")
+```
+
+``` r
+d<- read_PNAD("pessoas",i = 2014, file = path.expand("~/Datasets/PNAD/Dados/pnad_pessoas.txt"))
+```
+
 Related efforts
 ---------------
 
@@ -140,7 +171,7 @@ Users then normally manually reconstruct the import dictionaries in R by hand. T
 
 ### microdadosBrasil aproach
 
-(soon )
+(soon)
 
 #### Design principles
 
