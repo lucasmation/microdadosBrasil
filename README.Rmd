@@ -138,20 +138,6 @@ If for some reason you renamed a file or folder, our metadata won't work for you
 In this situation, the command would look like this:
 
 ```{r, eval = FALSE}
-<<<<<<< HEAD
-=======
-
-d<- read_PNAD("pessoas",i = 2014, file = path.expand("~/Datasets/PNAD/pnad_pes.txt"))
-
-```
-
-
-In this case you will also receive a warning:
-
-`You have specified  the 'file' argument, in this case we will assume that data is in a .txt or .csv file stored in the address specified by the 'file' parameter`
-
-
->>>>>>> e774ca063dd29afa6c592530c1e0569c500e244b
 
 d<- read_PNAD("pessoas",i = 2014, file = path.expand("~/Datasets/PNAD/pnad_pes.txt"))
 

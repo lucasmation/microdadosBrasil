@@ -118,6 +118,15 @@ If for some reason you renamed a file or folder, our metadata won't work for you
 
 In this situation, the command would look like this:
 
+``` r
+
+d<- read_PNAD("pessoas",i = 2014, file = path.expand("~/Datasets/PNAD/pnad_pes.txt"))
+```
+
+In this case you will also receive a warning:
+
+`You have specified  the 'file' argument, in this case we will assume that data is in a .txt or .csv file stored in the address specified by the 'file' parameter`
+
 ### Get import dictionaries
 
 If you only need the import dictionaries and don't want to use the import functions of the package. Use the function `get_import_dictionary`
@@ -125,10 +134,6 @@ If you only need the import dictionaries and don't want to use the import functi
 ``` r
 
 pnad_dic<- get_import_dictionary(dataset = "PNAD",i = 2014, ft = "pessoas")
-```
-
-``` r
-d<- read_PNAD("pessoas",i = 2014, file = path.expand("~/Datasets/PNAD/Dados/pnad_pessoas.txt"))
 ```
 
 Related efforts
