@@ -2,6 +2,14 @@
 library(stringr)
 library(tidyr)
 
+
+##################
+#
+# 10/01: This script is outdated, do not try to use it. The function get_all_dics() can be used to facilitate building dictionaries, but we do not have a general approach yet.
+#
+#
+
+######################################
 # This script replicates the generation of the dictionaries used in this package, #
 # it reads the SAS dictionaries, store and organize in a list for each dataset,   #
 # and save the list as a .rda file
@@ -105,6 +113,21 @@ oldwd<- getwd()
 setwd(path)
 metadata<- read_metadata("ENEM")
 get_all_dics(metadata)
+
+
+#################### PNS ########################################
+
+path<- path.expand("~/Datasets/PNS")
+
+oldwd<- getwd()
+
+setwd(path)
+metadata<- read_metadata("PNS")
+get_all_dics(metadata)
+
+write.table(dic_domicilios_2013, file = "import_dictionary_PNS_domicilios_2013.csv", sep = ";", row.names = F)
+write.table(dic_pessoas_2013, file = "import_dictionary_PNS_pessoas_2013.csv", sep = ";", row.names = F)
+
 
 
 

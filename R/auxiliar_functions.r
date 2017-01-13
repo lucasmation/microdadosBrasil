@@ -18,14 +18,14 @@ test_path_arguments<- function(root_path, file){
     }else{
       if(is.null(file)){
         status = 2
-        message(paste0("You have specified only the 'root_path' argument, in this case we will assume that data is in the directory specified and it is exactly as it have been downloaded from the source.\n"))
+        message(paste0("You have specified the 'root_path' argument, in this case we will assume that data is in the directory specified and it is exactly as it have been downloaded from the source.\n"))
 
 
       }else{
         status = 3
 
-        message(paste0("You have specified only the 'file' argument, in this case we will assume that data is in a .txt or .csv file stored in the adress specified by the 'file' parameter.\n"))
-        if (!file.exists(file)) { stop("Data not found. Check if you have provided a valid adress in the 'file' parameter" )  }
+        message(paste0("You have specified the 'file' argument, in this case we will assume that data is in a .txt or .csv file stored in the adress specified by the 'file' parameter.\n"))
+        if (!file.exists(file)) { stop("Data not found. Check if you have provided a valid address in the 'file' parameter" )  }
       }
     }
   }
