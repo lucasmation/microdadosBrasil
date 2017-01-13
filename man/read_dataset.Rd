@@ -9,6 +9,7 @@
 \alias{read_PME}
 \alias{read_PNAD}
 \alias{read_PNADcontinua}
+\alias{read_PNS}
 \alias{read_POF}
 \alias{read_RAIS}
 \alias{read_dataset}
@@ -38,6 +39,8 @@ read_POF(ft, i, root_path = NULL, file = NULL, vars_subset = NULL)
 
 read_PNADcontinua(ft, i, root_path = NULL, file = NULL,
   vars_subset = NULL)
+
+read_PNS(ft, i, root_path = NULL, file = NULL, vars_subset = NULL)
 }
 \arguments{
 \item{ft}{file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')}
