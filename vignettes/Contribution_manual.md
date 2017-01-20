@@ -1,18 +1,29 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-Section about GitHub/Git/Devtools usage:
-----------------------------------------
+The toolbox:
+------------
+
+Everyone is allowed to contribute to this package or modify it for own use. If you want to do it, it will be easier if you use the same tools that we use, we suggest( but is certainly possible to do without it) that before trying, you do :
+
+-   Install GIT
+-   Fork the repository and set it up on RStudio
+-   Learn the basics about packages structure in R
+
+Design principles
+-----------------
+
+The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the of original data - into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with list of import dictionaries extracted from the SAS import instructions from the data provider, serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.
 
 Inserting a new dataset in the package:
 ---------------------------------------
 
-Note: for hereon *dataset* stands as an alias for the name of the dataset you are trying to insert on the package, *filetype* as an alias to the subgroups inside each dataset( for PNAD we have the filetypes *pessoas*(*persons*) and *famílias*(*households*)) and *period* as an alias to every period available for that dataset and filetype.
+Note: for hereon **dt** stands as an alias for the name of the dataset you are trying to insert on the package, **ft** as an alias to the subgroups( we will also refer to them as 'file\_type') inside each dataset( for PNAD we have the file types *pessoas*(*persons*) and *famílias*(*households*)) and *period* as an alias to every period available for that dataset and filetype.
 
 Each new dataset depends on four pieces:
 
 -   One folder inside `inst/extdata` with the name of the dataset and one subfolder named `dictionaries`
--   One file with metadata inside the folder you created with the name `dataset_files_metadata_harmonization.csv`
+-   One file with metadata, stored inside the folder you created, with the name `dt_files_metadata_harmonization.csv`
 -   One wrapper function defined on the file `R/import_wrapper_functions.R`
--   Dictionaries stored inside `dataset/dictionaries` with the name `import_dictionary_dataset_filetype_period.csv`.
+-   Dictionaries stored inside `inst/extdata/dt/dictionaries` with the name `import_dictionary_dt_ft_period.csv`.
 
 The first piece is clear, look at the folders already created for the other datasets if you have any doubt.Now we start with detailed instructions for the next steps.
 
@@ -136,7 +147,7 @@ The suggested order of editions is:
 -   inputs\_folder
 -   data\_folder
 
-1.  Create one column for each *file type*(if you used a template from another dataset, also remove the old ones) of the dataset, this columns should be named `ft_filetype`( remember, here *filetype* is just an alias!).
+1.  Create one column for each *file type*(if you used a template from another dataset, also remove the old ones) of the dataset, this columns should be named `ft_ft`( Here, the first **ft** is literal and the second is just an alias for each file\_type).
 
 2.  Fill the other columns, for each period:
 
@@ -147,10 +158,73 @@ The suggested order of editions is:
 -   path: The name of the main folder, exactly as downloaded from the source( Ex: PNAD\_1401)
 -   inputs\_folder: Inside that folder should be a folder with the dictionaries stored in .txt on .sas format. Keep blank if there is no such folder.
 -   data\_folder: Inside the main folder should be a folder with the data stored. Keep blank if there is no such folder( speacially if the data is stored inside the main folder).
--   ft\_\* : this columns are a little tricky, you may have noted that the content of it is in the format `A&B`. `A` should be the name of the Input dictionary for that filetype in the case of fwf datasets or the delimiter in the case of delimited files. `B` should be the name of the file for that specific dataset, it can also be a regular expression for multiple files( in this case the data of the multiple files will be pooled.)
+-   ft\_ft : this columns are a little tricky, you may have noted that the content of it is in the format `A&B`. `A` should be the name of the Input dictionary for that filetype in the case of fwf datasets or the delimiter in the case of delimited files. `B` should be the name of the file for that specific dataset, it can also be a regular expression for multiple files( in this case the data of the multiple files will be pooled.)
 
-Once you have done all that, you can check if is everything working using the functions: `read_metadata` , `get_available_datasets`, `get_available_periods` and `get_available_filetypes`.
+Once you have done all that, you can check if everything is working using the functions: `read_metadata` , `get_available_datasets`, `get_available_periods` and `get_available_filetypes`. See the help pages of each function for detail.
 
 ### 2. The wrapper function:
 
+Each dataset has a wrapper function named `read_*`. The purpose of this function is only to call the main import function `read_data` with the appropriate arguments. This also allows for space to insert dataset-specific modifications. The wrapper function for the generic case should be:
+
+``` r
+
+#' @rdname read_dataset
+#' @export
+read_*<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL){
+
+
+  data<-read_*(dataset = "*", ft, i, root_path =  root_path, file = file, vars_subset = vars_subset)
+
+  return(data)
+}
+```
+
+Where `read_data` is the main internal function of the package, that does all the heavy work. The first two lines ( that starts with \#') are just commands to the roxygen package specifying the associated documentation of the function and that it should be exported(just keep that as it is) .
+
+Copy the template and substitute the \* with the name of the dataset.
+
+You can also insert dataset-specific modifications, look at the example of *CENSO* where we inserted an option(UF) to read only part of the files, based on the region of it ( using the name pattern):
+
+``` r
+
+#' @rdname read_dataset
+#' @export
+read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF = NULL){
+
+  metadata <-  read_metadata('CENSO')
+
+  if(is.null(file)){
+  root_path<- ifelse(is.null(UF),
+                     root_path,
+                     paste0(ifelse(is.null(root_path),getwd(),root_path),"/",UF))
+  if(!file.exists(root_path)){
+    stop("Data not found, check if you provided a valid root_path or stored the data in your current working directory.")
+  }
+  }
+
+
+
+  data<-read_data(dataset = "CENSO", ft = ft,i = i, root_path = root_path,file = file, vars_subset = vars_subset)
+
+
+  return(data)
+}
+```
+
 ### 3. Dictionaries:
+
+Dictionaries are stored as .csv tables in the \*/dictionaries folder, they are always named on the format "import\_dictionary\_\*\_\*\*\_period.csv" . The full path of the dictionary for the *pessoas* file of PNAD 2014 is `inst/extdata/PNAD/dictionaries/import_dictionary_PNAD_pessoas_2014.csv` ( you can check that on <https://github.com/lucasmation/microdadosBrasil> ).
+
+The dictionaries contains the columns:
+
+-   int\_pos: the start position of the variable
+-   var\_name: the name of the variable
+-   x: the SAS code that was used as input in case the dictionary wase created by `parses_SAS_import_dic()` ( you do not need to fill this, it was left here just for debugging reasons)
+-   CHAR: TRUE if the variable is character, FALSE if is not
+-   label: A description of the variable, it is not used in data importing, but can be helpful ( it may be easir to view the label in R using the package that looking at an excel table)
+-   length: lenght of the variable
+-   decimal\_places: length of decimal places ( NA if the variable is not numeric)
+-   fin\_pos: final position at the line
+-   col\_type: `c` for character, `i` for integer, `d` for numeric.
+
+You can always see the dictionary from R using the function `get_import_dictionary`. The function `parses_SAS_import_dic` can be used to create the table using a SAS dictionary ( it uses regular expressions to try to translate the dictionary and can get wrong results sometimes, use at your own risk and look carefully at the results)

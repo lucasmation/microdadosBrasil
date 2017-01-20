@@ -1,0 +1,166 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+
+
+## Ferramentas iniciais:
+
+Todos os usuários são convidados a contribuir para o pacote ou modificá-lo para uso próprio. Sugerimos aqui um preparo para facilitar o processo :
+
+- Instale o software de controle de versão GIT
+- Fork o repositório e sincronize com o RStudio
+- Aprenda o básico sobre a estrutura de pacotes do R
+
+## Design principles
+
+The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the of original data - into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with list of import dictionaries extracted from the SAS import instructions from the data provider, serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.
+
+## Inserindo novas bases de dados no pacote
+
+Note: for hereon **dt** stands as an alias for the name of the dataset you are trying to insert on the package, **ft** as an alias to the subgroups( we will also refer to them as 'file_type') inside each dataset( for PNAD we have the file types *pessoas*(*persons*) and  *famílias*(*households*)) and *period* as an alias to every period available for that dataset and filetype.
+
+Cada base de dados depende de 4 peças:
+
+- Uma pasta localizada dentro da pasta `inst/extdata` com o nome da base de dados e contendo uma sub-pasta nomeada  `dictionaries`
+- Um arquivo com metadados armazenado dentro da pasta cidada acima, nomeado: `dt_files_metadata_harmonization.csv`
+-Uma *wrapper function* definida no arquivo `R/import_wrapper_functions.R`
+- Dicionários armazenados na pasta `inst/extdata/dt/dictionaries` com o nome no formato: `import_dictionary_dt_ft_period.csv`.
+
+A primeira etapa, criar a pasta para a base de dados, é intutitiva, assim, iniciamos com instruções detalhadas para as outras 3 etapas.
+
+### 1.  O arquivo de metadados
+
+This file stores information about the directory structure, download links, delimiters, and other general information. Using this kind of file allows to separate dataset specific information of the actual code. We suggest that you copy a ready metadata file ( as "PNAD_metadata_files_harmonization.csv" ) and edit it to your needs. The file will be somewhat like this:
+
+
+| period|format |download_path                                                                                                                                                      |download_mode |missing_symbols |path                                |inputs_folder |data_folder |ft_domicilios                 |ft_pessoas                    |
+|------:|:------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:---------------|:-----------------------------------|:-------------|:-----------|:-----------------------------|:-----------------------------|
+|   2001|fwf    |ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/reponderacao_2001_2012/PNAD_reponderado_2001.zip          |source        |NA              |PNAD_reponderado_2001/2001          |Input         |Dados       |INPUT DOM2001.txt&DOM2001.txt |INPUT PES2001.txt&PES2001.txt |
+|   2002|fwf    |ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/reponderacao_2001_2012/PNAD_reponderado_2002.zip          |source        |NA              |PNAD_reponderado_2002/2002          |Input         |Dados       |INPUT DOM2002.txt&DOM2002.txt |INPUT PES2002.txt&PES2002.txt |
+|   2003|fwf    |ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/reponderacao_2001_2012/PNAD_reponderado_2003_20150814.zip |source        |NA              |PNAD_reponderado_2003_20150814/2003 |Input         |Dados       |INPUT DOM2003.txt&DOM2003.txt |INPUT PES2003.txt&PES2003.txt |
+|   2004|fwf    |ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/reponderacao_2001_2012/PNAD_reponderado_2004.zip          |source        |NA              |PNAD_reponderado_2004/2004          |Input         |Dados       |Input_Dom2004.txt&DOM2004.txt |Input_Pes2004.txt&PES2004.txt |
+|   2005|fwf    |ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/reponderacao_2001_2012/PNAD_reponderado_2005.zip          |source        |NA              |PNAD_reponderado_2005/2005          |Input         |Dados       |Input Dom2005.txt&DOM2005.txt |Input Pes2005.txt&PES2005.txt |
+|   2006|fwf    |ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/reponderacao_2001_2012/PNAD_reponderado_2006.zip          |source        |NA              |PNAD_reponderado_2006/2006          |Input         |Dados       |Input Dom2006.txt&DOM2006.txt |Input Pes2006.txt&PES2006.txt |
+> 
+
+
+
+The suggested  order of editions is:
+
+1. Edit/create the period column with the available time periods of the dataset.
+2. If you used an template, clean the content of all cells of the table, except for the ones of the period column. If you didn't, create the columns:
+
+- format
+- download_path
+- download_mode
+- missing_symbols
+- path
+- inputs_folder
+- data_folder
+
+3. Create one column for each *file type*(if you used a template from another dataset, also remove the old ones) of the dataset, this columns should be named `ft_ft`( Here, the first **ft** is literal and the second  is just an alias for each file_type).
+
+4. Fill the other columns, for each period:
+
+- format: csv if the dataset is a delimited file( even if is stored in other actual format, as .txt). `fwf` if the dataset is  fixed width format file( in this case a dictionary will be needed)
+- download_path: The path of the download, can be a direct link from a zipped folder or a path to a ftp folder.
+- download_mode: `ftp` for ftp folders and `source` for a direct link
+- missing_symbols: comma separated vector with possible missing values of the dataset. NA if none.
+- path: The name of the main folder, exactly as downloaded from the source( Ex: PNAD_1401)
+- inputs_folder: Inside that folder should be a folder with the dictionaries stored in .txt on .sas format. Keep blank if there is no such folder.
+- data_folder: Inside the main folder should be a folder with the data stored. Keep blank if there is no such folder( speacially if the data is stored inside the main folder).
+- ft_ft : this columns are a little tricky, you may have noted that the content of it is in the format `A&B`. `A` should be the name of the Input dictionary for that filetype in the case of fwf datasets or the delimiter in the case of delimited files. `B` should be the name of the file for that specific dataset, it can also be a regular expression for multiple files( in this case the data of the multiple files will be pooled.)  
+
+
+
+Once you have done all that, you can check if everything is working using the functions: `read_metadata` , `get_available_datasets`, `get_available_periods` and `get_available_filetypes`. See the help pages of each function for detail.
+
+### 2. The wrapper function:
+
+
+Each dataset has a wrapper function named `read_*`. The purpose of this function is only to call the main import function `read_data` with the appropriate arguments. This also allows for space to insert dataset-specific modifications. The wrapper function for the generic case should be:
+
+
+```{r, eval = FALSE}
+
+#' @rdname read_dataset
+#' @export
+read_*<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL){
+
+
+  data<-read_*(dataset = "*", ft, i, root_path =  root_path, file = file, vars_subset = vars_subset)
+
+  return(data)
+}
+```
+
+Where `read_data` is the main internal function of the package, that does all the heavy work. The first two lines ( that starts with #') are just commands to the roxygen package specifying the associated documentation of the function and that it should be exported(just keep that as it is) .
+
+Copy the template and substitute the * with the name of the dataset.
+
+You can also insert dataset-specific modifications, look at the example of *CENSO* where we inserted an option(UF) to read only part of the files, based on the region of it ( using the name pattern):
+
+```{r, eval = FALSE}
+
+#' @rdname read_dataset
+#' @export
+read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF = NULL){
+
+  metadata <-  read_metadata('CENSO')
+
+  if(is.null(file)){
+  root_path<- ifelse(is.null(UF),
+                     root_path,
+                     paste0(ifelse(is.null(root_path),getwd(),root_path),"/",UF))
+  if(!file.exists(root_path)){
+    stop("Data not found, check if you provided a valid root_path or stored the data in your current working directory.")
+  }
+  }
+
+
+
+  data<-read_data(dataset = "CENSO", ft = ft,i = i, root_path = root_path,file = file, vars_subset = vars_subset)
+
+
+  return(data)
+}
+
+
+
+```
+
+
+
+### 3. Dictionaries:
+
+
+Dictionaries are stored as .csv tables in the \*/dictionaries folder, they are always named on the format "import_dictionary_\*_\*\*_period.csv" . The full path of the dictionary for the *pessoas* file of PNAD 2014 is `inst/extdata/PNAD/dictionaries/import_dictionary_PNAD_pessoas_2014.csv` ( you can check that on https://github.com/lucasmation/microdadosBrasil ).
+
+The dictionaries contains the columns:
+
+
+- int_pos: the start position of the variable
+- var_name: the name of the variable
+- x: the SAS code that was used as input in case the dictionary wase created by `parses_SAS_import_dic()` ( you do not need to fill this, it was left here just for debugging reasons)
+- CHAR: TRUE if the variable is character, FALSE if is not
+- label: A description of the variable, it is not used in data importing, but can be helpful ( it may be easir to view the label in R using the package that looking at an excel table)
+- length: lenght of the variable
+- decimal_places: length of decimal places ( NA if the variable is not numeric)
+- fin_pos: final position at the line
+- col_type: `c` for character, `i` for integer, `d` for numeric.
+
+You can always see the dictionary from R using the function `get_import_dictionary`. The function `parses_SAS_import_dic` can be used to create the table using  a SAS dictionary ( it uses regular expressions to try to translate the dictionary and can get wrong results sometimes, use at your own risk and look carefully at the results)
+
