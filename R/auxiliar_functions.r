@@ -112,3 +112,21 @@ get_available_filetypes<- function(dataset, period){
 }
 
 
+nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos"){
+
+
+  overlap.pos = which(dic[[init_pos]][-1] - dic[[init_pos]][-length(dic[[init_pos]])] != dic[[fin_pos]][-length(dic[[fin_pos]])] - dic[[init_pos]][-length(dic[[init_pos]])] + 1)
+  if(length(overlap.pos) > 0){
+    dic.pos = dic
+    dic.lis = list()
+    dic.lis[[1]] = dic[-overlap.pos,]
+    for(i in 1:length(overlap.pos)){
+      dic.lis[[i+1]] = dic[overlap.pos[i],]
+    }
+  } else {
+    dic.lis[[1]] = dic
+  }
+  i = 1:length(dic.lis)
+  names(dic.lis) = paste("V", i, sep = "")
+  return(dic.lis)
+}
