@@ -42,6 +42,17 @@ aux_read_fwf <- function(f,dic){
   return(d)
 }
 
+read_fwf2 <- function(file, dic, progess = show_progress())
+{
+
+  dict = nodic_overlap(dic)
+
+
+
+  read = file %>% mapply(aux_read_fwf, ., dict) %>% dplyr::bind_cols()
+  read = read[, dic$var_name]
+  return(read)
+}
 
 
 
@@ -141,7 +152,7 @@ print(files)
         }
       }
 
-      lapply(files,aux_read_fwf, dic=dic) %>% bind_rows -> d
+      lapply(files, read_fwf2, dic=dic) %>% bind_rows -> d
     }
     if(format=='csv'){
 
