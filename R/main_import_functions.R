@@ -141,7 +141,7 @@ print(files)
         }
       }
 
-      lapply(files,aux_read_fwf, dic=dic) %>% bind_rows -> d
+      lapply(files,aux_read_fwf, dic=dic) %>% rbindlist %>% data.table -> d
     }
     if(format=='csv'){
 
