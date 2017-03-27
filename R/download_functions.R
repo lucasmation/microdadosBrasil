@@ -1,7 +1,23 @@
 
+#' Download brazilian microdata.
+#'
+#'
+#' @param dataset Standardized name of brazilian public microdadata. See available datasets with get_available_datasets()
+#' @param i       Period(year/quarter) to download, use get_available_periods(dataset) to see available periods
+#' @param unzip  (optional) logical. Should files be unzipped after download?
+#' @param replace (optional) logical. Should an already downloaded version of the data be replaced?
+#' @param root_path (optional) a path to the directory where dataset should be downloaded
+#'
+#' @examples
+#' \dontrun{
+#'
+#' download_sourceData("PNAD", 2014, unzip = T, root_path = "F:/Datasets/PNAD", replace = T)
+#'
+#'}
+#'
 #' @import RCurl
 #' @export
-download_sourceData <- function(dataset, i, unzip=T, ft=NULL, root_path = NULL, replace = FALSE){
+download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace = FALSE){
 
 
   dataset_list<- get_available_datasets()
