@@ -5,7 +5,7 @@
 #' @param dataset Standardized name of brazilian public microdadata. See available datasets with get_available_datasets()
 #' @param i       Period(year/quarter) to download, use get_available_periods(dataset) to see available periods
 #' @param unzip  (optional) logical. Should files be unzipped after download?
-#' @param replace (optional) logical. Should an already downloaded version of the data be replaced?
+#' @param replace (optional) logical. Should an existing version of the data be replaced?
 #' @param root_path (optional) a path to the directory where dataset should be downloaded
 #'
 #' @examples
