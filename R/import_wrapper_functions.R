@@ -133,7 +133,7 @@ read_RAIS<- function(ft, i,root_path = NULL,file = NULL, vars_subset = NULL,UF =
 read_CAGED<- function(ft,i,root_path = NULL,file = NULL, vars_subset = NULL){
 
 
-  data<- read_data(dataset = "CAGED",ft = ft, i = i, dic_list = NULL, root_path = root_path, file = file, vars_subset = vars_subset)
+  data<- read_data(dataset = "CAGED",ft = ft, i = i, root_path = root_path, file = file, vars_subset = vars_subset)
 
   return(data)
 }
@@ -157,8 +157,8 @@ read_PNAD<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL){
 #' @export
 read_PME <- function(ft,i, root_path = NULL,file = NULL, vars_subset = NULL){
 
-  if(!is.character(i)|!grepl(pattern = "^[0-9]{4}\\.[0-9]{2}$", x = i)){
-    stop(paste0("The argument 'i' must be a character in the format YYYY.MM"))
+  if(!is.character(i)|!grepl(pattern = "^[0-9]{4}-[0-9]{2}m$", x = i)){
+    stop(paste0("The argument 'i' must be a character in the format 2014-01m."))
 
   }
 
