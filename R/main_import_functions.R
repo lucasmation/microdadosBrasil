@@ -141,16 +141,18 @@ print(files)
         }
       }
 
-      lapply(files,aux_read_fwf, dic=dic) %>% rbindlist %>% data.table -> d
+      lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic) %>% rbindlist  -> d
     }
     if(format=='csv'){
 
       if(!is.null(vars_subset)){warning("You provided a subset of variables for a dataset that doesn't have a dictionary, make sure to provide valid variable names.", call. = FALSE)
 
-        lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names=T) -> d
+        d <- lapply(files, function(x,...) data.table::fread(x,...) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names = T)
 
         }else{
-        lapply(files,data.table::fread, sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names=T) -> d
+
+        d <- lapply(files, function(x,...) data.table::fread(x,...) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names = T)
+
       }
 
 
