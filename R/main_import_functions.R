@@ -142,6 +142,14 @@ print(files)
       }
 
       lapply(files,aux_read_fwf, dic=dic) %>% rbindlist %>% data.table -> d
+      #It could be removed after pull request https://github.com/tidyverse/readr/pull/632 be accepted
+      if(any(dic$decimal_places)){
+        sapply(which(as.logical(dic$decimal_places)), function(x){
+          if(dic$col_type[x] == "d"){
+            d[, (x):= d[, x, with = F]/(10**dic$decimal_places[x])]
+          }
+        })
+      }
     }
     if(format=='csv'){
 
