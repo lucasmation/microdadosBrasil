@@ -91,18 +91,33 @@ read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF
 
   metadata <-  read_metadata('CENSO')
 
+
+
   if(is.null(file)){
-  root_path<- ifelse(is.null(UF),
-                     root_path,
-                     paste0(ifelse(is.null(root_path),getwd(),root_path),"/",UF))
-  if(!file.exists(root_path)){
-    stop("Data not found, check if you provided a valid root_path or stored the data in your current working directory.")
+
+
+  # Change the data file information in metadata if UF is selected
+
+
+
+  if(!is.null(UF)){
+
+    UF <- paste0("(",paste(UF, collapse = "|"),")")
+
+
+    metadata[, grep("^ft_", names(metadata))] <-
+      lapply(metadata[, grep("^ft_", names(metadata))],
+             function(x) gsub(x = x, pattern = "&", replacement = paste0("&",UF,"/")))
+
   }
+
+
+
   }
 
 
 
-  data<-read_data(dataset = "CENSO", ft = ft,i = i, root_path = root_path,file = file, vars_subset = vars_subset)
+  data<-read_data(dataset = "CENSO", ft = ft, metadata = metadata, i = i, root_path = root_path,file = file, vars_subset = vars_subset)
 
 
   return(data)
