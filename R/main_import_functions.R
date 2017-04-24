@@ -31,14 +31,21 @@ read_var_translator <- function(dataset, ft){
 #' @import readr
 #' @export
 aux_read_fwf <- function(f,dic){
+
+  dict = nodic_overlap(dic)
+
   print(f)
+
+  aux_read<- function(f, dic){
+
   f %>% read_fwf(fwf_positions(start=dic$int_pos,end=dic$fin_pos,col_names=dic$var_name),
                  col_types=paste(dic$col_type,collapse ='')) -> d
-#   for(i in names(d)){
-#     if(dic[dic$var_name==i,"col_type"] != 'c'){
-#       print(i)
-#     }
-#   }
+  return(d)
+    }
+
+  lapply(dict, aux_read, f = f) %>% dplyr::bind_cols() -> d
+
+
   return(d)
 }
 
@@ -144,7 +151,7 @@ print(files)
 
   lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic) %>% rbindlist  -> d
       #It could be removed after pull request https://github.com/tidyverse/readr/pull/632 be accepted
-      if(any(dic$decimal_places)){
+      if(any(dic$decimal_places) & dataset == "CENSO"){
         sapply(which(as.logical(dic$decimal_places)), function(x){
           if(dic$col_type[x] == "d"){
             d[, (x):= d[, x, with = F]/(10**dic$decimal_places[x])]

@@ -72,21 +72,9 @@ save(CensoEducacaoSuperior_dics, file = paste0(dic_folder, "/CensoEducacaoSuperi
 
 ################### PNAD #########################################################################
 
-path<-"C:/.../PNAD"
+path<-"C:/Users/b2826073/Documents/Datasets/PNAD"
 
-setwd(path)
-metadata<- read_metadata("PNAD")
-get_all_dics(metadata)
-
-PNAD_dics<- mapply(FUN = get_period_dics, metadata$period, MoreArgs = list(metadata = metadata),SIMPLIFY = FALSE)
-names(PNAD_dics)<- metadata$period
-
-save(PNAD_dics, file = paste0(dic_folder, "/PNAD_dics.rda"))
-
-str(PNAD_dics)
-
-
-
+get_all_dics("PNAD", dataset.root = path, globalEnv = F, write = T)
 
 
 ########################## PME ######################################################
