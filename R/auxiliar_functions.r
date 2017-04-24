@@ -35,13 +35,39 @@ test_path_arguments<- function(root_path, file){
 }
 
 
-check_overlapping <- function(dic){
+read_fwf2 <- function(file, dic, progess = show_progress())
+{
 
-  check = any(dic$int_pos[-1] <= dic$fin_pos[-dim(dic)[1]])
+  dict = nodic_overlap(dic)
 
-  return(check)
+
+  read = file %>% mapply(aux_read_fwf, ., dict) %>% dplyr::bind_cols()
+  read = read[, dic$var_name]
+  return(read)
 }
 
+
+
+nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos")
+  {
+
+      # Primeiro teste de overlap
+      overlap.pos = which(dic[[init_pos]][-1] - dic[[init_pos]][-length(dic[[init_pos]])] != dic[[fin_pos]][-length(dic[[fin_pos]])] - dic[[init_pos]][-length(dic[[init_pos]])] + 1)
+      if(length(overlap.pos) > 0){
+        dic.pos = dic
+        dic.lis = list()
+        dic.lis[[1]] = dic[-overlap.pos,]
+        for(i in 1:length(overlap.pos)){
+          dic.lis[[i+1]] = dic[overlap.pos[i],]
+        }
+      } else {
+            dic.lis = list()
+        dic.lis[[1]] = dic
+      }
+      i = 1:length(dic.lis)
+      names(dic.lis) = paste("V", i, sep = "")
+      return(dic.lis)
+  }
 
 
 get_available_datasets <- function(){

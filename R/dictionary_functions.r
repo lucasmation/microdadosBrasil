@@ -70,26 +70,40 @@ parses_SAS_import_dic <- function(file){
   dic %>% return
 }
 
-get_all_dics<- function(metadata){
+get_all_dics<- function(dataset,globalEnv = T, write = F, package.root = getwd(), dataset.root = getwd()){
   #facilita o 'parse' de muitos dicionários ao mesmo tempo antes de coloca-los em uma lista
   #Funciona apenas para diretorios 'bem comportados' como Censo Escolar e PNAD Continua
+
+  metadata = read_metadata(dataset)
 
   for(i in metadata$period){
 
     if(metadata[metadata$period == i,"format"]== "fwf"){
       print(i)
-      dics_path <- paste0(ifelse(is.na(metadata[metadata$period==i,'path']),"",metadata[metadata$period==i,'path']),
+      dics_path <- file.path(dataset.root,
+                          paste0(ifelse(is.na(metadata[metadata$period==i,'path']),"",metadata[metadata$period==i,'path']),
                           ifelse(is.na(metadata[metadata$period==i,'path']),"","/"),
-                          ifelse(is.na(metadata[metadata$period==i,'inputs_folder']),"",metadata[metadata$period==i,'inputs_folder']))
+                          ifelse(is.na(metadata[metadata$period==i,'inputs_folder']),"",metadata[metadata$period==i,'inputs_folder'])))
 
       #normal file types (ft)
       ft_list <- names(metadata)[grepl(names(metadata) ,pattern = "^ft_")] %>% gsub(pattern = "^ft_",replacement ="")
       for(ft in ft_list){
         f <- unlist(strsplit(metadata[metadata$period==i,paste0("ft_",ft)], split='&'))[1]
         if(!is.na(f)){
+
+          if(globalEnv){
+
           print(paste0(dics_path,'/',f))
           try({assign(paste0('dic_',ft,"_",i),
                       parses_SAS_import_dic(paste0(dics_path,ifelse(dics_path == "","",'/'),f)) ,  envir = .GlobalEnv)})
+
+          }
+          if(write){
+            file.dic = file.path(package.root, "inst", "extdata", dataset, "dictionaries",
+                                 paste0("import_dictionary_PNAD", ft,"_",i, ".csv"))
+
+            fwrite(parses_SAS_import_dic(paste0(dics_path,ifelse(dics_path == "","",'/'),f)),file = file.dic , sep = ";" )
+          }
 
         }
       }
