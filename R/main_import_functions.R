@@ -38,10 +38,10 @@ aux_read_fwf <- function(f,dic){
 
   aux_read<- function(f, dic){
 
-  f %>% read_fwf(fwf_positions(start=dic$int_pos,end=dic$fin_pos,col_names=dic$var_name),
-                 col_types=paste(dic$col_type,collapse ='')) -> d
-  return(d)
-    }
+    f %>% read_fwf(fwf_positions(start=dic$int_pos,end=dic$fin_pos,col_names=dic$var_name),
+                   col_types=paste(dic$col_type,collapse ='')) -> d
+    return(d)
+  }
 
   lapply(dict, aux_read, f = f) %>% dplyr::bind_cols() -> d
 
@@ -76,7 +76,7 @@ aux_read_fwf <- function(f,dic){
 #' @export
 read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL, vars_subset = NULL){
 
-    #Check for inconsistency in parameters
+  #Check for inconsistency in parameters
   # status:
   # 0 - Both root_path and file, error
   # 1 - No root_path ,no file
@@ -105,29 +105,29 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
 
   var_list <- names(metadata)[ !(names(metadata) %in% ft_list2)]
 
-    #subseting metadata and var_translator
-    md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
-    if (!is.null(var_translator)) {
-      vt <- var_translator %>% rename_( old_varname = as.name(paste0('varname',i))) %>%
-        select(std_varname ,old_varname ) %>% filter(!is.na(old_varname))
-print(str(vt))
-    }
+  #subseting metadata and var_translator
+  md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
+  if (!is.null(var_translator)) {
+    vt <- var_translator %>% rename_( old_varname = as.name(paste0('varname',i))) %>%
+      select(std_varname ,old_varname ) %>% filter(!is.na(old_varname))
+    print(str(vt))
+  }
 
-    a <- md %>% select_(.dots = ft) %>% collect %>% .[[ft]]
-    file_name <- unlist(strsplit(a, split='&'))[2]
-    delim <- unlist(strsplit(a, split='&'))[1]  # for csv files
-    format <- md %>% select_(.dots = 'format') %>% collect %>% .[['format']]
-    missing_symbol <- md %>% select_(.dots = 'missing_symbols') %>% collect %>% .[['missing_symbols']] %>% ifelse(test = is.na(.), no = strsplit(x = .,split = "&")) %>% unlist
-    # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
-    data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/") %>% ifelse(. == "", getwd(),.)
+  a <- md %>% select_(.dots = ft) %>% collect %>% .[[ft]]
+  file_name <- unlist(strsplit(a, split='&'))[2]
+  delim <- unlist(strsplit(a, split='&'))[1]  # for csv files
+  format <- md %>% select_(.dots = 'format') %>% collect %>% .[['format']]
+  missing_symbol <- md %>% select_(.dots = 'missing_symbols') %>% collect %>% .[['missing_symbols']] %>% ifelse(test = is.na(.), no = strsplit(x = .,split = "&")) %>% unlist
+  # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
+  data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/") %>% ifelse(. == "", getwd(),.)
 
-print(file_name)
-print(data_path)
-    files <- list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE, full.names = TRUE)
-print(files)
+  print(file_name)
+  print(data_path)
+  files <- list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE, full.names = TRUE)
+  print(files)
 
 
-    if (!any(file.exists(files)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
+  if (!any(file.exists(files)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
 
 
   #Importing
@@ -135,60 +135,60 @@ print(files)
     files = file
     if (!any(file.exists(file)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
   }
-    print(format)
-    t0 <- Sys.time()
-    if(format=='fwf'){
+  print(format)
+  t0 <- Sys.time()
+  if(format=='fwf'){
 
-      dic <- get_import_dictionary(dataset, i, ft)
-      if(!is.null(vars_subset)){
+    dic <- get_import_dictionary(dataset, i, ft)
+    if(!is.null(vars_subset)){
       dic<- dic[dic$var_name %in% vars_subset,]
       if(dim(dic)[1] == 0){
 
         stop("There are no valid variables in the provided subset")
+      }
+    }
+
+
+    lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic) %>% rbindlist  -> d
+    #It could be removed after pull request https://github.com/tidyverse/readr/pull/632 be accepted
+    if(any(dic$decimal_places) & dataset == "CENSO"){
+      sapply(which(as.logical(dic$decimal_places)), function(x){
+        if(dic$col_type[x] == "d"){
+          d[, (x):= d[, x, with = F]/(10**dic$decimal_places[x])]
         }
-      }
+      })
+    }
 
+  }
+  if(format=='csv'){
 
-  lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic) %>% rbindlist  -> d
-      #It could be removed after pull request https://github.com/tidyverse/readr/pull/632 be accepted
-      if(any(dic$decimal_places) & dataset == "CENSO"){
-        sapply(which(as.logical(dic$decimal_places)), function(x){
-          if(dic$col_type[x] == "d"){
-            d[, (x):= d[, x, with = F]/(10**dic$decimal_places[x])]
-          }
-        })
-      }
+    if(!is.null(vars_subset)){warning("You provided a subset of variables for a dataset that doesn't have a dictionary, make sure to provide valid variable names.", call. = FALSE)
+
+      d <- lapply(files, function(x,...) data.table::fread(x,...) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names = T)
+
+    }else{
+
+      d <- lapply(files, function(x,...) data.table::fread(x,...) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names = T)
 
     }
-    if(format=='csv'){
-
-      if(!is.null(vars_subset)){warning("You provided a subset of variables for a dataset that doesn't have a dictionary, make sure to provide valid variable names.", call. = FALSE)
-
-        d <- lapply(files, function(x,...) data.table::fread(x,...) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset) %>% rbindlist(use.names = T)
-
-        }else{
-
-        d <- lapply(files, function(x,...) data.table::fread(x,...) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol)) %>% rbindlist(use.names = T)
-
-      }
 
 
-      }
+  }
 
 
-    t1 <- Sys.time()
-    print(t1-t0)
-    print(object.size(d), units = "Gb")
+  t1 <- Sys.time()
+  print(t1-t0)
+  print(object.size(d), units = "Gb")
 
   #adjusting var names
-    if (!is.null(var_translator)) {
+  if (!is.null(var_translator)) {
 
-      # d <- d %>% rename_(.dots = one_of(as.character(vt$old_varname), vt$new_varname))
-      #names(d)[names(d) %in% vt$old_varname] <- vt$std_varname
-      #d <- d %>% data.table::setnames(old = vt$old_varname, new = vt$new_varname)
-      old_vars<- names(d) %in% vt$old_varname
-      names(d)[old_vars]<- vt$std_varname
-    }
+    # d <- d %>% rename_(.dots = one_of(as.character(vt$old_varname), vt$new_varname))
+    #names(d)[names(d) %in% vt$old_varname] <- vt$std_varname
+    #d <- d %>% data.table::setnames(old = vt$old_varname, new = vt$new_varname)
+    old_vars<- names(d) %in% vt$old_varname
+    names(d)[old_vars]<- vt$std_varname
+  }
 
   return(d)
 }
