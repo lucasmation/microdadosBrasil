@@ -1,14 +1,15 @@
 #Carefull! Function test_download() will delete all files previous inside 'folder'
 
 
-test_download<- function(dataset,folder,periods = NULL, unzip = F){
+test_download<- function(dataset,folder,periods = NULL, unzip = F, ignore.files = F, update_test_results = T, test.folder = "testes/test_results"){
 
 
-  if(list.files(folder,full.names = TRUE) %>% length() > 0){
-    stop(paste0("The folder ",folder,"is not empty, all files will be deleted!"))}
+  if(list.files(folder,full.names = TRUE) %>% length() > 0 & !ignore.files){
+    stop(paste0("The folder ",folder,"is not empty!"))}
 
 
   metadata<- read_metadata(dataset)
+  today.date<- Sys.Date() %>% as.character()
 
   if(is.null(periods)){
     periods <- metadata$period
@@ -23,24 +24,53 @@ test_download<- function(dataset,folder,periods = NULL, unzip = F){
     d<- NA
 
     t0<- Sys.time()
-    try({ d<- download_sourceData(dataset,i = i,unzip = unzip,dest = folder)})
+    try({ d<- download_sourceData(dataset,i = i,unzip = unzip,root_path = folder)})
     t1<- Sys.time()
 
 
 
 
-    results_temp<- data.frame(period =i,
+    results_temp<- data.frame(dataset = dataset,
+                              period =i,
+                              date = today.date,
                               time_download = difftime(t1,t0, units = "secs"),
-                              error_download = !is.null(d))
+                              error_download = is.na(d), stringsAsFactors = F)
 
     results<- bind_rows(results,results_temp)
 
+    if(update_test_results){
+
+      update_test_download(results, test.folder)
+
+    }
 
   }
 
   return(results)
 
 }
+
+
+update_test_download<- function(test_results, test.folder = "testes/test_results"){
+
+  file.tests<- file.path(test.folder, "download_test_results.csv")
+  old.tests<- data.table::fread(file.tests, sep = ";", dec = ",")
+
+  tests<- rbind(old.tests, test_results)
+
+  tests[, date:= as.Date(date, "%Y-%m-%d")]
+  tests<- tests[order(dataset,period, -date)]
+  tests[, date:= as.character(date)]
+  tests <- tests %>% filter(!(duplicated(dataset) & duplicated(period)))
+
+  write.csv2(tests, file.tests, row.names = F)
+
+  return(tests)
+
+}
+
+
+
 
 test_read <- function(dataset,folder,periods = NULL){
 
