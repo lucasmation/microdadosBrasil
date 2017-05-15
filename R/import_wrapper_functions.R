@@ -21,7 +21,7 @@ NULL
 #' @import magrittr
 #' @import stringr
 #' @export
-read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = NULL, vars_subset = NULL){
+read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = NULL, vars_subset = NULL, nrows = -1L){
 
 
   #selecting dictionaries
@@ -31,7 +31,7 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = N
     var_translator <- read_var_translator('CensoEscolar','escola')
     read_data(ft, i, metadata, var_translator,root_path, dic_list = CensoEscolar_dics)
   } else {
-    read_data(dataset = "CensoEscolar",ft, i,root_path = root_path, file = file, vars_subset = vars_subset)
+    read_data(dataset = "CensoEscolar",ft, i,root_path = root_path, file = file, vars_subset = vars_subset, nrows = nrows)
   }
 
 }
@@ -42,13 +42,13 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = N
 
 #' @rdname read_dataset
 #' @export
-read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL, file = NULL, vars_subset = NULL){
+read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL, file = NULL, vars_subset = NULL, nrows = -1L){
   metadata <-  read_metadata('CensoEducacaoSuperior')
 
 
 
 
-   data<-read_data(dataset = "CensoEducacaoSuperior",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset)
+   data<-read_data(dataset = "CensoEducacaoSuperior",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows)
 
   return(data)
 }
@@ -56,38 +56,22 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL, file = NULL, vars_sub
 
 #' @rdname read_dataset
 #' @export
-read_ENEM<- function(ft,i,root_path=NULL, file = NULL, vars_subset = NULL){
+read_ENEM<- function(ft,i,root_path=NULL, file = NULL, vars_subset = NULL, nrows = -1L){
   metadata <-  read_metadata('ENEM')
 
 
 
 
-  data<-read_data(dataset = "ENEM",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset)
+  data<-read_data(dataset = "ENEM",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows)
 
   return(data)
 }
-
-
-
-
-
-read_SISOB<- function(ft,i,root_path=NULL, file = NULL, vars_subset = NULL){
-  metadata <-  read_metadata('SISOB')
-
-
-
-
-  data<-read_data(dataset = "SISOB",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset)
-
-  return(data)
-}
-
 
 
 
 #' @rdname read_dataset
 #' @export
-read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF = NULL){
+read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF = NULL, nrows = -1L){
 
   metadata <-  read_metadata('CENSO')
 
@@ -117,7 +101,7 @@ read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF
 
 
 
-  data<-read_data(dataset = "CENSO", ft = ft, metadata = metadata, i = i, root_path = root_path,file = file, vars_subset = vars_subset)
+  data<-read_data(dataset = "CENSO", ft = ft, metadata = metadata, i = i, root_path = root_path,file = file, vars_subset = vars_subset, nrows = nrows)
 
 
   return(data)
@@ -126,7 +110,7 @@ read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF
 #' @rdname read_dataset
 #' @export
 
-read_RAIS<- function(ft, i,root_path = NULL,file = NULL, vars_subset = NULL,UF = NULL){
+read_RAIS<- function(ft, i,root_path = NULL,file = NULL, vars_subset = NULL,UF = NULL, nrows = -1L){
 
   metadata <-  read_metadata('RAIS')
 
@@ -137,7 +121,7 @@ read_RAIS<- function(ft, i,root_path = NULL,file = NULL, vars_subset = NULL,UF =
       gsub(pattern = "[A-Z]{2}", replacement = UF, fixed = TRUE)}
 
 
-  data <- read_data(dataset = "RAIS",ft = ft, i = i, metadata = metadata, root_path = root_path,file = file, vars_subset = vars_subset)
+  data <- read_data(dataset = "RAIS",ft = ft, i = i, metadata = metadata, root_path = root_path,file = file, vars_subset = vars_subset, nrows = nrows)
 
   return(data)
 }
@@ -145,10 +129,10 @@ read_RAIS<- function(ft, i,root_path = NULL,file = NULL, vars_subset = NULL,UF =
 #' @rdname read_dataset
 #' @export
 
-read_CAGED<- function(ft,i,root_path = NULL,file = NULL, vars_subset = NULL){
+read_CAGED<- function(ft,i,root_path = NULL,file = NULL, vars_subset = NULL, nrows = -1L){
 
 
-  data<- read_data(dataset = "CAGED",ft = ft, i = i, root_path = root_path, file = file, vars_subset = vars_subset)
+  data<- read_data(dataset = "CAGED",ft = ft, i = i, root_path = root_path, file = file, vars_subset = vars_subset, nrows = nrows)
 
   return(data)
 }
@@ -159,18 +143,18 @@ read_CAGED<- function(ft,i,root_path = NULL,file = NULL, vars_subset = NULL){
 #' @rdname read_dataset
 #' @export
 #'
-read_PNAD<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL){
+read_PNAD<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL, nrows = -1L){
 
 
 
-  data<-read_data(dataset = "PNAD", ft, i, root_path =  root_path, file = file, vars_subset = vars_subset)
+  data<-read_data(dataset = "PNAD", ft, i, root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows)
 
   return(data)
 }
 
 #' @rdname read_dataset
 #' @export
-read_PME <- function(ft,i, root_path = NULL,file = NULL, vars_subset = NULL){
+read_PME <- function(ft,i, root_path = NULL,file = NULL, vars_subset = NULL, nrows = -1L){
 
   if(!is.character(i)|!grepl(pattern = "^[0-9]{4}-[0-9]{2}m$", x = i)){
     stop(paste0("The argument 'i' must be a character in the format 2014-01m."))
@@ -179,27 +163,27 @@ read_PME <- function(ft,i, root_path = NULL,file = NULL, vars_subset = NULL){
 
 
 
-  data<- read_data(dataset = "PME", ft = ft,i = i, root_path = root_path, file = file, vars_subset = vars_subset)
+  data<- read_data(dataset = "PME", ft = ft,i = i, root_path = root_path, file = file, vars_subset = vars_subset, nrows = nrows)
   return(data)
 }
 
 
 #' @rdname read_dataset
 #' @export
-read_POF <- function(ft,i, root_path = NULL,file = NULL, vars_subset = NULL){
+read_POF <- function(ft,i, root_path = NULL,file = NULL, vars_subset = NULL, nrows = -1L){
 
 
-  data<- read_data(dataset= "POF", ft = ft,i = i, root_path = root_path,file = file, vars_subset = vars_subset)
+  data<- read_data(dataset= "POF", ft = ft,i = i, root_path = root_path,file = file, vars_subset = vars_subset, nrows = nrows)
   return(data)
 }
 
 #' @rdname read_dataset
 #' @export
-read_PNADcontinua<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL){
+read_PNADcontinua<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL, nrows = -1L){
 
 
 
-  data<-read_data(dataset = "PNADcontinua",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset)
+  data<-read_data(dataset = "PNADcontinua",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows)
 
   return(data)
 }
@@ -207,11 +191,11 @@ read_PNADcontinua<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL
 
 #' @rdname read_dataset
 #' @export
-read_PNS<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL){
+read_PNS<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL, nrows = -1L){
 
 
 
-  data<-read_data(dataset = "PNS",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset)
+  data<-read_data(dataset = "PNS",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows)
 
   return(data)
 }
