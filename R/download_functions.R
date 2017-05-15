@@ -20,6 +20,10 @@
 download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace = FALSE){
 
 
+
+  sucess = FALSE
+  size = NA
+
   dataset_list<- get_available_datasets()
 
   #Test if parameters are valid
@@ -67,7 +71,8 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     filenames <- RCurl::getURL(link, ftp.use.epsv = FALSE, ftplistonly = TRUE,
                         crlf = TRUE)
     file_dir<- gsub(link, pattern = "/+$", replacement = "", perl = TRUE) %>% gsub(pattern = ".+/", replacement = "")
-    dir.create(paste(c(root_path,file_dir), collapse = "/"))
+    filename<- new_dir <- paste(c(root_path,file_dir), collapse = "/")
+    dir.create(new_dir)
     filenames<- strsplit(filenames, "\r*\n")[[1]]
     file_links <- paste(link, filenames, sep = "")
 
@@ -107,7 +112,15 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     print(filename)
     print(file_dir)
 
+
+
+
+
     try({ download.file(link,destfile = paste(c(root_path,filename),collapse = "/"), mode = "wb")
+
+      sucess = TRUE
+
+
 
     if (unzip==T){
       #Unzipping main source file:
@@ -115,6 +128,9 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     }
     })
   }
+
+
+
     if (unzip==T){
     # #unzipping the data files (in case not unziped above)
     intern_files<- list.files(paste(c(root_path,file_dir),collapse = "/"), recursive = TRUE,all.files = TRUE, full.names = TRUE)
@@ -129,12 +145,18 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     }
 
 }
-    # check data_path for compressed files: .zip, .7z , .rar
-    # Unzip the .zip ones
-    # Issue warning for unzipping manually the .7z and .rar files
-    #
-    # }
+
+  if(file.info(filename)$isdir){
+
+    size<- sum(file.info(list.files("testes", recursive = TRUE, full.names = T))$size)
+  }else{
+    size = file.size(paste(c(root_path,filename),collapse = "/"))
   }
+    info.output<- data.frame(name = filename, link = link, sucess = sucess, size =  size, stringsAsFactors = F)
+
+  return(info.output)
+
+    }
 
 
 
