@@ -70,8 +70,8 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
     filenames <- RCurl::getURL(link, ftp.use.epsv = FALSE, ftplistonly = TRUE,
                         crlf = TRUE)
-    file_dir<- gsub(link, pattern = "/+$", replacement = "", perl = TRUE) %>% gsub(pattern = ".+/", replacement = "")
-    filename<- new_dir <- paste(c(root_path,file_dir), collapse = "/")
+    filename<- file_dir<- gsub(link, pattern = "/+$", replacement = "", perl = TRUE) %>% gsub(pattern = ".+/", replacement = "")
+    new_dir <- paste(c(root_path,file_dir), collapse = "/")
     dir.create(new_dir)
     filenames<- strsplit(filenames, "\r*\n")[[1]]
     file_links <- paste(link, filenames, sep = "")
@@ -146,11 +146,13 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
 }
 
-  if(file.info(filename)$isdir){
+  if(all(file.info(paste(c(root_path,filename),collapse = "/"))$isdir)){
 
-    size<- sum(file.info(list.files("testes", recursive = TRUE, full.names = T))$size)
+    size<- sum(file.info(list.files(paste(c(root_path,filename), collapse = "/"), recursive = TRUE, full.names = T))$size) %>%
+    utils:::format.object_size(., "Kb")
   }else{
-    size = file.size(paste(c(root_path,filename),collapse = "/"))
+    size = file.size(paste(c(root_path,filename),collapse = "/")) %>%
+      utils:::format.object_size(., "Kb")
   }
     info.output<- data.frame(name = filename, link = link, sucess = sucess, size =  size, stringsAsFactors = F)
 
