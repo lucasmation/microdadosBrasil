@@ -72,7 +72,7 @@ update_test_import_sample<- function(test_results, test.folder = "testes/test_re
   tests[, date:= as.Date(date, "%Y-%m-%d")]
   tests<- tests[order(dataset,period, -date)]
   tests[, date:= as.character(date)]
-  tests <- tests %>% filter(!(duplicated(dataset) & duplicated(period)))
+  tests <- tests %>% filter(!(duplicated(dataset) & duplicated(period) & duplicated(ft)))
 
   write.csv2(tests, file.tests, row.names = F)
 

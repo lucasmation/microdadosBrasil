@@ -3,97 +3,97 @@ Here are the results for import tests for each dataset( reading only a few lines
 
 ### CAGED
 
-| dataset | period   | file type | date       | sucess |  time\_download(s)| size(Mb) |  rows|  variables|
-|:--------|:---------|:----------|:-----------|:-------|------------------:|:---------|-----:|----------:|
-| CAGED   | 2009-01m | CAGED     | 2017-05-16 | TRUE   |               0.01| 0 Mb     |   100|         41|
-| CAGED   | 2009-02m | CAGED     | 2017-05-16 | TRUE   |               0.10| 0 Mb     |   100|         41|
-| CAGED   | 2009-03m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2009-04m | CAGED     | 2017-05-16 | TRUE   |               0.27| 0 Mb     |   100|         41|
-| CAGED   | 2009-05m | CAGED     | 2017-05-16 | TRUE   |               0.08| 0 Mb     |   100|         41|
-| CAGED   | 2009-06m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2009-07m | CAGED     | 2017-05-16 | TRUE   |               0.03| 0 Mb     |   100|         41|
-| CAGED   | 2009-08m | CAGED     | 2017-05-16 | TRUE   |               0.20| 0 Mb     |   100|         41|
-| CAGED   | 2009-09m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2009-10m | CAGED     | 2017-05-16 | TRUE   |               0.09| 0 Mb     |   100|         41|
-| CAGED   | 2009-11m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2009-12m | CAGED     | 2017-05-16 | TRUE   |               0.02| 0 Mb     |   100|         41|
-| CAGED   | 2010-01m | CAGED     | 2017-05-16 | TRUE   |               0.31| 0 Mb     |   100|         41|
-| CAGED   | 2010-02m | CAGED     | 2017-05-16 | TRUE   |               0.41| 0 Mb     |   100|         41|
-| CAGED   | 2010-03m | CAGED     | 2017-05-16 | TRUE   |               0.10| 0 Mb     |   100|         41|
-| CAGED   | 2010-04m | CAGED     | 2017-05-16 | TRUE   |               0.18| 0 Mb     |   100|         41|
-| CAGED   | 2010-05m | CAGED     | 2017-05-16 | TRUE   |               0.14| 0 Mb     |   100|         41|
-| CAGED   | 2010-06m | CAGED     | 2017-05-16 | TRUE   |               0.08| 0 Mb     |   100|         41|
-| CAGED   | 2010-07m | CAGED     | 2017-05-16 | TRUE   |               0.22| 0 Mb     |   100|         41|
-| CAGED   | 2010-08m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2010-09m | CAGED     | 2017-05-16 | TRUE   |               0.14| 0 Mb     |   100|         41|
-| CAGED   | 2010-10m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2010-11m | CAGED     | 2017-05-16 | TRUE   |               0.03| 0 Mb     |   100|         41|
-| CAGED   | 2010-12m | CAGED     | 2017-05-16 | TRUE   |               0.02| 0 Mb     |   100|         41|
-| CAGED   | 2011-01m | CAGED     | 2017-05-16 | TRUE   |               0.31| 0 Mb     |   100|         41|
-| CAGED   | 2011-02m | CAGED     | 2017-05-16 | TRUE   |               0.14| 0 Mb     |   100|         41|
-| CAGED   | 2011-03m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2011-04m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2011-05m | CAGED     | 2017-05-16 | TRUE   |               0.12| 0 Mb     |   100|         41|
-| CAGED   | 2011-06m | CAGED     | 2017-05-16 | TRUE   |               0.22| 0 Mb     |   100|         41|
-| CAGED   | 2011-07m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2011-08m | CAGED     | 2017-05-16 | TRUE   |               0.08| 0 Mb     |   100|         41|
-| CAGED   | 2011-09m | CAGED     | 2017-05-16 | TRUE   |               0.15| 0 Mb     |   100|         41|
-| CAGED   | 2011-10m | CAGED     | 2017-05-16 | TRUE   |               0.23| 0 Mb     |   100|         41|
-| CAGED   | 2011-11m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2011-12m | CAGED     | 2017-05-16 | TRUE   |               0.02| 0 Mb     |   100|         41|
-| CAGED   | 2012-01m | CAGED     | 2017-05-16 | TRUE   |               0.10| 0 Mb     |   100|         41|
-| CAGED   | 2012-02m | CAGED     | 2017-05-16 | TRUE   |               0.22| 0 Mb     |   100|         41|
-| CAGED   | 2012-03m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2012-04m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2012-05m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2012-06m | CAGED     | 2017-05-16 | FALSE  |               0.03| 0 Mb     |    NA|         NA|
-| CAGED   | 2012-07m | CAGED     | 2017-05-16 | TRUE   |               0.09| 0 Mb     |   100|         41|
-| CAGED   | 2012-08m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2012-09m | CAGED     | 2017-05-16 | TRUE   |               0.15| 0 Mb     |   100|         41|
-| CAGED   | 2012-10m | CAGED     | 2017-05-16 | TRUE   |               0.03| 0 Mb     |   100|         41|
-| CAGED   | 2012-11m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2012-12m | CAGED     | 2017-05-16 | TRUE   |               0.02| 0 Mb     |   100|         41|
-| CAGED   | 2013-01m | CAGED     | 2017-05-16 | TRUE   |               0.09| 0 Mb     |   100|         41|
-| CAGED   | 2013-02m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2013-03m | CAGED     | 2017-05-16 | TRUE   |               0.09| 0 Mb     |   100|         41|
-| CAGED   | 2013-04m | CAGED     | 2017-05-16 | TRUE   |               0.23| 0 Mb     |   100|         41|
-| CAGED   | 2013-05m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2013-06m | CAGED     | 2017-05-16 | TRUE   |               0.20| 0 Mb     |   100|         41|
-| CAGED   | 2013-07m | CAGED     | 2017-05-16 | TRUE   |               0.18| 0 Mb     |   100|         41|
-| CAGED   | 2013-08m | CAGED     | 2017-05-16 | TRUE   |               0.25| 0 Mb     |   100|         41|
-| CAGED   | 2013-09m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2013-10m | CAGED     | 2017-05-16 | TRUE   |               0.07| 0 Mb     |   100|         41|
-| CAGED   | 2013-11m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2013-12m | CAGED     | 2017-05-16 | TRUE   |               0.02| 0 Mb     |   100|         41|
-| CAGED   | 2014-01m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2014-02m | CAGED     | 2017-05-16 | TRUE   |               0.09| 0 Mb     |   100|         41|
-| CAGED   | 2014-03m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2014-04m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2014-05m | CAGED     | 2017-05-16 | TRUE   |               0.15| 0 Mb     |   100|         41|
-| CAGED   | 2014-06m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2014-07m | CAGED     | 2017-05-16 | TRUE   |               0.20| 0 Mb     |   100|         41|
-| CAGED   | 2014-08m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2014-09m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2014-10m | CAGED     | 2017-05-16 | TRUE   |               0.07| 0 Mb     |   100|         41|
-| CAGED   | 2014-11m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2014-12m | CAGED     | 2017-05-16 | TRUE   |               0.03| 0 Mb     |   100|         41|
-| CAGED   | 2015-01m | CAGED     | 2017-05-16 | TRUE   |               0.09| 0 Mb     |   100|         41|
-| CAGED   | 2015-02m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2015-03m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2015-04m | CAGED     | 2017-05-16 | TRUE   |               0.18| 0 Mb     |   100|         41|
-| CAGED   | 2015-05m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2015-06m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2015-07m | CAGED     | 2017-05-16 | TRUE   |               0.08| 0 Mb     |   100|         41|
-| CAGED   | 2015-08m | CAGED     | 2017-05-16 | TRUE   |               0.09| 0 Mb     |   100|         41|
-| CAGED   | 2015-09m | CAGED     | 2017-05-16 | FALSE  |               0.02| 0 Mb     |    NA|         NA|
-| CAGED   | 2015-10m | CAGED     | 2017-05-16 | FALSE  |               0.02| 0 Mb     |    NA|         NA|
-| CAGED   | 2015-11m | CAGED     | 2017-05-16 | TRUE   |               0.04| 0 Mb     |   100|         41|
-| CAGED   | 2015-12m | CAGED     | 2017-05-16 | TRUE   |               0.02| 0 Mb     |   100|         41|
-| CAGED   | 2016-01m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2016-02m | CAGED     | 2017-05-16 | TRUE   |               0.06| 0 Mb     |   100|         41|
-| CAGED   | 2016-03m | CAGED     | 2017-05-16 | TRUE   |               0.09| 0 Mb     |   100|         41|
-| CAGED   | 2016-04m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
-| CAGED   | 2016-05m | CAGED     | 2017-05-16 | TRUE   |               0.05| 0 Mb     |   100|         41|
+| dataset | period   | file type | date       | sucess | time\_download(s)  | size(Mb) |  rows|  variables|
+|:--------|:---------|:----------|:-----------|:-------|:-------------------|:---------|-----:|----------:|
+| CAGED   | 2009-01m | CAGED     | 2017-05-16 | TRUE   | 0,010146           | 0 Mb     |   100|         41|
+| CAGED   | 2009-02m | CAGED     | 2017-05-16 | TRUE   | 0,096151           | 0 Mb     |   100|         41|
+| CAGED   | 2009-03m | CAGED     | 2017-05-16 | TRUE   | 0,048033           | 0 Mb     |   100|         41|
+| CAGED   | 2009-04m | CAGED     | 2017-05-16 | TRUE   | 0,265952           | 0 Mb     |   100|         41|
+| CAGED   | 2009-05m | CAGED     | 2017-05-16 | TRUE   | 0,084260           | 0 Mb     |   100|         41|
+| CAGED   | 2009-06m | CAGED     | 2017-05-16 | TRUE   | 0,049797           | 0 Mb     |   100|         41|
+| CAGED   | 2009-07m | CAGED     | 2017-05-16 | TRUE   | 0,030210           | 0 Mb     |   100|         41|
+| CAGED   | 2009-08m | CAGED     | 2017-05-16 | TRUE   | 0,203063           | 0 Mb     |   100|         41|
+| CAGED   | 2009-09m | CAGED     | 2017-05-16 | TRUE   | 0,056699           | 0 Mb     |   100|         41|
+| CAGED   | 2009-10m | CAGED     | 2017-05-16 | TRUE   | 0,090196           | 0 Mb     |   100|         41|
+| CAGED   | 2009-11m | CAGED     | 2017-05-16 | TRUE   | 0,051001           | 0 Mb     |   100|         41|
+| CAGED   | 2009-12m | CAGED     | 2017-05-16 | TRUE   | 0,021013           | 0 Mb     |   100|         41|
+| CAGED   | 2010-01m | CAGED     | 2017-05-16 | TRUE   | 0,311377           | 0 Mb     |   100|         41|
+| CAGED   | 2010-02m | CAGED     | 2017-05-16 | TRUE   | 0,409175           | 0 Mb     |   100|         41|
+| CAGED   | 2010-03m | CAGED     | 2017-05-16 | TRUE   | 0,096886           | 0 Mb     |   100|         41|
+| CAGED   | 2010-04m | CAGED     | 2017-05-16 | TRUE   | 0,181296           | 0 Mb     |   100|         41|
+| CAGED   | 2010-05m | CAGED     | 2017-05-16 | TRUE   | 0,139247           | 0 Mb     |   100|         41|
+| CAGED   | 2010-06m | CAGED     | 2017-05-16 | TRUE   | 0,079643           | 0 Mb     |   100|         41|
+| CAGED   | 2010-07m | CAGED     | 2017-05-16 | TRUE   | 0,217213           | 0 Mb     |   100|         41|
+| CAGED   | 2010-08m | CAGED     | 2017-05-16 | TRUE   | 0,054361           | 0 Mb     |   100|         41|
+| CAGED   | 2010-09m | CAGED     | 2017-05-16 | TRUE   | 0,137139           | 0 Mb     |   100|         41|
+| CAGED   | 2010-10m | CAGED     | 2017-05-16 | TRUE   | 0,060285           | 0 Mb     |   100|         41|
+| CAGED   | 2010-11m | CAGED     | 2017-05-16 | TRUE   | 0,031249           | 0 Mb     |   100|         41|
+| CAGED   | 2010-12m | CAGED     | 2017-05-16 | TRUE   | 0,0217008590698242 | 0 Mb     |   100|         41|
+| CAGED   | 2011-01m | CAGED     | 2017-05-16 | TRUE   | 0,30635404586792   | 0 Mb     |   100|         41|
+| CAGED   | 2011-02m | CAGED     | 2017-05-16 | TRUE   | 0,139041900634766  | 0 Mb     |   100|         41|
+| CAGED   | 2011-03m | CAGED     | 2017-05-16 | TRUE   | 0,0368368625640869 | 0 Mb     |   100|         41|
+| CAGED   | 2011-04m | CAGED     | 2017-05-16 | TRUE   | 0,0584540367126465 | 0 Mb     |   100|         41|
+| CAGED   | 2011-05m | CAGED     | 2017-05-16 | TRUE   | 0,116379022598267  | 0 Mb     |   100|         41|
+| CAGED   | 2011-06m | CAGED     | 2017-05-16 | TRUE   | 0,220149040222168  | 0 Mb     |   100|         41|
+| CAGED   | 2011-07m | CAGED     | 2017-05-16 | TRUE   | 0,0541250705718994 | 0 Mb     |   100|         41|
+| CAGED   | 2011-08m | CAGED     | 2017-05-16 | TRUE   | 0,0791490077972412 | 0 Mb     |   100|         41|
+| CAGED   | 2011-09m | CAGED     | 2017-05-16 | TRUE   | 0,15096378326416   | 0 Mb     |   100|         41|
+| CAGED   | 2011-10m | CAGED     | 2017-05-16 | TRUE   | 0,231895923614502  | 0 Mb     |   100|         41|
+| CAGED   | 2011-11m | CAGED     | 2017-05-16 | TRUE   | 0,0625081062316895 | 0 Mb     |   100|         41|
+| CAGED   | 2011-12m | CAGED     | 2017-05-16 | TRUE   | 0,015617847442627  | 0 Mb     |   100|         41|
+| CAGED   | 2012-01m | CAGED     | 2017-05-16 | TRUE   | 0,100397109985352  | 0 Mb     |   100|         41|
+| CAGED   | 2012-02m | CAGED     | 2017-05-16 | TRUE   | 0,217147827148438  | 0 Mb     |   100|         41|
+| CAGED   | 2012-03m | CAGED     | 2017-05-16 | TRUE   | 0,0625030994415283 | 0 Mb     |   100|         41|
+| CAGED   | 2012-04m | CAGED     | 2017-05-16 | TRUE   | 0,0382790565490723 | 0 Mb     |   100|         41|
+| CAGED   | 2012-05m | CAGED     | 2017-05-16 | TRUE   | 0,0445749759674072 | 0 Mb     |   100|         41|
+| CAGED   | 2012-06m | CAGED     | 2017-05-16 | FALSE  | 0,0277438163757324 | 0 Mb     |    NA|         NA|
+| CAGED   | 2012-07m | CAGED     | 2017-05-16 | TRUE   | 0,0870459079742432 | 0 Mb     |   100|         41|
+| CAGED   | 2012-08m | CAGED     | 2017-05-16 | TRUE   | 0,0620789527893066 | 0 Mb     |   100|         41|
+| CAGED   | 2012-09m | CAGED     | 2017-05-16 | TRUE   | 0,153929948806763  | 0 Mb     |   100|         41|
+| CAGED   | 2012-10m | CAGED     | 2017-05-16 | TRUE   | 0,0289130210876465 | 0 Mb     |   100|         41|
+| CAGED   | 2012-11m | CAGED     | 2017-05-16 | TRUE   | 0,0521240234375    | 0 Mb     |   100|         41|
+| CAGED   | 2012-12m | CAGED     | 2017-05-16 | TRUE   | 0,0156271457672119 | 0 Mb     |   100|         41|
+| CAGED   | 2013-01m | CAGED     | 2017-05-16 | TRUE   | 0,0873210430145264 | 0 Mb     |   100|         41|
+| CAGED   | 2013-02m | CAGED     | 2017-05-16 | TRUE   | 0,0484490394592285 | 0 Mb     |   100|         41|
+| CAGED   | 2013-03m | CAGED     | 2017-05-16 | TRUE   | 0,0861141681671143 | 0 Mb     |   100|         41|
+| CAGED   | 2013-04m | CAGED     | 2017-05-16 | TRUE   | 0,233139991760254  | 0 Mb     |   100|         41|
+| CAGED   | 2013-05m | CAGED     | 2017-05-16 | TRUE   | 0,0405819416046143 | 0 Mb     |   100|         41|
+| CAGED   | 2013-06m | CAGED     | 2017-05-16 | TRUE   | 0,201515913009644  | 0 Mb     |   100|         41|
+| CAGED   | 2013-07m | CAGED     | 2017-05-16 | TRUE   | 0,17662501335144   | 0 Mb     |   100|         41|
+| CAGED   | 2013-08m | CAGED     | 2017-05-16 | TRUE   | 0,246948957443237  | 0 Mb     |   100|         41|
+| CAGED   | 2013-09m | CAGED     | 2017-05-16 | TRUE   | 0,0510120391845703 | 0 Mb     |   100|         41|
+| CAGED   | 2013-10m | CAGED     | 2017-05-16 | TRUE   | 0,0666751861572266 | 0 Mb     |   100|         41|
+| CAGED   | 2013-11m | CAGED     | 2017-05-16 | TRUE   | 0,0398309230804443 | 0 Mb     |   100|         41|
+| CAGED   | 2013-12m | CAGED     | 2017-05-16 | TRUE   | 0,0156259536743164 | 0 Mb     |   100|         41|
+| CAGED   | 2014-01m | CAGED     | 2017-05-16 | TRUE   | 0,0551159381866455 | 0 Mb     |   100|         41|
+| CAGED   | 2014-02m | CAGED     | 2017-05-16 | TRUE   | 0,0920479297637939 | 0 Mb     |   100|         41|
+| CAGED   | 2014-03m | CAGED     | 2017-05-16 | TRUE   | 0,0582940578460693 | 0 Mb     |   100|         41|
+| CAGED   | 2014-04m | CAGED     | 2017-05-16 | TRUE   | 0,0572719573974609 | 0 Mb     |   100|         41|
+| CAGED   | 2014-05m | CAGED     | 2017-05-16 | TRUE   | 0,152812957763672  | 0 Mb     |   100|         41|
+| CAGED   | 2014-06m | CAGED     | 2017-05-16 | TRUE   | 0,0396530628204346 | 0 Mb     |   100|         41|
+| CAGED   | 2014-07m | CAGED     | 2017-05-16 | TRUE   | 0,204674005508423  | 0 Mb     |   100|         41|
+| CAGED   | 2014-08m | CAGED     | 2017-05-16 | TRUE   | 0,0544281005859375 | 0 Mb     |   100|         41|
+| CAGED   | 2014-09m | CAGED     | 2017-05-16 | TRUE   | 0,0610721111297607 | 0 Mb     |   100|         41|
+| CAGED   | 2014-10m | CAGED     | 2017-05-16 | TRUE   | 0,0696048736572266 | 0 Mb     |   100|         41|
+| CAGED   | 2014-11m | CAGED     | 2017-05-16 | TRUE   | 0,049436092376709  | 0 Mb     |   100|         41|
+| CAGED   | 2014-12m | CAGED     | 2017-05-16 | TRUE   | 0,0288338661193848 | 0 Mb     |   100|         41|
+| CAGED   | 2015-01m | CAGED     | 2017-05-16 | TRUE   | 0,0850780010223389 | 0 Mb     |   100|         41|
+| CAGED   | 2015-02m | CAGED     | 2017-05-16 | TRUE   | 0,043302059173584  | 0 Mb     |   100|         41|
+| CAGED   | 2015-03m | CAGED     | 2017-05-16 | TRUE   | 0,0468778610229492 | 0 Mb     |   100|         41|
+| CAGED   | 2015-04m | CAGED     | 2017-05-16 | TRUE   | 0,178437948226929  | 0 Mb     |   100|         41|
+| CAGED   | 2015-05m | CAGED     | 2017-05-16 | TRUE   | 0,0440299510955811 | 0 Mb     |   100|         41|
+| CAGED   | 2015-06m | CAGED     | 2017-05-16 | TRUE   | 0,052990198135376  | 0 Mb     |   100|         41|
+| CAGED   | 2015-07m | CAGED     | 2017-05-16 | TRUE   | 0,0808560848236084 | 0 Mb     |   100|         41|
+| CAGED   | 2015-08m | CAGED     | 2017-05-16 | TRUE   | 0,0862798690795898 | 0 Mb     |   100|         41|
+| CAGED   | 2015-09m | CAGED     | 2017-05-16 | FALSE  | 0,0156230926513672 | 0 Mb     |    NA|         NA|
+| CAGED   | 2015-10m | CAGED     | 2017-05-16 | FALSE  | 0,0156209468841553 | 0 Mb     |    NA|         NA|
+| CAGED   | 2015-11m | CAGED     | 2017-05-16 | TRUE   | 0,0354850292205811 | 0 Mb     |   100|         41|
+| CAGED   | 2015-12m | CAGED     | 2017-05-16 | TRUE   | 0,0240151882171631 | 0 Mb     |   100|         41|
+| CAGED   | 2016-01m | CAGED     | 2017-05-16 | TRUE   | 0,0634748935699463 | 0 Mb     |   100|         41|
+| CAGED   | 2016-02m | CAGED     | 2017-05-16 | TRUE   | 0,0585780143737793 | 0 Mb     |   100|         41|
+| CAGED   | 2016-03m | CAGED     | 2017-05-16 | TRUE   | 0,0863637924194336 | 0 Mb     |   100|         41|
+| CAGED   | 2016-04m | CAGED     | 2017-05-16 | TRUE   | 0,0478880405426025 | 0 Mb     |   100|         41|
+| CAGED   | 2016-05m | CAGED     | 2017-05-16 | TRUE   | 0,0504322052001953 | 0 Mb     |   100|         41|
 
 ### CENSO
 
@@ -105,30 +105,41 @@ No test for this dataset yet
 
 ### CensoEscolar
 
-| dataset      | period | file type | date       | sucess |  time\_download(s)| size(Mb) |  rows|  variables|
-|:-------------|:-------|:----------|:-----------|:-------|------------------:|:---------|-----:|----------:|
-| CensoEscolar | 1995   | escola    | 2017-05-16 | TRUE   |               2.29| 0.3 Mb   |   100|        480|
-| CensoEscolar | 1996   | escola    | 2017-05-16 | TRUE   |               4.87| 0.4 Mb   |   100|        813|
-| CensoEscolar | 1997   | escola    | 2017-05-16 | TRUE   |               1.60| 0.2 Mb   |   100|        368|
-| CensoEscolar | 1998   | escola    | 2017-05-16 | TRUE   |               4.99| 0.5 Mb   |   100|        894|
-| CensoEscolar | 1999   | escola    | 2017-05-16 | TRUE   |               6.11| 0.6 Mb   |   100|       1066|
-| CensoEscolar | 2000   | escola    | 2017-05-16 | TRUE   |               0.14| 0.5 Mb   |   100|        873|
-| CensoEscolar | 2001   | escola    | 2017-05-16 | TRUE   |               0.39| 0.7 Mb   |   100|       1245|
-| CensoEscolar | 2002   | escola    | 2017-05-16 | TRUE   |               0.19| 0.8 Mb   |   100|       1308|
-| CensoEscolar | 2003   | escola    | 2017-05-16 | TRUE   |               0.22| 1.1 Mb   |   100|       1854|
-| CensoEscolar | 2004   | escola    | 2017-05-16 | TRUE   |               0.85| 3 Mb     |   100|       3261|
-| CensoEscolar | 2005   | escola    | 2017-05-16 | TRUE   |               0.69| 3.5 Mb   |   100|       3806|
-| CensoEscolar | 2006   | escola    | 2017-05-16 | TRUE   |               0.72| 3.5 Mb   |   100|       3809|
-| CensoEscolar | 2007   | escola    | 2017-05-16 | FALSE  |               0.02| 0 Mb     |    NA|         NA|
-| CensoEscolar | 2008   | escola    | 2017-05-16 | FALSE  |               0.03| 0 Mb     |    NA|         NA|
-| CensoEscolar | 2009   | escola    | 2017-05-16 | FALSE  |               0.02| 0 Mb     |    NA|         NA|
-| CensoEscolar | 2010   | escola    | 2017-05-16 | FALSE  |               0.02| 0 Mb     |    NA|         NA|
-| CensoEscolar | 2011   | escola    | 2017-05-16 | FALSE  |               0.02| 0 Mb     |    NA|         NA|
-| CensoEscolar | 2012   | escola    | 2017-05-16 | TRUE   |               0.03| 0.1 Mb   |   100|        139|
-| CensoEscolar | 2013   | escola    | 2017-05-16 | TRUE   |               0.02| 0.1 Mb   |   100|        140|
-| CensoEscolar | 2014   | escola    | 2017-05-16 | TRUE   |               0.03| 0.1 Mb   |   100|        139|
-| CensoEscolar | 2015   | escola    | 2017-05-16 | TRUE   |               0.03| 0.1 Mb   |   100|        167|
-| CensoEscolar | 2016   | escola    | 2017-05-16 | FALSE  |               0.02| 0 Mb     |    NA|         NA|
+| dataset      | period | file type             | date       | sucess | time\_download(s)  | size(Mb) |  rows|  variables|
+|:-------------|:-------|:----------------------|:-----------|:-------|:-------------------|:---------|-----:|----------:|
+| CensoEscolar | 1995   | escola                | 2017-05-16 | TRUE   | 2,28916120529175   | 0.3 Mb   |   100|        480|
+| CensoEscolar | 1995   | escola\_em\_e\_emprof | 2017-05-16 | TRUE   | 0,0854029655456543 | 0 Mb     |   100|         29|
+| CensoEscolar | 1995   | escola\_desporto      | 2017-05-16 | TRUE   | 0,278028011322021  | 0 Mb     |   100|         25|
+| CensoEscolar | 1996   | escola                | 2017-05-16 | TRUE   | 4,86665606498718   | 0.4 Mb   |   100|        813|
+| CensoEscolar | 1996   | escola\_em8           | 2017-05-16 | TRUE   | 0,129472970962524  | 0 Mb     |   100|         20|
+| CensoEscolar | 1996   | escola\_em11          | 2017-05-16 | TRUE   | 0,0719070434570312 | 0 Mb     |   100|         17|
+| CensoEscolar | 1996   | escola\_es6           | 2017-05-16 | TRUE   | 0,224822044372559  | 0 Mb     |   100|         16|
+| CensoEscolar | 1997   | escola                | 2017-05-16 | TRUE   | 1,59831500053406   | 0.2 Mb   |   100|        368|
+| CensoEscolar | 1998   | escola                | 2017-05-16 | TRUE   | 4,98833894729614   | 0.5 Mb   |   100|        894|
+| CensoEscolar | 1998   | escola\_educprof      | 2017-05-16 | TRUE   | 0,287703037261963  | 0 Mb     |   100|         15|
+| CensoEscolar | 1999   | escola                | 2017-05-16 | TRUE   | 6,11263585090637   | 0.6 Mb   |   100|       1066|
+| CensoEscolar | 2000   | escola                | 2017-05-16 | TRUE   | 0,140821933746338  | 0.5 Mb   |   100|        873|
+| CensoEscolar | 2000   | escola\_ind           | 2017-05-16 | TRUE   | 0,24012303352356   | 0.2 Mb   |   100|        195|
+| CensoEscolar | 2000   | ind\_reg              | 2017-05-16 | TRUE   | 0,273945093154907  | 0.2 Mb   |   100|        191|
+| CensoEscolar | 2001   | escola                | 2017-05-16 | TRUE   | 0,390365123748779  | 0.7 Mb   |   100|       1245|
+| CensoEscolar | 2002   | escola                | 2017-05-16 | TRUE   | 0,189918994903564  | 0.8 Mb   |   100|       1308|
+| CensoEscolar | 2003   | escola                | 2017-05-16 | TRUE   | 0,216885805130005  | 1.1 Mb   |   100|       1854|
+| CensoEscolar | 2004   | escola                | 2017-05-16 | TRUE   | 0,849230051040649  | 3 Mb     |   100|       3261|
+| CensoEscolar | 2005   | escola                | 2017-05-16 | TRUE   | 0,687732934951782  | 3.5 Mb   |   100|       3806|
+| CensoEscolar | 2006   | escola                | 2017-05-16 | TRUE   | 0,717526912689209  | 3.5 Mb   |   100|       3809|
+| CensoEscolar | 2007   | escola                | 2017-05-16 | FALSE  | 0,0156240463256836 | 0 Mb     |    NA|         NA|
+| CensoEscolar | 2007   | turma                 | 2017-05-16 | FALSE  | 0,213950157165527  | 0 Mb     |    NA|         NA|
+| CensoEscolar | 2007   | docente               | 2017-05-16 | FALSE  | 0,0318660736083984 | 0 Mb     |    NA|         NA|
+| CensoEscolar | 2007   | matricula             | 2017-05-16 | FALSE  | 0,0186078548431396 | 0 Mb     |    NA|         NA|
+| CensoEscolar | 2008   | escola                | 2017-05-16 | FALSE  | 0,0310230255126953 | 0 Mb     |    NA|         NA|
+| CensoEscolar | 2009   | escola                | 2017-05-16 | FALSE  | 0,0180110931396484 | 0 Mb     |    NA|         NA|
+| CensoEscolar | 2010   | escola                | 2017-05-16 | FALSE  | 0,0156259536743164 | 0 Mb     |    NA|         NA|
+| CensoEscolar | 2011   | escola                | 2017-05-16 | FALSE  | 0,0190119743347168 | 0 Mb     |    NA|         NA|
+| CensoEscolar | 2012   | escola                | 2017-05-16 | TRUE   | 0,0309820175170898 | 0.1 Mb   |   100|        139|
+| CensoEscolar | 2013   | escola                | 2017-05-16 | TRUE   | 0,0227987766265869 | 0.1 Mb   |   100|        140|
+| CensoEscolar | 2014   | escola                | 2017-05-16 | TRUE   | 0,0253050327301025 | 0.1 Mb   |   100|        139|
+| CensoEscolar | 2015   | escola                | 2017-05-16 | TRUE   | 0,0251619815826416 | 0.1 Mb   |   100|        167|
+| CensoEscolar | 2016   | escola                | 2017-05-16 | FALSE  | 0,0156271457672119 | 0 Mb     |    NA|         NA|
 
 ### ENEM
 
@@ -140,9 +151,10 @@ No test for this dataset yet
 
 ### PNAD
 
-| dataset | period | file type  | date       | sucess |  time\_download(s)| size(Mb) |  rows|  variables|
-|:--------|:-------|:-----------|:-----------|:-------|------------------:|:---------|-----:|----------:|
-| PNAD    | 2014   | domicilios | 2017-05-16 | TRUE   |               0.05| 0.1 Mb   |   100|         84|
+| dataset | period | file type  | date       | sucess | time\_download(s)  | size(Mb) |  rows|  variables|
+|:--------|:-------|:-----------|:-----------|:-------|:-------------------|:---------|-----:|----------:|
+| PNAD    | 2014   | domicilios | 2017-05-16 | TRUE   | 0,0476770401000977 | 0.1 Mb   |   100|         84|
+| PNAD    | 2014   | pessoas    | 2017-05-16 | TRUE   | 0.0952479839324951 | 0.3 Mb   |   100|        341|
 
 ### PNADcontinua
 
