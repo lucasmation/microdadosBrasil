@@ -1,5 +1,15 @@
 #Carefull! Function test_download() will delete all files previous inside 'folder'
 
+test_report<- function(report, test.folder = "testes/test_results"){
+
+
+
+    file.tests<- file.path(test.folder, paste0(report ,"_test_results.csv"))
+    results.tests<- data.table::fread(file.tests, sep = ";", dec = ",")
+    return(results.tests)
+
+
+}
 
 test_download<- function(dataset,folder,periods = NULL, unzip = F, ignore.files = F, update_test_results = T, test.folder = "testes/test_results"){
 
@@ -34,7 +44,8 @@ test_download<- function(dataset,folder,periods = NULL, unzip = F, ignore.files 
                               period =i,
                               date = today.date,
                               time_download = difftime(t1,t0, units = "secs"),
-                              error_download = is.na(d), stringsAsFactors = F)
+                              error_download = all(is.na(d)) & !is.data.frame(d),
+                              size = d$size, stringsAsFactors = F)
 
     results<- bind_rows(results,results_temp)
 
@@ -51,12 +62,30 @@ test_download<- function(dataset,folder,periods = NULL, unzip = F, ignore.files 
 }
 
 
+update_test_import_sample<- function(test_results, test.folder = "testes/test_results"){
+
+  file.tests<- file.path(test.folder, "import_sample_test_results.csv")
+  old.tests<- data.table::fread(file.tests, sep = ";", dec = ",")
+
+  tests<- rbind(old.tests, test_results, fill = T)
+
+  tests[, date:= as.Date(date, "%Y-%m-%d")]
+  tests<- tests[order(dataset,period, -date)]
+  tests[, date:= as.character(date)]
+  tests <- tests %>% filter(!(duplicated(dataset) & duplicated(period)))
+
+  write.csv2(tests, file.tests, row.names = F)
+
+  return(tests)
+
+}
+
 update_test_download<- function(test_results, test.folder = "testes/test_results"){
 
   file.tests<- file.path(test.folder, "download_test_results.csv")
   old.tests<- data.table::fread(file.tests, sep = ";", dec = ",")
 
-  tests<- rbind(old.tests, test_results)
+  tests<- rbind(old.tests, test_results, fill = T)
 
   tests[, date:= as.Date(date, "%Y-%m-%d")]
   tests<- tests[order(dataset,period, -date)]
@@ -72,9 +101,11 @@ update_test_download<- function(test_results, test.folder = "testes/test_results
 
 
 
-test_read <- function(dataset,folder,periods = NULL){
+test_read <- function(dataset,root_path,periods = NULL,nrows = 100, test.folder = "testes/test_results"){
 
-  results<-data.frame()
+  results<-data.frame(dataset = character(), period = character(),ft = character(), date = character(), sucess = character(),
+                      time = numeric(), size = character(),nrows = integer(), nvars = integer(),
+                      stringsAsFactors = F)
 
 
   metadata<- read_metadata(dataset)
@@ -90,46 +121,54 @@ test_read <- function(dataset,folder,periods = NULL){
     r<- NA
     gc()
 
-    ft_list  <- names(metadata)[grep("ft_", names(metadata))]
-    ft_list2 <- gsub("ft_","",names(metadata)[grep("ft_", names(metadata))])
-    results_temp<- data.frame(period = i)
-    names_temp<- c("period")
 
 
-    for(ft in ft_list2){
+
+
+
+    for(ft in get_available_filetypes(dataset,i)){
+
+      results_temp<- results[dataset == "@@@@@",]
 
       if(is.na(metadata[metadata$period == i,paste0("ft_",ft)])){
 
-        results_temp<- bind_cols(results_temp,
-                                 data.frame(
-                                   NA,
-                                   NA,
-                                   NA))
-        names_temp<- c(names_temp,
-                       paste0("time_",ft),paste0("size_",ft),paste0("error_",ft))
+        results_temp<-  lapply(results_temp[,], function(x) return(NA)) %>% data.frame
+
+        results_temp[1,'ft']<- ft
+        results_temp[1, 'period']<- i
+        results_temp[1, 'sucess'] <-  F
+
+
 
       }else{
       t0<- Sys.time()
       read_dataset<- get(paste0("read_",dataset))
 
-      try({ r <- read_dataset(ft = ft,i = i,root_path = folder)})
+      try({ r <- read_dataset(ft = ft,i = i,root_path = root_path, nrows = nrows)})
       t1 <- Sys.time()
 
 
-      results_temp<- bind_cols(results_temp,
-                               data.frame(
-                                 difftime(t1,t0, unit = "secs"),
-                                 object.size(r) %>% format(unit = "Mb"),
-                                 !is.data.frame(r)))
+      results_temp[1, 'dataset'] <-  dataset
+      results_temp[1, 'size'] <-  object.size(r) %>% format(unit = "Mb")
+      results_temp[1, 'sucess'] <-  is.data.frame(r)
+      results_temp[1, 'time'] <-  difftime(t1,t0, unit = "secs")
+      results_temp[1, 'nrows'] <-  ifelse(is.data.frame(r),nrow(r),NA)
+      results_temp[1, 'ft'] <-  ft
+      results_temp[1, 'period'] <- i
+      results_temp[1, 'nvars'] <- ifelse(is.data.frame(r),ncol(r), NA)
+      results_temp[1, 'date'] <- Sys.Date() %>% as.character()
 
-      names_temp<- c(names_temp,
-                     paste0("time_",ft),paste0("size_",ft),paste0("error_",ft))
+      update_test_import_sample(results_temp, test.folder)
+
       }
+
+      results<- bind_rows(results,results_temp)
+
     }
 
-    names(results_temp)<- names_temp
 
-    results<- bind_rows(results,results_temp)
+
+
 
 
 

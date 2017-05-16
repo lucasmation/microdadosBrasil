@@ -1,0 +1,24 @@
+"dataset";"period";"ft";"date";"sucess";"time";"size";"nrows";"nvars"
+"CensoEscolar";"1995";"escola";"2017-05-16";"TRUE";2,28916120529175;"0.3 Mb";100;480
+"CensoEscolar";"1996";"escola";"2017-05-16";"TRUE";4,86665606498718;"0.4 Mb";100;813
+"CensoEscolar";"1997";"escola";"2017-05-16";"TRUE";1,59831500053406;"0.2 Mb";100;368
+"CensoEscolar";"1998";"escola";"2017-05-16";"TRUE";4,98833894729614;"0.5 Mb";100;894
+"CensoEscolar";"1999";"escola";"2017-05-16";"TRUE";6,11263585090637;"0.6 Mb";100;1066
+"CensoEscolar";"2000";"escola";"2017-05-16";"TRUE";0,140821933746338;"0.5 Mb";100;873
+"CensoEscolar";"2001";"escola";"2017-05-16";"TRUE";0,390365123748779;"0.7 Mb";100;1245
+"CensoEscolar";"2002";"escola";"2017-05-16";"TRUE";0,189918994903564;"0.8 Mb";100;1308
+"CensoEscolar";"2003";"escola";"2017-05-16";"TRUE";0,216885805130005;"1.1 Mb";100;1854
+"CensoEscolar";"2004";"escola";"2017-05-16";"TRUE";0,849230051040649;"3 Mb";100;3261
+"CensoEscolar";"2005";"escola";"2017-05-16";"TRUE";0,687732934951782;"3.5 Mb";100;3806
+"CensoEscolar";"2006";"escola";"2017-05-16";"TRUE";0,717526912689209;"3.5 Mb";100;3809
+"CensoEscolar";"2007";"escola";"2017-05-16";"FALSE";0,0156240463256836;"0 Mb";NA;NA
+"CensoEscolar";"2008";"escola";"2017-05-16";"FALSE";0,0310230255126953;"0 Mb";NA;NA
+"CensoEscolar";"2009";"escola";"2017-05-16";"FALSE";0,0180110931396484;"0 Mb";NA;NA
+"CensoEscolar";"2010";"escola";"2017-05-16";"FALSE";0,0156259536743164;"0 Mb";NA;NA
+"CensoEscolar";"2011";"escola";"2017-05-16";"FALSE";0,0190119743347168;"0 Mb";NA;NA
+"CensoEscolar";"2012";"escola";"2017-05-16";"TRUE";0,0309820175170898;"0.1 Mb";100;139
+"CensoEscolar";"2013";"escola";"2017-05-16";"TRUE";0,0227987766265869;"0.1 Mb";100;140
+"CensoEscolar";"2014";"escola";"2017-05-16";"TRUE";0,0253050327301025;"0.1 Mb";100;139
+"CensoEscolar";"2015";"escola";"2017-05-16";"TRUE";0,0251619815826416;"0.1 Mb";100;167
+"CensoEscolar";"2016";"escola";"2017-05-16";"FALSE";0,0156271457672119;"0 Mb";NA;NA
+"PNAD";"2014";"domicilios";"2017-05-16";"TRUE";0,0476770401000977;"0.1 Mb";100;84

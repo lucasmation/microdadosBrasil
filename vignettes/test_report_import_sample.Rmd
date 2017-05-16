@@ -1,0 +1,51 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+
+
+devtools::load_all()
+source("../testes/test_functions.R")
+library(dplyr)
+
+```
+
+
+Here are the results for import tests for each dataset( reading only a few lines of the dataset):
+
+
+
+
+
+```{r, echo = F, results = 'asis'}
+
+for(dt in get_available_datasets()){
+
+cat("\n\n")
+cat(paste0("### ",dt))
+cat("\n\n")
+
+if(test_report('import_sample', test.folder = "../testes/test_results")[dataset == (dt),] %>% nrow > 0){
+  
+knitr::kable(test_report('import_sample', test.folder = "../testes/test_results")[dataset == (dt),], digits = 2, col.names = c("dataset", "period","file type", "date", "sucess", "time_download(s)", "size(Mb)","rows", "variables")) %>% print
+}else{
+  
+  cat("\nNo test for this dataset yet\n")
+}
+  
+  
+}
+  
+```
+
+
