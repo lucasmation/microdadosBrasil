@@ -77,4 +77,7 @@ int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
 194;V4621;12.;;12;0;205;d;FALSE
 206;V4622;$2.;;2;0;207;c;TRUE
 208;V4624;$1.;;1;0;208;c;TRUE
-209;V9992;$8.;;8;0;216;c;TRUE
+209;V4628;$1.;;1;0;209;c;TRUE
+210;V4632;7.;;7;0;216;i;FALSE
+217;V4633;$5.;;5;0;221;c;TRUE
+222;V9992;$8.;;8;0;229;c;TRUE
