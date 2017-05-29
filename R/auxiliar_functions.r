@@ -46,13 +46,17 @@ read_fwf2 <- function(file, dic, progess = show_progress())
   return(read)
 }
 
-
-
+#' Function to search and solve overlaping problems, returning a list of dictionaries.
+#' @param dic The dictionary to be worked on.
+#' @param init_pos The name of the column which contains the initial positions.
+#' @param fin_pos The name of the column which contains the final positions.
+#' @export
 nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos")
   {
-
+      dic = arrange(.data = dic, dic[[init_pos]])
       # Primeiro teste de overlap
       overlap.pos = which(dic[[init_pos]][-1] - dic[[init_pos]][-length(dic[[init_pos]])] != dic[[fin_pos]][-length(dic[[fin_pos]])] - dic[[init_pos]][-length(dic[[init_pos]])] + 1)
+      print(overlap.pos)
       if(length(overlap.pos) > 0){
         dic.pos = dic
         dic.lis = list()
@@ -66,6 +70,7 @@ nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos")
       }
       i = 1:length(dic.lis)
       names(dic.lis) = paste("V", i, sep = "")
+
       return(dic.lis)
   }
 
