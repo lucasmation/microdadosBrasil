@@ -123,7 +123,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
 
   print(file_name)
   print(data_path)
-  files <- list.files(path=data_path,pattern = file_name, ignore.case=T,recursive = TRUE, full.names = TRUE)
+  files <- list.files(path=data_path,recursive = TRUE, full.names = TRUE) %>% grep(pattern = paste0(file_name, "$"), value = T)
   print(files)
 
 
