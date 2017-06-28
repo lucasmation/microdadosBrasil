@@ -149,10 +149,10 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
   if(all(file.info(paste(c(root_path,filename),collapse = "/"))$isdir)){
 
     size<- sum(file.info(list.files(paste(c(root_path,filename), collapse = "/"), recursive = TRUE, full.names = T))$size) %>%
-    utils:::format.object_size(., "Kb")
+    utils:::format.object_size(., "Mb")
   }else{
     size = file.size(paste(c(root_path,filename),collapse = "/")) %>%
-      utils:::format.object_size(., "Kb")
+      utils:::format.object_size(., "Mb")
   }
     info.output<- data.frame(name = filename, link = link, sucess = sucess, size =  size, stringsAsFactors = F)
 

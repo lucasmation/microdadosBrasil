@@ -77,13 +77,13 @@ parses_SAS_import_dic <- function(file){
   dic %>% return
 }
 
-get_all_dics<- function(dataset,globalEnv = T, write = F, package.root = getwd(), dataset.root = getwd()){
+get_all_dics<- function(dataset,globalEnv = T, write = F, package.root = getwd(), dataset.root = getwd(), periods = get_available_periods(dataset)){
   #facilita o 'parse' de muitos dicionários ao mesmo tempo antes de coloca-los em uma lista
   #Funciona apenas para diretorios 'bem comportados' como Censo Escolar e PNAD Continua
 
   metadata = read_metadata(dataset)
 
-  for(i in metadata$period){
+  for(i in periods){
 
     if(metadata[metadata$period == i,"format"]== "fwf"){
       print(i)
@@ -107,7 +107,7 @@ get_all_dics<- function(dataset,globalEnv = T, write = F, package.root = getwd()
           }
           if(write){
             file.dic = file.path(package.root, "inst", "extdata", dataset, "dictionaries",
-                                 paste0("import_dictionary_PNAD", ft,"_",i, ".csv"))
+                                 paste0("import_dictionary_",dataset,"_", ft,"_",i, ".csv"))
 
             fwrite(parses_SAS_import_dic(paste0(dics_path,ifelse(dics_path == "","",'/'),f)),file = file.dic , sep = ";" )
           }

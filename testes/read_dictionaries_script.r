@@ -74,7 +74,7 @@ save(CensoEducacaoSuperior_dics, file = paste0(dic_folder, "/CensoEducacaoSuperi
 
 path<-"C:/Users/b2826073/Documents/Datasets/PNAD"
 
-get_all_dics("PNAD", dataset.root = path, globalEnv = T, write = T)
+get_all_dics("PNAD", periods = c(2001:2009, 2011:2015), dataset.root = path, globalEnv = T, write = T)
 
 
 ########################## PME ######################################################
