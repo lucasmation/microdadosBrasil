@@ -37,7 +37,7 @@ cat("\n\n")
 
 if(test_report('import_sample', test.folder = "../testes/test_results")[dataset == (dt),] %>% nrow > 0){
   
-knitr::kable(test_report('import_sample', test.folder = "../testes/test_results")[dataset == (dt),], digits = 2, col.names = c("dataset", "period","file type", "date", "sucess", "time_download(s)", "size(Mb)","rows", "variables")) %>% print
+knitr::kable(test_report('import_sample' , test.folder = "../testes/test_results")[dataset == (dt),], digits = 2, col.names = c("dataset", "period","file type", "date", "sucess", "time_download(s)", "size(Mb)","rows", "variables")) %>% print
 }else{
   
   cat("\nNo test for this dataset yet\n")

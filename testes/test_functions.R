@@ -5,7 +5,12 @@ test_report<- function(report, test.folder = "testes/test_results"){
 
 
     file.tests<- file.path(test.folder, paste0(report ,"_test_results.csv"))
-    results.tests<- data.table::fread(file.tests, sep = ";", dec = ",")
+    results.tests<- data.table::fread(file.tests, sep = ";", dec = c(","))
+
+    if(report == "import_sample"){
+    results.tests$time <- gsub(results.tests$time, pattern = ",", replacement = ".") %>% as.numeric()
+    }
+
     return(results.tests)
 
 
@@ -45,7 +50,7 @@ test_download<- function(dataset,folder,periods = NULL, unzip = F, ignore.files 
                               date = today.date,
                               time_download = difftime(t1,t0, units = "secs"),
                               error_download = all(is.na(d)) & !is.data.frame(d),
-                              size = d$size, stringsAsFactors = F)
+                              size = ifelse(is.data.frame(d), d$size, NA), stringsAsFactors = F)
 
     results<- bind_rows(results,results_temp)
 
@@ -66,13 +71,16 @@ update_test_import_sample<- function(test_results, test.folder = "testes/test_re
 
   file.tests<- file.path(test.folder, "import_sample_test_results.csv")
   old.tests<- data.table::fread(file.tests, sep = ";", dec = ",")
+  old.tests[, priority:= 2]
+  test_results <- mutate(test_results, priority = 1)
 
   tests<- rbind(old.tests, test_results, fill = T)
 
   tests[, date:= as.Date(date, "%Y-%m-%d")]
-  tests<- tests[order(dataset,period, -date)]
+  tests<- tests[order(dataset,period,priority, -date)]
   tests[, date:= as.character(date)]
-  tests <- tests %>% filter(!(duplicated(dataset) & duplicated(period) & duplicated(ft)))
+  tests <- tests %>% distinct(dataset,period,ft, .keep_all = T) %>%
+                      select(-priority)
 
   write.csv2(tests, file.tests, row.names = F)
 
@@ -90,7 +98,7 @@ update_test_download<- function(test_results, test.folder = "testes/test_results
   tests[, date:= as.Date(date, "%Y-%m-%d")]
   tests<- tests[order(dataset,period, -date)]
   tests[, date:= as.character(date)]
-  tests <- tests %>% filter(!(duplicated(dataset) & duplicated(period)))
+  tests <- tests %>% distinct(dataset, period, .keep_all = T) %>% select(dataset,period,date,time_download, error_download, size)
 
   write.csv2(tests, file.tests, row.names = F)
 
