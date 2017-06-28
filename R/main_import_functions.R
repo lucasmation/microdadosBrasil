@@ -74,7 +74,7 @@ aux_read_fwf <- function(f,dic, nrows = -1L){
 #' @import dplyr
 #' @importFrom data.table data.table setnames rbindlist
 #' @export
-read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL, vars_subset = NULL, nrows = -1L){
+read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL, vars_subset = NULL, nrows = -1L, source_file_mark = F){
 
   #Check for inconsistency in parameters
   # status:
@@ -191,6 +191,11 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
     old_vars<- names(d) %in% vt$old_varname
     names(d)[old_vars]<- vt$std_varname
   }
+  if(!source_file_mark & "source_file" %in% names(d)){
+
+    d[, source_file:= NULL]
+  }
+
 
   return(d)
 }
