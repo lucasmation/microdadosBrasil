@@ -154,7 +154,9 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
     if(any(dic$decimal_places) & dataset == "CENSO"){
       sapply(which(as.logical(dic$decimal_places)), function(x){
         if(dic$col_type[x] == "d"){
-          d[, (x):= (lapply(d[, x, with = F], as.numeric) %>% unlist) /(10**dic$decimal_places[x])]
+          var <- dic$var_name[x]
+
+          d[, (var):= (d[, var,with = F] /(10**dic$decimal_places[x]))]
         }
       })
     }
