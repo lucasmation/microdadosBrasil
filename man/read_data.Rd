@@ -5,7 +5,8 @@
 \title{Reads files (fwf or csv).}
 \usage{
 read_data(dataset, ft, i, metadata = NULL, var_translator = NULL,
-  root_path = NULL, file = NULL, vars_subset = NULL)
+  root_path = NULL, file = NULL, vars_subset = NULL, nrows = -1L,
+  source_file_mark = F)
 }
 \arguments{
 \item{dataset}{.}
@@ -14,9 +15,19 @@ read_data(dataset, ft, i, metadata = NULL, var_translator = NULL,
 
 \item{i}{period. Normally period in YYY format.}
 
+\item{metadata}{(optional) metadata for the dataset. If not provided it is obtained using the function read_metadata(dataset)}
+
 \item{var_translator}{(optional) a data.frame containing a subdataset (ft) specific renaming dictionary. Rows indicate the variable and the columuns the periods.}
 
 \item{root_path}{(optional) a path to the directory where dataset was downloaded}
+
+\item{file}{(optional) file to read, ignore all metadata in this case}
+
+\item{vars_subset}{(optional) read only selected variables( named on the dictionary for fwf files or in the first row for delimited files)}
+
+\item{nrows}{(optional) read only n first rows}
+
+\item{source_file_mark}{(optional) TRUE/FALSE , if T create a variable with the filename that the observation was imported from, useful for datasets with lots of separated files( CENSO and RAIS)}
 }
 \description{
 Main import function. Parses metadata and import diciontaries (in case of fwf files) to obtain import parameters for the desired subdataset and period. Then imports based on those parameters. Should not be aceessed directly, unless you are trying to extend the package, but rather though the wrapper funtions (read_CENSO, read_PNAD, etc).

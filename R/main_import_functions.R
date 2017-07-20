@@ -1,5 +1,11 @@
 # This file contains the main import functions
 
+#' Return a data.frame with metadata about a dataset
+#'
+#' @param dataset name of the dataset. Use get_available_datasets() to see options.
+
+#' @return a data.frame containing metadata about the dataset.
+#'
 #' @export
 read_metadata <- function(dataset){
   read.csv2(system.file("extdata", dataset,
@@ -9,7 +15,7 @@ read_metadata <- function(dataset){
 
 }
 
-#' @export
+
 read_var_translator <- function(dataset, ft){
   read.csv2(system.file("extdata",
                         paste0(dataset,'_',ft,'_varname_harmonization.csv'),
@@ -19,17 +25,8 @@ read_var_translator <- function(dataset, ft){
 
 
 
-#' Reads fixed-width file (fwf) file based on dictionary.
-#'
-#' @param f A fixed-width file (fwf) (normally a .txt file).
-#' @param dic A data.frame, containing the import dictionary, including the variables: var_name, int_pos, fin_pos, decima_places (optional)
-#' @return a data.frame containing the imported data.
-#'
-#' @examples
-#' \dontrun{aux_read_fwf(filename.txt,dicionary_name)}
-#'
+
 #' @import readr
-#' @export
 aux_read_fwf <- function(f,dic, nrows = -1L){
 
   dict = nodic_overlap(dic)
@@ -59,8 +56,13 @@ aux_read_fwf <- function(f,dic, nrows = -1L){
 #' @param dataset .
 #' @param ft file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')
 #' @param i period. Normally period in YYY format.
+#' @param metadata (optional) metadata for the dataset. If not provided it is obtained using the function read_metadata(dataset)
 #' @param var_translator (optional) a data.frame containing a subdataset (ft) specific renaming dictionary. Rows indicate the variable and the columuns the periods.
 #' @param root_path (optional) a path to the directory where dataset was downloaded
+#' @param file (optional) file to read, ignore all metadata in this case
+#' @param vars_subset (optional) read only selected variables( named on the dictionary for fwf files or in the first row for delimited files)
+#' @param nrows (optional) read only n first rows
+#' @param source_file_mark (optional) TRUE/FALSE , if T create a variable with the filename that the observation was imported from, useful for datasets with lots of separated files( CENSO and RAIS)
 #'
 #' @examples
 #' \dontrun{

@@ -74,7 +74,9 @@ nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos")
       return(dic.lis)
   }
 
+#' Returns available datasets int the package
 
+#' @export
 get_available_datasets <- function(){
   datasets_list<- list.files(system.file("extdata", package = "microdadosBrasil"), full.names = TRUE) %>%
     (function(x) return(x[dir.exists(x)])) %>%
@@ -86,7 +88,12 @@ get_available_datasets <- function(){
   return(datasets_list)
 }
 
-
+#' Returns the periods for wich we have information about a dataset in the package
+#'
+#' @param  dataset name of the dataset. See get_available_datasets() for options.
+#' @param  fwfonly (optional) TRUE/FALSE if TRUE returns only the periods for wich the dataset is distributed as a fixed width file.
+#'
+#' @export
 get_available_periods <- function(dataset, fwfonly = FALSE){
 
 
@@ -116,6 +123,17 @@ get_available_periods <- function(dataset, fwfonly = FALSE){
 
 }
 
+
+#' Returns available filetypes for a dataset in a given period.
+#'
+#' @param  dataset name of the dataset. See get_available_datasets() for options.
+#' @param  period  See get_available_periods(dataset) for options
+#'
+#' @examples
+#'
+#' get_available_filetypes("PNAD", 2014)
+#'
+#' @export
 get_available_filetypes<- function(dataset, period){
 
   md = is.data.frame(dataset)

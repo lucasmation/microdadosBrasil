@@ -8,6 +8,15 @@
 #' @param ft file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')
 #' @param i period. Normally period in YYY format.
 #' @param harmonize_varnames Should variable names be harmonized over the periods of the subdataset (ft)
+#' @param root_path (optional) a path to the directory where dataset was downloaded
+#' @param file (optional) file to read, ignore all metadata in this case
+#' @param vars_subset (optional) read only selected variables( named on the dictionary for fwf files or in the first row for delimited files)
+#' @param nrows (optional) read only n first rows
+#' @param source_file_mark (optional) TRUE/FALSE , if T create a variable with the filename that the observation was imported from, useful for datasets with lots of separated files( CENSO and RAIS)
+#' @param UF (optional) only for CENSO and RAIS. Use this option to read only the files for selected brazilian states. c("DF)
+#'
+
+
 #'
 #' @return a data.frame containing the imported data.
 #' @name read_dataset
