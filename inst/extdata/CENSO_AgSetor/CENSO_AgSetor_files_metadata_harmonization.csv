@@ -1,0 +1,3 @@
+period;download_path;download_mode;format;path;inputs_folder;data_folder;missing_symbols;ft_temp
+2000;ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2000/Dados_do_Universo/Agregado_por_Setores_Censitarios/;ftp;csv;Agregados_por_Setores_Censitarios;NA;NA;NA;
+2010;ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_do_Universo/Agregados_por_Setores_Censitarios/;ftp;csv;NA;NA;NA;NA;";&(@@)_[A-Z]{2}.csv"

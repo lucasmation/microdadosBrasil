@@ -49,6 +49,9 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = N
 
 
 
+
+
+
 #' @rdname read_dataset
 #' @export
 read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL, file = NULL, vars_subset = NULL, nrows = -1L, source_file_mark = F){
@@ -57,7 +60,7 @@ read_CensoEducacaoSuperior<- function(ft,i,root_path=NULL, file = NULL, vars_sub
 
 
 
-   data<-read_data(dataset = "CensoEducacaoSuperior",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = source_file_mark)
+  data<-read_data(dataset = "CensoEducacaoSuperior",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = source_file_mark)
 
   return(data)
 }
@@ -76,7 +79,73 @@ read_ENEM<- function(ft,i,root_path=NULL, file = NULL, vars_subset = NULL, nrows
   return(data)
 }
 
+#' @rdname read_dataset
+#' @export
+read_CENSO_AgSetor<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF = NULL, nrows = -1L, source_file_mark = F){
 
+
+
+    metadata <-  read_metadata('CENSO_AgSetor')
+
+
+
+    if(is.null(file)){
+
+
+      # Change the data file information in metadata if UF is selected
+
+
+
+      if(!is.null(UF)){
+
+        UF <- paste0("(",paste(UF, collapse = "|"),")")
+
+
+        metadata[, grep("^ft_", names(metadata))] <-
+          lapply(metadata[, grep("^ft_", names(metadata))],
+                 function(x) stringi::stri_replace_all_fixed(x, pattern = "[A-Z]{2}", replacement = UF)) %>% unlist
+
+
+      }
+
+
+
+    }
+
+    sub_ft<- "Basico"
+    md_new <- metadata
+    md_new[, grep("^ft_", names(metadata))]<-
+
+      lapply(metadata[, grep("^ft_", names(metadata))],
+             function(x) stringi::stri_replace_all_fixed(x, pattern = "@@", replacement = sub_ft)) %>% unlist
+
+    data<-read_data(dataset = "CENSO_AgSetor", ft ="temp", metadata = md_new, i = i, root_path = root_path,file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = T)
+
+  sub_ft<- "Domicilio01"
+
+  for(sub_ft in c(paste0("Domicilio","0", 1:2), paste0("Pessoa", str_pad(c(1,3:6, 8:13), 2, "left", 0)))){
+
+    md_new <- metadata
+    md_new[, grep("^ft_", names(metadata))]<-
+
+      lapply(metadata[, grep("^ft_", names(metadata))],
+             function(x) stringi::stri_replace_all_fixed(x, pattern = "@@", replacement = sub_ft)) %>% unlist
+
+    temp<-read_data(dataset = "CENSO_AgSetor", ft ="temp", metadata = md_new, i = i, root_path = root_path,file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = F)
+
+    names(temp)[grepl(names(temp), pattern = "[0-9]")]<- paste0(sub_ft, "_", names(temp)[grepl(names(temp), pattern = "[0-9]")])
+
+    key.vars<- names(temp)[!grepl(names(temp), pattern = "[0-9]")]
+
+    key.vars<- key.vars[key.vars %in% names(data)]
+
+    temp[, Cod_setor:= as.numeric(Cod_setor)]
+
+    data<- merge(data, temp, by = key.vars, all.x = T)
+
+  }
+  return(data)
+}
 
 #' @rdname read_dataset
 #' @export
@@ -89,20 +158,20 @@ read_CENSO<- function(ft,i,root_path = NULL, file = NULL, vars_subset = NULL, UF
   if(is.null(file)){
 
 
-  # Change the data file information in metadata if UF is selected
+    # Change the data file information in metadata if UF is selected
 
 
 
-  if(!is.null(UF)){
+    if(!is.null(UF)){
 
-    UF <- paste0("(",paste(UF, collapse = "|"),")")
+      UF <- paste0("(",paste(UF, collapse = "|"),")")
 
 
-    metadata[, grep("^ft_", names(metadata))] <-
-      lapply(metadata[, grep("^ft_", names(metadata))],
-             function(x) gsub(x = x, pattern = "&", replacement = paste0("&",UF,"/")))
+      metadata[, grep("^ft_", names(metadata))] <-
+        lapply(metadata[, grep("^ft_", names(metadata))],
+               function(x) gsub(x = x, pattern = "&", replacement = paste0("&",UF,"/")))
 
-  }
+    }
 
 
 

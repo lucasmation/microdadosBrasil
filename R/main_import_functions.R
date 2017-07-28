@@ -151,7 +151,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
     }
 
 
-    lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic, nrows = nrows) %>% rbindlist  -> d
+    lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic, nrows = nrows) %>% rbindlist(., fill = T)  -> d
     #It could be removed after pull request https://github.com/tidyverse/readr/pull/632 be accepted
     if(any(dic$decimal_places) & dataset == "CENSO"){
       sapply(which(as.logical(dic$decimal_places)), function(x){
@@ -168,11 +168,11 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
 
     if(!is.null(vars_subset)){warning("You provided a subset of variables for a dataset that doesn't have a dictionary, make sure to provide valid variable names.", call. = FALSE)
 
-      d <- lapply(files, function(x,...) data.table::fread(x,...) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset, nrows = nrows) %>% rbindlist(use.names = T)
+      d <- lapply(files, function(x,...) data.table::fread(x,..., fill = T) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol), select = vars_subset, nrows = nrows) %>% rbindlist(use.names = T)
 
     }else{
 
-      d <- lapply(files, function(x,...) data.table::fread(x,...) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol), nrows = nrows) %>% rbindlist(use.names = T)
+      d <- lapply(files, function(x,...) data.table::fread(x,..., fill = T) %>% .[, source_file := x], sep = delim, na.strings = c("NA",missing_symbol), nrows = nrows) %>% rbindlist(.,use.names = T, fill = T)
 
     }
 
