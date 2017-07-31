@@ -16,7 +16,7 @@ period;format;download_path;download_mode;missing_symbols;path;inputs_folder;dat
 1990;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/1990/;ftp;NA;1990;;Dados;INPUT DOM1976.txt&DOM1976.txt;INPUT PES1990.txt&PES1990.txt
 1991;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/1991/;ftp;NA;1991;;Dados;INPUT DOM1976.txt&DOM1976.txt;INPUT PES1991.txt&PES1991.txt
 1992;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/1992/;ftp;NA;1992;;Dados;INPUT DOM1976.txt&DOM1976.txt;INPUT PES1992.txt&PES1992.txt
-1993;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/1993/;ftp;NA;1993;;Dados;INPUT DOM1976.txt&DOM1976.txt;INPUT PES1993.txt&PES1993.txt
+1993;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/1993/;ftp;NA;1993;;Dados/DADOS;INPUT DOM93.txt&DOM93.dat;INPUT PES1993.txt&PES93.dat
 1994;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/1994/;ftp;NA;1994;;Dados;INPUT DOM1976.txt&DOM1976.txt;INPUT PES1994.txt&PES1994.txt
 1995;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/1995/;ftp;NA;1995;;Dados;INPUT DOM1976.txt&DOM1976.txt;INPUT PES1995.txt&PES1995.txt
 1996;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_anual/microdados/1996/;ftp;NA;1996;;Dados;INPUT DOM1976.txt&DOM1976.txt;INPUT PES1996.txt&PES1996.txt
