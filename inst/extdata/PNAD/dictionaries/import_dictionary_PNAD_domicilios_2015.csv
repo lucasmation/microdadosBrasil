@@ -78,6 +78,8 @@ int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
 206;V4622;$2.;;2;0;207;c;TRUE
 208;V4624;$1.;;1;0;208;c;TRUE
 209;V4628;$1.;;1;0;209;c;TRUE
-210;V4632;7.;;7;0;216;i;FALSE
-217;V4633;$5.;;5;0;221;c;TRUE
-222;V9992;$8.;;8;0;229;c;TRUE
+210;V4629;7.;;7;0;216;i;FALSE
+217;V4630;$5.;;5;0;221;c;TRUE
+222;V4632;7.;;7;0;228;i;FALSE
+229;V4633;$5.;;5;0;233;c;TRUE
+234;V9992;$8.;;8;0;241;c;TRUE
