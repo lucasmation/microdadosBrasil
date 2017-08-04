@@ -11,7 +11,7 @@ read_metadata <- function(dataset){
   read.csv2(system.file("extdata", dataset,
                         paste0(dataset,'_files_metadata_harmonization.csv'),
                         package = "microdadosBrasil"),
-            stringsAsFactors = FALSE)
+            stringsAsFactors = FALSE, check.names = F)
 
 }
 
@@ -19,7 +19,7 @@ read_metadata <- function(dataset){
 read_var_translator <- function(dataset, ft){
   read.csv2(system.file("extdata",
                         paste0(dataset,'_',ft,'_varname_harmonization.csv'),
-                        package = "microdadosBrasil"), stringsAsFactors = FALSE)
+                        package = "microdadosBrasil"), stringsAsFactors = FALSE, check.names =F)
 }
 
 
