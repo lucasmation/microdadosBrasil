@@ -8,7 +8,7 @@ download_sourceData("POF", 2002,root_path =  pof.path)
 download_sourceData("POF", 2008,root_path =  pof.path.08)
 
 
-d<- read_POF("T_DESPESA_90DIAS_S", 2008, pof.path.08)
+d<- read_POF("despesa_90dias", 2008, pof.path.08)
 
 d<- read_POF("despesa_12meses", 2002, root_path = pof.path)
 
