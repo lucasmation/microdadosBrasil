@@ -86,16 +86,31 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
     for(y in seq_along(filenames)[!download_sucess]){
 
-      print(paste(c(root_path,file_dir,filenames[y]),collapse = "/"))
+      dest.files = paste(c(root_path,file_dir, filenames[y],collapse = "/"))
+      print(dest.files)
       print(file_links[y])
       download_sucess[y] = FALSE
       try({
-          download.file(file_links[y],destfile = paste(c(root_path,file_dir, filenames[y]),collapse = "/"), mode = "wb")
+          download.file(file_links[y],destfile = dest.files, mode = "wb")
           download_sucess[y] = TRUE
 
 
         })
+
+      if(sum(file.info(dest.files)$size) < 100000){
+
+        sucess = F
+        if(loop_counter == max_loops - 1){
+          message(paste0("Downloaded files for period ", i," on the ", loop_counter, "th try were too small. Possible corruption." ))
+
+
+        }else{
+          message(paste0("Downloaded files for period ", i," on the ", loop_counter, "th try were too small, possible corruption, retrying download..." ))
+
+        }
+      }
     }
+
 
       loop_counter = loop_counter + 1
     }
@@ -107,31 +122,48 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
     filename <- link %>% gsub(pattern = ".+/", replacement = "")
     file_dir <- filename %>% gsub( pattern = "\\.zip", replacement = "")
-
+    dest.files <- paste(c(root_path,filename),collapse = "/")
     print(link)
     print(filename)
     print(file_dir)
 
 
 
+    max_loops  = 4
+    loop_counter = 1
 
+    while(!(sucess) & loop_counter< max_loops){
 
-    try({ download.file(link,destfile = paste(c(root_path,filename),collapse = "/"), mode = "wb")
+    try({ download.file(link,destfile = dest.files, mode = "wb")
 
       sucess = TRUE
 
-
-
-    if (unzip==T){
-      #Unzipping main source file:
-      unzip(paste(c(root_path,filename),collapse = "/") ,exdir = paste(c(root_path,file_dir),collapse = "/"))
-    }
     })
+
+
+    if(sucess == T){
+    if(sum(file.info(dest.files)$size) < 100000){
+
+      sucess = F
+      if(loop_counter == max_loops - 1){
+      message(paste0("Downloaded files for period ", i," on the ", loop_counter, "th try were too small. Possible corruption." ))
+
+
+      }else{
+      message(paste0("Downloaded files for period ", i," on the ", loop_counter, "th try were too small, possible corruption, retrying download..." ))
+
+      }
+    }
+
+      loop_counter = loop_counter + 1
+    }}
+
+
   }
 
 
 
-    if (unzip==T){
+    if (unzip==T & sucess == T){
     # #unzipping the data files (in case not unziped above)
     intern_files<- list.files(paste(c(root_path,file_dir),collapse = "/"), recursive = TRUE,all.files = TRUE, full.names = TRUE)
     zip_files<- intern_files[grepl(pattern = "\\.zip$",x = intern_files)]
