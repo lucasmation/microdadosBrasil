@@ -83,10 +83,11 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
     while(!all(download_sucess) & loop_counter< max_loops){
 
+      dest.files.all = sapply(filenames, function(x) {paste(c(root_path,file_dir, x),collapse = "/")})
 
     for(y in seq_along(filenames)[!download_sucess]){
 
-      dest.files = paste(c(root_path,file_dir, filenames[y],collapse = "/"))
+      dest.files = paste(c(root_path,file_dir, filenames[y]),collapse = "/")
       print(dest.files)
       print(file_links[y])
       download_sucess[y] = FALSE
@@ -97,7 +98,10 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
         })
 
-      if(sum(file.info(dest.files)$size) < 100000){
+
+    }
+
+      if(sum(file.info(dest.files.all)$size) < 100000){
 
         sucess = F
         if(loop_counter == max_loops - 1){
@@ -108,12 +112,14 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
           message(paste0("Downloaded files for period ", i," on the ", loop_counter, "th try were too small, possible corruption, retrying download..." ))
 
         }
+      }else{
+        sucess = T
       }
     }
 
 
-      loop_counter = loop_counter + 1
-    }
+    loop_counter = loop_counter + 1
+
 
     if(!all(download_sucess)){ message(paste0("The download of the following files failed:\n"),
                                        paste(filenames[!download_sucess], collapse = "\n"))}
@@ -157,6 +163,10 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
       loop_counter = loop_counter + 1
     }}
+    if (unzip==T & sucess == T){
+      #Unzipping main source file:
+      unzip(paste(c(root_path,filename),collapse = "/") ,exdir = paste(c(root_path,file_dir),collapse = "/"))
+    }
 
 
   }
