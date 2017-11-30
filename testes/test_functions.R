@@ -36,7 +36,7 @@ test_download<- function(dataset,folder,periods = NULL, unzip = F, ignore.files 
 
   for(i in periods){
 
-    d<- NA
+    d<- NULL
 
     t0<- Sys.time()
     try({ d<- download_sourceData(dataset,i = i,unzip = unzip,root_path = folder)})
@@ -49,7 +49,7 @@ test_download<- function(dataset,folder,periods = NULL, unzip = F, ignore.files 
                               period =i,
                               date = today.date,
                               time_download = difftime(t1,t0, units = "secs"),
-                              error_download = all(is.na(d)) & !is.data.frame(d),
+                              error_download = ifelse(is.null(d), T, !(d$sucess)),
                               size = ifelse(is.data.frame(d), d$size, NA), stringsAsFactors = F)
 
     results<- bind_rows(results,results_temp)
@@ -93,10 +93,10 @@ update_test_download<- function(test_results, test.folder = "testes/test_results
   file.tests<- file.path(test.folder, "download_test_results.csv")
   old.tests<- data.table::fread(file.tests, sep = ";", dec = ",")
 
-  tests<- rbind(old.tests, test_results, fill = T)
+  tests<- rbind(old.tests %>% mutate(pref = 0), test_results %>% mutate(pref = 1), fill = T) %>% data.table
 
   tests[, date:= as.Date(date, "%Y-%m-%d")]
-  tests<- tests[order(dataset,period, -date)]
+  tests<- tests[order(dataset,period, -date, -pref)]
   tests[, date:= as.character(date)]
   tests <- tests %>% distinct(dataset, period, .keep_all = T) %>% select(dataset,period,date,time_download, error_download, size)
 
