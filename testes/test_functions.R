@@ -39,7 +39,7 @@ test_download<- function(dataset,folder,periods = NULL, unzip = F, ignore.files 
     d<- NULL
 
     t0<- Sys.time()
-    try({ d<- download_sourceData(dataset,i = i,unzip = unzip,root_path = folder)})
+    try({ d<- download_sourceData(dataset,i = i,unzip = unzip,root_path = folder, replace = T)})
     t1<- Sys.time()
 
 

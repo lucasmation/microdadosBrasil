@@ -38,13 +38,16 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
 
   ft_list  <- names(metadata)[grep("ft_", names(metadata))]
-  data_file_names<- metadata %>% filter(period == i ) %>% select_(.dots =c(ft_list)) %>% unlist(use.names = FALSE) %>% gsub(pattern = ".+?&", replacement = "")
-  data_file_names<- paste0(data_file_names[!is.na(data_file_names)],"$")
+  data_path <- metadata %>% filter(period == i ) %>% select(path) %>% unlist(use.names = F) %>% paste0(.,".*?")
+  data_file_names<- metadata %>% filter(period == i ) %>% select_(.dots =c(ft_list)) %>% unlist(use.names = FALSE)
+  data_file_names<- paste0(data_path,
+                           gsub(pattern = ".+?&", replacement = "", data_file_names[!is.na(data_file_names)]),
+                           "$")
+
   if (!replace) {
     if(any(grepl(pattern = paste0(data_file_names,collapse = "|"), x = list.files(recursive = TRUE, path = ifelse(is.null(root_path), ".", root_path))))) {
-      stop(paste0("This data was already downloaded.(check:\n",
-                  paste(list.files(pattern = paste0(data_file_names,collapse = "|"),
-                             recursive = TRUE,path = ifelse(is.null(root_path), ".", root_path), full.names = TRUE), collapse = "\n"),
+      stop(paste0("This data was already downloaded. Check:\n - ",
+                  paste(grep(pattern = paste0(data_file_names,collapse = "|"), list.files(recursive = TRUE,path = ifelse(is.null(root_path), ".", root_path), full.names = TRUE), value = T), collapse = "\n - "),
                   ")\n\nIf you want to overwrite the previous files add replace=T to the function call."))
 
     }
@@ -127,7 +130,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
   }else{
 
     filename <- link %>% gsub(pattern = ".+/", replacement = "")
-    file_dir <- filename %>% gsub( pattern = "\\.zip", replacement = "")
+    file_dir <- filename %>% gsub( pattern = "(\\.zip)|(\\.7z)|(\\.rar)", replacement = "")
     dest.files <- paste(c(root_path,filename),collapse = "/")
     print(link)
     print(filename)
@@ -165,7 +168,12 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     }}
     if (unzip==T & sucess == T){
       #Unzipping main source file:
+      if(grepl(filename, pattern = "\\.7z")){
+
+        archive::archive_extract(paste(c(root_path,filename),collapse = "/") , paste(c(root_path,file_dir),collapse = "/"))
+      }else{
       unzip(paste(c(root_path,filename),collapse = "/") ,exdir = paste(c(root_path,file_dir),collapse = "/"))
+      }
     }
 
 
@@ -179,12 +187,26 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     zip_files<- intern_files[grepl(pattern = "\\.zip$",x = intern_files)]
     rar_files<- intern_files[grepl(pattern = "\\.rar$",x = intern_files)]
     r7z_files<- intern_files[grepl(pattern = "\\.7z$",x = intern_files)]
-    if(length(r7z_files)>0){warning(paste0("There are files in .7z format inside the main folder, please unzip manually: ",paste(r7z_files,collapse = ", ")))}
+    #if(length(r7z_files)>0){warning(paste0("There are files in .7z format inside the main folder, please unzip manually: ",paste(r7z_files,collapse = ", ")))}
     if(length(rar_files)>0){warning(paste0("There are files in .rar format inside the main folder, please unzip manually: ",paste(r7z_files,collapse = ", ")))}
     for(zip_file in zip_files){
       exdir<- zip_file %>% gsub(pattern = "\\.zip", replacement = "")
       unzip(zipfile = zip_file,exdir = exdir )
     }
+    for(zip_file in r7z_files){
+
+      exdir<- zip_file %>% gsub(pattern = "\\.7z", replacement = "")
+      archive::archive_extract(zip_file, exdir)
+
+    }
+
+    for(zip_file in rar_files){
+
+      exdir<- zip_file %>% gsub(pattern = "\\.rar", replacement = "")
+      archive::archive_extract(zip_file, exdir)
+
+    }
+
 
 }
 
