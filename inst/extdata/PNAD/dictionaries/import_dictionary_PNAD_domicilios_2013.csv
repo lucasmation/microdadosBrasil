@@ -1,98 +1,99 @@
 int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
-5;UF;$2.;;2;0;6;c;TRUE
-5;V0102;$8.;;8;0;12;c;TRUE
-13;V0103;$3.;;3;0;15;c;TRUE
-16;V0104;$2.;;2;0;17;c;TRUE
-18;V0105;$2.;;2;0;19;c;TRUE
-20;V0106;$2.;;2;0;21;c;TRUE
-22;V0201;$1.;;1;0;22;c;TRUE
-23;V0202;$1.;;1;0;23;c;TRUE
-24;V0203;$1.;;1;0;24;c;TRUE
-25;V0204;$1.;;1;0;25;c;TRUE
-26;V0205;2.;;2;0;27;i;FALSE
-28;V0206;2.;;2;0;29;i;FALSE
-30;V0207;$1.;;1;0;30;c;TRUE
-31;V0208;12.;;12;0;42;d;FALSE
-43;V0209;12.;;12;0;54;d;FALSE
-55;V0210;$1.;;1;0;55;c;TRUE
-56;V0211;$1.;;1;0;56;c;TRUE
-57;V0212;$1.;;1;0;57;c;TRUE
-58;V0213;$1.;;1;0;58;c;TRUE
-59;V0214;$1.;;1;0;59;c;TRUE
-60;V0215;$1.;;1;0;60;c;TRUE
-61;V0216;$1.;;1;0;61;c;TRUE
-62;V2016;2.;;2;0;63;i;FALSE
-64;V0217;$1.;;1;0;64;c;TRUE
-65;V0218;$1.;;1;0;65;c;TRUE
-66;V0219;$1.;;1;0;66;c;TRUE
-67;V0220;$1.;;1;0;67;c;TRUE
-68;V2020;$1.;;1;0;68;c;TRUE
-69;V0221;$1.;;1;0;69;c;TRUE
-70;V0222;$1.;;1;0;70;c;TRUE
-71;V0223;$1.;;1;0;71;c;TRUE
-72;V0224;$1.;;1;0;72;c;TRUE
-73;V0225;$1.;;1;0;73;c;TRUE
-74;V0226;$1.;;1;0;74;c;TRUE
-75;V0227;$1.;;1;0;75;c;TRUE
-76;V02270;$2.;;2;0;77;c;TRUE
-78;V02271;$2.;;2;0;79;c;TRUE
-80;V02272;$1.;;1;0;80;c;TRUE
-81;V02273;$1.;;1;0;81;c;TRUE
-82;V02274;$1.;;1;0;82;c;TRUE
-83;V2027;$1.;;1;0;83;c;TRUE
-84;V0228;$1.;;1;0;84;c;TRUE
-85;V0229;$1.;;1;0;85;c;TRUE
-86;V0230;$1.;;1;0;86;c;TRUE
-87;V0231;$1.;;1;0;87;c;TRUE
-88;V0232;$1.;;1;0;88;c;TRUE
-89;V02321;$1.;;1;0;89;c;TRUE
-90;V02322;$1.;;1;0;90;c;TRUE
-91;V02323;$1.;;1;0;91;c;TRUE
-92;V02324;$1.;;1;0;92;c;TRUE
-93;V02325;$1.;;1;0;93;c;TRUE
-94;V02326;$1.;;1;0;94;c;TRUE
-95;V02327;$1.;;1;0;95;c;TRUE
-96;V02424;$1.;;1;0;96;c;TRUE
-97;V02425;$1.;;1;0;97;c;TRUE
-98;V02426;$1.;;1;0;98;c;TRUE
-99;V2032;$1.;;1;0;99;c;TRUE
-100;V4105;$1.;;1;0;100;c;TRUE
-101;V4107;$1.;;1;0;101;c;TRUE
-102;V4600;$2.;;2;0;103;c;TRUE
-104;V4601;$2.;;2;0;105;c;TRUE
-106;V4602;$4.;;4;0;109;c;TRUE
-110;V4604;$2.;;2;0;111;c;TRUE
-112;V4605;12.10;;12;10;123;d;FALSE
-124;V4606;$3.;;3;0;126;c;TRUE
-127;V4607;12.10;;12;10;138;d;FALSE
-139;V4608;$6.;;6;0;144;c;TRUE
-145;V4609;$9.;;9;0;153;c;TRUE
-154;V4610;3.;;3;0;156;i;FALSE
-157;V4611;5.;;5;0;161;i;FALSE
-162;V4614;12.;;12;0;173;d;FALSE
-174;UPA;$4.;;4;0;177;c;TRUE
-178;V4617;7.;;7;0;184;i;FALSE
-185;V4618;7.;;7;0;191;i;FALSE
-192;V4620;$2.;;2;0;193;c;TRUE
-194;V4621;12.;;12;0;205;d;FALSE
-206;V4622;$2.;;2;0;207;c;TRUE
-208;V4624;$1.;;1;0;208;c;TRUE
-209;V2101;$1.;;1;0;209;c;TRUE
-210;V2103;$1.;;1;0;210;c;TRUE
-211;V2105;$1.;;1;0;211;c;TRUE
-212;V2107;$1.;;1;0;212;c;TRUE
-213;V2109;$1.;;1;0;213;c;TRUE
-214;V2113;$1.;;1;0;214;c;TRUE
-215;V2115;$1.;;1;0;215;c;TRUE
-216;V2117;$1.;;1;0;216;c;TRUE
-217;V2121;$1.;;1;0;217;c;TRUE
-218;V2123;$1.;;1;0;218;c;TRUE
-219;V2124;$1.;;1;0;219;c;TRUE
-220;V2126;$1.;;1;0;220;c;TRUE
-221;V2128;$1.;;1;0;221;c;TRUE
-222;V2130;$1.;;1;0;222;c;TRUE
-223;V2132;$1.;;1;0;223;c;TRUE
-224;V2134;$1.;;1;0;224;c;TRUE
-225;V2138;$2.;;2;0;226;c;TRUE
-227;V2139;$2.;;2;0;228;c;TRUE
-229;V9992;$8.;;8;0;236;c;TRUE
+5;UF;$2.;/*Unidade da Federação*/;2;0;6;c;TRUE
+5;V0102;$8.;/*Número de controle*/;8;0;12;c;TRUE
+13;V0103;$3.;/*Número de série*/;3;0;15;c;TRUE
+16;V0104;$2.;/*Tipo de entrevista*/;2;0;17;c;TRUE
+18;V0105;$2.;/*Total de moradores*/;2;0;19;c;TRUE
+20;V0106;$2.;/*Total de moradores de 10 anos ou mais*/;2;0;21;c;TRUE
+22;V0201;$1.;/*Espécie do domicílio*/;1;0;22;c;TRUE
+23;V0202;$1.;/*Tipo do domicílio*/;1;0;23;c;TRUE
+24;V0203;$1.;/*Material predominante na construção das paredes externas do prédio*/;1;0;24;c;TRUE
+25;V0204;$1.;/*Material predominante na cobertura (telhado) do domicílio */;1;0;25;c;TRUE
+26;V0205;2.;/*Número de cômodos do domicílio*/;2;0;27;i;FALSE
+28;V0206;2.;/*Número de cômodos servindo de dormitório*/;2;0;29;i;FALSE
+30;V0207;$1.;/*Condição de ocupação do domicílio*/;1;0;30;c;TRUE
+31;V0208;12.;/*Aluguel mensal pago no mês de referência*/;12;0;42;d;FALSE
+43;V0209;12.;/*Prestação mensal paga no mês de referência*/;12;0;54;d;FALSE
+55;V0210;$1.;/*Terreno onde está localizado o domicílio é próprio*/;1;0;55;c;TRUE
+56;V0211;$1.;/*Tem água canalizada em pelo menos um cômodo do domicílio */;1;0;56;c;TRUE
+57;V0212;$1.;/*Proveniência da água canalizada utilizada no domicílio*/;1;0;57;c;TRUE
+58;V0213;$1.;/*Água utilizada no domicílio é canalizada de rede geral de distribuição para a propriedade*/;1;0;58;c;TRUE
+59;V0214;$1.;/*Água utilizada no domicílio é de poço ou nascente localizado na propriedade*/;1;0;59;c;TRUE
+60;V0215;$1.;/*Tem banheiro ou sanitário no domicílio ou na propriedade*/;1;0;60;c;TRUE
+61;V0216;$1.;/*Uso do banheiro ou sanitário*/;1;0;61;c;TRUE
+62;V2016;2.;/*Número de banheiros ou sanitários*/;2;0;63;i;FALSE
+64;V0217;$1.;/*Forma de escoadouro do banheiro ou sanitário*/;1;0;64;c;TRUE
+65;V0218;$1.;/*Destino do lixo domiciliar */;1;0;65;c;TRUE
+66;V0219;$1.;/*Forma de iluminação do domicílio*/;1;0;66;c;TRUE
+67;V0220;$1.;/*Tem telefone móvel celular*/;1;0;67;c;TRUE
+68;V2020;$1.;/*Tem telefone fixo convencional*/;1;0;68;c;TRUE
+69;V0221;$1.;/*Tem fogão de duas ou mais bocas*/;1;0;69;c;TRUE
+70;V0222;$1.;/*Tem fogão de uma boca*/;1;0;70;c;TRUE
+71;V0223;$1.;/*Tipo de combustível utilizado no fogão */;1;0;71;c;TRUE
+72;V0224;$1.;/*Tem filtro d’água*/;1;0;72;c;TRUE
+73;V0225;$1.;/*Tem rádio*/;1;0;73;c;TRUE
+74;V0226;$1.;/*Tem televisão em cores*/;1;0;74;c;TRUE
+75;V0227;$1.;/*Tem televisão em preto e branco*/;1;0;75;c;TRUE
+76;V02270;$2.;/*Número de televisões de tela fina*/;2;0;77;c;TRUE
+78;V02271;$2.;/*Número de televisões de tubo*/;2;0;79;c;TRUE
+80;V02272;$1.;/*Tem televisão por assinatura*/;1;0;80;c;TRUE
+81;V02273;$1.;/*Tem televisão com recepçao de sinal digital de tv aberta*/;1;0;81;c;TRUE
+82;V02274;$1.;/*Tem televisão com antena parabólica*/;1;0;82;c;TRUE
+83;V2027;$1.;/*Tem aparelho de DVD*/;1;0;83;c;TRUE
+84;V0228;$1.;/*Tem geladeira*/;1;0;84;c;TRUE
+85;V0229;$1.;/*Tem freezer*/;1;0;85;c;TRUE
+86;V0230;$1.;/*Tem máquina de lavar roupa*/;1;0;86;c;TRUE
+87;V0231;$1.;/*Tem microcomputador*/;1;0;87;c;TRUE
+88;V0232;$1.;/*Microcomputador é utilizado para acessar a Internet*/;1;0;88;c;TRUE
+89;V02321;$1.;/*Tem tablet*/;1;0;89;c;TRUE
+90;V02322;$1.;/*Tem acesso à Internet no próprio domicilio*/;1;0;90;c;TRUE
+91;V02323;$1.;/*Para acessar à Internet utiliza-se microcomputador*/;1;0;91;c;TRUE
+92;V02324;$1.;/*Para acessar à Internet utiliza-se telefone celular*/;1;0;92;c;TRUE
+93;V02325;$1.;/*Para acessar à Internet utiliza-se tablet*/;1;0;93;c;TRUE
+94;V02326;$1.;/*Para acessar à Internet utiliza-se tv*/;1;0;94;c;TRUE
+95;V02327;$1.;/*Para acessar à Internet utiliza-se outro equipamento eletrônico*/;1;0;95;c;TRUE
+96;V02424;$1.;/*O acesso à Internet é feito através de sinal de rede celular 3G ou 4G*/;1;0;96;c;TRUE
+97;V02425;$1.;/*O acesso à Internet é feito através de conexão discada por linha telefônica*/;1;0;97;c;TRUE
+98;V02426;$1.;/*O acesso à Internet é feito por banda larga*/;1;0;98;c;TRUE
+99;V2032;$1.;/*Tem carro ou motocicleta de uso pessoal*/;1;0;99;c;TRUE
+100;V4105;$1.;/*Código de situação censitária*/;1;0;100;c;TRUE
+101;V4107;$1.;/*Código de área censitária*/;1;0;101;c;TRUE
+102;V4600;$2.;/*Dia de referência*/;2;0;103;c;TRUE
+104;V4601;$2.;/*Mês de referência*/;2;0;105;c;TRUE
+106;V4602;$4.;/*Estrato*/;4;0;109;c;TRUE
+110;V4604;$2.;/*Número de municípios selecionados no estrato*/;2;0;111;c;TRUE
+112;V4605;12.10;/*Probabilidade do município*/;12;10;123;d;FALSE
+124;V4606;$3.;/*Número de setores selecionados no município*/;3;0;126;c;TRUE
+127;V4607;12.10;/*Probabilidade do setor*/;12;10;138;d;FALSE
+139;V4608;$6.;/*Intervalo de seleção do domicílio*/;6;0;144;c;TRUE
+145;V4609;$9.;/*Projeção de população */;9;0;153;c;TRUE
+154;V4610;3.;/*Inverso da fração*/;3;0;156;i;FALSE
+157;V4611;5.;/*Peso do domicílio*/;5;0;161;i;FALSE
+162;V4614;12.;/*Rendimento mensal domiciliar*/;12;0;173;d;FALSE
+174;UPA;$4.;/*Delimitação do município*/;4;0;177;c;TRUE
+178;V4617;7.;/*STRAT*/;7;0;184;i;FALSE
+185;V4618;7.;/*PSU*/;7;0;191;i;FALSE
+192;V4620;$2.;/*Número de componentes do domícilio */;2;0;193;c;TRUE
+194;V4621;12.;/*Rendimento mensal domiciliar per capita */;12;0;205;d;FALSE
+206;V4622;$2.;/*Faixa do rendimento mensal domiciliar per capita */;2;0;207;c;TRUE
+208;V4623A;$2.;/*Situação de segurança alimentar do domicílio - EBIA 2009*/;2;0;209;c;TRUE
+210;V4624;$1.;/*Forma de abastecimento de água*/;1;0;210;c;TRUE
+211;V2101;$1.;/*Informante desta parte*/;1;0;211;c;TRUE
+212;V2103;$1.;/*Os moradores tiveram a preocupação de que os alimentos acabassem antes de poderem comprar ou receber mais comida*/;1;0;212;c;TRUE
+213;V2105;$1.;/*Os alimentos acabaram antes que os moradores deste domicílio tivessem dinheiro para comprar mais comida*/;1;0;213;c;TRUE
+214;V2107;$1.;/*Os moradores ficaram sem dinheiro para ter uma alimentação saudável e variada*/;1;0;214;c;TRUE
+215;V2109;$1.;/*Os moradores comeram apenas alguns alimentos que ainda tinham porque o dinheiro acabou*/;1;0;215;c;TRUE
+216;V2113;$1.;/*Algum morador de 18 anos ou mais de idade deixou de fazer alguma refeição porque não havia dinheiro para comprar comida*/;1;0;216;c;TRUE
+217;V2115;$1.;/*Algum morador de 18 anos ou mais de idade, alguma vez, comeu menos do que achou que devia porque não havia dinheiro para comprar comida*/;1;0;217;c;TRUE
+218;V2117;$1.;/*Algum morador de 18 anos ou mais de idade, alguma vez, sentiu fome mas não comeu porque não havia dinheiro para comprar comida*/;1;0;218;c;TRUE
+219;V2121;$1.;/*Algum morador de 18 anos ou mais de idade, alguma vez, fez uma refeição ou ficou um dia inteiro sem comer porque não havia dinheiro para comprar comida*/;1;0;219;c;TRUE
+220;V2123;$1.;/*Existência de morador de 0 a 17 anos de idade*/;1;0;220;c;TRUE
+221;V2124;$1.;/*Algum morador com menos de 18 anos de idade, alguma vez, deixou de ter uma alimentação saudável e variada porque não havia dinheiro para comprar comida*/;1;0;221;c;TRUE
+222;V2126;$1.;/*Algum morador com menos de 18 anos de idade, alguma vez, não comeu quantidade suficiente de comida porque não havia dinheiro para comprar comida*/;1;0;222;c;TRUE
+223;V2128;$1.;/*Alguma vez, foi diminuida a quantidade de alimentos das refeições de algum morador com menos de 18 anos de idade porque não havia dinheiro para comprar comida*/;1;0;223;c;TRUE
+224;V2130;$1.;/*Alguma vez, algum morador com menos de 18 anos de idade deixou de fazer uma refeição porque não havia dinheiro para comprar comida*/;1;0;224;c;TRUE
+225;V2132;$1.;/*Alguma vez, algum morador com menos de 18 anos de idade sentiu fome, mas não comeu porque não havia dinheiro para comprar comida*/;1;0;225;c;TRUE
+226;V2134;$1.;/*Alguma vez, algum morador com menos de 18 anos de idade fez apenas uma refeição ao dia ou ficou sem comer por um dia inteiro porque não havia dinheiro para comprar comida*/;1;0;226;c;TRUE
+227;V2138;$2.;/*Principal atutide adotada quando faltou alimento*/;2;0;228;c;TRUE
+229;V2139;$2.;/*Outra atitude adotada quando faltou alimento*/;2;0;230;c;TRUE
+231;V9992;$8.;/*Data de geração do arquivo de microdados*/;8;0;238;c;TRUE
