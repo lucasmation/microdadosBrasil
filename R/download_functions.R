@@ -75,7 +75,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
                         crlf = TRUE)
     filename<- file_dir<- gsub(link, pattern = "/+$", replacement = "", perl = TRUE) %>% gsub(pattern = ".+/", replacement = "")
     new_dir <- paste(c(root_path,file_dir), collapse = "/")
-    dir.create(new_dir)
+    if(!dir.exists(new_dir)){dir.create(new_dir)}
     filenames<- strsplit(filenames, "\r*\n")[[1]]
     file_links <- paste(link, filenames, sep = "")
 
@@ -84,7 +84,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     max_loops  = 20
     loop_counter = 1
 
-    while(!all(download_sucess) & loop_counter< max_loops){
+    while(!all(download_sucess) & loop_counter< max_loops ){
 
       dest.files.all = sapply(filenames, function(x) {paste(c(root_path,file_dir, x),collapse = "/")})
 
@@ -167,45 +167,45 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
       loop_counter = loop_counter + 1
     }}
     if (unzip==T & sucess == T){
+      #Won't use 'archive' in the main download function until its on CRAN
       #Unzipping main source file:
-      if(grepl(filename, pattern = "\\.7z")){
+      #if(grepl(filename, pattern = "\\.7z")){
 
-        archive::archive_extract(paste(c(root_path,filename),collapse = "/") , paste(c(root_path,file_dir),collapse = "/"))
-      }else{
+       # archive::archive_extract(paste(c(root_path,filename),collapse = "/") , paste(c(root_path,file_dir),collapse = "/"))
+      #}else{
       unzip(paste(c(root_path,filename),collapse = "/") ,exdir = paste(c(root_path,file_dir),collapse = "/"))
-      }
+      #}
     }
 
 
   }
 
 
-
     if (unzip==T & sucess == T){
-    # #unzipping the data files (in case not unziped above)
+    ##unzipping the data files (in case not unziped above)
     intern_files<- list.files(paste(c(root_path,file_dir),collapse = "/"), recursive = TRUE,all.files = TRUE, full.names = TRUE)
     zip_files<- intern_files[grepl(pattern = "\\.zip$",x = intern_files)]
     rar_files<- intern_files[grepl(pattern = "\\.rar$",x = intern_files)]
     r7z_files<- intern_files[grepl(pattern = "\\.7z$",x = intern_files)]
-    #if(length(r7z_files)>0){warning(paste0("There are files in .7z format inside the main folder, please unzip manually: ",paste(r7z_files,collapse = ", ")))}
-    if(length(rar_files)>0){warning(paste0("There are files in .rar format inside the main folder, please unzip manually: ",paste(r7z_files,collapse = ", ")))}
+    if(length(r7z_files)>0){message(paste0("\nThere are files in .7z format inside the main folder, please unzip manually or use:\n unzip_all_7z_rar(", root_path, ")"))}
+    if(length(rar_files)>0){message(paste0("\nThere are files in .rar format inside the main folder, please unzip manually or use:\n unzip_all_7z_rar(", root_path, ")"))}
     for(zip_file in zip_files){
       exdir<- zip_file %>% gsub(pattern = "\\.zip", replacement = "")
       unzip(zipfile = zip_file,exdir = exdir )
     }
-    for(zip_file in r7z_files){
+    #for(zip_file in r7z_files){
 
-      exdir<- zip_file %>% gsub(pattern = "\\.7z", replacement = "")
-      archive::archive_extract(zip_file, exdir)
+    # exdir<- zip_file %>% gsub(pattern = "\\.7z", replacement = "")
+    # archive::archive_extract(zip_file, exdir)
 
-    }
+    #}
 
-    for(zip_file in rar_files){
+    #for(zip_file in rar_files){
 
-      exdir<- zip_file %>% gsub(pattern = "\\.rar", replacement = "")
-      archive::archive_extract(zip_file, exdir)
+    #  exdir<- zip_file %>% gsub(pattern = "\\.rar", replacement = "")
+    #  archive::archive_extract(zip_file, exdir)
 
-    }
+    #}
 
 
 }
@@ -225,5 +225,51 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     }
 
 
+#' Wrapper for unzipping lots of .rar and .7z files with archive::archive() .
+#'
+#'
+#' @param root_path  path to the directory where files are stored(will look for files recursively inside that folder)
+#'
+#' @examples
+#' \dontrun{
+#'
+#' unzip_all_7z_rar("Datasets/micro_censo_escolar_2010")
+#'
+#'}
+#'
+#' @export
+unzip_all_7z_rar <- function(root_path){
+
+
+  if(!("archive" %in% installed.packages()[,1])){
+    stop("The package 'archive' is needed to unzip 7z and rar files. Install it with devtools::install_github('jimhester/archive') \n More info at: https://github.com/jimhester/archive")
+  }
+
+
+  # #unzipping the data files (in case not unziped above)
+  intern_files<- list.files(root_path, recursive = TRUE,all.files = TRUE, full.names = TRUE)
+  zip_files<- intern_files[grepl(pattern = "\\.zip$",x = intern_files)]
+  rar_files<- intern_files[grepl(pattern = "\\.rar$",x = intern_files)]
+  r7z_files<- intern_files[grepl(pattern = "\\.7z$",x = intern_files)]
+
+  for(zip_file in zip_files){
+    exdir<- zip_file %>% gsub(pattern = "\\.zip", replacement = "")
+    unzip(zipfile = zip_file,exdir = exdir )
+    cat(paste0("Unzipped ", zip_file,"\n"))
+  }
+  for(zip_file in r7z_files){
+    exdir<- zip_file %>% gsub(pattern = "\\.7z", replacement = "")
+    archive::archive_extract(zip_file, exdir)
+    cat(paste0("Unzipped ", zip_file,"\n"))
+
+  }
+  for(zip_file in rar_files){
+    exdir<- zip_file %>% gsub(pattern = "\\.rar", replacement = "")
+    archive::archive_extract(zip_file, exdir)
+    cat(paste0("Unzipped ", zip_file,"\n"))
+
+  }
+
+}
 
 
