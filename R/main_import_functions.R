@@ -27,20 +27,20 @@ read_var_translator <- function(dataset, ft){
 
 
 #' @import readr
-aux_read_fwf <- function(f,dic, nrows = -1L){
+aux_read_fwf <- function(f,dic, nrows = -1L, na = "NA"){
 
   dict = nodic_overlap(dic)
 
-  print(f)
+  #print(f)
 
-  aux_read<- function(f, dic,nrows = -1L){
+  aux_read<- function(f, dic,nrows = -1L, na = "NA"){
 
     f %>% read_fwf(fwf_positions(start=dic$int_pos,end=dic$fin_pos,col_names=dic$var_name),
-                   col_types=paste(dic$col_type,collapse =''),n_max = nrows) -> d
+                   col_types=paste(dic$col_type,collapse =''),n_max = nrows, na = na) -> d
     return(d)
   }
 
-  lapply(dict, aux_read, f = f, nrows = nrows) %>% dplyr::bind_cols() -> d
+  lapply(dict, aux_read, f = f, nrows = nrows, na = na) %>% dplyr::bind_cols() -> d
 
 
   return(d)
@@ -112,7 +112,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   if (!is.null(var_translator)) {
     vt <- var_translator %>% rename_( old_varname = as.name(paste0('varname',i))) %>%
       select(std_varname ,old_varname ) %>% filter(!is.na(old_varname))
-    print(str(vt))
+    #print(str(vt))
   }
 
   a <- md %>% select_(.dots = ft) %>% collect %>% .[[ft]]
@@ -123,10 +123,10 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
   data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/") %>% ifelse(. == "", getwd(),.)
 
-  print(file_name)
-  print(data_path)
+  #print(file_name)
+  #print(data_path)
   files <- list.files(path=data_path,recursive = TRUE, full.names = TRUE) %>% grep(pattern = paste0(file_name, "$"), value = T, ignore.case = T)
-  print(files)
+  #print(files)
 
 
   if (!any(file.exists(files)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
@@ -137,7 +137,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
     files = file
     if (!any(file.exists(file)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
   }
-  print(format)
+  #print(format)
   t0 <- Sys.time()
   if(format=='fwf'){
 
@@ -151,7 +151,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
     }
 
 
-    lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic, nrows = nrows) %>% rbindlist  -> d
+    lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic, nrows = nrows, na = missing_symbol) %>% rbindlist  -> d
     #It could be removed after pull request https://github.com/tidyverse/readr/pull/632 be accepted
     if(any(dic$decimal_places) & dataset == "CENSO"){
       sapply(which(as.logical(dic$decimal_places)), function(x){
