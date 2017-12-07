@@ -55,7 +55,7 @@ nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos")
   {
       dic = arrange(.data = dic, dic[[init_pos]])
       # Primeiro teste de overlap
-      overlap.pos = which(dic[[init_pos]][-1] - dic[[init_pos]][-length(dic[[init_pos]])] != dic[[fin_pos]][-length(dic[[fin_pos]])] - dic[[init_pos]][-length(dic[[init_pos]])] + 1)
+      overlap.pos = which(dic[[init_pos]][-1] - dic[[init_pos]][-length(dic[[init_pos]])] < dic[[fin_pos]][-length(dic[[fin_pos]])] - dic[[init_pos]][-length(dic[[init_pos]])] + 1)
       print(overlap.pos)
       if(length(overlap.pos) > 0){
         dic.pos = dic
