@@ -19,4 +19,3 @@ Returns available filetypes for a dataset in a given period.
 get_available_filetypes("PNAD", 2014)
 
 }
-

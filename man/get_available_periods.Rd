@@ -14,4 +14,3 @@ get_available_periods(dataset, fwfonly = FALSE)
 \description{
 Returns the periods for wich we have information about a dataset in the package
 }
-

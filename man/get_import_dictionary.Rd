@@ -19,4 +19,3 @@ The dictionaries used in this package are stored in lists. get_import_dictionary
 \examples{
 get_import_dictionary(dataset = "CensoEscolar", i = 1996, ft = "escola")
 }
-

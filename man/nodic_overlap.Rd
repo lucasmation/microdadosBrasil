@@ -16,4 +16,3 @@ nodic_overlap(dic, init_pos = "int_pos", fin_pos = "fin_pos")
 \description{
 Function to search and solve overlaping problems, returning a list of dictionaries.
 }
-

@@ -15,4 +15,3 @@ a data.frame containing metadata about the dataset.
 \description{
 Return a data.frame with metadata about a dataset
 }
-
