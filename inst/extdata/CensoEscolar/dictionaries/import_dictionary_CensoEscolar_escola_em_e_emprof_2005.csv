@@ -1,18 +1,18 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"CODESC";"$CHAR10.";"";10;0;10;"c";TRUE
-11;"ANO";"8.";"";8;0;18;"i";FALSE
-19;"COD_EM22";"$CHAR7.";"";7;0;25;"c";TRUE
-26;"VEM2211";"8.";"";8;0;33;"i";FALSE
-34;"VEM2212";"8.";"";8;0;41;"i";FALSE
-42;"VEM2213";"8.";"";8;0;49;"i";FALSE
-50;"VEM2214";"8.";"";8;0;57;"i";FALSE
-58;"VEM2215";"8.";"";8;0;65;"i";FALSE
-66;"VEM2216";"8.";"";8;0;73;"i";FALSE
-74;"VEM2217";"8.";"";8;0;81;"i";FALSE
-82;"VEM2221";"8.";"";8;0;89;"i";FALSE
-90;"VEM2222";"8.";"";8;0;97;"i";FALSE
-98;"VEM2223";"8.";"";8;0;105;"i";FALSE
-106;"VEM2224";"8.";"";8;0;113;"i";FALSE
-114;"VEM2225";"8.";"";8;0;121;"i";FALSE
-122;"VEM2226";"8.";"";8;0;129;"i";FALSE
-130;"VEM2227";"8.";"";8;0;137;"i";FALSE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;CODESC;$CHAR10.;/*Código da Escola*/;10;0;10;c;TRUE
+11;ANO;8.;/*Ano do Censo Escolar*/;8;0;18;i;FALSE
+19;COD_EM22;$CHAR7.;/*Código do Curso*/;7;0;25;c;TRUE
+26;VEM2211;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - 1ª Série - Turno Diurno*/;8;0;33;i;FALSE
+34;VEM2212;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - 2ª Série - Turno Diurno*/;8;0;41;i;FALSE
+42;VEM2213;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - 3ª Série - Turno Diurno*/;8;0;49;i;FALSE
+50;VEM2214;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - 4ª Série - Turno Diurno*/;8;0;57;i;FALSE
+58;VEM2215;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - Não-Seriada - Turno Diurno*/;8;0;65;i;FALSE
+66;VEM2216;8.;/*Concluintes em 2004 no ensino médio integrado à educação profissional - Turno Diurno*/;8;0;73;i;FALSE
+74;VEM2217;8.;/*Carga Horária Total do Curso - Turno Diurno*/;8;0;81;i;FALSE
+82;VEM2221;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - 1ª Série - Turno Noturno*/;8;0;89;i;FALSE
+90;VEM2222;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - 2ª Série - Turno Noturno*/;8;0;97;i;FALSE
+98;VEM2223;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - 3ª Série - Turno Noturno*/;8;0;105;i;FALSE
+106;VEM2224;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - 4ª Série - Turno Noturno*/;8;0;113;i;FALSE
+114;VEM2225;8.;/*Matrícula inicial em 2005 no ensino médio integrado à educação profissional - Não-Seriada - Turno Noturno*/;8;0;121;i;FALSE
+122;VEM2226;8.;/*Concluintes em 2004 no ensino médio integrado à educação profissional - Turno Noturno*/;8;0;129;i;FALSE
+130;VEM2227;8.;/*Carga Horária Total do Curso - Turno Noturno*/;8;0;137;i;FALSE

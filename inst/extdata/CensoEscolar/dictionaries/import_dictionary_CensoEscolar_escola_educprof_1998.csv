@@ -1,15 +1,15 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"MASCARA";"8.";"";8;0;8;"i";FALSE
-9;"ANO";"8.";"";8;0;16;"i";FALSE
-17;"CODMUNIC";"$12.";"";12;0;28;"c";TRUE
-29;"UF";"$50.";"";50;0;78;"c";TRUE
-79;"SIGLA";"$2.";"";2;0;80;"c";TRUE
-81;"MUNIC";"$50.";"";50;0;130;"c";TRUE
-131;"DEP";"$10.";"";10;0;140;"c";TRUE
-141;"LOC";"$10.";"";10;0;150;"c";TRUE
-151;"CODFUNC";"$11.";"";11;0;161;"c";TRUE
-162;"CODCURSO";"$10.";"";10;0;171;"c";TRUE
-172;"NOMECUR";"$100.";"";100;0;271;"c";TRUE
-272;"EM1513";"7.";"";7;0;278;"i";FALSE
-280;"EM1514";"7.";"";7;0;286;"i";FALSE
-288;"EM1515";"7.";"";7;0;294;"i";FALSE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;MASCARA;8.;/* Mascara da Escola */;8;0;8;i;FALSE
+9;ANO;8.;/* Ano do Censo Escola */;8;0;16;i;FALSE
+17;CODMUNIC;$12.;/* Código do Município */;12;0;28;c;TRUE
+29;UF;$50.;/* Unidade da Federação */;50;0;78;c;TRUE
+79;SIGLA;$2.;/* Sigla da Unidade da Federação */;2;0;80;c;TRUE
+81;MUNIC;$50.;/* Nome do Município */;50;0;130;c;TRUE
+131;DEP;$10.;/* Dependência Administrativa */;10;0;140;c;TRUE
+141;LOC;$10.;/* Localização */;10;0;150;c;TRUE
+151;CODFUNC;$11.;/* Condição de Funcionamento */;11;0;161;c;TRUE
+162;CODCURSO;$10.;/* Código do Curso de Habilitação */;10;0;171;c;TRUE
+172;NOMECUR;$100.;/* Nome do Curso de Habilitação */;100;0;271;c;TRUE
+272;EM1513;7.;/* Número de Turmas em 98 na Educação Profissional por Habilitação */;7;0;278;i;FALSE
+280;EM1514;7.;/* Número de Matricula em 98 na Educação Profissional por Habilitação */;7;0;286;i;FALSE
+288;EM1515;7.;/* Número de Concluintes em 97 na Educação Profissional por Habilitação */;7;0;294;i;FALSE

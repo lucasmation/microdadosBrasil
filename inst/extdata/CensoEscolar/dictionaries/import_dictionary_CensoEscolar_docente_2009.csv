@@ -1,95 +1,95 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"ANO_CENSO";"5.";"";5;0;5;"i";FALSE
-6;"FK_COD_DOCENTE";"13.";"";13;0;18;"d";FALSE
-19;"NU_DIA";"3.";"";3;0;21;"i";FALSE
-22;"NU_MES";"3.";"";3;0;24;"i";FALSE
-25;"NU_ANO";"5.";"";5;0;29;"i";FALSE
-30;"NUM_IDADE";"4.";"";4;0;33;"i";FALSE
-34;"TP_SEXO";"$Char1.";"";1;0;34;"c";TRUE
-35;"TP_COR_RACA";"$Char1.";"";1;0;35;"c";TRUE
-36;"TP_NACIONALIDADE";"$Char1.";"";1;0;36;"c";TRUE
-37;"FK_COD_PAIS_ORIGEM";"4.";"";4;0;40;"i";FALSE
-41;"FK_COD_ESTADO_DNASC";"3.";"";3;0;43;"i";FALSE
-44;"SIGLA_ESTADO_DNASC";"$Char2.";"";2;0;45;"c";TRUE
-46;"FK_COD_MUNICIPIO_DNASC";"8.";"";8;0;53;"i";FALSE
-54;"FK_COD_ESTADO_DEND";"3.";"";3;0;56;"i";FALSE
-57;"SIGLA_ESTADO_DEND";"$Char2.";"";2;0;58;"c";TRUE
-59;"FK_COD_MUNICIPIO_DEND";"8.";"";8;0;66;"i";FALSE
-67;"FK_COD_ESCOLARIDADE";"2.";"";2;0;68;"i";FALSE
-69;"FK_CLASSE_CURSO_1";"4.";"";4;0;72;"i";FALSE
-73;"FK_COD_AREA_OCDE_1";"$Char6.";"";6;0;78;"c";TRUE
-79;"ID_LICENCIATURA_1";"2.";"";2;0;80;"i";FALSE
-81;"NU_ANO_CONCLUSAO_1";"5.";"";5;0;85;"i";FALSE
-86;"ID_TIPO_INSTITUICAO_1";"2.";"";2;0;87;"i";FALSE
-88;"ID_NOME_INSTITUICAO_1";"$Char100.";"";100;0;187;"c";TRUE
-188;"FK_COD_IES_1";"9.";"";9;0;196;"i";FALSE
-197;"FK_CLASSE_CURSO_2";"4.";"";4;0;200;"i";FALSE
-201;"FK_COD_AREA_OCDE_2";"$Char6.";"";6;0;206;"c";TRUE
-207;"ID_LICENCIATURA_2";"2.";"";2;0;208;"i";FALSE
-209;"NU_ANO_CONCLUSAO_2";"5.";"";5;0;213;"i";FALSE
-214;"ID_TIPO_INSTITUICAO_2";"2.";"";2;0;215;"i";FALSE
-216;"ID_NOME_INSTITUICAO_2";"$Char100.";"";100;0;315;"c";TRUE
-316;"FK_COD_IES_2";"9.";"";9;0;324;"i";FALSE
-325;"FK_CLASSE_CURSO_3";"4.";"";4;0;328;"i";FALSE
-329;"FK_COD_AREA_OCDE_3";"$Char6.";"";6;0;334;"c";TRUE
-335;"ID_LICENCIATURA_3";"2.";"";2;0;336;"i";FALSE
-337;"NU_ANO_CONCLUSAO_3";"5.";"";5;0;341;"i";FALSE
-342;"ID_TIPO_INSTITUICAO_3";"2.";"";2;0;343;"i";FALSE
-344;"ID_NOME_INSTITUICAO_3";"$Char100.";"";100;0;443;"c";TRUE
-444;"FK_COD_IES_3";"9.";"";9;0;452;"i";FALSE
-453;"ID_QUIMICA";"$Char1.";"";1;0;453;"c";TRUE
-454;"ID_FISICA";"$Char1.";"";1;0;454;"c";TRUE
-455;"ID_MATEMATICA";"$Char1.";"";1;0;455;"c";TRUE
-456;"ID_BIOLOGIA";"$Char1.";"";1;0;456;"c";TRUE
-457;"ID_CIENCIAS";"$Char1.";"";1;0;457;"c";TRUE
-458;"ID_LINGUA_LITERAT_PORTUGUESA";"$Char1.";"";1;0;458;"c";TRUE
-459;"ID_LINGUA_LITERAT_INGLES";"$Char1.";"";1;0;459;"c";TRUE
-460;"ID_LINGUA_LITERAT_ESPANHOL";"$Char1.";"";1;0;460;"c";TRUE
-461;"ID_LINGUA_LITERAT_OUTRA";"$Char1.";"";1;0;461;"c";TRUE
-462;"ID_LINGUA_LITERAT_INDIGENA";"$Char1.";"";1;0;462;"c";TRUE
-463;"ID_ARTES";"$Char1.";"";1;0;463;"c";TRUE
-464;"ID_EDUCACAO_FISICA";"$Char1.";"";1;0;464;"c";TRUE
-465;"ID_HISTORIA";"$Char1.";"";1;0;465;"c";TRUE
-466;"ID_GEOGRAFIA";"$Char1.";"";1;0;466;"c";TRUE
-467;"ID_FILOSOFIA";"$Char1.";"";1;0;467;"c";TRUE
-468;"ID_ENSINO_RELIGIOSO";"$Char1.";"";1;0;468;"c";TRUE
-469;"ID_ESTUDOS_SOCIAIS";"$Char1.";"";1;0;469;"c";TRUE
-470;"ID_INFORMATICA_COMPUTACAO";"$Char1.";"";1;0;470;"c";TRUE
-471;"ID_PROFISSIONALIZANTE";"$Char1.";"";1;0;471;"c";TRUE
-472;"ID_DISC_ATENDIMENTO_ESPECIAIS";"$Char1.";"";1;0;472;"c";TRUE
-473;"ID_DISC_DIVERSIDADE_SOCIO_CULT";"$Char1.";"";1;0;473;"c";TRUE
-474;"ID_LIBRAS";"$Char1.";"";1;0;474;"c";TRUE
-475;"ID_DISCIPLINAS_PEDAG";"$Char1.";"";1;0;475;"c";TRUE
-476;"ID_OUTRAS_DISCIPLINAS";"$Char1.";"";1;0;476;"c";TRUE
-477;"ID_ESPECIALIZACAO";"$Char1.";"";1;0;477;"c";TRUE
-478;"ID_MESTRADO";"$Char1.";"";1;0;478;"c";TRUE
-479;"ID_DOUTORADO";"$Char1.";"";1;0;479;"c";TRUE
-480;"ID_POS_GRADUACAO_NENHUM";"$Char1.";"";1;0;480;"c";TRUE
-481;"ID_ESPECIFICO_CRECHE";"$Char1.";"";1;0;481;"c";TRUE
-482;"ID_ESPECIFICO_PRE_ESCOLA";"$Char1.";"";1;0;482;"c";TRUE
-483;"ID_ESPECIFICO_NEC_ESP";"$Char1.";"";1;0;483;"c";TRUE
-484;"ID_ESPECIFICO_ED_INDIGENA";"$Char1.";"";1;0;484;"c";TRUE
-485;"ID_INTERCULTURAL_OUTROS";"$Char1.";"";1;0;485;"c";TRUE
-486;"ID_ESPECIFICO_NENHUM";"$Char1.";"";1;0;486;"c";TRUE
-487;"ID_TIPO_DOCENTE";"$Char1.";"";1;0;487;"c";TRUE
-488;"PK_COD_TURMA";"11.";"";11;0;498;"d";FALSE
-499;"FK_COD_TIPO_TURMA";"3.";"";3;0;501;"i";FALSE
-502;"FK_COD_MOD_ENSINO";"3.";"";3;0;504;"i";FALSE
-505;"FK_COD_ETAPA_ENSINO";"4.";"";4;0;508;"i";FALSE
-509;"FK_COD_CURSO_PROF";"9.";"";9;0;517;"i";FALSE
-518;"PK_COD_ENTIDADE";"9.";"";9;0;526;"i";FALSE
-527;"FK_COD_ESTADO";"3.";"";3;0;529;"i";FALSE
-530;"SIGLA";"$Char2.";"";2;0;531;"c";TRUE
-532;"FK_COD_MUNICIPIO";"8.";"";8;0;539;"i";FALSE
-540;"ID_LOCALIZACAO";"$Char1.";"";1;0;540;"c";TRUE
-541;"ID_DEPENDENCIA_ADM";"$Char1.";"";1;0;541;"c";TRUE
-542;"DESC_CATEGORIA_ESCOLA_PRIVADA";"$Char1.";"";1;0;542;"c";TRUE
-543;"ID_CONVENIADA_PP";"$Char1.";"";1;0;543;"c";TRUE
-544;"ID_TIPO_CONVENIO_PODER_PUBLICO";"2.";"";2;0;545;"i";FALSE
-546;"ID_MANT_ESCOLA_PRIVADA_EMP";"$Char1.";"";1;0;546;"c";TRUE
-547;"ID_MANT_ESCOLA_PRIVADA_ONG";"$Char1.";"";1;0;547;"c";TRUE
-548;"ID_MANT_ESCOLA_PRIVADA_SIND";"$Char1.";"";1;0;548;"c";TRUE
-549;"ID_MANT_ESCOLA_PRIVADA_S_FINS";"$Char1.";"";1;0;549;"c";TRUE
-550;"ID_DOCUMENTO_REGULAMENTACAO";"$Char1.";"";1;0;550;"c";TRUE
-551;"ID_LOCALIZACAO_DIFERENCIADA";"$Char1.";"";1;0;551;"c";TRUE
-552;"ID_EDUCACAO_INDIGENA";"$Char1.";"";1;0;552;"c";TRUE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;ANO_CENSO;5.;/*Ano do Censo*/;5;0;5;i;FALSE
+6;FK_COD_DOCENTE;13.;/*Código do Docente*/;13;0;18;d;FALSE
+19;NU_DIA;3.;/*Data de nascimento - dia*/;3;0;21;i;FALSE
+22;NU_MES;3.;/*Data de nascimento - mês*/;3;0;24;i;FALSE
+25;NU_ANO;5.;/*Data de nascimento - ano*/;5;0;29;i;FALSE
+30;NUM_IDADE;4.;/*Idade1*/;4;0;33;i;FALSE
+34;TP_SEXO;$Char1.;/*Sexo*/;1;0;34;c;TRUE
+35;TP_COR_RACA;$Char1.;/*Cor/raça*/;1;0;35;c;TRUE
+36;TP_NACIONALIDADE;$Char1.;/*Nacionalidade*/;1;0;36;c;TRUE
+37;FK_COD_PAIS_ORIGEM;4.;/*Código do País de origem*/;4;0;40;i;FALSE
+41;FK_COD_ESTADO_DNASC;3.;/*Código da UF de nascimento*/;3;0;43;i;FALSE
+44;SIGLA_ESTADO_DNASC;$Char2.;/*Sigla da UF de nascimento*/;2;0;45;c;TRUE
+46;FK_COD_MUNICIPIO_DNASC;8.;/*Código do Município de nascimento*/;8;0;53;i;FALSE
+54;FK_COD_ESTADO_DEND;3.;/*Código da UF de residência*/;3;0;56;i;FALSE
+57;SIGLA_ESTADO_DEND;$Char2.;/*Sigla da UF de residência*/;2;0;58;c;TRUE
+59;FK_COD_MUNICIPIO_DEND;8.;/*Código do Município de residência*/;8;0;66;i;FALSE
+67;FK_COD_ESCOLARIDADE;2.;/*Escolaridade*/;2;0;68;i;FALSE
+69;FK_CLASSE_CURSO_1;4.;/*Código da Área do curso 1*/;4;0;72;i;FALSE
+73;FK_COD_AREA_OCDE_1;$Char6.;/*Código do curso 1 da escolaridade Superior Completo*/;6;0;78;c;TRUE
+79;ID_LICENCIATURA_1;2.;/*Possui Licenciatura no curso 1*/;2;0;80;i;FALSE
+81;NU_ANO_CONCLUSAO_1;5.;/*Ano de conclusão do curso 1*/;5;0;85;i;FALSE
+86;ID_TIPO_INSTITUICAO_1;2.;/*Tipo de instituição do curso 1*/;2;0;87;i;FALSE
+88;ID_NOME_INSTITUICAO_1;$Char100.;/*Nome da instituição do curso 1*/;100;0;187;c;TRUE
+188;FK_COD_IES_1;9.;/*Código da Instituição do curso 1*/;9;0;196;i;FALSE
+197;FK_CLASSE_CURSO_2;4.;/*Código da Área do curso 2*/;4;0;200;i;FALSE
+201;FK_COD_AREA_OCDE_2;$Char6.;/*Código do curso 2 da escolaridade Superior Completo*/;6;0;206;c;TRUE
+207;ID_LICENCIATURA_2;2.;/*Possui Licenciatura no curso 1*/;2;0;208;i;FALSE
+209;NU_ANO_CONCLUSAO_2;5.;/*Ano de conclusão do curso 2*/;5;0;213;i;FALSE
+214;ID_TIPO_INSTITUICAO_2;2.;/*Tipo de instituição do curso 2*/;2;0;215;i;FALSE
+216;ID_NOME_INSTITUICAO_2;$Char100.;/*Nome da instituição do curso 2*/;100;0;315;c;TRUE
+316;FK_COD_IES_2;9.;/*Código da Instituição do curso 2*/;9;0;324;i;FALSE
+325;FK_CLASSE_CURSO_3;4.;/*Código da Área do curso 3*/;4;0;328;i;FALSE
+329;FK_COD_AREA_OCDE_3;$Char6.;/*Código do curso 3 da escolaridade Superior Completo*/;6;0;334;c;TRUE
+335;ID_LICENCIATURA_3;2.;/*Possui Licenciatura no curso 3*/;2;0;336;i;FALSE
+337;NU_ANO_CONCLUSAO_3;5.;/*Ano de conclusão do curso 3*/;5;0;341;i;FALSE
+342;ID_TIPO_INSTITUICAO_3;2.;/*Tipo de instituição do curso 3*/;2;0;343;i;FALSE
+344;ID_NOME_INSTITUICAO_3;$Char100.;/*Nome da instituição do curso 3*/;100;0;443;c;TRUE
+444;FK_COD_IES_3;9.;/*Código da Instituição do curso 2*/;9;0;452;i;FALSE
+453;ID_QUIMICA;$Char1.;/*Disciplinas - Química*/;1;0;453;c;TRUE
+454;ID_FISICA;$Char1.;/*Disciplinas - Física*/;1;0;454;c;TRUE
+455;ID_MATEMATICA;$Char1.;/*Disciplinas - Matemática*/;1;0;455;c;TRUE
+456;ID_BIOLOGIA;$Char1.;/*Disciplinas - Biologia*/;1;0;456;c;TRUE
+457;ID_CIENCIAS;$Char1.;/*Disciplinas - Ciências*/;1;0;457;c;TRUE
+458;ID_LINGUA_LITERAT_PORTUGUESA;$Char1.;/*Disciplinas - Língua / Literatura Portuguesa*/;1;0;458;c;TRUE
+459;ID_LINGUA_LITERAT_INGLES;$Char1.;/*Disciplinas - Língua / Literatura estrangeira - Inglês*/;1;0;459;c;TRUE
+460;ID_LINGUA_LITERAT_ESPANHOL;$Char1.;/*Disciplinas - Língua / Literatura estrangeira - Espanhol*/;1;0;460;c;TRUE
+461;ID_LINGUA_LITERAT_OUTRA;$Char1.;/*Disciplinas - Língua / Literatura estrangeira - Outra*/;1;0;461;c;TRUE
+462;ID_LINGUA_LITERAT_INDIGENA;$Char1.;/*Disciplinas - Língua Indígena*/;1;0;462;c;TRUE
+463;ID_ARTES;$Char1.;/*Disciplinas - Artes (Educação Artística, Teatro, Dança, Música, Artes Plásticas e outras)*/;1;0;463;c;TRUE
+464;ID_EDUCACAO_FISICA;$Char1.;/*Disciplinas - Educação Física*/;1;0;464;c;TRUE
+465;ID_HISTORIA;$Char1.;/*Disciplinas - História*/;1;0;465;c;TRUE
+466;ID_GEOGRAFIA;$Char1.;/*Disciplinas - Geografia*/;1;0;466;c;TRUE
+467;ID_FILOSOFIA;$Char1.;/*Disciplinas - Filosofia*/;1;0;467;c;TRUE
+468;ID_ENSINO_RELIGIOSO;$Char1.;/*Disciplinas - Ensino Religioso*/;1;0;468;c;TRUE
+469;ID_ESTUDOS_SOCIAIS;$Char1.;/*Disciplinas - Estudos Sociais / Sociologia*/;1;0;469;c;TRUE
+470;ID_INFORMATICA_COMPUTACAO;$Char1.;/*Disciplinas - Informática / Computação*/;1;0;470;c;TRUE
+471;ID_PROFISSIONALIZANTE;$Char1.;/*Disciplinas - Disciplinas profissionalizantes*/;1;0;471;c;TRUE
+472;ID_DISC_ATENDIMENTO_ESPECIAIS;$Char1.;/*Disciplinas - Disciplinas voltadas ao atendimento de necessidades especiais (Disciplinas pedagógicas)*/;1;0;472;c;TRUE
+473;ID_DISC_DIVERSIDADE_SOCIO_CULT;$Char1.;/*Disciplinas - Disciplinas voltadas à diversidade sócio-cultural (Disciplinas pedagógicas)*/;1;0;473;c;TRUE
+474;ID_LIBRAS;$Char1.;/*Disciplinas - Libras*/;1;0;474;c;TRUE
+475;ID_DISCIPLINAS_PEDAG;$Char1.;/*Disciplinas - Disciplinas pedagógicas*/;1;0;475;c;TRUE
+476;ID_OUTRAS_DISCIPLINAS;$Char1.;/*Disciplinas - Outras disciplinas pedagógicas*/;1;0;476;c;TRUE
+477;ID_ESPECIALIZACAO;$Char1.;/*Pós-Graduação - Especialização*/;1;0;477;c;TRUE
+478;ID_MESTRADO;$Char1.;/*Pós-Graduação - Mestrado*/;1;0;478;c;TRUE
+479;ID_DOUTORADO;$Char1.;/*Pós-Graduação - Doutorado*/;1;0;479;c;TRUE
+480;ID_POS_GRADUACAO_NENHUM;$Char1.;/*Pós-Graduação - Nenhum*/;1;0;480;c;TRUE
+481;ID_ESPECIFICO_CRECHE;$Char1.;/*Outros cursos - Específico para creche*/;1;0;481;c;TRUE
+482;ID_ESPECIFICO_PRE_ESCOLA;$Char1.;/*Outros cursos - Específico para pré-escola*/;1;0;482;c;TRUE
+483;ID_ESPECIFICO_NEC_ESP;$Char1.;/*Outros cursos - Específico para educação especial*/;1;0;483;c;TRUE
+484;ID_ESPECIFICO_ED_INDIGENA;$Char1.;/*Outros cursos - Específico para educação indígena*/;1;0;484;c;TRUE
+485;ID_INTERCULTURAL_OUTROS;$Char1.;/*Outros cursos - Intercultural/Diversidade/outros*/;1;0;485;c;TRUE
+486;ID_ESPECIFICO_NENHUM;$Char1.;/*Outros cursos - Nenhum*/;1;0;486;c;TRUE
+487;ID_TIPO_DOCENTE;$Char1.;/*Função que exerce na escola*/;1;0;487;c;TRUE
+488;PK_COD_TURMA;11.;/*Código da Turma*/;11;0;498;d;FALSE
+499;FK_COD_TIPO_TURMA;3.;/*Tipo de atendimento*/;3;0;501;i;FALSE
+502;FK_COD_MOD_ENSINO;3.;/*Modalidade*/;3;0;504;i;FALSE
+505;FK_COD_ETAPA_ENSINO;4.;/*Etapa*/;4;0;508;i;FALSE
+509;FK_COD_CURSO_PROF;9.;/*Curso da Educação Profissional*/;9;0;517;i;FALSE
+518;PK_COD_ENTIDADE;9.;/*Código da Escola*/;9;0;526;i;FALSE
+527;FK_COD_ESTADO;3.;/*Código da UF da escola*/;3;0;529;i;FALSE
+530;SIGLA;$Char2.;/*Sigla da UF da escola*/;2;0;531;c;TRUE
+532;FK_COD_MUNICIPIO;8.;/*Código do Município da escola*/;8;0;539;i;FALSE
+540;ID_LOCALIZACAO;$Char1.;/*Localização (Escola)*/;1;0;540;c;TRUE
+541;ID_DEPENDENCIA_ADM;$Char1.;/*Dependência Administrativa (Escola)*/;1;0;541;c;TRUE
+542;DESC_CATEGORIA_ESCOLA_PRIVADA;$Char1.;/*Categoria da escola privada*/;1;0;542;c;TRUE
+543;ID_CONVENIADA_PP;$Char1.;/*Conveniada com o poder público (Escola)*/;1;0;543;c;TRUE
+544;ID_TIPO_CONVENIO_PODER_PUBLICO;2.;/*Dependência do convênio com o poder público*/;2;0;545;i;FALSE
+546;ID_MANT_ESCOLA_PRIVADA_EMP;$Char1.;/*Mantenedora da escola privada - Empresa, grupo empresarial do setor privado ou pessoa física*/;1;0;546;c;TRUE
+547;ID_MANT_ESCOLA_PRIVADA_ONG;$Char1.;/*Mantenedora da escola privada - Organização não governamental - ONG internacional ou nacional*/;1;0;547;c;TRUE
+548;ID_MANT_ESCOLA_PRIVADA_SIND;$Char1.;/*Mantenedora da escola privada - Sindicatos de trabalhadores ou patronais, associações, cooperativas e sistema S*/;1;0;548;c;TRUE
+549;ID_MANT_ESCOLA_PRIVADA_S_FINS;$Char1.;/*Mantenedora da escola privada - Instituições sem fins lucrativos*/;1;0;549;c;TRUE
+550;ID_DOCUMENTO_REGULAMENTACAO;$Char1.;/*Regulamentação no conselho ou órgão municipal, estadual ou federal de educação*/;1;0;550;c;TRUE
+551;ID_LOCALIZACAO_DIFERENCIADA;$Char1.;/*Localização diferenciada da escola*/;1;0;551;c;TRUE
+552;ID_EDUCACAO_INDIGENA;$Char1.;/*Educação Indígena*/;1;0;552;c;TRUE

@@ -1,49 +1,49 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"MASCARA";"8.";"";8;0;8;"i";FALSE
-9;"ANO";"5.";"";5;0;13;"i";FALSE
-14;"CODMUNIC";"$CHAR12.";"";12;0;25;"c";TRUE
-26;"UF";"$CHAR50.";"";50;0;75;"c";TRUE
-76;"SIGLA";"$CHAR2.";"";2;0;77;"c";TRUE
-78;"MUNIC";"$CHAR50.";"";50;0;127;"c";TRUE
-128;"DEP";"$CHAR10.";"";10;0;137;"c";TRUE
-138;"LOC";"$CHAR10.";"";10;0;147;"c";TRUE
-148;"CODFUNC";"$CHAR11.";"";11;0;158;"c";TRUE
-159;"COD_CUR";"10.";"";10;0;168;"d";FALSE
-169;"CARG_HOR";"5.";"";5;0;173;"i";FALSE
-174;"NOMECUR";"$CHAR50.";"";50;0;223;"c";TRUE
-224;"SUB";"$CHAR1.";"";1;0;224;"c";TRUE
-225;"ART";"$CHAR1.";"";1;0;225;"c";TRUE
-226;"EP211";"7.";"";7;0;232;"i";FALSE
-233;"EP212";"7.";"";7;0;239;"i";FALSE
-240;"EP213";"7.";"";7;0;246;"i";FALSE
-247;"EP214";"7.";"";7;0;253;"i";FALSE
-254;"EP215";"7.";"";7;0;260;"i";FALSE
-261;"EP216";"7.";"";7;0;267;"i";FALSE
-268;"EP217";"7.";"";7;0;274;"i";FALSE
-275;"EP221";"7.";"";7;0;281;"i";FALSE
-282;"EP222";"7.";"";7;0;288;"i";FALSE
-289;"EP223";"7.";"";7;0;295;"i";FALSE
-296;"EP224";"7.";"";7;0;302;"i";FALSE
-303;"EP225";"7.";"";7;0;309;"i";FALSE
-310;"EP226";"7.";"";7;0;316;"i";FALSE
-317;"EP227";"7.";"";7;0;323;"i";FALSE
-324;"EP218";"7.";"";7;0;330;"i";FALSE
-331;"EP219";"7.";"";7;0;337;"i";FALSE
-338;"EP228";"7.";"";7;0;344;"i";FALSE
-345;"EP229";"7.";"";7;0;351;"i";FALSE
-352;"EP23A";"7.";"";7;0;358;"i";FALSE
-359;"EP233";"7.";"";7;0;365;"i";FALSE
-366;"EP234";"7.";"";7;0;372;"i";FALSE
-373;"EP235";"7.";"";7;0;379;"i";FALSE
-380;"EP236";"7.";"";7;0;386;"i";FALSE
-387;"EP237";"7.";"";7;0;393;"i";FALSE
-394;"EP24A";"7.";"";7;0;400;"i";FALSE
-401;"EP243";"7.";"";7;0;407;"i";FALSE
-408;"EP244";"7.";"";7;0;414;"i";FALSE
-415;"EP245";"7.";"";7;0;421;"i";FALSE
-422;"EP246";"7.";"";7;0;428;"i";FALSE
-429;"EP247";"7.";"";7;0;435;"i";FALSE
-436;"EP238";"7.";"";7;0;442;"i";FALSE
-443;"EP239";"7.";"";7;0;449;"i";FALSE
-450;"EP248";"7.";"";7;0;456;"i";FALSE
-457;"EP249";"7.";"";7;0;463;"i";FALSE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;MASCARA;8.;/*  Máscara	*/;8;0;8;i;FALSE
+9;ANO;5.;/*  Ano do Censo Escolar	*/;5;0;13;i;FALSE
+14;CODMUNIC;$CHAR12.;/*  Código do Município	*/;12;0;25;c;TRUE
+26;UF;$CHAR50.;/*  Nome da Unidade da Federação	*/;50;0;75;c;TRUE
+76;SIGLA;$CHAR2.;/*  Sigla da UF	*/;2;0;77;c;TRUE
+78;MUNIC;$CHAR50.;/*  Nome do Município	*/;50;0;127;c;TRUE
+128;DEP;$CHAR10.;/*  Dependência Administrativa	*/;10;0;137;c;TRUE
+138;LOC;$CHAR10.;/*  Localização/Zona da Escola	*/;10;0;147;c;TRUE
+148;CODFUNC;$CHAR11.;/*  Condição de Funcionamento	*/;11;0;158;c;TRUE
+159;COD_CUR;10.;/*  Código do Curso Técnico	*/;10;0;168;d;FALSE
+169;CARG_HOR;5.;/*  Carga Horária do Curso Técnico	*/;5;0;173;i;FALSE
+174;NOMECUR;$CHAR50.;/*  Nome do Curso Técnico	*/;50;0;223;c;TRUE
+224;SUB;$CHAR1.;/*  Modalidade de oferta - Subseqüente	*/;1;0;224;c;TRUE
+225;ART;$CHAR1.;/*  Modalidade de oferta - Aticulado	*/;1;0;225;c;TRUE
+226;EP211;7.;/*  Matrículas - Nascidos após 1989 - Turno Diurno 	*/;7;0;232;i;FALSE
+233;EP212;7.;/*  Matrículas - Nascidos de 1989 a 1987 - Turno Diurno 	*/;7;0;239;i;FALSE
+240;EP213;7.;/*  Matrículas - Nascidos de 1986 a 1985 - Turno Diurno 	*/;7;0;246;i;FALSE
+247;EP214;7.;/*  Matrículas - Nascidos de 1984 a 1980 - Turno Diurno 	*/;7;0;253;i;FALSE
+254;EP215;7.;/*  Matrículas - Nascidos de 1979 a 1975 - Turno Diurno 	*/;7;0;260;i;FALSE
+261;EP216;7.;/*  Matrículas - Nascidos de 1974 a 1965 - Turno Diurno 	*/;7;0;267;i;FALSE
+268;EP217;7.;/*  Matrículas - Nascidos antes de 1965 - Turno Diurno 	*/;7;0;274;i;FALSE
+275;EP221;7.;/*  Nascidos após 1989 - Turno Noturno	*/;7;0;281;i;FALSE
+282;EP222;7.;/*  Nascidos de 1989 a 1987 - Turno Noturno	*/;7;0;288;i;FALSE
+289;EP223;7.;/*  Nascidos de 1986 e 1985 - Turno Noturno	*/;7;0;295;i;FALSE
+296;EP224;7.;/*  Nascidos de 1984 a 1980 - Turno Noturno	*/;7;0;302;i;FALSE
+303;EP225;7.;/*  Nascidos de 1979 a 1975 - Turno Noturno	*/;7;0;309;i;FALSE
+310;EP226;7.;/*  Nascidos de 1974 a 1965 - Turno Noturno	*/;7;0;316;i;FALSE
+317;EP227;7.;/*  Nascidos antes de 1965 - Turno Noturno	*/;7;0;323;i;FALSE
+324;EP218;7.;/*  Matrículas - Turno Diurno - Masculino 	*/;7;0;330;i;FALSE
+331;EP219;7.;/*  Matrículas - Turno Diurno - Feminino 	*/;7;0;337;i;FALSE
+338;EP228;7.;/*  Matrículas - Turno Noturno - Masculino	*/;7;0;344;i;FALSE
+345;EP229;7.;/*  Matrículas - Turno Noturno - Feminino	*/;7;0;351;i;FALSE
+352;EP23A;7.;/*  Concluintes no ano anterior - Nascidos após 1986 - Turno Diurno	*/;7;0;358;i;FALSE
+359;EP233;7.;/*  Concluintes no ano anterior - Nascidos de 1986 a 1985 - Turno Diurno	*/;7;0;365;i;FALSE
+366;EP234;7.;/*  Concluintes no ano anterior - Nascidos de 1984 a 1980 - Turno Diurno	*/;7;0;372;i;FALSE
+373;EP235;7.;/*  Concluintes no ano anterior - Nascidos de 1979 a 1975 - Turno Diurno	*/;7;0;379;i;FALSE
+380;EP236;7.;/*  Concluintes no ano anterior - Nascidos de 1974 a 1965 - Turno Diurno	*/;7;0;386;i;FALSE
+387;EP237;7.;/*  Concluintes no ano anterior - Nascidos antes de 1965 - Turno Diurno	*/;7;0;393;i;FALSE
+394;EP24A;7.;/*  Concluintes no ano anterior - Nascidos após 1986 - Turno Noturno	*/;7;0;400;i;FALSE
+401;EP243;7.;/*  Concluintes no ano anterior - Nascidos de 1986 a 1985 - Turno Noturno	*/;7;0;407;i;FALSE
+408;EP244;7.;/*  Concluintes no ano anterior - Nascidos de 1984 e 1980 - Turno Noturno	*/;7;0;414;i;FALSE
+415;EP245;7.;/*  Concluintes no ano anterior - Nascidos de 1979 a 1975 - Turno Noturno	*/;7;0;421;i;FALSE
+422;EP246;7.;/*  Concluintes no ano anterior - Nascidos de 1974 a 1965 - Turno Noturno	*/;7;0;428;i;FALSE
+429;EP247;7.;/*  Concluintes no ano anterior - Nascidos antes de 1965 - Turno Noturno	*/;7;0;435;i;FALSE
+436;EP238;7.;/*  Concluintes no ano anterior - Turno Diurno - Masculino	*/;7;0;442;i;FALSE
+443;EP239;7.;/*  Concluintes no ano anterior - Turno Diurno - Feminino	*/;7;0;449;i;FALSE
+450;EP248;7.;/*  Concluintes no ano anterior - Turno Noturno - Masculino	*/;7;0;456;i;FALSE
+457;EP249;7.;/*  Concluintes no ano anterior - Turno Noturno - Feminino	*/;7;0;463;i;FALSE

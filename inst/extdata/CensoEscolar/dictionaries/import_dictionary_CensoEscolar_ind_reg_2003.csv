@@ -1,191 +1,191 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"ANO";"5.";"";5;0;5;"i";FALSE
-6;"CODUNGE";"$CHAR12.";"";12;0;17;"c";TRUE
-18;"NOME";"$CHAR50.";"";50;0;67;"c";TRUE
-68;"DEP";"$CHAR10.";"";10;0;77;"c";TRUE
-78;"LOC";"$CHAR10.";"";10;0;87;"c";TRUE
-88;"IEI00001";"6.1";"";6;1;93;"d";FALSE
-94;"IEI00002";"6.1";"";6;1;99;"d";FALSE
-100;"IEI00003";"6.1";"";6;1;105;"d";FALSE
-106;"IEI00004";"6.1";"";6;1;111;"d";FALSE
-112;"IEI00005";"6.1";"";6;1;117;"d";FALSE
-118;"IEI00006";"6.1";"";6;1;123;"d";FALSE
-124;"IEI00007";"6.1";"";6;1;129;"d";FALSE
-130;"IEI00008";"6.1";"";6;1;135;"d";FALSE
-136;"IEI00009";"6.1";"";6;1;141;"d";FALSE
-142;"IEI00010";"6.1";"";6;1;147;"d";FALSE
-148;"IEI00011";"6.1";"";6;1;153;"d";FALSE
-154;"IEI00012";"6.1";"";6;1;159;"d";FALSE
-160;"ICA00001";"6.1";"";6;1;165;"d";FALSE
-166;"ICA00002";"6.1";"";6;1;171;"d";FALSE
-172;"ICA00003";"6.1";"";6;1;177;"d";FALSE
-178;"ICA00004";"6.1";"";6;1;183;"d";FALSE
-184;"ICA00005";"6.1";"";6;1;189;"d";FALSE
-190;"ICA00006";"6.1";"";6;1;195;"d";FALSE
-196;"IEF00001";"6.1";"";6;1;201;"d";FALSE
-202;"IEF00002";"6.1";"";6;1;207;"d";FALSE
-208;"IEF00003";"6.1";"";6;1;213;"d";FALSE
-214;"IEF00004";"6.1";"";6;1;219;"d";FALSE
-220;"IEF00005";"6.1";"";6;1;225;"d";FALSE
-226;"IEF00006";"6.1";"";6;1;231;"d";FALSE
-232;"IEF00007";"6.1";"";6;1;237;"d";FALSE
-238;"IEF00008";"6.1";"";6;1;243;"d";FALSE
-244;"IEF00009";"6.1";"";6;1;249;"d";FALSE
-250;"IEF00010";"6.1";"";6;1;255;"d";FALSE
-256;"IEF00011";"6.1";"";6;1;261;"d";FALSE
-262;"IEF00012";"6.1";"";6;1;267;"d";FALSE
-268;"IEF00013";"6.1";"";6;1;273;"d";FALSE
-274;"IEF00014";"6.1";"";6;1;279;"d";FALSE
-280;"IEF00015";"6.1";"";6;1;285;"d";FALSE
-286;"IEF00016";"6.1";"";6;1;291;"d";FALSE
-292;"IEF00017";"6.1";"";6;1;297;"d";FALSE
-298;"IEF00018";"6.1";"";6;1;303;"d";FALSE
-304;"IEF00019";"6.1";"";6;1;309;"d";FALSE
-310;"IEF00020";"6.1";"";6;1;315;"d";FALSE
-316;"IEF00021";"6.1";"";6;1;321;"d";FALSE
-322;"IEF00022";"6.1";"";6;1;327;"d";FALSE
-328;"IEF00023";"6.1";"";6;1;333;"d";FALSE
-334;"IEF00024";"6.1";"";6;1;339;"d";FALSE
-340;"IEF00025";"6.1";"";6;1;345;"d";FALSE
-346;"IEF00026";"6.1";"";6;1;351;"d";FALSE
-352;"IEF00027";"6.1";"";6;1;357;"d";FALSE
-358;"IEF00028";"6.1";"";6;1;363;"d";FALSE
-364;"IEF00029";"6.1";"";6;1;369;"d";FALSE
-370;"IEF00030";"6.1";"";6;1;375;"d";FALSE
-376;"IEF00031";"6.1";"";6;1;381;"d";FALSE
-382;"IEF00032";"6.1";"";6;1;387;"d";FALSE
-388;"IEF00033";"6.1";"";6;1;393;"d";FALSE
-394;"IEF00034";"6.1";"";6;1;399;"d";FALSE
-400;"IEF00035";"6.1";"";6;1;405;"d";FALSE
-406;"IEF00036";"6.1";"";6;1;411;"d";FALSE
-412;"IEF00037";"6.1";"";6;1;417;"d";FALSE
-418;"IEF00038";"6.1";"";6;1;423;"d";FALSE
-424;"IEF00039";"6.1";"";6;1;429;"d";FALSE
-430;"IEF00040";"6.1";"";6;1;435;"d";FALSE
-436;"IEF00041";"6.1";"";6;1;441;"d";FALSE
-442;"IEF00042";"6.1";"";6;1;447;"d";FALSE
-448;"IEF00043";"6.1";"";6;1;453;"d";FALSE
-454;"IEF00044";"6.1";"";6;1;459;"d";FALSE
-460;"IEF00045";"6.1";"";6;1;465;"d";FALSE
-466;"IEF00046";"6.1";"";6;1;471;"d";FALSE
-472;"IEF00047";"6.1";"";6;1;477;"d";FALSE
-478;"IEF00048";"6.1";"";6;1;483;"d";FALSE
-484;"IEF00049";"6.1";"";6;1;489;"d";FALSE
-490;"IEF00050";"6.1";"";6;1;495;"d";FALSE
-496;"IEF00051";"6.1";"";6;1;501;"d";FALSE
-502;"IEF00052";"6.1";"";6;1;507;"d";FALSE
-508;"IEF00053";"6.1";"";6;1;513;"d";FALSE
-514;"IEF00054";"6.1";"";6;1;519;"d";FALSE
-520;"IEF00055";"6.1";"";6;1;525;"d";FALSE
-526;"IEF00056";"6.1";"";6;1;531;"d";FALSE
-532;"IEF00057";"6.1";"";6;1;537;"d";FALSE
-538;"IEF00058";"6.1";"";6;1;543;"d";FALSE
-544;"IEF00059";"6.1";"";6;1;549;"d";FALSE
-550;"IEF00060";"6.1";"";6;1;555;"d";FALSE
-556;"IEF00061";"6.1";"";6;1;561;"d";FALSE
-562;"IEF00062";"6.1";"";6;1;567;"d";FALSE
-568;"IEF00063";"6.1";"";6;1;573;"d";FALSE
-574;"IEF00064";"6.1";"";6;1;579;"d";FALSE
-580;"IEF00065";"6.1";"";6;1;585;"d";FALSE
-586;"IEF00066";"6.1";"";6;1;591;"d";FALSE
-592;"IEF00067";"6.1";"";6;1;597;"d";FALSE
-598;"IEF00068";"6.1";"";6;1;603;"d";FALSE
-604;"IEF00069";"6.1";"";6;1;609;"d";FALSE
-610;"IEF00070";"6.1";"";6;1;615;"d";FALSE
-616;"IEF00071";"6.1";"";6;1;621;"d";FALSE
-622;"IEF00072";"6.1";"";6;1;627;"d";FALSE
-628;"IEF00073";"6.1";"";6;1;633;"d";FALSE
-634;"IEF00074";"6.1";"";6;1;639;"d";FALSE
-640;"IEF00075";"6.1";"";6;1;645;"d";FALSE
-646;"IEF00076";"6.1";"";6;1;651;"d";FALSE
-652;"IEF00077";"6.1";"";6;1;657;"d";FALSE
-658;"IEF00078";"6.1";"";6;1;663;"d";FALSE
-664;"IEF00079";"6.1";"";6;1;669;"d";FALSE
-670;"IEF00080";"6.1";"";6;1;675;"d";FALSE
-676;"IEF00081";"6.1";"";6;1;681;"d";FALSE
-682;"IEF00082";"6.1";"";6;1;687;"d";FALSE
-688;"IEF00083";"6.1";"";6;1;693;"d";FALSE
-694;"IEF00084";"6.1";"";6;1;699;"d";FALSE
-700;"IEF00085";"6.1";"";6;1;705;"d";FALSE
-706;"IEF00086";"6.1";"";6;1;711;"d";FALSE
-712;"IEF00087";"6.1";"";6;1;717;"d";FALSE
-718;"IEF00088";"6.1";"";6;1;723;"d";FALSE
-724;"IEF00089";"6.1";"";6;1;729;"d";FALSE
-730;"IEF00090";"6.1";"";6;1;735;"d";FALSE
-736;"IEF00091";"6.1";"";6;1;741;"d";FALSE
-742;"IEF00092";"6.1";"";6;1;747;"d";FALSE
-748;"IEF00093";"6.1";"";6;1;753;"d";FALSE
-754;"IEF00094";"6.1";"";6;1;759;"d";FALSE
-760;"IEF00095";"6.1";"";6;1;765;"d";FALSE
-766;"IEF00096";"6.1";"";6;1;771;"d";FALSE
-772;"IEF00097";"6.1";"";6;1;777;"d";FALSE
-778;"IEF00098";"6.1";"";6;1;783;"d";FALSE
-784;"IEF00099";"6.1";"";6;1;789;"d";FALSE
-790;"IEF00100";"6.1";"";6;1;795;"d";FALSE
-796;"IEF00101";"6.1";"";6;1;801;"d";FALSE
-802;"IEF00102";"6.1";"";6;1;807;"d";FALSE
-808;"IEF00103";"6.1";"";6;1;813;"d";FALSE
-814;"IEF00104";"6.1";"";6;1;819;"d";FALSE
-820;"IEF00105";"6.1";"";6;1;825;"d";FALSE
-826;"IEF00106";"6.1";"";6;1;831;"d";FALSE
-832;"IEF00107";"6.1";"";6;1;837;"d";FALSE
-838;"IEF00108";"6.1";"";6;1;843;"d";FALSE
-844;"IEF00109";"6.1";"";6;1;849;"d";FALSE
-850;"IEM00001";"6.1";"";6;1;855;"d";FALSE
-856;"IEM00002";"6.1";"";6;1;861;"d";FALSE
-862;"IEM00003";"6.1";"";6;1;867;"d";FALSE
-868;"IEM00004";"6.1";"";6;1;873;"d";FALSE
-874;"IEM00005";"6.1";"";6;1;879;"d";FALSE
-880;"IEM00006";"6.1";"";6;1;885;"d";FALSE
-886;"IEM00007";"6.1";"";6;1;891;"d";FALSE
-892;"IEM00008";"6.1";"";6;1;897;"d";FALSE
-898;"IEM00009";"6.1";"";6;1;903;"d";FALSE
-904;"IEM00010";"6.1";"";6;1;909;"d";FALSE
-910;"IEM00011";"6.1";"";6;1;915;"d";FALSE
-916;"IEM00012";"6.1";"";6;1;921;"d";FALSE
-922;"IEM00013";"6.1";"";6;1;927;"d";FALSE
-928;"IEM00014";"6.1";"";6;1;933;"d";FALSE
-934;"IEM00015";"6.1";"";6;1;939;"d";FALSE
-940;"IEM00016";"6.1";"";6;1;945;"d";FALSE
-946;"IEM00017";"6.1";"";6;1;951;"d";FALSE
-952;"IEM00018";"6.1";"";6;1;957;"d";FALSE
-958;"IEM00019";"6.1";"";6;1;963;"d";FALSE
-964;"IEM00020";"6.1";"";6;1;969;"d";FALSE
-970;"IEM00021";"6.1";"";6;1;975;"d";FALSE
-976;"IEM00022";"6.1";"";6;1;981;"d";FALSE
-982;"IEM00023";"6.1";"";6;1;987;"d";FALSE
-988;"IEM00024";"6.1";"";6;1;993;"d";FALSE
-994;"IEM00025";"6.1";"";6;1;999;"d";FALSE
-1000;"IEM00026";"6.1";"";6;1;1005;"d";FALSE
-1006;"IEM00027";"6.1";"";6;1;1011;"d";FALSE
-1012;"IEM00028";"6.1";"";6;1;1017;"d";FALSE
-1018;"IEM00029";"6.1";"";6;1;1023;"d";FALSE
-1024;"IEM00030";"6.1";"";6;1;1029;"d";FALSE
-1030;"IEM00031";"6.1";"";6;1;1035;"d";FALSE
-1036;"IEM00032";"6.1";"";6;1;1041;"d";FALSE
-1042;"IEM00033";"6.1";"";6;1;1047;"d";FALSE
-1048;"IEM00034";"6.1";"";6;1;1053;"d";FALSE
-1054;"IEM00035";"6.1";"";6;1;1059;"d";FALSE
-1060;"IEM00037";"6.1";"";6;1;1065;"d";FALSE
-1066;"IEM00038";"6.1";"";6;1;1071;"d";FALSE
-1072;"IEM00039";"6.1";"";6;1;1077;"d";FALSE
-1078;"IEM00040";"6.1";"";6;1;1083;"d";FALSE
-1084;"IEM00041";"6.1";"";6;1;1089;"d";FALSE
-1090;"IEM00042";"6.1";"";6;1;1095;"d";FALSE
-1096;"IEM00043";"6.1";"";6;1;1101;"d";FALSE
-1102;"IEM00044";"6.1";"";6;1;1107;"d";FALSE
-1108;"IEM00045";"6.1";"";6;1;1113;"d";FALSE
-1114;"IEM00046";"6.1";"";6;1;1119;"d";FALSE
-1120;"IEM00047";"6.1";"";6;1;1125;"d";FALSE
-1126;"IEM00048";"6.1";"";6;1;1131;"d";FALSE
-1132;"IEM00049";"6.1";"";6;1;1137;"d";FALSE
-1138;"IEM00050";"6.1";"";6;1;1143;"d";FALSE
-1144;"IEM00051";"6.1";"";6;1;1149;"d";FALSE
-1150;"IEM00052";"6.1";"";6;1;1155;"d";FALSE
-1156;"IEM00053";"6.1";"";6;1;1161;"d";FALSE
-1162;"IEM00054";"6.1";"";6;1;1167;"d";FALSE
-1168;"IEM00055";"6.1";"";6;1;1173;"d";FALSE
-1174;"IEM00056";"6.1";"";6;1;1179;"d";FALSE
-1180;"IEM00057";"6.1";"";6;1;1185;"d";FALSE
-1186;"IEM00058";"6.1";"";6;1;1191;"d";FALSE
-1192;"IEM00059";"6.1";"";6;1;1197;"d";FALSE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;ANO;5.;/*	Ano do Censo Escolar	*/;5;0;5;i;FALSE
+6;CODUNGE;$CHAR12.;/*  Código da unidade geográfica */;12;0;17;c;TRUE
+18;NOME;$CHAR50.;/*  Nome da unidade geográfica */;50;0;67;c;TRUE
+68;DEP;$CHAR10.;/*	Dependência Administrativa	*/;10;0;77;c;TRUE
+78;LOC;$CHAR10.;/*	Localização/Zona da Escola	*/;10;0;87;c;TRUE
+88;IEI00001;6.1;/*	Número Médio de Horas-Aula Diária na Creche 	*/;6;1;93;d;FALSE
+94;IEI00002;6.1;/*	Número Médio de Horas-Aula Diária na Pré-Escola 	*/;6;1;99;d;FALSE
+100;IEI00003;6.1;/*	Percentual de Alunos no Turno Noturno na Creche	*/;6;1;105;d;FALSE
+106;IEI00004;6.1;/*	Percentual de Alunos no Turno Noturno na Pré-Escola	*/;6;1;111;d;FALSE
+112;IEI00005;6.1;/*	Número Médio de Alunos por Turma na Creche	*/;6;1;117;d;FALSE
+118;IEI00006;6.1;/*	Número Médio de Alunos por Turma na Pré-Escola	*/;6;1;123;d;FALSE
+124;IEI00007;6.1;/*	Percentual de Matrículas do Sexo Feminino na Creche	*/;6;1;129;d;FALSE
+130;IEI00008;6.1;/*	Percentual de Matrículas do Sexo Feminino na Pré-Escola	*/;6;1;135;d;FALSE
+136;IEI00009;6.1;/*	Idade Mediana que o Aluno Completa no Ano na Creche 	*/;6;1;141;d;FALSE
+142;IEI00010;6.1;/*	Idade Mediana que o Aluno Completa no Ano na Pré-Escola 	*/;6;1;147;d;FALSE
+148;IEI00011;6.1;/*	Percentual de Docentes com Curso Superior na Creche	*/;6;1;153;d;FALSE
+154;IEI00012;6.1;/*	Percentual de Docentes com Curso Superior na Pré-Escola	*/;6;1;159;d;FALSE
+160;ICA00001;6.1;/*	Número Médio de Horas-Aula Diária na Classe de Alfabetização 	*/;6;1;165;d;FALSE
+166;ICA00002;6.1;/*	Percentual de Alunos no Turno Noturno na Classe de Alfabetização	*/;6;1;171;d;FALSE
+172;ICA00003;6.1;/*	Número Médio de Alunos por Turma na Classe de Alfabetização	*/;6;1;177;d;FALSE
+178;ICA00004;6.1;/*	Percentual de Matrículas do Sexo Feminino na Classe de Alfabetização	*/;6;1;183;d;FALSE
+184;ICA00005;6.1;/*	Idade Mediana que o Aluno Completa no Ano na Classe de Alfabetização	*/;6;1;189;d;FALSE
+190;ICA00006;6.1;/*	Percentual de Docentes com Curso Superior na Classe de Alfabetização	*/;6;1;195;d;FALSE
+196;IEF00001;6.1;/*	Número Médio de Horas-Aula Diária no Ensino Fundamental	*/;6;1;201;d;FALSE
+202;IEF00002;6.1;/*	Número Médio de Horas-Aula Diária de 1ª a 4ª Série	*/;6;1;207;d;FALSE
+208;IEF00003;6.1;/*	Número Médio de Horas-Aula Diária de 5ª a 8ª Série	*/;6;1;213;d;FALSE
+214;IEF00004;6.1;/*	Número Médio de Horas-Aula Diária na 1ª Série	*/;6;1;219;d;FALSE
+220;IEF00005;6.1;/*	Número Médio de Horas-Aula Diária na 2ª Série	*/;6;1;225;d;FALSE
+226;IEF00006;6.1;/*	Número Médio de Horas-Aula Diária na 3ª Série	*/;6;1;231;d;FALSE
+232;IEF00007;6.1;/*	Número Médio de Horas-Aula Diária na 4ª Série	*/;6;1;237;d;FALSE
+238;IEF00008;6.1;/*	Número Médio de Horas-Aula Diária na 5ª Série	*/;6;1;243;d;FALSE
+244;IEF00009;6.1;/*	Número Médio de Horas-Aula Diária na 6ª Série	*/;6;1;249;d;FALSE
+250;IEF00010;6.1;/*	Número Médio de Horas-Aula Diária na 7ª Série	*/;6;1;255;d;FALSE
+256;IEF00011;6.1;/*	Número Médio de Horas-Aula Diária na 8ª Série	*/;6;1;261;d;FALSE
+262;IEF00012;6.1;/*	Percentual de Alunos no Turno Noturno no Ensino Fundamental	*/;6;1;267;d;FALSE
+268;IEF00013;6.1;/*	Percentual de Alunos no Turno Noturno de 1ª a 4ª Série	*/;6;1;273;d;FALSE
+274;IEF00014;6.1;/*	Percentual de Alunos no Turno Noturno de 5ª a 8ª Série	*/;6;1;279;d;FALSE
+280;IEF00015;6.1;/*	Percentual de Alunos no Turno Noturno na 1ª Série	*/;6;1;285;d;FALSE
+286;IEF00016;6.1;/*	Percentual de Alunos no Turno Noturno na 2ª Série	*/;6;1;291;d;FALSE
+292;IEF00017;6.1;/*	Percentual de Alunos no Turno Noturno na 3ª Série	*/;6;1;297;d;FALSE
+298;IEF00018;6.1;/*	Percentual de Alunos no Turno Noturno na 4ª Série	*/;6;1;303;d;FALSE
+304;IEF00019;6.1;/*	Percentual de Alunos no Turno Noturno na 5ª Série	*/;6;1;309;d;FALSE
+310;IEF00020;6.1;/*	Percentual de Alunos no Turno Noturno na 6ª Série	*/;6;1;315;d;FALSE
+316;IEF00021;6.1;/*	Percentual de Alunos no Turno Noturno na 7ª Série	*/;6;1;321;d;FALSE
+322;IEF00022;6.1;/*	Percentual de Alunos no Turno Noturno na 8ª Série	*/;6;1;327;d;FALSE
+328;IEF00023;6.1;/*	Número Médio de Alunos por Turma no Ensino Fundamental	*/;6;1;333;d;FALSE
+334;IEF00024;6.1;/*	Número Médio de Alunos por Turma de 1ª a 4ª Série	*/;6;1;339;d;FALSE
+340;IEF00025;6.1;/*	Número Médio de Alunos por Turma de 5ª a 8ª Série	*/;6;1;345;d;FALSE
+346;IEF00026;6.1;/*	Número Médio de Alunos por Turma na 1ª Série	*/;6;1;351;d;FALSE
+352;IEF00027;6.1;/*	Número Médio de Alunos por Turma na 2ª Série	*/;6;1;357;d;FALSE
+358;IEF00028;6.1;/*	Número Médio de Alunos por Turma na 3ª Série	*/;6;1;363;d;FALSE
+364;IEF00029;6.1;/*	Número Médio de Alunos por Turma na 4ª Série	*/;6;1;369;d;FALSE
+370;IEF00030;6.1;/*	Número Médio de Alunos por Turma na 5ª Série	*/;6;1;375;d;FALSE
+376;IEF00031;6.1;/*	Número Médio de Alunos por Turma na 6ª Série	*/;6;1;381;d;FALSE
+382;IEF00032;6.1;/*	Número Médio de Alunos por Turma na 7ª Série	*/;6;1;387;d;FALSE
+388;IEF00033;6.1;/*	Número Médio de Alunos por Turma na 8ª Série	*/;6;1;393;d;FALSE
+394;IEF00034;6.1;/*	Percentual de Matrículas do Sexo Feminino no Ensino Fundamental	*/;6;1;399;d;FALSE
+400;IEF00035;6.1;/*	Percentual de Matrículas do Sexo Feminino de 1ª a 4ª Série	*/;6;1;405;d;FALSE
+406;IEF00036;6.1;/*	Percentual de Matrículas do Sexo Feminino de 5ª a 8ª Série	*/;6;1;411;d;FALSE
+412;IEF00037;6.1;/*	Percentual de Matrículas do Sexo Feminino na 1ª Série	*/;6;1;417;d;FALSE
+418;IEF00038;6.1;/*	Percentual de Matrículas do Sexo Feminino na 2ª Série	*/;6;1;423;d;FALSE
+424;IEF00039;6.1;/*	Percentual de Matrículas do Sexo Feminino na 3ª Série	*/;6;1;429;d;FALSE
+430;IEF00040;6.1;/*	Percentual de Matrículas do Sexo Feminino na 4ª Série	*/;6;1;435;d;FALSE
+436;IEF00041;6.1;/*	Percentual de Matrículas do Sexo Feminino na 5ª Série	*/;6;1;441;d;FALSE
+442;IEF00042;6.1;/*	Percentual de Matrículas do Sexo Feminino na 6ª Série	*/;6;1;447;d;FALSE
+448;IEF00043;6.1;/*	Percentual de Matrículas do Sexo Feminino na 7ª Série	*/;6;1;453;d;FALSE
+454;IEF00044;6.1;/*	Percentual de Matrículas do Sexo Feminino na 8ª Série	*/;6;1;459;d;FALSE
+460;IEF00045;6.1;/*	Idade Mediana que o Aluno Completa no Ano no Ensino Fundamental	*/;6;1;465;d;FALSE
+466;IEF00046;6.1;/*	Idade Mediana que o Aluno Completa no Ano de 1ª a 4ª Série	*/;6;1;471;d;FALSE
+472;IEF00047;6.1;/*	Idade Mediana que o Aluno Completa no Ano de 5ª a 8ª Série	*/;6;1;477;d;FALSE
+478;IEF00048;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 1ª Série	*/;6;1;483;d;FALSE
+484;IEF00049;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 2ª Série	*/;6;1;489;d;FALSE
+490;IEF00050;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 3ª Série	*/;6;1;495;d;FALSE
+496;IEF00051;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 4ª Série	*/;6;1;501;d;FALSE
+502;IEF00052;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 5ª Série	*/;6;1;507;d;FALSE
+508;IEF00053;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 6ª Série	*/;6;1;513;d;FALSE
+514;IEF00054;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 7ª Série	*/;6;1;519;d;FALSE
+520;IEF00055;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 8ª Série	*/;6;1;525;d;FALSE
+526;IEF00056;6.1;/*	Taxa de Distorção Idade-Série no Ensino Fundamental	*/;6;1;531;d;FALSE
+532;IEF00057;6.1;/*	Taxa de Distorção Idade-Série de 1ª a 4ª Série	*/;6;1;537;d;FALSE
+538;IEF00058;6.1;/*	Taxa de Distorção Idade-Série de 5ª a 8ª Série	*/;6;1;543;d;FALSE
+544;IEF00059;6.1;/*	Taxa de Distorção Idade-Série na 1ª Série	*/;6;1;549;d;FALSE
+550;IEF00060;6.1;/*	Taxa de Distorção Idade-Série na 2ª Série	*/;6;1;555;d;FALSE
+556;IEF00061;6.1;/*	Taxa de Distorção Idade-Série na 3ª Série	*/;6;1;561;d;FALSE
+562;IEF00062;6.1;/*	Taxa de Distorção Idade-Série na 4ª Série	*/;6;1;567;d;FALSE
+568;IEF00063;6.1;/*	Taxa de Distorção Idade-Série na 5ª Série	*/;6;1;573;d;FALSE
+574;IEF00064;6.1;/*	Taxa de Distorção Idade-Série na 6ª Série	*/;6;1;579;d;FALSE
+580;IEF00065;6.1;/*	Taxa de Distorção Idade-Série na 7ª Série	*/;6;1;585;d;FALSE
+586;IEF00066;6.1;/*	Taxa de Distorção Idade-Série na 8ª Série	*/;6;1;591;d;FALSE
+592;IEF00067;6.1;/*	Taxa de Aprovação no Ensino Fundamental - No ano anterior	*/;6;1;597;d;FALSE
+598;IEF00068;6.1;/*	Taxa de Aprovação de 1ª a 4ª Série - No ano anterior	*/;6;1;603;d;FALSE
+604;IEF00069;6.1;/*	Taxa de Aprovação de 5ª a 8ª Série - No ano anterior	*/;6;1;609;d;FALSE
+610;IEF00070;6.1;/*	Taxa de Aprovação na 1ª Série - No ano anterior	*/;6;1;615;d;FALSE
+616;IEF00071;6.1;/*	Taxa de Aprovação na 2ª Série - No ano anterior	*/;6;1;621;d;FALSE
+622;IEF00072;6.1;/*	Taxa de Aprovação na 3ª Série - No ano anterior	*/;6;1;627;d;FALSE
+628;IEF00073;6.1;/*	Taxa de Aprovação na 4ª Série - No ano anterior	*/;6;1;633;d;FALSE
+634;IEF00074;6.1;/*	Taxa de Aprovação na 5ª Série - No ano anterior	*/;6;1;639;d;FALSE
+640;IEF00075;6.1;/*	Taxa de Aprovação na 6ª Série - No ano anterior	*/;6;1;645;d;FALSE
+646;IEF00076;6.1;/*	Taxa de Aprovação na 7ª Série - No ano anterior	*/;6;1;651;d;FALSE
+652;IEF00077;6.1;/*	Taxa de Aprovação na 8ª Série - No ano anterior	*/;6;1;657;d;FALSE
+658;IEF00078;6.1;/*	Taxa de Reprovação no Ensino Fundamental - No ano anterior	*/;6;1;663;d;FALSE
+664;IEF00079;6.1;/*	Taxa de Reprovação de 1ª a 4ª Série - No ano anterior	*/;6;1;669;d;FALSE
+670;IEF00080;6.1;/*	Taxa de Reprovação de 5ª a 8ª Série - No ano anterior	*/;6;1;675;d;FALSE
+676;IEF00081;6.1;/*	Taxa de Reprovação na 1ª Série - No ano anterior	*/;6;1;681;d;FALSE
+682;IEF00082;6.1;/*	Taxa de Reprovação na 2ª Série - No ano anterior	*/;6;1;687;d;FALSE
+688;IEF00083;6.1;/*	Taxa de Reprovação na 3ª Série - No ano anterior	*/;6;1;693;d;FALSE
+694;IEF00084;6.1;/*	Taxa de Reprovação na 4ª Série - No ano anterior	*/;6;1;699;d;FALSE
+700;IEF00085;6.1;/*	Taxa de Reprovação na 5ª Série - No ano anterior	*/;6;1;705;d;FALSE
+706;IEF00086;6.1;/*	Taxa de Reprovação na 6ª Série - No ano anterior	*/;6;1;711;d;FALSE
+712;IEF00087;6.1;/*	Taxa de Reprovação na 7ª Série - No ano anterior	*/;6;1;717;d;FALSE
+718;IEF00088;6.1;/*	Taxa de Reprovação na 8ª Série - No ano anterior	*/;6;1;723;d;FALSE
+724;IEF00089;6.1;/*	Taxa de Abandono no Ensino Fundamental - No ano anterior	*/;6;1;729;d;FALSE
+730;IEF00090;6.1;/*	Taxa de Abandono de 1ª a 4ª Série - No ano anterior	*/;6;1;735;d;FALSE
+736;IEF00091;6.1;/*	Taxa de Abandono de 5ª a 8ª Série - No ano anterior	*/;6;1;741;d;FALSE
+742;IEF00092;6.1;/*	Taxa de Abandono na 1ª Série - No ano anterior	*/;6;1;747;d;FALSE
+748;IEF00093;6.1;/*	Taxa de Abandono na 2ª Série - No ano anterior	*/;6;1;753;d;FALSE
+754;IEF00094;6.1;/*	Taxa de Abandono na 3ª Série - No ano anterior	*/;6;1;759;d;FALSE
+760;IEF00095;6.1;/*	Taxa de Abandono na 4ª Série - No ano anterior	*/;6;1;765;d;FALSE
+766;IEF00096;6.1;/*	Taxa de Abandono na 5ª Série - No ano anterior	*/;6;1;771;d;FALSE
+772;IEF00097;6.1;/*	Taxa de Abandono na 6ª Série - No ano anterior	*/;6;1;777;d;FALSE
+778;IEF00098;6.1;/*	Taxa de Abandono na 7ª Série - No ano anterior	*/;6;1;783;d;FALSE
+784;IEF00099;6.1;/*	Taxa de Abandono na 8ª Série - No ano anterior	*/;6;1;789;d;FALSE
+790;IEF00100;6.1;/*	Percentual de Concluintes - Feminino no Ensino Fundamental - No ano anterior	*/;6;1;795;d;FALSE
+796;IEF00101;6.1;/*	Idade Mediana de Conclusão - no Ensino Fundamental - No ano anterior	*/;6;1;801;d;FALSE
+802;IEF00102;6.1;/*	Idade Mediana de Conclusão - Feminino no Ensino Fundamental - No ano anterior	*/;6;1;807;d;FALSE
+808;IEF00103;6.1;/*	Idade Mediana de Conclusão - Masculina no Ensino Fundamental - No ano anterior	*/;6;1;813;d;FALSE
+814;IEF00104;6.1;/*	Taxa de Distorção Idade-Conclusão no Ens. Fund. - No ano anterior	*/;6;1;819;d;FALSE
+820;IEF00105;6.1;/*	Taxa de Distorção Idade-Conclusão - Feminino no Ens. Fund.  - No ano anterior	*/;6;1;825;d;FALSE
+826;IEF00106;6.1;/*	Taxa de Distorção Idade-Conclusão - Masculino no Ens.Fund.  - No ano anterior	*/;6;1;831;d;FALSE
+832;IEF00107;6.1;/*	Percentual de Docentes com Curso Superior no Ensino Fundamental	*/;6;1;837;d;FALSE
+838;IEF00108;6.1;/*	Percentual de Docentes com Curso Superior de 1ª a 4ª Série	*/;6;1;843;d;FALSE
+844;IEF00109;6.1;/*	Percentual de Docentes com Curso Superior de 5ª a 8ª Série	*/;6;1;849;d;FALSE
+850;IEM00001;6.1;/*	Número Médio de Horas-Aula Diária no Ensino Médio	*/;6;1;855;d;FALSE
+856;IEM00002;6.1;/*	Número Médio de Horas-Aula Diária na 1ª Série	*/;6;1;861;d;FALSE
+862;IEM00003;6.1;/*	Número Médio de Horas-Aula Diária na 2ª Série	*/;6;1;867;d;FALSE
+868;IEM00004;6.1;/*	Número Médio de Horas-Aula Diária na 3ª Série	*/;6;1;873;d;FALSE
+874;IEM00005;6.1;/*	Número Médio de Horas-Aula Diária na 4ª Série	*/;6;1;879;d;FALSE
+880;IEM00006;6.1;/*	Número Médio de Horas-Aula Diária na  Não Seriada 	*/;6;1;885;d;FALSE
+886;IEM00007;6.1;/*	Percentual de Alunos no Turno Noturno no Ensino Médio	*/;6;1;891;d;FALSE
+892;IEM00008;6.1;/*	Percentual de Alunos no Turno Noturno na 1ª Série	*/;6;1;897;d;FALSE
+898;IEM00009;6.1;/*	Percentual de Alunos no Turno Noturno na 2ª Série	*/;6;1;903;d;FALSE
+904;IEM00010;6.1;/*	Percentual de Alunos no Turno Noturno na 3ª Série	*/;6;1;909;d;FALSE
+910;IEM00011;6.1;/*	Percentual de Alunos no Turno Noturno na 4ª Série	*/;6;1;915;d;FALSE
+916;IEM00012;6.1;/*	Percentual de Alunos no Turno Noturno na Não Seriada	*/;6;1;921;d;FALSE
+922;IEM00013;6.1;/*	Número Médio de Alunos por Turma no Ensino Médio	*/;6;1;927;d;FALSE
+928;IEM00014;6.1;/*	Número Médio de Alunos por Turma na 1ª Série	*/;6;1;933;d;FALSE
+934;IEM00015;6.1;/*	Número Médio de Alunos por Turma na 2ª Série	*/;6;1;939;d;FALSE
+940;IEM00016;6.1;/*	Número Médio de Alunos por Turma na 3ª Série	*/;6;1;945;d;FALSE
+946;IEM00017;6.1;/*	Número Médio de Alunos por Turma na 4ª Série	*/;6;1;951;d;FALSE
+952;IEM00018;6.1;/*	Número Médio de Alunos por Turma na Não Seriada	*/;6;1;957;d;FALSE
+958;IEM00019;6.1;/*	Percentual de Matrículas do Sexo Feminino no Ensino Médio	*/;6;1;963;d;FALSE
+964;IEM00020;6.1;/*	Percentual de Matrículas do Sexo Feminino na 1ª Série	*/;6;1;969;d;FALSE
+970;IEM00021;6.1;/*	Percentual de Matrículas do Sexo Feminino na 2ª Série	*/;6;1;975;d;FALSE
+976;IEM00022;6.1;/*	Percentual de Matrículas do Sexo Feminino na 3ª Série	*/;6;1;981;d;FALSE
+982;IEM00023;6.1;/*	Percentual de Matrículas do Sexo Feminino na 4ª Série	*/;6;1;987;d;FALSE
+988;IEM00024;6.1;/*	Percentual de Matrículas do Sexo Feminino na Não Seriada	*/;6;1;993;d;FALSE
+994;IEM00025;6.1;/*	Idade Mediana que o Aluno Completa no Ano no Ensino Médio	*/;6;1;999;d;FALSE
+1000;IEM00026;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 1ª Série	*/;6;1;1005;d;FALSE
+1006;IEM00027;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 2ª Série	*/;6;1;1011;d;FALSE
+1012;IEM00028;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 3ª Série	*/;6;1;1017;d;FALSE
+1018;IEM00029;6.1;/*	Idade Mediana que o Aluno Completa no Ano na 4ª Série	*/;6;1;1023;d;FALSE
+1024;IEM00030;6.1;/*	Idade Mediana que o Aluno Completa no Ano na Não Seriada	*/;6;1;1029;d;FALSE
+1030;IEM00031;6.1;/*	Taxa de Distorção Idade-Série no Ensino Médio	*/;6;1;1035;d;FALSE
+1036;IEM00032;6.1;/*	Taxa de Distorção Idade-Série na 1ª Série	*/;6;1;1041;d;FALSE
+1042;IEM00033;6.1;/*	Taxa de Distorção Idade-Série na 2ª Série	*/;6;1;1047;d;FALSE
+1048;IEM00034;6.1;/*	Taxa de Distorção Idade-Série na 3ª Série	*/;6;1;1053;d;FALSE
+1054;IEM00035;6.1;/*	Taxa de Distorção Idade-Série na 4ª Série	*/;6;1;1059;d;FALSE
+1060;IEM00037;6.1;/*	Taxa de Aprovação no Ensino Médio - No ano anterior	*/;6;1;1065;d;FALSE
+1066;IEM00038;6.1;/*	Taxa de Aprovação na 1ª Série - No ano anterior	*/;6;1;1071;d;FALSE
+1072;IEM00039;6.1;/*	Taxa de Aprovação na 2ª Série - No ano anterior	*/;6;1;1077;d;FALSE
+1078;IEM00040;6.1;/*	Taxa de Aprovação na 3ª Série - No ano anterior	*/;6;1;1083;d;FALSE
+1084;IEM00041;6.1;/*	Taxa de Aprovação na 4ª Série - No ano anterior	*/;6;1;1089;d;FALSE
+1090;IEM00042;6.1;/*	Taxa de Reprovação no Ensino Médio - No ano anterior	*/;6;1;1095;d;FALSE
+1096;IEM00043;6.1;/*	Taxa de Reprovação na 1ª Série - No ano anterior	*/;6;1;1101;d;FALSE
+1102;IEM00044;6.1;/*	Taxa de Reprovação na 2ª Série - No ano anterior	*/;6;1;1107;d;FALSE
+1108;IEM00045;6.1;/*	Taxa de Reprovação na 3ª Série - No ano anterior	*/;6;1;1113;d;FALSE
+1114;IEM00046;6.1;/*	Taxa de Reprovação na 4ª Série - No ano anterior	*/;6;1;1119;d;FALSE
+1120;IEM00047;6.1;/*	Taxa de Abandono no Ensino Médio - No ano anterior	*/;6;1;1125;d;FALSE
+1126;IEM00048;6.1;/*	Taxa de Abandono na 1ª Série - No ano anterior	*/;6;1;1131;d;FALSE
+1132;IEM00049;6.1;/*	Taxa de Abandono na 2ª Série - No ano anterior	*/;6;1;1137;d;FALSE
+1138;IEM00050;6.1;/*	Taxa de Abandono na 3ª Série - No ano anterior	*/;6;1;1143;d;FALSE
+1144;IEM00051;6.1;/*	Taxa de Abandono na 4ª Série - No ano anterior	*/;6;1;1149;d;FALSE
+1150;IEM00052;6.1;/*	Percentual de Concluintes - Feminino Ensino Médio  - No ano anterior	*/;6;1;1155;d;FALSE
+1156;IEM00053;6.1;/*	Idade Mediana de Conclusão - no Ensino Médio - No ano anterior	*/;6;1;1161;d;FALSE
+1162;IEM00054;6.1;/*	Idade Mediana de Conclusão - Feminino no Ensino Médio - No ano anterior	*/;6;1;1167;d;FALSE
+1168;IEM00055;6.1;/*	Idade Mediana de Conclusão - Masculina no Ensino Médio - No ano anterior	*/;6;1;1173;d;FALSE
+1174;IEM00056;6.1;/*	Taxa de Distorção Idade-Conclusão no Ensino Médio  - No ano anterior	*/;6;1;1179;d;FALSE
+1180;IEM00057;6.1;/*	Taxa de Distorção Idade-Conclusão - Feminino no Ens. Médio  - No ano anterior	*/;6;1;1185;d;FALSE
+1186;IEM00058;6.1;/*	Taxa de Distorção Idade-Conclusão - Masculino no Ens. Médio  - No ano anterior	*/;6;1;1191;d;FALSE
+1192;IEM00059;6.1;/*	Percentual de Docentes com Curso Superior no Ensino Médio	*/;6;1;1197;d;FALSE

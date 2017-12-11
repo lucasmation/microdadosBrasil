@@ -1,50 +1,50 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"MASCARA";"8.";"";8;0;8;"i";FALSE
-9;"ANO";"5.";"";5;0;13;"i";FALSE
-14;"CODMUNIC";"$CHAR12.";"";12;0;25;"c";TRUE
-26;"UF";"$CHAR50.";"";50;0;75;"c";TRUE
-76;"SIGLA";"$CHAR2.";"";2;0;77;"c";TRUE
-78;"MUNIC";"$CHAR50.";"";50;0;127;"c";TRUE
-128;"DEP";"$CHAR10.";"";10;0;137;"c";TRUE
-138;"LOC";"$CHAR10.";"";10;0;147;"c";TRUE
-148;"CODFUNC";"$CHAR11.";"";11;0;158;"c";TRUE
-159;"NOME_CUR";"$CHAR50.";"";50;0;208;"c";TRUE
-209;"GRD_COD";"$CHAR1.";"";1;0;209;"c";TRUE
-210;"AREA_COD";"$CHAR3.";"";3;0;212;"c";TRUE
-213;"SUBAREAC";"$CHAR5.";"";5;0;217;"c";TRUE
-218;"VEP111";"7.";"";7;0;224;"i";FALSE
-225;"VEP112";"7.";"";7;0;231;"i";FALSE
-232;"VEP113";"7.";"";7;0;238;"i";FALSE
-239;"VPE114";"7.";"";7;0;245;"i";FALSE
-246;"VEP115";"7.";"";7;0;252;"i";FALSE
-253;"VEP116";"7.";"";7;0;259;"i";FALSE
-260;"VEP117";"7.";"";7;0;266;"i";FALSE
-267;"VEP121";"7.";"";7;0;273;"i";FALSE
-274;"VEP122";"7.";"";7;0;280;"i";FALSE
-281;"VEP123";"7.";"";7;0;287;"i";FALSE
-288;"VEP124";"7.";"";7;0;294;"i";FALSE
-295;"VEP125";"7.";"";7;0;301;"i";FALSE
-302;"VEP126";"7.";"";7;0;308;"i";FALSE
-309;"VEP127";"7.";"";7;0;315;"i";FALSE
-316;"VEP118";"7.";"";7;0;322;"i";FALSE
-323;"VEP119";"7.";"";7;0;329;"i";FALSE
-330;"VEP128";"7.";"";7;0;336;"i";FALSE
-337;"VEP129";"7.";"";7;0;343;"i";FALSE
-344;"DEP131";"7.";"";7;0;350;"i";FALSE
-351;"DEP132";"7.";"";7;0;357;"i";FALSE
-358;"DEP133";"7.";"";7;0;364;"i";FALSE
-365;"DEP134";"7.";"";7;0;371;"i";FALSE
-372;"DEP135";"7.";"";7;0;378;"i";FALSE
-379;"DEP136";"7.";"";7;0;385;"i";FALSE
-386;"DEP137";"7.";"";7;0;392;"i";FALSE
-393;"NEP141";"7.";"";7;0;399;"i";FALSE
-400;"NEP142";"7.";"";7;0;406;"i";FALSE
-407;"NEP143";"7.";"";7;0;413;"i";FALSE
-414;"NEP144";"7.";"";7;0;420;"i";FALSE
-421;"NEP145";"7.";"";7;0;427;"i";FALSE
-428;"NEP146";"7.";"";7;0;434;"i";FALSE
-435;"NEP147";"7.";"";7;0;441;"i";FALSE
-442;"DEP138";"7.";"";7;0;448;"i";FALSE
-449;"DEP139";"7.";"";7;0;455;"i";FALSE
-456;"NEP148";"7.";"";7;0;462;"i";FALSE
-463;"NEP149";"7.";"";7;0;469;"i";FALSE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;MASCARA;8.;/*  Máscara	*/;8;0;8;i;FALSE
+9;ANO;5.;/*  Ano do Censo Escolar	*/;5;0;13;i;FALSE
+14;CODMUNIC;$CHAR12.;/*  Código do Município	*/;12;0;25;c;TRUE
+26;UF;$CHAR50.;/*  Nome da Unidade da Federação	*/;50;0;75;c;TRUE
+76;SIGLA;$CHAR2.;/*  Sigla da UF	*/;2;0;77;c;TRUE
+78;MUNIC;$CHAR50.;/*  Nome do Município	*/;50;0;127;c;TRUE
+128;DEP;$CHAR10.;/*  Dependência Administrativa	*/;10;0;137;c;TRUE
+138;LOC;$CHAR10.;/*  Localização/Zona da Escola	*/;10;0;147;c;TRUE
+148;CODFUNC;$CHAR11.;/*  Condição de Funcionamento	*/;11;0;158;c;TRUE
+159;NOME_CUR;$CHAR50.;/*  Nome do Curso Técnico	*/;50;0;208;c;TRUE
+209;GRD_COD;$CHAR1.;/*  Código da Grande Área do Curso Técnico	*/;1;0;209;c;TRUE
+210;AREA_COD;$CHAR3.;/*  Código da Área do Curso Técnico	*/;3;0;212;c;TRUE
+213;SUBAREAC;$CHAR5.;/*  Código da Sub-Área do Curso Técnico	*/;5;0;217;c;TRUE
+218;VEP111;7.;/*  Matrículas - Nascidos após 1987 - Turno Diurno 	*/;7;0;224;i;FALSE
+225;VEP112;7.;/*  Matrículas - Nascidos de 1987 a 1985 - Turno Diurno 	*/;7;0;231;i;FALSE
+232;VEP113;7.;/*  Matrículas - Nascidos de 1984 a 1983 - Turno Diurno 	*/;7;0;238;i;FALSE
+239;VPE114;7.;/*  Matrículas - Nascidos de 1982 a 1978 - Turno Diurno 	*/;7;0;245;i;FALSE
+246;VEP115;7.;/*  Matrículas - Nascidos de 1977 a 1973 - Turno Diurno 	*/;7;0;252;i;FALSE
+253;VEP116;7.;/*  Matrículas - Nascidos de 1972 a 1963 - Turno Diurno 	*/;7;0;259;i;FALSE
+260;VEP117;7.;/*  Matrículas - Nascidos antes de 1963 - Turno Diurno 	*/;7;0;266;i;FALSE
+267;VEP121;7.;/*  Matrículas - Nascidos após 1987 - Turno Noturno	*/;7;0;273;i;FALSE
+274;VEP122;7.;/*  Matrículas - Nascidos de 1987 a 1985 - Turno Noturno	*/;7;0;280;i;FALSE
+281;VEP123;7.;/*  Matrículas - Nascidos de 1984 a 1983 - Turno Noturno	*/;7;0;287;i;FALSE
+288;VEP124;7.;/*  Matrículas - Nascidos de 1982 a 1978 - Turno Noturno	*/;7;0;294;i;FALSE
+295;VEP125;7.;/*  Matrículas - Nascidos de 1977 a 1973 - Turno Noturno	*/;7;0;301;i;FALSE
+302;VEP126;7.;/*  Matrículas - Nascidos de 1972 a 1963 - Turno Noturno	*/;7;0;308;i;FALSE
+309;VEP127;7.;/*  Matrículas - Nascidos antes de 1963 - Turno Noturno	*/;7;0;315;i;FALSE
+316;VEP118;7.;/*  Matrículas - Turno Diurno - Masculino 	*/;7;0;322;i;FALSE
+323;VEP119;7.;/*  Matrículas - Turno Diurno - Feminino 	*/;7;0;329;i;FALSE
+330;VEP128;7.;/*  Matrículas - Turno Noturno - Masculino	*/;7;0;336;i;FALSE
+337;VEP129;7.;/*  Matrículas - Turno Noturno - Feminino	*/;7;0;343;i;FALSE
+344;DEP131;7.;/*  Concluintes em 2001 - Nascidos após 1987 - Turno Diurno 	*/;7;0;350;i;FALSE
+351;DEP132;7.;/*  Concluintes em 2001 - Nascidos de 1987 a 1985 - Turno Diurno 	*/;7;0;357;i;FALSE
+358;DEP133;7.;/*  Concluintes em 2001 - Nascidos de 1984 a 1983 - Turno Diurno 	*/;7;0;364;i;FALSE
+365;DEP134;7.;/*  Concluintes em 2001 - Nascidos de 1982 a 1978 - Turno Diurno 	*/;7;0;371;i;FALSE
+372;DEP135;7.;/*  Concluintes em 2001 - Nascidos de 1977 a 1973 - Turno Diurno 	*/;7;0;378;i;FALSE
+379;DEP136;7.;/*  Concluintes em 2001 - Nascidos de 1972 a 1963 - Turno Diurno 	*/;7;0;385;i;FALSE
+386;DEP137;7.;/*  Concluintes em 2001 - Nascidos antes de 1963 - Turno Diurno 	*/;7;0;392;i;FALSE
+393;NEP141;7.;/*  Concluintes em 2001 - Nascidos após 1987 - Turno Noturno	*/;7;0;399;i;FALSE
+400;NEP142;7.;/*  Concluintes em 2001 - Nascidos de 1987 a 1985 - Turno Noturno	*/;7;0;406;i;FALSE
+407;NEP143;7.;/*  Concluintes em 2001 - Nascidos de 1984 a 1983 - Turno Noturno	*/;7;0;413;i;FALSE
+414;NEP144;7.;/*  Concluintes em 2001 - Nascidos de 1982 a 1978 - Turno Noturno	*/;7;0;420;i;FALSE
+421;NEP145;7.;/*  Concluintes em 2001 - Nascidos de 1977 a 1973 - Turno Noturno	*/;7;0;427;i;FALSE
+428;NEP146;7.;/*  Concluintes em 2001 - Nascidos de 1972 a 1963 - Turno Noturno	*/;7;0;434;i;FALSE
+435;NEP147;7.;/*  Concluintes em 2001 - Nascidos antes de 1963 - Turno Noturno	*/;7;0;441;i;FALSE
+442;DEP138;7.;/*  Concluintes em 2001 - Turno Diurno - Masculino	*/;7;0;448;i;FALSE
+449;DEP139;7.;/*  Concluintes em 2001 - Turno Diurno - Feminino	*/;7;0;455;i;FALSE
+456;NEP148;7.;/*  Concluintes em 2001 - Turno Noturno - Masculino	*/;7;0;462;i;FALSE
+463;NEP149;7.;/*  Concluintes em 2001 - Turno Noturno - Feminino	*/;7;0;469;i;FALSE

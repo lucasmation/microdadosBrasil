@@ -1,116 +1,116 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"ANO_CENSO";"5.";"";5;0;5;"i";FALSE
-6;"PK_COD_ENTIDADE";"9.";"";9;0;14;"i";FALSE
-15;"COD_ORGAO_REGIONAL_INEP";"$CHAR5.";"";5;0;19;"c";TRUE
-20;"DESC_SITUACAO_FUNCIONAMENTO";"$CHAR15.";"";15;0;34;"c";TRUE
-35;"DT_ANO_LETIVO_INICIO";"DATETIME20.";"";20;0;54;"d";FALSE
-55;"DT_ANO_LETIVO_TERMINO";"DATETIME20.";"";20;0;74;"d";FALSE
-75;"FK_COD_ESTADO";"3.";"";3;0;77;"i";FALSE
-78;"SIGLA";"$CHAR2.";"";2;0;79;"c";TRUE
-80;"FK_COD_MUNICIPIO";"8.";"";8;0;87;"i";FALSE
-88;"ID_DEPENDENCIA_ADM";"$CHAR1.";"";1;0;88;"c";TRUE
-89;"ID_LOCALIZACAO";"$CHAR1.";"";1;0;89;"c";TRUE
-90;"DESC_CATEGORIA_ESCOLA_PRIVADA";"$CHAR1.";"";1;0;90;"c";TRUE
-91;"ID_CONVENIADA_PP";"$CHAR1.";"";1;0;91;"c";TRUE
-92;"ID_TIPO_CONVENIO_PODER_PUBLICO";"2.";"";2;0;93;"i";FALSE
-94;"ID_MANT_ESCOLA_PRIVADA_EMP";"$CHAR1.";"";1;0;94;"c";TRUE
-95;"ID_MANT_ESCOLA_PRIVADA_ONG";"$CHAR1.";"";1;0;95;"c";TRUE
-96;"ID_MANT_ESCOLA_PRIVADA_SIND";"$CHAR1.";"";1;0;96;"c";TRUE
-97;"ID_MANT_ESCOLA_PRIVADA_S_FINS";"$CHAR1.";"";1;0;97;"c";TRUE
-98;"ID_DOCUMENTO_REGULAMENTACAO";"$CHAR1.";"";1;0;98;"c";TRUE
-99;"ID_LOCAL_FUNC_PREDIO_ESCOLAR";"$CHAR1.";"";1;0;99;"c";TRUE
-100;"ID_LOCAL_FUNC_SALAS_EMPRESA";"$CHAR1.";"";1;0;100;"c";TRUE
-101;"ID_ESCOLA_COMP_PREDIO";"$CHAR1.";"";1;0;101;"c";TRUE
-102;"ID_LOCAL_FUNC_PRISIONAL";"$CHAR1.";"";1;0;102;"c";TRUE
-103;"ID_LOCAL_FUNC_TEMPLO_IGREJA";"$CHAR1.";"";1;0;103;"c";TRUE
-104;"ID_LOCAL_FUNC_CASA_PROFESSOR";"$CHAR1.";"";1;0;104;"c";TRUE
-105;"ID_LOCAL_FUNC_GALPAO";"$CHAR1.";"";1;0;105;"c";TRUE
-106;"ID_LOCAL_FUNC_OUTROS";"$CHAR1.";"";1;0;106;"c";TRUE
-107;"ID_LOCAL_FUNC_SALAS_OUTRA_ESC";"$CHAR1.";"";1;0;107;"c";TRUE
-108;"ID_AGUA_FILTRADA";"$CHAR1.";"";1;0;108;"c";TRUE
-109;"ID_AGUA_REDE_PUBLICA";"$CHAR1.";"";1;0;109;"c";TRUE
-110;"ID_AGUA_POCO_ARTESIANO";"$CHAR1.";"";1;0;110;"c";TRUE
-111;"ID_AGUA_CACIMBA";"$CHAR1.";"";1;0;111;"c";TRUE
-112;"ID_AGUA_FONTE_RIO";"$CHAR1.";"";1;0;112;"c";TRUE
-113;"ID_AGUA_INEXISTENTE";"$CHAR1.";"";1;0;113;"c";TRUE
-114;"ID_ENERGIA_REDE_PUBLICA";"$CHAR1.";"";1;0;114;"c";TRUE
-115;"ID_ENERGIA_GERADOR";"$CHAR1.";"";1;0;115;"c";TRUE
-116;"ID_ENERGIA_OUTROS";"$CHAR1.";"";1;0;116;"c";TRUE
-117;"ID_ENERGIA_INEXISTENTE";"$CHAR1.";"";1;0;117;"c";TRUE
-118;"ID_ESGOTO_REDE_PUBLICA";"$CHAR1.";"";1;0;118;"c";TRUE
-119;"ID_ESGOTO_FOSSA";"$CHAR1.";"";1;0;119;"c";TRUE
-120;"ID_ESGOTO_INEXISTENTE";"$CHAR1.";"";1;0;120;"c";TRUE
-121;"ID_LIXO_COLETA_PERIODICA";"$CHAR1.";"";1;0;121;"c";TRUE
-122;"ID_LIXO_QUEIMA";"$CHAR1.";"";1;0;122;"c";TRUE
-123;"ID_LIXO_JOGA_OUTRA_AREA";"$CHAR1.";"";1;0;123;"c";TRUE
-124;"ID_LIXO_RECICLA";"$CHAR1.";"";1;0;124;"c";TRUE
-125;"ID_LIXO_ENTERRA";"$CHAR1.";"";1;0;125;"c";TRUE
-126;"ID_LIXO_OUTROS";"$CHAR1.";"";1;0;126;"c";TRUE
-127;"ID_SALA_DIRETORIA";"$CHAR1.";"";1;0;127;"c";TRUE
-128;"ID_SALA_PROFESSOR";"$CHAR1.";"";1;0;128;"c";TRUE
-129;"ID_LABORATORIO_INFORMATICA";"$CHAR1.";"";1;0;129;"c";TRUE
-130;"ID_LABORATORIO_CIENCIAS";"$CHAR1.";"";1;0;130;"c";TRUE
-131;"ID_SALA_ATENDIMENTO_ESPECIAL";"$CHAR1.";"";1;0;131;"c";TRUE
-132;"ID_QUADRA_ESPORTES";"$CHAR1.";"";1;0;132;"c";TRUE
-133;"ID_COZINHA";"$CHAR1.";"";1;0;133;"c";TRUE
-134;"ID_BIBLIOTECA";"$CHAR1.";"";1;0;134;"c";TRUE
-135;"ID_SALA_LEITURA";"$CHAR1.";"";1;0;135;"c";TRUE
-136;"ID_PARQUE_INFANTIL";"$CHAR1.";"";1;0;136;"c";TRUE
-137;"ID_BERCARIO";"$CHAR1.";"";1;0;137;"c";TRUE
-138;"ID_SANITARIO_FORA_PREDIO";"$CHAR1.";"";1;0;138;"c";TRUE
-139;"ID_SANITARIO_DENTRO_PREDIO";"$CHAR1.";"";1;0;139;"c";TRUE
-140;"ID_SANITARIO_EI";"$CHAR1.";"";1;0;140;"c";TRUE
-141;"ID_SANITARIO_PNE";"$CHAR1.";"";1;0;141;"c";TRUE
-142;"ID_DEPENDENCIAS_PNE";"$CHAR1.";"";1;0;142;"c";TRUE
-143;"ID_DEPENDENCIAS_OUTRAS";"$CHAR1.";"";1;0;143;"c";TRUE
-144;"NUM_SALAS_EXISTENTES";"5.";"";5;0;148;"i";FALSE
-149;"NUM_SALAS_UTILIZADAS";"5.";"";5;0;153;"i";FALSE
-154;"ID_EQUIP_TV";"$CHAR1.";"";1;0;154;"c";TRUE
-155;"ID_EQUIP_VIDEOCASSETE";"$CHAR1.";"";1;0;155;"c";TRUE
-156;"ID_EQUIP_DVD";"$CHAR1.";"";1;0;156;"c";TRUE
-157;"ID_EQUIP_PARABOLICA";"$CHAR1.";"";1;0;157;"c";TRUE
-158;"ID_EQUIP_COPIADORA";"$CHAR1.";"";1;0;158;"c";TRUE
-159;"ID_EQUIP_RETRO";"$CHAR1.";"";1;0;159;"c";TRUE
-160;"ID_EQUIP_IMPRESSORA";"$CHAR1.";"";1;0;160;"c";TRUE
-161;"ID_COMPUTADORES";"$CHAR1.";"";1;0;161;"c";TRUE
-162;"NUM_COMPUTADORES";"5.";"";5;0;166;"i";FALSE
-167;"NUM_COMP_ADMINISTRATIVOS";"5.";"";5;0;171;"i";FALSE
-172;"NUM_COMP_ALUNOS";"5.";"";5;0;176;"i";FALSE
-177;"ID_INTERNET";"$CHAR1.";"";1;0;177;"c";TRUE
-178;"ID_BANDA_LARGA";"2.";"";2;0;179;"i";FALSE
-180;"NUM_FUNCIONARIOS";"5.";"";5;0;184;"i";FALSE
-185;"ID_ALIMENTACAO";"$CHAR1.";"";1;0;185;"c";TRUE
-186;"ID_AEE";"2.";"";2;0;187;"i";FALSE
-188;"ID_MOD_ATIV_COMPLEMENTAR";"2.";"";2;0;189;"i";FALSE
-190;"ID_MOD_ENS_REGULAR";"$CHAR1.";"";1;0;190;"c";TRUE
-191;"ID_REG_INFANTIL_CRECHE";"$CHAR1.";"";1;0;191;"c";TRUE
-192;"ID_REG_INFANTIL_PREESCOLA";"$CHAR1.";"";1;0;192;"c";TRUE
-193;"ID_REG_FUND_8_ANOS";"$CHAR1.";"";1;0;193;"c";TRUE
-194;"ID_REG_FUND_9_ANOS";"$CHAR1.";"";1;0;194;"c";TRUE
-195;"ID_REG_MEDIO_MEDIO";"$CHAR1.";"";1;0;195;"c";TRUE
-196;"ID_REG_MEDIO_INTEGRADO";"$CHAR1.";"";1;0;196;"c";TRUE
-197;"ID_REG_MEDIO_NORMAL";"$CHAR1.";"";1;0;197;"c";TRUE
-198;"ID_REG_MEDIO_PROF";"$CHAR1.";"";1;0;198;"c";TRUE
-199;"ID_MOD_ENS_ESP";"$CHAR1.";"";1;0;199;"c";TRUE
-200;"ID_ESP_INFANTIL_CRECHE";"$CHAR1.";"";1;0;200;"c";TRUE
-201;"ID_ESP_INFANTIL_PREESCOLA";"$CHAR1.";"";1;0;201;"c";TRUE
-202;"ID_ESP_FUND_8_ANOS";"$CHAR1.";"";1;0;202;"c";TRUE
-203;"ID_ESP_FUND_9_ANOS";"$CHAR1.";"";1;0;203;"c";TRUE
-204;"ID_ESP_MEDIO_MEDIO";"$CHAR1.";"";1;0;204;"c";TRUE
-205;"ID_ESP_MEDIO_INTEGRADO";"$CHAR1.";"";1;0;205;"c";TRUE
-206;"ID_ESP_MEDIO_NORMAL";"$CHAR1.";"";1;0;206;"c";TRUE
-207;"ID_ESP_MEDIO_PROFISSIONAL";"$CHAR1.";"";1;0;207;"c";TRUE
-208;"ID_ESP_EJA_FUNDAMENTAL";"$CHAR1.";"";1;0;208;"c";TRUE
-209;"ID_ESP_EJA_MEDIO";"$CHAR1.";"";1;0;209;"c";TRUE
-210;"ID_MOD_EJA";"$CHAR1.";"";1;0;210;"c";TRUE
-211;"ID_EJA_FUNDAMENTAL";"$CHAR1.";"";1;0;211;"c";TRUE
-212;"ID_EJA_MEDIO";"$CHAR1.";"";1;0;212;"c";TRUE
-213;"ID_FUND_CICLOS";"$CHAR1.";"";1;0;213;"c";TRUE
-214;"ID_LOCALIZACAO_DIFERENCIADA";"$CHAR1.";"";1;0;214;"c";TRUE
-215;"ID_MATERIAL_ESP_NAO_UTILIZA";"$CHAR1.";"";1;0;215;"c";TRUE
-216;"ID_MATERIAL_ESP_QUILOMBOLA";"$CHAR1.";"";1;0;216;"c";TRUE
-217;"ID_MATERIAL_ESP_INDIGENA";"$CHAR1.";"";1;0;217;"c";TRUE
-218;"ID_EDUCACAO_INDIGENA";"$CHAR1.";"";1;0;218;"c";TRUE
-219;"ID_LINGUA_INDIGENA";"$CHAR1.";"";1;0;219;"c";TRUE
-220;"FK_COD_LINGUA_INDIGENA";"5.";"";5;0;224;"i";FALSE
-225;"ID_LINGUA_PORTUGUESA";"$CHAR1.";"";1;0;225;"c";TRUE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;ANO_CENSO;5.;/*Ano do Censo*/;5;0;5;i;FALSE
+6;PK_COD_ENTIDADE;9.;/*Código da Escola*/;9;0;14;i;FALSE
+15;COD_ORGAO_REGIONAL_INEP;$CHAR5.;/*Código do Órgão Regional de Ensino*/;5;0;19;c;TRUE
+20;DESC_SITUACAO_FUNCIONAMENTO;$CHAR15.;/*Situação de funcionamento*/;15;0;34;c;TRUE
+35;DT_ANO_LETIVO_INICIO;DATETIME20.;/*Início do ano letivo*/;20;0;54;d;FALSE
+55;DT_ANO_LETIVO_TERMINO;DATETIME20.;/*Término (Previsão) do ano letivo*/;20;0;74;d;FALSE
+75;FK_COD_ESTADO;3.;/*Código da UF*/;3;0;77;i;FALSE
+78;SIGLA;$CHAR2.;/*Sigla da UF*/;2;0;79;c;TRUE
+80;FK_COD_MUNICIPIO;8.;/*Código do Município*/;8;0;87;i;FALSE
+88;ID_DEPENDENCIA_ADM;$CHAR1.;/*Dependência Administrativa*/;1;0;88;c;TRUE
+89;ID_LOCALIZACAO;$CHAR1.;/*Localização*/;1;0;89;c;TRUE
+90;DESC_CATEGORIA_ESCOLA_PRIVADA;$CHAR1.;/*Categoria da escola privada*/;1;0;90;c;TRUE
+91;ID_CONVENIADA_PP;$CHAR1.;/*Conveniada com o poder público*/;1;0;91;c;TRUE
+92;ID_TIPO_CONVENIO_PODER_PUBLICO;2.;/*Dependência do convênio com o poder público*/;2;0;93;i;FALSE
+94;ID_MANT_ESCOLA_PRIVADA_EMP;$CHAR1.;/*Mantenedora da escola privada - Empresa, grupo empresarial do setor privado ou pessoa física*/;1;0;94;c;TRUE
+95;ID_MANT_ESCOLA_PRIVADA_ONG;$CHAR1.;/*Mantenedora da escola privada - Organização não governamental - ONG internacional ou nacional*/;1;0;95;c;TRUE
+96;ID_MANT_ESCOLA_PRIVADA_SIND;$CHAR1.;/*Mantenedora da escola privada - Sindicatos de trabalhadores ou patronais, associações, cooperativas e sistema S*/;1;0;96;c;TRUE
+97;ID_MANT_ESCOLA_PRIVADA_S_FINS;$CHAR1.;/*Mantenedora da escola privada - Apae/Pestalozzi*/;1;0;97;c;TRUE
+98;ID_DOCUMENTO_REGULAMENTACAO;$CHAR1.;/*Regulamentação no conselho ou órgão municipal, estadual ou federal de educação*/;1;0;98;c;TRUE
+99;ID_LOCAL_FUNC_PREDIO_ESCOLAR;$CHAR1.;/*Local de funcionamento da escola - Prédio escolar*/;1;0;99;c;TRUE
+100;ID_LOCAL_FUNC_SALAS_EMPRESA;$CHAR1.;/*Local de funcionamento da escola - Salas de empresa*/;1;0;100;c;TRUE
+101;ID_ESCOLA_COMP_PREDIO;$CHAR1.;/*Local de funcionamento da escola - Salas em outra escola*/;1;0;101;c;TRUE
+102;ID_LOCAL_FUNC_PRISIONAL;$CHAR1.;/*Local de funcionamento da escola - Unidade de Internação/Prisional*/;1;0;102;c;TRUE
+103;ID_LOCAL_FUNC_TEMPLO_IGREJA;$CHAR1.;/*Local de funcionamento da escola - Templo/Igreja*/;1;0;103;c;TRUE
+104;ID_LOCAL_FUNC_CASA_PROFESSOR;$CHAR1.;/*Local de funcionamento da escola - Casa do professor*/;1;0;104;c;TRUE
+105;ID_LOCAL_FUNC_GALPAO;$CHAR1.;/*Local de funcionamento da escola - Galpão/Rancho/Paiol/Barracão*/;1;0;105;c;TRUE
+106;ID_LOCAL_FUNC_OUTROS;$CHAR1.;/*Local de funcionamento da escola - Outros*/;1;0;106;c;TRUE
+107;ID_LOCAL_FUNC_SALAS_OUTRA_ESC;$CHAR1.;/*Prédio compartilhado com outra escola*/;1;0;107;c;TRUE
+108;ID_AGUA_FILTRADA;$CHAR1.;/*Água consumida pelos alunos*/;1;0;108;c;TRUE
+109;ID_AGUA_REDE_PUBLICA;$CHAR1.;/*Abastecimento de água - Rede pública*/;1;0;109;c;TRUE
+110;ID_AGUA_POCO_ARTESIANO;$CHAR1.;/*Abastecimento de água - Poço artesiano*/;1;0;110;c;TRUE
+111;ID_AGUA_CACIMBA;$CHAR1.;/*Abastecimento de água - Cacimba/Cisterna/Poço*/;1;0;111;c;TRUE
+112;ID_AGUA_FONTE_RIO;$CHAR1.;/*Abastecimento de água - Fonte/Rio/Igarapé/Riacho/Córrego*/;1;0;112;c;TRUE
+113;ID_AGUA_INEXISTENTE;$CHAR1.;/*Abastecimento de água - Inexistente*/;1;0;113;c;TRUE
+114;ID_ENERGIA_REDE_PUBLICA;$CHAR1.;/*Abastecimento de energia elétrica - Rede pública*/;1;0;114;c;TRUE
+115;ID_ENERGIA_GERADOR;$CHAR1.;/*Abastecimento de energia elétrica - Gerador*/;1;0;115;c;TRUE
+116;ID_ENERGIA_OUTROS;$CHAR1.;/*Abastecimento de energia elétrica - Outros (Energia alternativa)*/;1;0;116;c;TRUE
+117;ID_ENERGIA_INEXISTENTE;$CHAR1.;/*Abastecimento de energia elétrica - Inexistente*/;1;0;117;c;TRUE
+118;ID_ESGOTO_REDE_PUBLICA;$CHAR1.;/*Esgoto sanitário - Rede pública*/;1;0;118;c;TRUE
+119;ID_ESGOTO_FOSSA;$CHAR1.;/*Esgoto sanitário - Fossa*/;1;0;119;c;TRUE
+120;ID_ESGOTO_INEXISTENTE;$CHAR1.;/*Esgoto sanitário - Inexistente*/;1;0;120;c;TRUE
+121;ID_LIXO_COLETA_PERIODICA;$CHAR1.;/*Destinação do lixo - Coleta periódica*/;1;0;121;c;TRUE
+122;ID_LIXO_QUEIMA;$CHAR1.;/*Destinação do lixo - Queima*/;1;0;122;c;TRUE
+123;ID_LIXO_JOGA_OUTRA_AREA;$CHAR1.;/*Destinação do lixo - Joga em outra área*/;1;0;123;c;TRUE
+124;ID_LIXO_RECICLA;$CHAR1.;/*Destinação do lixo - Recicla*/;1;0;124;c;TRUE
+125;ID_LIXO_ENTERRA;$CHAR1.;/*Destinação do lixo - Enterra*/;1;0;125;c;TRUE
+126;ID_LIXO_OUTROS;$CHAR1.;/*Destinação do lixo - Outros*/;1;0;126;c;TRUE
+127;ID_SALA_DIRETORIA;$CHAR1.;/*Dependências existentes na escola - Diretoria*/;1;0;127;c;TRUE
+128;ID_SALA_PROFESSOR;$CHAR1.;/*Dependências existentes na escola - Sala de professores*/;1;0;128;c;TRUE
+129;ID_LABORATORIO_INFORMATICA;$CHAR1.;/*Dependências existentes na escola - Laboratório de informática*/;1;0;129;c;TRUE
+130;ID_LABORATORIO_CIENCIAS;$CHAR1.;/*Dependências existentes na escola - Laboratório de ciências*/;1;0;130;c;TRUE
+131;ID_SALA_ATENDIMENTO_ESPECIAL;$CHAR1.;/*Dependências existentes na escola - Sala de recursos para atendimento educacional especializado*/;1;0;131;c;TRUE
+132;ID_QUADRA_ESPORTES;$CHAR1.;/*Dependências existentes na escola - Quadra de esportes*/;1;0;132;c;TRUE
+133;ID_COZINHA;$CHAR1.;/*Dependências existentes na escola - Cozinha*/;1;0;133;c;TRUE
+134;ID_BIBLIOTECA;$CHAR1.;/*Dependências existentes na escola - Biblioteca/Sala de leitura*/;1;0;134;c;TRUE
+135;ID_SALA_LEITURA;$CHAR1.;/*Dependências existentes na escola - Biblioteca/Sala de leitura*/;1;0;135;c;TRUE
+136;ID_PARQUE_INFANTIL;$CHAR1.;/*Dependências existentes na escola - Parque infantil*/;1;0;136;c;TRUE
+137;ID_BERCARIO;$CHAR1.;/*Dependências existentes na escola - Biblioteca/Sala de leitura*/;1;0;137;c;TRUE
+138;ID_SANITARIO_FORA_PREDIO;$CHAR1.;/*Dependências existentes na escola - Sanitário fora do prédio*/;1;0;138;c;TRUE
+139;ID_SANITARIO_DENTRO_PREDIO;$CHAR1.;/*Dependências existentes na escola - Sanitário dentro do prédio*/;1;0;139;c;TRUE
+140;ID_SANITARIO_EI;$CHAR1.;/*Dependências existentes na escola - Sanitário dentro do prédio*/;1;0;140;c;TRUE
+141;ID_SANITARIO_PNE;$CHAR1.;/*Dependências existentes na escola - Sanitário adequado a alunos com deficiência ou mobilidade reduzida*/;1;0;141;c;TRUE
+142;ID_DEPENDENCIAS_PNE;$CHAR1.;/*Dependências existentes na escola - Dependências e vias adequadas a alunos com deficiência ou mobilidade reduzida*/;1;0;142;c;TRUE
+143;ID_DEPENDENCIAS_OUTRAS;$CHAR1.;/*Dependências existentes na escola - Nenhuma das dependência relacionadas*/;1;0;143;c;TRUE
+144;NUM_SALAS_EXISTENTES;5.;/*Número de salas de aula existentes na escola*/;5;0;148;i;FALSE
+149;NUM_SALAS_UTILIZADAS;5.;/*Número de salas utilizadas como salas de aula (dentro e fora do prédio)*/;5;0;153;i;FALSE
+154;ID_EQUIP_TV;$CHAR1.;/*Equipamentos existentes na escola - Aparelho de televisão*/;1;0;154;c;TRUE
+155;ID_EQUIP_VIDEOCASSETE;$CHAR1.;/*Equipamentos existentes na escola - Videocassete*/;1;0;155;c;TRUE
+156;ID_EQUIP_DVD;$CHAR1.;/*Equipamentos existentes na escola - DVD*/;1;0;156;c;TRUE
+157;ID_EQUIP_PARABOLICA;$CHAR1.;/*Equipamentos existentes na escola - Antena parabólica*/;1;0;157;c;TRUE
+158;ID_EQUIP_COPIADORA;$CHAR1.;/*Equipamentos existentes na escola - Copiadora*/;1;0;158;c;TRUE
+159;ID_EQUIP_RETRO;$CHAR1.;/*Equipamentos existentes na escola - Retroprojetor*/;1;0;159;c;TRUE
+160;ID_EQUIP_IMPRESSORA;$CHAR1.;/*Equipamentos existentes na escola - Impressora*/;1;0;160;c;TRUE
+161;ID_COMPUTADORES;$CHAR1.;/*Possui computadores*/;1;0;161;c;TRUE
+162;NUM_COMPUTADORES;5.;/*Quantidade de computadores na escola*/;5;0;166;i;FALSE
+167;NUM_COMP_ADMINISTRATIVOS;5.;/*Quantidade de computadores de uso administrativo*/;5;0;171;i;FALSE
+172;NUM_COMP_ALUNOS;5.;/*Quantidade de computadores para uso dos alunos*/;5;0;176;i;FALSE
+177;ID_INTERNET;$CHAR1.;/*Acesso à Internet*/;1;0;177;c;TRUE
+178;ID_BANDA_LARGA;2.;/*Internet Banda Larga*/;2;0;179;i;FALSE
+180;NUM_FUNCIONARIOS;5.;/*Total de funcionários da escola (inclusive professores e auxiliares)*/;5;0;184;i;FALSE
+185;ID_ALIMENTACAO;$CHAR1.;/*Alimentação escolar para os alunos*/;1;0;185;c;TRUE
+186;ID_AEE;2.;/*Alimentação escolar para os alunos*/;2;0;187;i;FALSE
+188;ID_MOD_ATIV_COMPLEMENTAR;2.;/*Atividade Complementar*/;2;0;189;i;FALSE
+190;ID_MOD_ENS_REGULAR;$CHAR1.;/*Modalidade - Ensino Regular*/;1;0;190;c;TRUE
+191;ID_REG_INFANTIL_CRECHE;$CHAR1.;/*Ensino Regular - Educação Infantil - Creche*/;1;0;191;c;TRUE
+192;ID_REG_INFANTIL_PREESCOLA;$CHAR1.;/*Ensino Regular - Educação Infantil - Pré-escola*/;1;0;192;c;TRUE
+193;ID_REG_FUND_8_ANOS;$CHAR1.;/*Ensino Regular - Ensino Fundamental - 8 anos*/;1;0;193;c;TRUE
+194;ID_REG_FUND_9_ANOS;$CHAR1.;/*Ensino Regular - Ensino Fundamental - 9 anos*/;1;0;194;c;TRUE
+195;ID_REG_MEDIO_MEDIO;$CHAR1.;/*Ensino Regular - Ensino Médio - Médio*/;1;0;195;c;TRUE
+196;ID_REG_MEDIO_INTEGRADO;$CHAR1.;/*Ensino Regular - Ensino Médio - Integrado*/;1;0;196;c;TRUE
+197;ID_REG_MEDIO_NORMAL;$CHAR1.;/*Ensino Regular - Ensino Médio - Normal/Magistério*/;1;0;197;c;TRUE
+198;ID_REG_MEDIO_PROF;$CHAR1.;/*Ensino Regular - Ensino Médio - Ensino Profissional*/;1;0;198;c;TRUE
+199;ID_MOD_ENS_ESP;$CHAR1.;/*Modalidade - Educação Especial*/;1;0;199;c;TRUE
+200;ID_ESP_INFANTIL_CRECHE;$CHAR1.;/*Educação Especial - Educação Infantil - Creche*/;1;0;200;c;TRUE
+201;ID_ESP_INFANTIL_PREESCOLA;$CHAR1.;/*Educação Especial - Educação Infantil - Pré-escola*/;1;0;201;c;TRUE
+202;ID_ESP_FUND_8_ANOS;$CHAR1.;/*Educação Especial - Ensino Fundamental - 8 anos*/;1;0;202;c;TRUE
+203;ID_ESP_FUND_9_ANOS;$CHAR1.;/*Educação Especial - Ensino Fundamental - 9 anos*/;1;0;203;c;TRUE
+204;ID_ESP_MEDIO_MEDIO;$CHAR1.;/*Educação Especial - Ensino Médio - Médio*/;1;0;204;c;TRUE
+205;ID_ESP_MEDIO_INTEGRADO;$CHAR1.;/*Educação Especial - Ensino Médio - Integrado*/;1;0;205;c;TRUE
+206;ID_ESP_MEDIO_NORMAL;$CHAR1.;/*Educação Especial - Ensino Médio - Normal/Magistério*/;1;0;206;c;TRUE
+207;ID_ESP_MEDIO_PROFISSIONAL;$CHAR1.;/*Educação Especial - Ensino Médio - Educação Profissional*/;1;0;207;c;TRUE
+208;ID_ESP_EJA_FUNDAMENTAL;$CHAR1.;/*Educação Especial - Educação de Jovens e Adultos - Ensino Fundamental*/;1;0;208;c;TRUE
+209;ID_ESP_EJA_MEDIO;$CHAR1.;/*Educação Especial - Educação de Jovens e Adultos - Ensino Médio*/;1;0;209;c;TRUE
+210;ID_MOD_EJA;$CHAR1.;/*Modalidade - Educação de Jovens e Adultos*/;1;0;210;c;TRUE
+211;ID_EJA_FUNDAMENTAL;$CHAR1.;/*Educação de Jovens e Adultos - Ensino Fundamental*/;1;0;211;c;TRUE
+212;ID_EJA_MEDIO;$CHAR1.;/*Educação de Jovens e Adultos - Ensino Médio*/;1;0;212;c;TRUE
+213;ID_FUND_CICLOS;$CHAR1.;/*Educação de Jovens e Adultos - Ensino Médio*/;1;0;213;c;TRUE
+214;ID_LOCALIZACAO_DIFERENCIADA;$CHAR1.;/*Localização diferenciada da escola*/;1;0;214;c;TRUE
+215;ID_MATERIAL_ESP_NAO_UTILIZA;$CHAR1.;/*Materiais didáticos específicos para atendimento à diversidade sócio-cultural - Não utiliza*/;1;0;215;c;TRUE
+216;ID_MATERIAL_ESP_QUILOMBOLA;$CHAR1.;/*Materiais didáticos específicos para atendimento à diversidade sócio-cultural - Quilombolas*/;1;0;216;c;TRUE
+217;ID_MATERIAL_ESP_INDIGENA;$CHAR1.;/*Materiais didáticos específicos para atendimento à diversidade sócio-cultural - Indígena*/;1;0;217;c;TRUE
+218;ID_EDUCACAO_INDIGENA;$CHAR1.;/*Educação Indígena*/;1;0;218;c;TRUE
+219;ID_LINGUA_INDIGENA;$CHAR1.;/*Educação Indígena - Língua em que o ensino é ministrado - Língua Indígena*/;1;0;219;c;TRUE
+220;FK_COD_LINGUA_INDIGENA;5.;/*Educação Indígena - Língua em que o ensino é ministrado - Língua Indígena - Código da língua Indígena*/;5;0;224;i;FALSE
+225;ID_LINGUA_PORTUGUESA;$CHAR1.;/*Educação Indígena - Língua em que o ensino é ministrado - Língua Portuguesa*/;1;0;225;c;TRUE

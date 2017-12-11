@@ -1,18 +1,18 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"MASCARA";"8.";"";8;0;8;"i";FALSE
-9;"ANO";"5.";"";5;0;13;"i";FALSE
-14;"CODMUNIC";"$CHAR12.";"";12;0;25;"c";TRUE
-26;"UF";"$CHAR50.";"";50;0;75;"c";TRUE
-76;"SIGLA";"$CHAR2.";"";2;0;77;"c";TRUE
-78;"MUNIC";"$CHAR50.";"";50;0;127;"c";TRUE
-128;"DEP";"$CHAR10.";"";10;0;137;"c";TRUE
-138;"LOC";"$CHAR10.";"";10;0;147;"c";TRUE
-148;"CODFUNC";"$CHAR11.";"";11;0;158;"c";TRUE
-159;"HABILCOD";"$CHAR10.";"";10;0;168;"c";TRUE
-169;"HABILNOM";"$CHAR100.";"";100;0;268;"c";TRUE
-269;"VEM1215";"7.";"";7;0;275;"i";FALSE
-276;"VEM1216";"7.";"";7;0;282;"i";FALSE
-283;"VEM1217";"7.";"";7;0;289;"i";FALSE
-290;"VEM1218";"7.";"";7;0;296;"i";FALSE
-297;"VEM1219";"7.";"";7;0;303;"i";FALSE
-304;"VEM1214";"7.";"";7;0;310;"i";FALSE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;MASCARA;8.;/* Máscara da Escola	*/;8;0;8;i;FALSE
+9;ANO;5.;/* Ano do Censo Escolar	*/;5;0;13;i;FALSE
+14;CODMUNIC;$CHAR12.;/* Código do Município	*/;12;0;25;c;TRUE
+26;UF;$CHAR50.;/* Nome da Unidade da Federação	*/;50;0;75;c;TRUE
+76;SIGLA;$CHAR2.;/* Sigla da UF	*/;2;0;77;c;TRUE
+78;MUNIC;$CHAR50.;/* Nome do Município	*/;50;0;127;c;TRUE
+128;DEP;$CHAR10.;/* Dependência Administrativa	*/;10;0;137;c;TRUE
+138;LOC;$CHAR10.;/* Localização/Zona da Escola	*/;10;0;147;c;TRUE
+148;CODFUNC;$CHAR11.;/* Condição de Funcionamento	*/;11;0;158;c;TRUE
+159;HABILCOD;$CHAR10.;/* Código da Habilitação Profissional	*/;10;0;168;c;TRUE
+169;HABILNOM;$CHAR100.;/* Nome da Habilitação Profissional	*/;100;0;268;c;TRUE
+269;VEM1215;7.;/* Matrículas - 1a. série	*/;7;0;275;i;FALSE
+276;VEM1216;7.;/* Matrículas - 2a. série	*/;7;0;282;i;FALSE
+283;VEM1217;7.;/* Matrículas - 3a. série	*/;7;0;289;i;FALSE
+290;VEM1218;7.;/* Matrículas - 4a. série	*/;7;0;296;i;FALSE
+297;VEM1219;7.;/* Matrículas - Não-seriada	*/;7;0;303;i;FALSE
+304;VEM1214;7.;/* Concluintes no ano anterior	*/;7;0;310;i;FALSE

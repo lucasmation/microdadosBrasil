@@ -1,57 +1,57 @@
-"int_pos";"var_name";"x";"label";"length";"decimal_places";"fin_pos";"col_type";"CHAR"
-1;"ANO_CENSO";"8.";"";8;0;8;"i";FALSE
-9;"PK_COD_MATRICULA";"16.";"";16;0;24;"d";FALSE
-25;"FK_COD_ALUNO";"16.";"";16;0;40;"d";FALSE
-41;"NU_DIA";"6.";"";6;0;46;"i";FALSE
-47;"NU_MES";"6.";"";6;0;52;"i";FALSE
-53;"NU_ANO";"8.";"";8;0;60;"i";FALSE
-61;"NUM_IDADE";"8.";"";8;0;68;"i";FALSE
-69;"TP_SEXO";"$Char1.";"";1;0;69;"c";TRUE
-70;"TP_COR_RACA";"$Char1.";"";1;0;70;"c";TRUE
-71;"TP_NACIONALIDADE";"$Char1.";"";1;0;71;"c";TRUE
-72;"FK_COD_PAIS_ORIGEM";"7.";"";7;0;78;"i";FALSE
-79;"FK_COD_ESTADO_NASC";"6.";"";6;0;84;"i";FALSE
-85;"SGL_UF_NASCIMENTO";"$Char2.";"";2;0;86;"c";TRUE
-87;"FK_COD_MUNICIPIO_DNASC";"16.";"";16;0;102;"d";FALSE
-103;"FK_COD_ESTADO_END";"6.";"";6;0;108;"i";FALSE
-109;"SIGLA_END";"$2.";"";2;0;110;"c";TRUE
-111;"FK_COD_MUNICIPIO_END";"16.";"";16;0;126;"d";FALSE
-127;"ID_ZONA_RESIDENCIAL";"$Char1.";"";1;0;127;"c";TRUE
-128;"ID_TIPO_ATENDIMENTO";"$Char1.";"";1;0;128;"c";TRUE
-129;"ID_N_T_E_P";"$Char1.";"";1;0;129;"c";TRUE
-130;"ID_RESPONSAVEL_TRANSPORTE";"$Char1.";"";1;0;130;"c";TRUE
-131;"ID_POSSUI_NEC_ESPECIAL";"$Char1.";"";1;0;131;"c";TRUE
-132;"ID_TIPO_NEC_ESP_CEGUEIRA";"$Char1.";"";1;0;132;"c";TRUE
-133;"ID_TIPO_NEC_ESP_BAIXA_VISAO";"$Char1.";"";1;0;133;"c";TRUE
-134;"ID_TIPO_NEC_ESP_SURDEZ";"$Char1.";"";1;0;134;"c";TRUE
-135;"ID_TIPO_NEC_ESP_DEF_AUDITIVA";"$Char1.";"";1;0;135;"c";TRUE
-136;"ID_TIPO_NEC_ESP_SURDO_CEGUEIRA";"$Char1.";"";1;0;136;"c";TRUE
-137;"ID_TIPO_NEC_ESP_DEF_FISICA";"$Char1.";"";1;0;137;"c";TRUE
-138;"ID_TIPO_NEC_ESP_DEF_MENTAL";"$Char1.";"";1;0;138;"c";TRUE
-139;"ID_TIPO_NEC_ESP_TRANSTORNOS";"$Char1.";"";1;0;139;"c";TRUE
-140;"ID_TIPO_NEC_ESP_SINDROME_DOWN";"$Char1.";"";1;0;140;"c";TRUE
-141;"ID_TIPO_NEC_ESP_DEF_MULTIPLAS";"$Char1.";"";1;0;141;"c";TRUE
-142;"ID_TIPO_NEC_ESP_SUPERDOTACAO";"$Char1.";"";1;0;142;"c";TRUE
-143;"ID_NEC_APO_ESP_PEDAGOGICO";"$Char1.";"";1;0;143;"c";TRUE
-144;"FK_COD_MOD_ENSINO";"6.";"";6;0;149;"i";FALSE
-150;"FK_COD_ETAPA_ENSINO";"6.";"";6;0;155;"i";FALSE
-156;"PK_COD_TURMA";"14.";"";14;0;169;"d";FALSE
-170;"FK_COD_CURSO_PROF";"10.";"";10;0;179;"d";FALSE
-180;"COD_UNIFICADA";"12.";"";12;0;191;"d";FALSE
-192;"FK_COD_TIPO_TURMA";"6.";"";6;0;197;"i";FALSE
-198;"PK_COD_ENTIDADE";"12.";"";12;0;209;"d";FALSE
-210;"FK_COD_ESTADO_ESCOLA";"6.";"";6;0;215;"i";FALSE
-216;"SIGLA_ESCOLA";"$Char2.";"";2;0;217;"c";TRUE
-218;"COD_MUNICIPIO_ESCOLA";"16.";"";16;0;233;"d";FALSE
-234;"ID_LOCALIZACAO_ESC";"$Char1.";"";1;0;234;"c";TRUE
-235;"ID_DEPENDENCIA_ADM_ESC";"$Char1.";"";1;0;235;"c";TRUE
-236;"DESC_CATA_ESCOLA_PRIV";"$Char1.";"";1;0;236;"c";TRUE
-237;"ID_CONVENIADA_PP_ESC";"$Char1.";"";1;0;237;"c";TRUE
-238;"ID_TIPO_CONVENIO_PODER_PUBLICO";"$Char1.";"";1;0;238;"c";TRUE
-239;"ID_MANT_ESCOLA_PRIVADA_EMP";"$Char1.";"";1;0;239;"c";TRUE
-240;"ID_MANT_ESCOLA_PRIVADA_ONG";"$Char1.";"";1;0;240;"c";TRUE
-241;"ID_MANT_ESCOLA_PRIVADA_SIND";"$Char1.";"";1;0;241;"c";TRUE
-242;"ID_MANT_ESCOLA_PRIVADA_APAE";"$Char1.";"";1;0;242;"c";TRUE
-243;"ID_DOCUMENTO_REGULAMENTACAO";"$Char1.";"";1;0;243;"c";TRUE
-244;"ID_LOCALIZACAO_DIFERENCIADA";"$Char1.";"";1;0;244;"c";TRUE
-245;"ID_EDUCACAO_INDIGENA";"$Char1.";"";1;0;245;"c";TRUE
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;ANO_CENSO;8.;/*Ano do Censo*/;8;0;8;i;FALSE
+9;PK_COD_MATRICULA;16.;/*Código da matrícula*/;16;0;24;d;FALSE
+25;FK_COD_ALUNO;16.;/*Código do aluno (ID_INEP)*/;16;0;40;d;FALSE
+41;NU_DIA;6.;/*Data de nascimento - dia*/;6;0;46;i;FALSE
+47;NU_MES;6.;/*Data de nascimento - mês*/;6;0;52;i;FALSE
+53;NU_ANO;8.;/*Data de nascimento - ano*/;8;0;60;i;FALSE
+61;NUM_IDADE;8.;/*Idade1*/;8;0;68;i;FALSE
+69;TP_SEXO;$Char1.;/*Sexo*/;1;0;69;c;TRUE
+70;TP_COR_RACA;$Char1.;/*Cor/raça*/;1;0;70;c;TRUE
+71;TP_NACIONALIDADE;$Char1.;/*Nacionalidade*/;1;0;71;c;TRUE
+72;FK_COD_PAIS_ORIGEM;7.;/*Código País de origem*/;7;0;78;i;FALSE
+79;FK_COD_ESTADO_NASC;6.;/*Código UF de nascimento*/;6;0;84;i;FALSE
+85;SGL_UF_NASCIMENTO;$Char2.;/*Sigla da UF de nascimento*/;2;0;86;c;TRUE
+87;FK_COD_MUNICIPIO_DNASC;16.;/*Código Município de nascimento*/;16;0;102;d;FALSE
+103;FK_COD_ESTADO_END;6.;/*Código UF de residência*/;6;0;108;i;FALSE
+109;SIGLA_END;$2.;/*Sigla UF de residência*/;2;0;110;c;TRUE
+111;FK_COD_MUNICIPIO_END;16.;/*Código Município de residência*/;16;0;126;d;FALSE
+127;ID_ZONA_RESIDENCIAL;$Char1.;/*Localização/Zona de residência*/;1;0;127;c;TRUE
+128;ID_TIPO_ATENDIMENTO;$Char1.;/*Atendimento escolar diferenciado*/;1;0;128;c;TRUE
+129;ID_N_T_E_P;$Char1.;/*Transporte escolar público*/;1;0;129;c;TRUE
+130;ID_RESPONSAVEL_TRANSPORTE;$Char1.;/*Poder público responsável pelo transporte escolar*/;1;0;130;c;TRUE
+131;ID_POSSUI_NEC_ESPECIAL;$Char1.;/*Necessidades educacionais especiais*/;1;0;131;c;TRUE
+132;ID_TIPO_NEC_ESP_CEGUEIRA;$Char1.;/*Tipo de necessidade educacional especial (cegueira)*/;1;0;132;c;TRUE
+133;ID_TIPO_NEC_ESP_BAIXA_VISAO;$Char1.;/*Tipo de necessidade educacional especial (baixa visão)*/;1;0;133;c;TRUE
+134;ID_TIPO_NEC_ESP_SURDEZ;$Char1.;/*Tipo de necessidade educacional especial (surdez)*/;1;0;134;c;TRUE
+135;ID_TIPO_NEC_ESP_DEF_AUDITIVA;$Char1.;/*Tipo de necessidade educacional especial (deficiência auditiva)*/;1;0;135;c;TRUE
+136;ID_TIPO_NEC_ESP_SURDO_CEGUEIRA;$Char1.;/*Tipo de necessidade educacional especial (surdocegueira)*/;1;0;136;c;TRUE
+137;ID_TIPO_NEC_ESP_DEF_FISICA;$Char1.;/*Tipo de necessidade educacional especial (deficiência física)*/;1;0;137;c;TRUE
+138;ID_TIPO_NEC_ESP_DEF_MENTAL;$Char1.;/*Tipo de necessidade educacional especial (deficiência mental)*/;1;0;138;c;TRUE
+139;ID_TIPO_NEC_ESP_TRANSTORNOS;$Char1.;/*Tipo de necessidade educacional especial (transtornos invasivos (globais) do desenvolvimento)*/;1;0;139;c;TRUE
+140;ID_TIPO_NEC_ESP_SINDROME_DOWN;$Char1.;/*Tipo de necessidade educacional especial (síndrome de Down)*/;1;0;140;c;TRUE
+141;ID_TIPO_NEC_ESP_DEF_MULTIPLAS;$Char1.;/*Tipo de necessidade educacional especial (deficiência múltipla)*/;1;0;141;c;TRUE
+142;ID_TIPO_NEC_ESP_SUPERDOTACAO;$Char1.;/*Tipo de necessidade educacional especial (altas habilidades/superdotação)*/;1;0;142;c;TRUE
+143;ID_NEC_APO_ESP_PEDAGOGICO;$Char1.;/*Atendimento educacional especializado (apoio pedagógico)*/;1;0;143;c;TRUE
+144;FK_COD_MOD_ENSINO;6.;/*Modalidade*/;6;0;149;i;FALSE
+150;FK_COD_ETAPA_ENSINO;6.;/*Etapa */;6;0;155;i;FALSE
+156;PK_COD_TURMA;14.;/*Código da turma*/;14;0;169;d;FALSE
+170;FK_COD_CURSO_PROF;10.;/*Curso de Educação Profssional*/;10;0;179;d;FALSE
+180;COD_UNIFICADA;12.;/*Unificada, multietapa, multi ou correção de fluxo*/;12;0;191;d;FALSE
+192;FK_COD_TIPO_TURMA;6.;/*Tipo de atendimento*/;6;0;197;i;FALSE
+198;PK_COD_ENTIDADE;12.;/*Código da Escola*/;12;0;209;d;FALSE
+210;FK_COD_ESTADO_ESCOLA;6.;/*Código UF da escola*/;6;0;215;i;FALSE
+216;SIGLA_ESCOLA;$Char2.;/*Sigla da UF da escola*/;2;0;217;c;TRUE
+218;COD_MUNICIPIO_ESCOLA;16.;/*Código Município da escola*/;16;0;233;d;FALSE
+234;ID_LOCALIZACAO_ESC;$Char1.;/*Localização (Escola)*/;1;0;234;c;TRUE
+235;ID_DEPENDENCIA_ADM_ESC;$Char1.;/*Dependência Administrativa (Escola)*/;1;0;235;c;TRUE
+236;DESC_CATA_ESCOLA_PRIV;$Char1.;/*Categoria da escola privada*/;1;0;236;c;TRUE
+237;ID_CONVENIADA_PP_ESC;$Char1.;/*Conveniada com o poder público (Escola)*/;1;0;237;c;TRUE
+238;ID_TIPO_CONVENIO_PODER_PUBLICO;$Char1.;/*Dependência do convênio com o poder público*/;1;0;238;c;TRUE
+239;ID_MANT_ESCOLA_PRIVADA_EMP;$Char1.;/*Mantenedora da escola privada - Empresa, grupo empresarial do setor privado ou pessoa física*/;1;0;239;c;TRUE
+240;ID_MANT_ESCOLA_PRIVADA_ONG;$Char1.;/*Mantenedora da escola privada - Organização não governamental - ONG internacional ou nacional*/;1;0;240;c;TRUE
+241;ID_MANT_ESCOLA_PRIVADA_SIND;$Char1.;/*Mantenedora da escola privada - Sindicatos de trabalhadores ou patronais, associações, cooperativas e sistema S*/;1;0;241;c;TRUE
+242;ID_MANT_ESCOLA_PRIVADA_APAE;$Char1.;/*Mantenedora da escola privada - Apae/Pestalozzi*/;1;0;242;c;TRUE
+243;ID_DOCUMENTO_REGULAMENTACAO;$Char1.;/*Regulamentação no conselho ou órgão municipal, estadual ou federal de educação*/;1;0;243;c;TRUE
+244;ID_LOCALIZACAO_DIFERENCIADA;$Char1.;/*Localização diferenciada da escola*/;1;0;244;c;TRUE
+245;ID_EDUCACAO_INDIGENA;$Char1.;/*Educação Indígena*/;1;0;245;c;TRUE
