@@ -74,10 +74,16 @@ aux_read_fwf <- function(f,dic, nrows = -1L, na = "NA"){
 #' read_data('escola',2013,CensoEscolar_metadata,CensoEscolar_dics)}
 
 #' @import dplyr
-#' @importFrom data.table data.table setnames rbindlist
+#' @importFrom data.table data.table setnames rbindlist :=
+#' @importFrom stats setNames
 #' @export
 read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_path=NULL, file=NULL, vars_subset = NULL, nrows = -1L, source_file_mark = F){
 
+  # CRAN check
+  if(F){
+  . <- NULL
+  source_file <- NULL
+  }
   #Check for inconsistency in parameters
   # status:
   # 0 - Both root_path and file, error
@@ -108,10 +114,11 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   var_list <- names(metadata)[ !(names(metadata) %in% ft_list2)]
 
   #subseting metadata and var_translator
-  md <- metadata %>% select_(.dots =c(var_list,ft2)) %>% filter(period==i) %>% rename_(.dots=setNames(ft2,ft))
+  md <- metadata[metadata$period == i,] %>% select_(.dots =c(var_list,ft2))  %>% rename_(.dots=setNames(ft2,ft))
   if (!is.null(var_translator)) {
-    vt <- var_translator %>% rename_( old_varname = as.name(paste0('varname',i))) %>%
-      select(std_varname ,old_varname ) %>% filter(!is.na(old_varname))
+    vt <- var_translator %>% rename_( old_varname = as.name(paste0('varname',i)))
+    vt <- vt[!is.na(vt$old_varname), c("std_varname", "old_varname")]
+
     #print(str(vt))
   }
 
@@ -119,9 +126,11 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   file_name <- unlist(strsplit(a, split='&'))[2]
   delim <- unlist(strsplit(a, split='&'))[1]  # for csv files
   format <- md %>% select_(.dots = 'format') %>% collect %>% .[['format']]
-  missing_symbol <- md %>% select_(.dots = 'missing_symbols') %>% collect %>% .[['missing_symbols']] %>% ifelse(test = is.na(.), no = strsplit(x = .,split = "&")) %>% unlist
+  missing_symbol <- md %>% select_(.dots = 'missing_symbols') %>% collect %>% .[['missing_symbols']]
+  missing_symbol <- ifelse(test = is.na(missing_symbol), no = strsplit(missing_symbol,split = "&")) %>% unlist
   # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
-  data_path <-  paste(c(root_path,md$path,md$data_folder) %>% .[!is.na(.)],collapse = "/") %>% ifelse(. == "", getwd(),.)
+  data_path <-  paste(c(root_path,md$path,md$data_folder)[!is.na(c(root_path,md$path,md$data_folder))] ,collapse = "/")
+  if(data_path == ""){data_path <- getwd()}
 
   #print(file_name)
   #print(data_path)
@@ -188,7 +197,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   if (!is.null(var_translator)) {
 
 
-    vt <- data.table(vt)[old_varname %in%  names(d)][old_varname != "" & std_varname != ""]
+    vt <- vt[vt$old_varname %in%  names(d),][vt$old_varname != "" & vt$std_varname != "",]
     setnames(d, vt$old_varname, vt$std_varname)
 
   }

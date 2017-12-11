@@ -35,13 +35,13 @@ test_path_arguments<- function(root_path, file){
 }
 
 
-read_fwf2 <- function(file, dic, progess = show_progress())
+read_fwf2 <- function(file, dic)
 {
 
   dict = nodic_overlap(dic)
 
 
-  read = file %>% mapply(aux_read_fwf, ., dict) %>% dplyr::bind_cols()
+  read = mapply(aux_read_fwf, file, dict) %>% dplyr::bind_cols()
   read = read[, dic$var_name]
   return(read)
 }
@@ -152,12 +152,14 @@ get_available_filetypes<- function(dataset, period){
 
   }
 
-  filetypes = dataset[ dataset$period == period,] %>%
-    subset(select = !is.na(.)[1,]) %>% names() %>%
-    subset(grepl(pattern = "^ft_", x = .)) %>%
-    gsub(pattern = "^ft_", replacement = "", x = .)
+  filetypes = dataset[ dataset$period == period,]
+  filetypes = subset(filetypes, select = !is.na(filetypes)[1,]) %>% names
+  filetypes = subset(filetypes, grepl(filetypes, pattern = "^ft_"))
+  filetypes = gsub(filetypes, pattern = "^ft_", replacement = "")
+
   return(filetypes)
 
 }
 
+as.object_size <- function(x) structure(x, class = "object_size")
 

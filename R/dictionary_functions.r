@@ -47,10 +47,12 @@ get_import_dictionary <- function(dataset, i, ft){
 }
 
 #' @importFrom stringr str_trim
-
 parses_SAS_import_dic <- function(file, keepLabels){
-  dic_sas   <- readLines(file) %>% remove_comments(keepLabels) %>% str_trim %>% as.data.frame(stringsAsFactors = FALSE)
 
+#trick for NSE to pass CRAN check
+a <- int_pos <- decimal_places <- x <- NULL
+
+  dic_sas   <- readLines(file) %>% remove_comments(keepLabels) %>% str_trim %>% as.data.frame(stringsAsFactors = FALSE)
 
   names(dic_sas) <- 'a'
   dic_sas<-  dic_sas %>% filter(grepl("^@",a))
@@ -106,15 +108,18 @@ get_all_dics<- function(dataset,globalEnv = T, write = F, package.root = getwd()
           if(globalEnv){
 
           print(paste0(dics_path,'/',f))
-          try({assign(paste0('dic_',ft,"_",i),
-                      parses_SAS_import_dic(paste0(dics_path,ifelse(dics_path == "","",'/'),f) , keepLabels = keepLabels) ,  envir = .GlobalEnv)})
+          try({
+            # Commented to pass R CMD CHECK
+            #assign(paste0('dic_',ft,"_",i),
+            #          parses_SAS_import_dic(paste0(dics_path,ifelse(dics_path == "","",'/'),f) , keepLabels = keepLabels) ,  envir = .GlobalEnv)
+            })
 
           }
           if(write){
             file.dic = file.path(package.root, "inst", "extdata", dataset, "dictionaries",
                                  paste0("import_dictionary_",dataset,"_", ft,"_",i, ".csv"))
 
-            fwrite(parses_SAS_import_dic(paste0(dics_path,ifelse(dics_path == "","",'/'),f), keepLabels = keepLabels),file = file.dic , sep = ";" )
+            data.table::fwrite(parses_SAS_import_dic(paste0(dics_path,ifelse(dics_path == "","",'/'),f), keepLabels = keepLabels),file = file.dic , sep = ";" )
           }
 
         }
@@ -180,6 +185,7 @@ get_period_dics<- function(i, metadata){
 
 
 parses_SQL_import_dic <- function(file){
+  a<- NULL
   dic_sql   <- readLines(file) %>% sapply(FUN = remove_comments) %>% sapply(str_trim) %>% as.data.frame(stringsAsFactors = FALSE)
 
 
@@ -190,22 +196,7 @@ parses_SQL_import_dic <- function(file){
     mutate_(int_pos= ~as.numeric(int_pos),
             fin_pos= ~as.numeric(fin_pos),
             length= ~fin_pos - int_pos + 1) -> dic
-  #             decimal_places=gregexpr("(?<=\\.)[[:digit:]]+",~x,perl = TRUE) %>% regmatches(x = x) %>% as.numeric) -> dic
-  #   dic %>% mutate(
-  #     decimal_places=ifelse(is.na(decimal_places),0,decimal_places),
-  #     fin_pos= int_pos+length -1,
-  #     col_type=ifelse(is.na(x),'c',
-  #                     ifelse(grepl("\\$",x),'c',
-  #                            ifelse(length<=9 & decimal_places==0,'i','d'))) ,
-  #     CHAR=ifelse(grepl("\\$",x),TRUE,FALSE)
-  #   ) -> dic
 
-  #ALGUNS DICIONARIOS N?O MOSTRAM O TAMANHO PARA ALGUNS CAMPOS, APENAS A POSI??O INICIAL E FINAL
-  #   estimated_length<- dic$int_pos %>% diff %>% c(0)
-  #   dic$length[is.na(dic$length)]<- estimated_length
-  #   estimated_final<- dic$int_pos + dic$length
-  #   dic$fin_pos[is.na(dic$fin_pos)]<- estimated_final[is.na(dic$fin_pos)]
-  #
   dic %>% return
 }
 

@@ -15,7 +15,8 @@
 #'
 #'}
 #'
-#' @import RCurl
+#' @importFrom  utils download.file installed.packages  object.size read.csv2  unzip
+#' @importFrom  RCurl getURL
 #' @export
 download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace = FALSE){
 
@@ -38,8 +39,8 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
 
   ft_list  <- names(metadata)[grep("ft_", names(metadata))]
-  data_path <- metadata %>% filter(period == i ) %>% select(path) %>% unlist(use.names = F) %>% paste0(.,".*?")
-  data_file_names<- metadata %>% filter(period == i ) %>% select_(.dots =c(ft_list)) %>% unlist(use.names = FALSE)
+  data_path <- metadata[metadata$period == i, "path"]  %>% unlist(use.names = F) %>% paste0(".*?")
+  data_file_names<- metadata[metadata$period ==i, ft_list] %>% unlist(use.names = FALSE)
   data_file_names<- paste0(data_path,
                            gsub(pattern = ".+?&", replacement = "", data_file_names[!is.na(data_file_names)]),
                            "$")
@@ -56,7 +57,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
 
 
-  md <- metadata %>% filter(period==i)
+  md <- metadata[metadata$period== i,]
 
   link <- md$download_path
   data_file_names<- md
@@ -212,11 +213,11 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
   if(all(file.info(paste(c(root_path,filename),collapse = "/"))$isdir)){
 
-    size<- sum(file.info(list.files(paste(c(root_path,filename), collapse = "/"), recursive = TRUE, full.names = T))$size) %>%
-    utils:::format.object_size(., "Mb")
+    size<- as.object_size(sum(file.info(list.files(paste(c(root_path,filename), collapse = "/"), recursive = TRUE, full.names = T))$size)) %>%
+    format(units = "Mb")
   }else{
-    size = file.size(paste(c(root_path,filename),collapse = "/")) %>%
-      utils:::format.object_size(., "Mb")
+    size = as.object_size(file.size(paste(c(root_path,filename),collapse = "/"))) %>%
+      format(units = "Mb")
   }
     info.output<- data.frame(name = filename, link = link, sucess = sucess, size =  size, stringsAsFactors = F)
 
