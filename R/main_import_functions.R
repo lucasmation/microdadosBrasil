@@ -17,7 +17,7 @@ read_metadata <- function(dataset){
 
 
 read_var_translator <- function(dataset, ft){
-  read.csv2(system.file("extdata",
+  read.csv2(system.file("extdata", dataset,
                         paste0(dataset,'_',ft,'_varname_harmonization.csv'),
                         package = "microdadosBrasil"), stringsAsFactors = FALSE, check.names =F)
 }
@@ -187,11 +187,10 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   #adjusting var names
   if (!is.null(var_translator)) {
 
-    # d <- d %>% rename_(.dots = one_of(as.character(vt$old_varname), vt$new_varname))
-    #names(d)[names(d) %in% vt$old_varname] <- vt$std_varname
-    #d <- d %>% data.table::setnames(old = vt$old_varname, new = vt$new_varname)
-    old_vars<- names(d) %in% vt$old_varname
-    names(d)[old_vars]<- vt$std_varname
+
+    vt <- data.table(vt)[old_varname %in%  names(d)][old_varname != "" & std_varname != ""]
+    setnames(d, vt$old_varname, vt$std_varname)
+
   }
   if(!source_file_mark & "source_file" %in% names(d)){
 

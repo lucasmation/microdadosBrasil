@@ -38,7 +38,7 @@ read_CensoEscolar <- function(ft,i,harmonize_varnames=F,root_path=NULL, file = N
   #Variable names hamonization
   if (harmonize_varnames==T) {
     var_translator <- read_var_translator('CensoEscolar','escola')
-    read_data(ft, i, metadata, var_translator,root_path, dic_list = CensoEscolar_dics)
+    read_data("CensoEscolar", ft, i, var_translator = var_translator, root_path = root_path, file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = source_file_mark)
   } else {
     read_data(dataset = "CensoEscolar",ft, i,root_path = root_path, file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = source_file_mark)
   }
