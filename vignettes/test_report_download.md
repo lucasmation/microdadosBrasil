@@ -283,7 +283,8 @@ No test for this dataset yet
 
 | dataset | period | date       |  time\_download(s)| Success | size(kb) |
 |:--------|:-------|:-----------|------------------:|:--------|:---------|
-| POF     | 2002   | 2017-05-18 |              50.32| TRUE    | 84.1 Mb  |
+| POF     | 2002   | 2017-12-01 |             405.41| TRUE    | 640.8 Mb |
+| POF     | 2008   | 2017-12-01 |             161.24| TRUE    | 160.9 Mb |
 
 ### RAIS
 
