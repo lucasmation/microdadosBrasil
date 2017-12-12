@@ -1,3 +1,0 @@
-period;download_path;download_mode;format;path;inputs_folder;data_folder;missing_symbols;ft_domicilios;ft_pessoas;ft_mortalidade;ft_emigracao
-2000;ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2000/Microdados/;ftp;fwf;NA;NA;Microdados;NA;INPUT_SAS_DOM.txt&Dom[0-9]{2}.txt;INPUT_SAS_PESSOAS.txt&Pes[0-9]{2}.txt;NA;NA
-2010;ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_Gerais_da_Amostra/Microdados/;ftp;fwf;NA;NA;Microdados;NA;NA&Amostra_Domicilios_[0-9]{2}.*?txt;NA&Amostra_Pessoas_[0-9]{2}.*?txt;NA&Amostra_Mortalidade_[0-9]{2}.*?txt;NA&Amostra_Emigracao_[0-9]{2}.*?txt

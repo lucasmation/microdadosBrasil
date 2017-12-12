@@ -1,0 +1,2 @@
+period;format;download_path;download_mode;path;inputs_folder;data_folder;missing_symbols;ft_domicilios;ft_pessoas
+2013;fwf;ftp://ftp.ibge.gov.br/PNS/2013/microdados/pns_2013_microdados_2016_12_02.zip;source;pns_2013_microdados_2016_12_02;Dicionarios_e_input;Dados;;input_DOMPNS2013.txt&DOMPNS2013.txt;input_PESPNS2013.txt&PESPNS2013.txt

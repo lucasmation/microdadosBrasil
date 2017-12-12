@@ -1,0 +1,20 @@
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;V0001;;;2;;2;c;FALSE
+3;V0002;;;5;;7;c;FALSE
+8;V0011;;;13;;20;c;FALSE
+21;V0300;;;8;;28;d;FALSE
+29;V0010;;;3;13;44;d;FALSE
+45;V1001;;;1;;45;c;TRUE
+46;V1002;;;2;;47;c;FALSE
+48;V1003;;;3;;50;c;FALSE
+51;V1004;;;2;;52;c;FALSE
+53;V1006 ;;;1;;53;c;FALSE
+54;V0303;;;1;;54;c;TRUE
+55;V0304;;;4;;58;c;FALSE
+59;V0305;;;4;;62;c;FALSE
+63;V3061;;;7;;69;c;FALSE
+70;M0303;;;1;;70;c;FALSE
+71;M0304;;;1;;71;c;TRUE
+72;M0305;;;1;;72;c;TRUE
+73;M3061;;;1;;73;c;TRUE
+74;V1005;;;1;;74;c;TRUE

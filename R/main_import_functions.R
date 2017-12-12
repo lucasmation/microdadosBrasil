@@ -8,7 +8,7 @@
 #'
 #' @export
 read_metadata <- function(dataset){
-  read.csv2(system.file("extdata", dataset,
+  read.csv2(system.file("extdata",
                         paste0(dataset,'_files_metadata_harmonization.csv'),
                         package = "microdadosBrasil"),
             stringsAsFactors = FALSE, check.names = F) %>% data.frame
@@ -17,7 +17,7 @@ read_metadata <- function(dataset){
 
 
 read_var_translator <- function(dataset, ft){
-  read.csv2(system.file("extdata", dataset,
+  read.csv2(system.file("extdata", "dics",
                         paste0(dataset,'_',ft,'_varname_harmonization.csv'),
                         package = "microdadosBrasil"), stringsAsFactors = FALSE, check.names =F)
 }

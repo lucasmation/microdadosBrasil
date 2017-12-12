@@ -35,8 +35,7 @@ test_path_arguments<- function(root_path, file){
 }
 
 
-read_fwf2 <- function(file, dic)
-{
+read_fwf2 <- function(file, dic){
 
   dict = nodic_overlap(dic)
 
@@ -51,8 +50,7 @@ read_fwf2 <- function(file, dic)
 #' @param init_pos The name of the column which contains the initial positions.
 #' @param fin_pos The name of the column which contains the final positions.
 #' @export
-nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos")
-  {
+nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos"){
       dic = arrange(.data = dic, dic[[init_pos]])
       # Primeiro teste de overlap
       overlap.pos = which(dic[[init_pos]][-1] - dic[[init_pos]][-length(dic[[init_pos]])] < dic[[fin_pos]][-length(dic[[fin_pos]])] - dic[[init_pos]][-length(dic[[init_pos]])] + 1)
@@ -74,12 +72,13 @@ nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos")
       return(dic.lis)
   }
 
-#' Returns available datasets int the package
 
+#' Returns available datasets int the package
 #' @export
 get_available_datasets <- function(){
   datasets_list<- list.files(system.file("extdata", package = "microdadosBrasil"), full.names = TRUE) %>%
-    (function(x) return(x[dir.exists(x)])) %>%
+    (function(x) return(grep("metadata_harmonization",x, value = T))) %>%
+    str_replace(pattern = "_.+", replacement = "") %>%
     str_replace(pattern = ".+/", replacement = "")
 
   #datasets_list<- data(package = "microdadosBrasil")$results[,"Item"] %>%

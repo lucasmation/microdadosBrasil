@@ -1,0 +1,18 @@
+period;format;download_path;download_mode;path;inputs_folder;data_folder;missing_symbols;ft_enem;ft_questionario;ft_itens;ft_consistencia_escola
+1998;fwf;http://download.inep.gov.br/microdados/micro_enem1998.zip;source;micro_enem1998;INPUT_SAS_SPSS;DADOS/DADOS_ENEM_1998;;INPUT_SAS_ENEM_1998.sas&DADOS_ENEM_1998.txt;;;
+1999;fwf;http://download.inep.gov.br/microdados/micro_enem1999.zip;source;micro_enem1999;IMPUT_SAS_SPSS;DADOS/DADOS_ENEM_1999;;INPUT_SAS_ENEM_1999.sas&DADOS_ENEM_1999.txt;;;
+2000;fwf;http://download.inep.gov.br/microdados/micro_enem2000.zip;source;micro_enem2000;IMPUT_SAS_SPSS;DADOS/DADOS_ENEM_2000;;INPUT_SAS_ENEM_2000.sas&DADOS_ENEM_2000.txt;;;
+2001;fwf;http://download.inep.gov.br/microdados/micro_enem2001.zip;source;micro_enem2001;IMPUT_SAS_SPSS;DADOS;;INPUT_SAS_ENEM_2001.sas&DADOS_ENEM_2001.txt;;;
+2002;fwf;http://download.inep.gov.br/microdados/micro_enem2002.zip;source;micro_enem2002;INPUTS_SAS_SPSS;DADOS/DADOS_ENEM_2002;;INPUT_SAS_ENEM_2002.sas&DADOS_ENEM_2002.txt;;;
+2003;fwf;http://download.inep.gov.br/microdados/micro_enem2003.zip;source;micro_enem2003;INPUTS_SAS_SPSS;DADOS/DADOS_ENEM_2003;;INPUT_SAS_ENEM_2003.sas&DADOS_ENEM_2003.txt;;;
+2004;fwf;http://download.inep.gov.br/microdados/micro_enem2004.zip;source;micro_enem2004;INPUTS_SAS_SPSS;DADOS/DADOS_ENEM_2004;;INPUT_SAS_ENEM_2004.sas&DADOS_ENEM_2004.txt;;;
+2005;fwf;http://download.inep.gov.br/microdados/microdados_enem_2005.zip;source;microdados_enem_2005;;DADOS_ENEM_2005;;INPUT_SAS_ENEM_2005.sas&DADOS_ENEM_2005.txt;;;
+2006;fwf;http://download.inep.gov.br/microdados/microdados_ENEM_2006.zip;source;microdados_ENEM_2006;INPUTS_SAS_SPSS;Dados/DADOS_ENEM_2006;;INPUT_SAS_ENEM_2006.sas&DADOS_ENEM_2006.txt;;;
+2007;fwf;http://download.inep.gov.br/microdados/microdados_enem_2007_DVD.zip;source;microdados_enem_2007_DVD;INPUTS_SAS_SPSS;DADOS/DADOS_ENEM_2007;;INPUT_SAS_ENEM_2007.sas&DADOS_ENEM_2007.txt;;;
+2008;fwf;http://download.inep.gov.br/microdados/microdados_enem_2008.zip;source;microdados_enem_2008/MICRODADOS DO ENEM 2008;INPUTS_SAS_SPSS;DADOS/DADOS_ENEM_2008;;INPUT_SAS_ENEM_2008.sas&DADOS_ENEM_2008.txt;;;
+2009;fwf;http://download.inep.gov.br/microdados/microdados_enem2009.rar;source;microdados_enem2009/Microdados ENEM 2009;Input_SAS;Dados Enem 2009;;INPUT_SAS_ENEM_2009.sas&DADOS_ENEM_2009.txt;;;
+2010;fwf;http://download.inep.gov.br/microdados/microdados_enem2010_2.rar;source;microdados_enem2010_2/Microdados ENEM 2010;Input_SAS;Dados Enem 2010;;INPUT_SAS_ENEM_2010.sas&DADOS_ENEM_2010.txt;INPUT_SAS_QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2010.sas&QUESTIONARIO_SOCIO_ECONOMICO_ENEM_2010.txt;;
+2011;csv;http://download.inep.gov.br/microdados/microdados_enem2011.zip;source;;;;;INPUT_SAS_ENEM_2011.sas&DADOS_ENEM_2011.txt;;;
+2012;csv;http://download.inep.gov.br/microdados/microdados_enem2012.zip;source;microdados_enem2012;;DADOS;;,&DADOS_ENEM_2012.csv;,&QUESTIONARIO_ENEM_2012.csv;,&ITENS_ENEM_2012.csv;
+2013;csv;http://download.inep.gov.br/microdados/microdados_enem2013.zip;source;microdados_enem2013/Microdados_Enem_2013;;DADOS;;,&MICRODADOS_ENEM_2013.csv;;MA;,&CONSISTENCIA_ENEM_ESCOLA_2013.csv
+2014;csv;http://download.inep.gov.br/microdados/microdados_enem2014.zip;source;microdados_enem2014/microdados_enem2014;;DADOS;;,&MICRODADOS_ENEM_2014.csv;;;,&CONSISTENCIA_ENEM_ESCOLA_2014.csv
