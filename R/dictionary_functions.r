@@ -31,8 +31,8 @@ get_import_dictionary <- function(dataset, i, ft){
     stop( paste0("File type not available. The available file types for this dataset and this period are these: ",
                  paste(ft_list,collapse = ", ")),call. = FALSE)}
 
-  dic.file<- system.file("extdata", dataset,"dictionaries",
-                         paste0("import_dictionary_",dataset,"_", ft,"_", i ,".csv"),
+  dic.file<- system.file("extdata", "dics",
+                         paste0("dic_",dataset,"_", ft,"_", i ,".csv"),
                          package = "microdadosBrasil")
   if(file.exists(dic.file)){
  dic<-  read.csv2(dic.file,
