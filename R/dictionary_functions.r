@@ -8,7 +8,9 @@
 #' @param  ft file type.
 #'
 #' @examples
+#' \dontrun{
 #' get_import_dictionary(dataset = "CensoEscolar", i = 1996, ft = "escola")
+#' }
 
 #' @export
 get_import_dictionary <- function(dataset, i, ft){
