@@ -17,7 +17,7 @@ read_metadata <- function(dataset){
 
 
 read_var_translator <- function(dataset, ft){
-  read.csv2(system.file("extdata", "dics",
+  read.csv2(system.file("extdata",
                         paste0(dataset,'_',ft,'_varname_harmonization.csv'),
                         package = "microdadosBrasil"), stringsAsFactors = FALSE, check.names =F)
 }
@@ -127,7 +127,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   delim <- unlist(strsplit(a, split='&'))[1]  # for csv files
   format <- md %>% select_(.dots = 'format') %>% collect %>% .[['format']]
   missing_symbol <- md %>% select_(.dots = 'missing_symbols') %>% collect %>% .[['missing_symbols']]
-  missing_symbol <- ifelse(test = is.na(missing_symbol), no = strsplit(missing_symbol,split = "&")) %>% unlist
+  missing_symbol <- ifelse(test = is.na(missing_symbol), no = strsplit(missing_symbol,split = "&"), yes = "NA") %>% unlist
   # data_path <- paste0(root_path,"/",md$path,'/',md$data_folder)
   data_path <-  paste(c(root_path,md$path,md$data_folder)[!is.na(c(root_path,md$path,md$data_folder))] ,collapse = "/")
   if(data_path == ""){data_path <- getwd()}
@@ -197,7 +197,7 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   if (!is.null(var_translator)) {
 
 
-    vt <- vt[vt$old_varname %in%  names(d),][vt$old_varname != "" & vt$std_varname != "",]
+    vt <- vt[vt$old_varname %in%  names(d) & vt$old_varname != "" & vt$std_varname != "",]
     setnames(d, vt$old_varname, vt$std_varname)
 
   }
