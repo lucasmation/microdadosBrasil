@@ -1,0 +1,28 @@
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;TIPO_REG;$2.;/* TIPO DE REGISTRO                                 */;2;0;2;c;TRUE
+3;COD_UF;$2.;/* CÓDIGO DA UF                                     */;2;0;4;c;TRUE
+5;NUM_SEQ;$3.;/* NÚMERO SEQUENCIAL                                */;3;0;7;c;TRUE
+8;NUM_DV;$1.;/* DV DO SEQUENCIAL                                 */;1;0;8;c;TRUE
+9;COD_DOMC;$2.;/* NÚMERO DO DOMICÍLIO                              */;2;0;10;c;TRUE
+11;NUM_UC;$1.;/* NÚMERO DA UC                                     */;1;0;11;c;TRUE
+12;NUM_INFORMANTE;$2.;/* NÚMERO DO INFORMANTE                             */;2;0;13;c;TRUE
+14;NUM_EXT_RENDA;$2.;/* ESTRATO GEOGRÁFICO                               */;2;0;15;c;TRUE
+16;FATOR_EXPANSAO1;15.8;/* FATOR DE EXPANSÃO 1 (DESENHO AMOSTRAL)           */;15;8;30;d;FALSE
+31;FATOR_EXPANSAO2;15.8;/* FATOR DE EXPANSÃO 2 (AJUSTADO P/ ESTIMATIVAS)    */;15;8;45;d;FALSE
+46;NUM_QUADRO;$2.;/* NÚMERO DO QUADRO                                 */;2;0;47;c;TRUE
+48;LOCAL;$1.;/* FONTE DO ALIMENTO CONSUMIDO		      */;1;0;48;c;TRUE
+49;HORARIO;$2.;/* HORÁRIO DO CONSUMO		                      */;2;0;50;c;TRUE
+51;QTD_ITEM;8.3;/* QUANTIDADE CONSUMIDA			      */;8;3;58;d;FALSE
+59;COD_UNIDADE;$5.;/* CÓDIGO DA UNIDADE DE MEDIDA 1                    */;5;0;63;c;TRUE
+64;COD_ITEM;$7.;/* CÓDIGO DO TIPO DE ALIMENTO 		      */;7;0;70;c;TRUE
+71;COD_PREPARACAO;$2.;/* CÓDIGO DA FORMA DE PREPARAÇÃO 		      */;2;0;72;c;TRUE
+73;COD_IMPUT;$1.;/* CÓDIGO DE IMPUTAÇÃO DO CONSUMO ALIMENTAR	      */;1;0;73;c;TRUE
+74;QTD_IMPUT;8.3;/* QUANTIDADE CONSUMIDA IMPUTADA 		      */;8;3;81;d;FALSE
+82;UTILIZA_FREQUENTEMENTE;$1.;/* UTILIZA COM FREQUENCIA			      */;1;0;82;c;TRUE
+83;RENDA_BRUTA_MONETARIA;16.2;/* RENDA MONETÁRIA MENSAL DA UC                     */;16;2;98;d;FALSE
+99;RENDA_BRUTA_NAO_MONETARIA;16.2;/* RENDA NÃO MONETÁRIA MENSAL DA UC                 */;16;2;114;d;FALSE
+115;RENDA_TOTAL;16.2;/* RENDA TOTAL MENSAL DA UC                         */;16;2;130;d;FALSE
+131;COD_UNIDADE_MEDIDA2;$5.;/* CÓDIGO DA UNIDADE DE MEDIDA 2	              */;5;0;135;c;TRUE
+136;QTD_UNID_MED;8.3;/* QUANTIDADE DA UNIDADE DE MEDIDA EM GRAMAS        */;8;3;143;d;FALSE
+144;QTD_FINAL;8.3;/* QUANTIDADE FINAL EM GRAMAS               	      */;8;3;151;d;FALSE
+152;DIA_DA_SEMANA;"$1.;";/* DIA DA SEMANA                            	      */;1;0;152;c;TRUE

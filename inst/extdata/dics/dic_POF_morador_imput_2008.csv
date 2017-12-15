@@ -1,0 +1,32 @@
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;TIPO_REG;$2.;/* TIPO DE REGISTRO                                      */;2;0;2;c;TRUE
+3;COD_UF;$2.;/* CÓDIGO DA UF                                          */;2;0;4;c;TRUE
+5;NUM_SEQ;$3.;/* NÚMERO SEQUENCIAL                                     */;3;0;7;c;TRUE
+8;NUM_DV;$1.;/* DV DO SEQUENCIAL                                      */;1;0;8;c;TRUE
+9;COD_DOMC;$2.;/* NÚMERO DO DOMICÍLIO                                   */;2;0;10;c;TRUE
+11;NUM_UC;$1.;/* NÚMERO DA UC                                          */;1;0;11;c;TRUE
+12;NUM_INFORMANTE;$2.;/* NÚMERO DO INFORMANTE                                  */;2;0;13;c;TRUE
+14;NUM_EXT_RENDA;$2.;/* ESTRATO GEOGRÁFICO                                    */;2;0;15;c;TRUE
+16;FATOR_EXPANSAO1;14.8;/* FATOR DE EXPANSÃO 1 (DESENHO AMOSTRAL)                */;14;8;29;d;FALSE
+30;FATOR_EXPANSAO2;14.8;/* FATOR DE EXPANSÃO 2 (AJUSTADO P/ ESTIMATIVAS)         */;14;8;43;d;FALSE
+44;COD_SABE_LER;$1.;/* IMPUTAÇÃO - SABE LER E ESCREVER                       */;1;0;44;c;TRUE
+45;COD_FREQ_ESCOLA;$1.;/* IMPUTAÇÃO - FREQUÊNCIA A ESCOLA OU CRECHE             */;1;0;45;c;TRUE
+46;COD_CURSO_FREQ;$1.;/* IMPUTAÇÃO - CURSO QUE FREQUENTA                       */;1;0;46;c;TRUE
+47;COD_DUR_PRIMEIRO_GRAU_EH;$1.;/* IMPUTAÇÃO - QUAL A DURAÇÃO DO CURSO DE 1º GRAU        */;1;0;47;c;TRUE
+48;COD_SERIE_FREQ;$1.;/* IMPUTAÇÃO - SERIE QUE FREQUENTA                       */;1;0;48;c;TRUE
+49;COD_NIVEL_INSTR;$1.;/* IMPUTAÇÃO - CURSO MAIS ELEVADO QUE FREQUENTOU         */;1;0;49;c;TRUE
+50;COD_DUR_PRIMEIRO_GRAU_ERA;$1.;/* IMPUTAÇÃO - QUAL ERA A DURAÇÃO DO CURSO DE 1º GRAU    */;1;0;50;c;TRUE
+51;COD_SERIE_COM_APROVACAO;$1.;/* IMPUTAÇÃO - ÚLTIMA SERIE CONCLUÍDA                    */;1;0;51;c;TRUE
+52;COD_CONCLUIU_CURSO;$1.;/* IMPUTAÇÃO - CONCLUSÃO DO CURSO MAIS ELEVADO           */;1;0;52;c;TRUE
+53;COD_TEM_CARTAO;$1.;/* IMPUTAÇÃO - TEM CARTÃO DE CRÉDITO                     */;1;0;53;c;TRUE
+54;COD_EHTITULAR_CARTAO;$1.;/* IMPUTAÇÃO - TITULAR DO CARTÃO DE CRÉDITO              */;1;0;54;c;TRUE
+55;COD_TEM_CHEQUE;$1.;/* IMPUTAÇÃO - TEM CHEQUE ESPECIAL                       */;1;0;55;c;TRUE
+56;COD_EHTITULAR_CONTA;$1.;/* IMPUTAÇÃO - TITULAR DA CONTA CORRENTE                 */;1;0;56;c;TRUE
+57;RENDA_BRUTA_MONETARIA;16.2;/* RENDA MONETÁRIA MENSAL DA UC                          */;16;2;72;d;FALSE
+73;RENDA_BRUTA_NAO_MONETARIA;16.2;/* RENDA NÃO MONETÁRIA MENSAL DA UC                      */;16;2;88;d;FALSE
+89;RENDA_TOTAL;16.2;/* RENDA TOTAL MENSAL DA UC                              */;16;2;104;d;FALSE
+105;COD_TEM_PLANO;$1.;/* IMPUTAÇÃO - TEM PLANO DE SAÚDE                        */;1;0;105;c;TRUE
+106;COD_EHTITULAR;$1.;/* IMPUTAÇÃO - É TITULAR DO PLANO DE SAÚDE               */;1;0;106;c;TRUE
+107;COD_NUM_DEPENDENTE;$1.;/* IMPUTAÇÃO - NÚMERO DE DEPENDENTES DO PLANO DE SAÚDE   */;1;0;107;c;TRUE
+108;COD_LEITE_MATERNO;$1.;/* IMPUTAÇÃO - RECEBIMENTO DE LEITE MATERNO              */;1;0;108;c;TRUE
+109;MESES_LEITE_MATERNO;"$1.;";/* IMPUTAÇÃO - NÚMERO DE MESES QUE RECEBEU LEITE MATERNO */;1;0;109;c;TRUE

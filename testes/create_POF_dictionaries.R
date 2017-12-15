@@ -4,18 +4,8 @@ pof.path <- "C:/Users/b2826073/Documents/Datasets/POF/2002"
 pof.path.08 <- "C:/Users/b2826073/Documents/Datasets/POF/2008"
 
 
-download_sourceData("POF", 2002,root_path =  pof.path)
-download_sourceData("POF", 2008,root_path =  pof.path.08)
-
-
-d<- read_POF("despesa_90dias", 2008, pof.path.08)
-
-d<- read_POF("despesa_12meses", 2002, root_path = pof.path)
-
-
-
 dataset.root = pof.path
-i = 2002
+i = 2008
 ft = "T_CADERNETA_DESPESA_S"
 package.root = "C:/Users/b2826073/Documents/microdadosBrasil"
 dataset<- "POF"
@@ -42,13 +32,13 @@ pof_md<- fread(input =
 )
 
 
-for(ft in pof_md %>% filter(!is.na(ft_)) %>% .$ft){
+for(ft in pof_md[7] %>% filter(!is.na(ft_)) %>% .$ft){
 
 
   internal_regex<- pof_md[ft_ == (ft), .(internal_regex)] %>% unlist(., use.names = F)
 
 
-  metadata<- read_metadata("POF") %>% filter(period == 2002)
+  metadata<- read_metadata("POF") %>% filter(period == i)
 
 f <- unlist(strsplit(metadata[metadata$period==i,paste0("ft_",ft)], split='&'))[1]
 
@@ -70,11 +60,11 @@ target<- str_extract(dic.raw, pattern = paste0(internal_regex,"[\\d\\D]+?[Ee][Nn
 parses_SAS_import_dic(file = textConnection(target)) -> dic
 
 
-file.dic = file.path(package.root, "inst", "extdata", dataset, "dictionaries",
-                     paste0("import_dictionary_",dataset,"_", ft,"_",i, ".csv"))
+file.dic = file.path(package.root, "inst", "extdata", "dics",
+                     paste0("dic_",dataset,"_", ft,"_",i, ".csv"))
 
 
-fwrite(dic, file.dic, sep = ";")
+#fwrite(dic, file.dic, sep = ";")
 
 }
 
@@ -93,6 +83,7 @@ pof_md<- fread(input =
                  " ft_|internal_regex
                domicilio|T_DOMICILIO_S.txt
                morador|T_MORADOR_S.txt
+               morador_imput|T_MORADOR_IMPUT_S.txt
                condicoes_de_vida|T_CONDICOES_DE_VIDA_S.txt
                inventario|T_INVENTARIO_S.txt
                despesa_90dias|T_DESPESA_90DIAS_S.txt
@@ -105,6 +96,7 @@ pof_md<- fread(input =
                rendimentos|T_RENDIMENTOS_S.txt
                outros_rendimentos|T_OUTROS_RECI_S.txt
                aluguel_estimado|T_ALUGUEL_ESTIMADO_S.txt
+               consumo|T_CONSUMO_S.txt
                "
 
 )
@@ -135,11 +127,11 @@ for(ft in pof_md %>% filter(!is.na(ft_)) %>% .$ft){
 
   target<- str_extract(dic.raw, pattern = paste0(internal_regex,"[\\d\\D]+?[Rr][Uu][Nn];"))
 
-  parses_SAS_import_dic(file = textConnection(target)) -> dic
+  parses_SAS_import_dic(file = textConnection(target), T) -> dic
 
 
-  file.dic = file.path(package.root, "inst", "extdata", dataset, "dictionaries",
-                       paste0("import_dictionary_",dataset,"_", ft,"_",i, ".csv"))
+  file.dic = file.path(package.root, "inst", "extdata", "dics",
+                       paste0("dic_",dataset,"_", ft,"_",i, ".csv"))
 
 
   fwrite(dic, file.dic, sep = ";")

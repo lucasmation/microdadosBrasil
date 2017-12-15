@@ -1,25 +1,25 @@
 int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
-1;TIPO_REG;$2.;;2;0;2;c;TRUE
-3;COD_UF;$2.;;2;0;4;c;TRUE
-5;NUM_SEQ;$3.;;3;0;7;c;TRUE
-8;NUM_DV;$1.;;1;0;8;c;TRUE
-9;COD_DOMC;$2.;;2;0;10;c;TRUE
-11;NUM_UC;$1.;;1;0;11;c;TRUE
-12;NUM_INFORMANTE;$2.;;2;0;13;c;TRUE
-14;NUM_EXT_RENDA;$2.;;2;0;15;c;TRUE
-16;FATOR_EXPANSAO1;14.8;;14;8;29;d;FALSE
-30;FATOR_EXPANSAO2;14.8;;14;8;43;d;FALSE
-44;NUM_QUADRO;$2.;;2;0;45;c;TRUE
-46;COD_ITEM;$5.;;5;0;50;c;TRUE
-51;COD_OBTENCAO;$2.;;2;0;52;c;TRUE
-53;VAL_DESPESA;11.2;;11;2;63;d;FALSE
-64;COD_ESTADO;$1.;;1;0;64;c;TRUE
-65;FATOR_ANUAL;2.;;2;0;66;i;FALSE
-67;NUM_DEFLATOR;5.2;;5;2;71;d;FALSE
-72;VAL_DESPESA_CORRIGIDO;11.2;;11;2;82;d;FALSE
-83;VALOR_ANUAL_EXPANDIDO2;16.2;;16;2;98;d;FALSE
-99;COD_IMPUT;$2.;;2;0;100;c;TRUE
-101;RENDA_BRUTA_MONETARIA;16.2;;16;2;116;d;FALSE
-117;RENDA_BRUTA_NAO_MONETARIA;16.2;;16;2;132;d;FALSE
-133;RENDA_TOTAL;16.2;;16;2;148;d;FALSE
-149;COD_LOCAL_COMPRA;$5.;;5;0;153;c;TRUE
+1;TIPO_REG;$2.;/* TIPO DE REGISTRO                                 */;2;0;2;c;TRUE
+3;COD_UF;$2.;/* CÓDIGO DA UF                                     */;2;0;4;c;TRUE
+5;NUM_SEQ;$3.;/* NÚMERO SEQUENCIAL                                */;3;0;7;c;TRUE
+8;NUM_DV;$1.;/* DV DO SEQUENCIAL                                 */;1;0;8;c;TRUE
+9;COD_DOMC;$2.;/* NÚMERO DO DOMICÍLIO                              */;2;0;10;c;TRUE
+11;NUM_UC;$1.;/* NÚMERO DA UC                                     */;1;0;11;c;TRUE
+12;NUM_INFORMANTE;$2.;/* NÚMERO DO INFORMANTE                             */;2;0;13;c;TRUE
+14;NUM_EXT_RENDA;$2.;/* ESTRATO GEOGRÁFICO                               */;2;0;15;c;TRUE
+16;FATOR_EXPANSAO1;14.8;/* FATOR DE EXPANSÃO 1 (DESENHO AMOSTRAL)           */;14;8;29;d;FALSE
+30;FATOR_EXPANSAO2;14.8;/* FATOR DE EXPANSÃO 2 (AJUSTADO P/ ESTIMATIVAS)    */;14;8;43;d;FALSE
+44;NUM_QUADRO;$2.;/* NÚMERO DO QUADRO                                 */;2;0;45;c;TRUE
+46;COD_ITEM;$5.;/* CÓDIGO DO ITEM                                   */;5;0;50;c;TRUE
+51;COD_OBTENCAO;$2.;/* FORMA DE AQUISIÇÃO                               */;2;0;52;c;TRUE
+53;VAL_DESPESA;11.2;/* VALOR DA DESPESA / AQUISIÇÃO                     */;11;2;63;d;FALSE
+64;COD_ESTADO;$1.;/* ESTADO DE AQUISIÇÃO                              */;1;0;64;c;TRUE
+65;FATOR_ANUAL;2.;/* FATOR DE ANUALIZAÇÃO                             */;2;0;66;i;FALSE
+67;NUM_DEFLATOR;5.2;/* DEFLATOR FATOR                                   */;5;2;71;d;FALSE
+72;VAL_DESPESA_CORRIGIDO;11.2;/* VALOR DA DESPESA DEFLACIONADO                    */;11;2;82;d;FALSE
+83;VALOR_ANUAL_EXPANDIDO2;16.2;/* VALOR DA DESPESA ANUALIZADO E EXPANDIDO (FATOR2) */;16;2;98;d;FALSE
+99;COD_IMPUT;$2.;/* CÓDIGO DE IMPUTAÇÃO                              */;2;0;100;c;TRUE
+101;RENDA_BRUTA_MONETARIA;16.2;/* RENDA MONETÁRIA MENSAL DA UC                     */;16;2;116;d;FALSE
+117;RENDA_BRUTA_NAO_MONETARIA;16.2;/* RENDA NÃO MONETÁRIA MENSAL DA UC                 */;16;2;132;d;FALSE
+133;RENDA_TOTAL;16.2;/* RENDA TOTAL MENSAL DA UC                         */;16;2;148;d;FALSE
+149;COD_LOCAL_COMPRA;$5.;/* CÓDIGO DO LOCAL DE AQUISIÇAO                     */;5;0;153;c;TRUE
