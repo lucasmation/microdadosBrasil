@@ -4,7 +4,7 @@
 \alias{get_available_periods}
 \title{Returns the periods for wich we have information about a dataset in the package}
 \usage{
-get_available_periods(dataset, fwfonly = FALSE)
+get_available_periods(dataset, fwfonly = FALSE, as.data.frame = TRUE)
 }
 \arguments{
 \item{dataset}{name of the dataset. See get_available_datasets() for options.}

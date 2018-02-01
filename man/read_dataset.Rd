@@ -16,7 +16,8 @@
 \title{Functions to read most common Brazillian dataset}
 \usage{
 read_CensoEscolar(ft, i, harmonize_varnames = F, root_path = NULL,
-  file = NULL, vars_subset = NULL, nrows = -1L, source_file_mark = F)
+  file = NULL, vars_subset = NULL, nrows = -1L,
+  source_file_mark = FALSE)
 
 read_CensoEducacaoSuperior(ft, i, root_path = NULL, file = NULL,
   vars_subset = NULL, nrows = -1L, source_file_mark = F)
@@ -37,16 +38,16 @@ read_PNAD(ft, i, root_path = NULL, file = NULL, vars_subset = NULL,
   nrows = -1L, source_file_mark = F)
 
 read_PME(ft, i, root_path = NULL, file = NULL, vars_subset = NULL,
-  nrows = -1L, source_file_mark = F)
+  nrows = -1L, source_file_mark = FALSE)
 
 read_POF(ft, i, root_path = NULL, file = NULL, vars_subset = NULL,
-  nrows = -1L, source_file_mark = F)
+  nrows = -1L, source_file_mark = FALSE)
 
 read_PNADcontinua(ft, i, root_path = NULL, file = NULL,
-  vars_subset = NULL, nrows = -1L, source_file_mark = F)
+  vars_subset = NULL, nrows = -1L, source_file_mark = FALSE)
 
 read_PNS(ft, i, root_path = NULL, file = NULL, vars_subset = NULL,
-  nrows = -1L, source_file_mark = F)
+  nrows = -1L, source_file_mark = FALSE)
 }
 \arguments{
 \item{ft}{file type. Indicates the subdataset within the dataset. For example: "pessoa" (person) or "domicílio" (household) data from the "CENSO" (Census). For a list of available ft for the period just type an invalid ft (Ex: ft = 'aasfasf')}

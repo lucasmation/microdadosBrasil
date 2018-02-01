@@ -41,13 +41,13 @@ cd "`C:\user\my_working_diretory"
 file open rcode using  my_Rcode.R, write replace
 
 file write rcode                                           ///
-`""setwd("C:/user/my_working_diretory") #remember to change \ for / "' _newline ///
+`""setwd("/user/my_working_diretory") #remember to change \ for /   "' _newline ///
 `"install.packages('microdadosBrasil')                              "' _newline ///
 `"install.packages('haven')                                         "' _newline ///
-`"library(microdadosBrasil)                                        "' _newline ///
+`"library(microdadosBrasil)                                         "' _newline ///
 `"library(haven)                                                    "' _newline ///
 `"                                                                  "' _newline ///
-`"download_sourceData("PNAD", 2002, unzip = T)                      "' _newline ///
+`"download_sourceData("PNAD", 2002, unzip = TRUE)                   "' _newline ///
 `"d  <- read_PNAD("domicilios", 2002)                               "' _newline ///
 `"                                                                  "' _newline ///
 `"write_dta(d,file='PNAD_2002_domicilios.dta')                      "'
@@ -63,7 +63,7 @@ use PNAD_2002_domicilios.dta, clear
 In the above code, only the following lines relate to microdadosBrasil: 
 
 ```
-`"download_sourceData("PNAD", 2002, unzip = T)                      "' _newline ///
+`"download_sourceData("PNAD", 2002, unzip = TRUE)                   "' _newline ///
 `"d  <- read_PNAD("domicilios", 2002)                               "' _newline ///
 ```
 
@@ -86,10 +86,10 @@ f = open("my_Rcode.R","w") #opens file with name of "test.txt"
 f.write('setwd("C:/user/my_working_diretory") #remember to change \ for /  \n')
 f.write('install.packages("microdadosBrasil")                              \n')
 f.write('install.packages("haven")                                         \n')
-f.write('library(microdadosBrasil)                                        \n')
+f.write('library(microdadosBrasil)                                         \n')
 f.write('library(haven)                                                    \n')
 f.write('                                                                  \n')
-f.write('download_sourceData("PNAD", 2002, unzip = T)                      \n')
+f.write('download_sourceData("PNAD", 2002, unzip = TRUE)                   \n')
 f.write('d  <- read_PNAD("domicilios", 2002)                               \n')
 f.write('                                                                  \n')
 f.write('write_csv2(d, file="PNAD_2002_domicilios.csv, row.names = F")     \n')

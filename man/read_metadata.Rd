@@ -4,10 +4,12 @@
 \alias{read_metadata}
 \title{Return a data.frame with metadata about a dataset}
 \usage{
-read_metadata(dataset)
+read_metadata(dataset, as.data.frame = TRUE)
 }
 \arguments{
 \item{dataset}{name of the dataset. Use get_available_datasets() to see options.}
+
+\item{as.data.frame}{should we return a data.frame or a data.table? Default is TRUE.}
 }
 \value{
 a data.frame containing metadata about the dataset.

@@ -8,4 +8,6 @@ POF_.rda
 inst/doc
 .RDataTmp
 testes/SQLCadUnico/
-
+R/packaging.notes.R
+expurgo/
+Microdados/
