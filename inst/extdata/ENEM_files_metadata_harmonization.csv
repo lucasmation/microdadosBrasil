@@ -16,3 +16,5 @@ period;format;download_path;download_mode;path;inputs_folder;data_folder;missing
 2012;csv;http://download.inep.gov.br/microdados/microdados_enem2012.zip;source;microdados_enem2012;;DADOS;;,&DADOS_ENEM_2012.csv;,&QUESTIONARIO_ENEM_2012.csv;,&ITENS_ENEM_2012.csv;
 2013;csv;http://download.inep.gov.br/microdados/microdados_enem2013.zip;source;microdados_enem2013/Microdados_Enem_2013;;DADOS;;,&MICRODADOS_ENEM_2013.csv;;MA;,&CONSISTENCIA_ENEM_ESCOLA_2013.csv
 2014;csv;http://download.inep.gov.br/microdados/microdados_enem2014.zip;source;microdados_enem2014/microdados_enem2014;;DADOS;;,&MICRODADOS_ENEM_2014.csv;;;,&CONSISTENCIA_ENEM_ESCOLA_2014.csv
+2015;csv;http://download.inep.gov.br/microdados/microdados_enem2015.zip;source;microdados_enem2015/microdados_enem_2015;;DADOS;;,&MICRODADOS_ENEM_2015.csv;;;,&CONSISTENCIA_ENEM_ESCOLA_2015.csv
+2016;csv;http://download.inep.gov.br/microdados/microdados_enem2016.zip;source;microdados_enem2016/microdados_enem_2016;;DADOS;;,&microdados_enem_2016.csv;;,&itens_prova_2016.csv;
