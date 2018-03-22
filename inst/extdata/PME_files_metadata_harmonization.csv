@@ -167,3 +167,5 @@ period;format;download_path;download_mode;path;missing_symbols;inputs_folder;dat
 2015-10m;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Mensal_de_Emprego/Microdados_reponderados/PMEnova_2015.zip;source;;;Documentacao/documentacao/Layout;PMEnova_2015;INPUT.txt&PMEnova.102015.txt
 2015-11m;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Mensal_de_Emprego/Microdados_reponderados/PMEnova_2015.zip;source;;;Documentacao/documentacao/Layout;PMEnova_2015;INPUT.txt&PMEnova.112015.txt
 2015-12m;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Mensal_de_Emprego/Microdados_reponderados/PMEnova_2015.zip;source;;;Documentacao/documentacao/Layout;PMEnova_2015;INPUT.txt&PMEnova.122015.txt
+2016-01m;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Mensal_de_Emprego/Microdados/2016/PMEnova_012016.zip;source;;;Documentacao/documentacao/Layout;PMEnova_012016;INPUT.txt&PMEnova.012016.txt
+2016-02m;fwf;ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Mensal_de_Emprego/Microdados/2016/PMEnova_022016.zip;source;;;Documentacao/documentacao/Layout;PMEnova_022016;INPUT.txt&PMEnova.022016.txt
