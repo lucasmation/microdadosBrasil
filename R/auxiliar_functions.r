@@ -78,8 +78,10 @@ nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos"){
 get_available_datasets <- function(){
   datasets_list<- list.files(system.file("extdata", package = "microdadosBrasil"), full.names = TRUE) %>%
     (function(x) return(grep("metadata_harmonization",x, value = T))) %>%
-    str_replace(pattern = "_.+", replacement = "") %>%
-    str_replace(pattern = ".+/", replacement = "")
+    str_split("/") %>%
+    unlist %>%
+    tail(n = 1) %>%
+    str_replace(pattern = "_\\D+", replacement = "")
 
   #datasets_list<- data(package = "microdadosBrasil")$results[,"Item"] %>%
    #gsub(pattern = "_dics", replacement = "")
