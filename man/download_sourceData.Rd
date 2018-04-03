@@ -4,8 +4,8 @@
 \alias{download_sourceData}
 \title{Download brazilian microdata.}
 \usage{
-download_sourceData(dataset, i, unzip = T, root_path = NULL,
-  replace = FALSE)
+download_sourceData(dataset, i, unzip = TRUE, root_path = NULL,
+  replace = FALSE, UF = "all", as.data.frame = TRUE, dry.run = FALSE)
 }
 \arguments{
 \item{dataset}{Standardized name of brazilian public microdadata. See available datasets with get_available_datasets()}
@@ -24,7 +24,7 @@ Download brazilian microdata.
 \examples{
 \dontrun{
 
-download_sourceData("PNAD", 2014, unzip = T, root_path = "F:/Datasets/PNAD", replace = T)
+download_sourceData("PNAD", 2014, unzip = TRUE, root_path = "F:/Datasets/PNAD", replace = TRUE)
 
 }
 

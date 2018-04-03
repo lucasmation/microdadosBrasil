@@ -67,14 +67,14 @@ d <- read_CENSO('domicilios',2000, root_path ="C:/....")
 d <- read_CENSO('pessoas',2000, UF = "DF")
 
 # PNAD 2002
-download_sourceData("PNAD", 2002, unzip = T)
+download_sourceData("PNAD", 2002, unzip = TRUE)
 d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
 
 # Censo Escolar
-download_sourceData('CensoEscolar', 2005, unzip=T)
+download_sourceData('CensoEscolar', 2005, unzip = TRUE)
 d <- read_CensoEscolar('escola',2005)
-d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
+d <- read_CensoEscolar('escola',2005,harmonize_varnames = TRUE)
 
 #RAIS
 #Para tentar baixar os dados de todo o ano de 2000 e todas as UFs

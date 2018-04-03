@@ -6,7 +6,7 @@
 \usage{
 read_data(dataset, ft, i, metadata = NULL, var_translator = NULL,
   root_path = NULL, file = NULL, vars_subset = NULL, nrows = -1L,
-  source_file_mark = F)
+  source_file_mark = FALSE)
 }
 \arguments{
 \item{dataset}{.}

@@ -221,7 +221,7 @@ d<- read.fwf(file = paste0(data_path, "PES2011.txt"),
 
 ```{r, eval = FALSE, echo = TRUE}
 
-download_sourceData(dataset = "PNAD", i = 2011, unzip = T)
+download_sourceData(dataset = "PNAD", i = 2011, unzip = TRUE)
 d<- read_PNAD(ft = "pessoas", i = 2011)
 
 
@@ -233,7 +233,7 @@ d<- read_PNAD(ft = "pessoas", i = 2011)
 
 ```{r, eval = FALSE, echo = TRUE}
 
-download_sourceData(dataset = "CensoEscolar", i = 2000, unzip = T)
+download_sourceData(dataset = "CensoEscolar", i = 2000, unzip = TRUE)
 d<- read_CensoEscolar(ft = "escola", i = 2000)
 
 

@@ -27,7 +27,7 @@ Here are the results for download tests for each dataset:
 
 
 
-```{r, echo = F, results = 'asis'}
+```{r, echo = FALSE, results = 'asis'}
 
 for(dt in get_available_datasets()){
 
