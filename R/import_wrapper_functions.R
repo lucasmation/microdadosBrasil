@@ -218,7 +218,7 @@ read_PNADcontinua<- function(ft,i,root_path=NULL,file = NULL, vars_subset = NULL
 
 
 
-  data<-read_data(dataset = "PNADcontinua",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = source_file_mark)
+  data<-read_data(dataset = "PnadContinua",ft, i,root_path =  root_path, file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = source_file_mark)
 
   return(data)
 }
