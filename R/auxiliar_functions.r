@@ -79,9 +79,9 @@ get_available_datasets <- function(){
   datasets_list<- list.files(system.file("extdata", package = "microdadosBrasil"), full.names = TRUE) %>%
     (function(x) return(grep("metadata_harmonization",x, value = T))) %>%
     str_split("/") %>%
+    lapply(tail, c(n = 1)) %>%
     unlist %>%
-    tail(n = 1) %>%
-    str_replace(pattern = "_\\D+", replacement = "")
+    str_replace(pattern = "_.+", replacement = "")
 
   #datasets_list<- data(package = "microdadosBrasil")$results[,"Item"] %>%
    #gsub(pattern = "_dics", replacement = "")
