@@ -1,0 +1,15 @@
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+3;rm;2.;NA;2;0;4;i;FALSE
+5;uf;2.;NA;2;0;6;i;FALSE
+7;seq;3.;NA;3;0;9;i;FALSE
+10;digito;1.;NA;1;0;10;i;FALSE
+11;domicilio;2.;NA;2;0;12;i;FALSE
+13;unid.cons;1.;NA;1;0;13;i;FALSE
+14;cod.desp;4.;NA;4;0;17;i;FALSE
+18;dv.despesa;1.;NA;1;0;18;i;FALSE
+19;est.aquis;1.;NA;1;0;19;i;FALSE
+20;quant.bem;2.;NA;2;0;21;i;FALSE
+22;ano.aquisicao;2.;NA;2;0;23;i;FALSE
+24;for.ult.aquis;1.;NA;1;0;24;d;FALSE
+25;cod.critica;2.;NA;2;0;26;i;FALSE
+27;cod.imp;2.;NA;2;0;28;i;FALSE
