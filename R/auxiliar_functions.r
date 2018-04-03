@@ -76,7 +76,7 @@ nodic_overlap <- function(dic, init_pos = "int_pos", fin_pos = "fin_pos"){
 #' Returns available datasets int the package
 #' @export
 get_available_datasets <- function(){
-  datasets_list<- list.files(system.file("extdata", package = "microdadosBrasil"), full.names = TRUE) %>%
+  datasets_list<- list.files(system.file("extdata", package = "microdadosBrasil"), full.names = FALSE) %>%
     (function(x) return(grep("metadata_harmonization",x, value = T))) %>%
     str_split("/") %>%
     unlist %>%
