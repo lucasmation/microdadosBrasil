@@ -187,8 +187,7 @@ read_POF <- function(ft,i, root_path = NULL,file = NULL, vars_subset = NULL, nro
 
     metadata <- read_metadata("POF")
     data_path <- paste(c(root_path, metadata[metadata$period == i, "path"], metadata[metadata$period == i, "data_folder"], ""), collapse = "/")
-    uf<-list.files(paste0(data_path), pattern="x.*txt")
-
+    uf<-list.files(data_path) #, pattern="x.*txt"
     tudo<-NULL
     for(j in uf){
       dados <- readLines(paste0(data_path,j))
