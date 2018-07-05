@@ -1,0 +1,259 @@
+int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
+1;Ano;$4.;/* Ano de referência */             ;4;0;4;c;TRUE
+5;Trimestre;$1.;/* Trimestre de referência */             ;1;0;5;c;TRUE
+6;UF;$2.;/* Unidade da Federação */             ;2;0;7;c;TRUE
+8;Capital;$2.;/* Município da Capital */             ;2;0;9;c;TRUE
+10;RM_RIDE;$2.;/* Reg. Metr. e Reg. Adm. Int. Des. */         ;2;0;11;c;TRUE
+12;UPA;$9.;/* Unidade Primária de Amostragem */            ;9;0;20;c;TRUE
+21;Estrato;$7.;/* Estrato */               ;7;0;27;c;TRUE
+28;V1008;$2.;/* Número de seleção do domicílio */           ;2;0;29;c;TRUE
+30;V1014;$2.;/* Painel */               ;2;0;31;c;TRUE
+32;V1022;$1.;/* Tipo de situação da região */           ;1;0;32;c;TRUE
+33;V1023;$1.;/* Tipo de área */             ;1;0;33;c;TRUE
+34;V1030;9.;/* Projeção da população */             ;9;0;42;i;FALSE
+43;V1031;15.;/* Peso SEM pós estratificação */            ;15;8;57;d;FALSE
+58;V1032;15.;/* Peso COM pós estratificação */            ;15;8;72;d;FALSE
+73;posest;$3.;/* Domínios de projeção */             ;3;0;75;c;TRUE
+76;V2001;2.;/* Número de pessoas no domicílio */           ;2;0;77;i;FALSE
+78;V2003;$2.;/* Número de ordem */             ;2;0;79;c;TRUE
+80;V2005;$2.;/* Condição no domicílio */             ;2;0;81;c;TRUE
+82;V2007;$1.;/* Sexo */               ;1;0;82;c;TRUE
+83;V2008;$2.;/* Dia de nascimento */             ;2;0;84;c;TRUE
+85;V20081;$2.;/* Mês de nascimento */             ;2;0;86;c;TRUE
+87;V20082;$4.;/* Ano de nascimento */             ;4;0;90;c;TRUE
+91;V2009;3.;/* Idade na data de referência */           ;3;0;93;i;FALSE
+94;V2010;$1.;/* Cor ou raça */             ;1;0;94;c;TRUE
+95;V3001;$1.;/* Sabe ler e escrever */            ;1;0;95;c;TRUE
+96;V3002;$1.;/* Frequenta escola */              ;1;0;96;c;TRUE
+97;V3002A;$1.;/* A escola que ... frequenta é de */         ;1;0;97;c;TRUE
+98;V3003A;$2.;/* Qual é o curso que frequenta */          ;2;0;99;c;TRUE
+100;V3004;$1.;/* Duração deste curso que requenta */           ;1;0;100;c;TRUE
+101;V3005A;$1.;/* Curso que freq é organizado em: */          ;1;0;101;c;TRUE
+102;V3006;$2.;/* Qual é o ano/série que frequenta */          ;2;0;103;c;TRUE
+104;V3007;$1.;/* Concluiu outro curso de graduação */           ;1;0;104;c;TRUE
+105;V3008;$1.;/* Anteriormente frequentou escola */             ;1;0;105;c;TRUE
+106;V3009A;$2.;/* Curso mais elevado que frequentou */           ;2;0;107;c;TRUE
+108;V3010;$1.;/* Duração do curso que frequentou */           ;1;0;108;c;TRUE
+109;V3011A;$1.;/* Curso que freq é organizado em: */          ;1;0;109;c;TRUE
+110;V3012;$1.;/* Aprovado na prim. série do curso */          ;1;0;110;c;TRUE
+111;V3013;$2.;/* Último ano/série que concluiu */            ;2;0;112;c;TRUE
+113;V3014;$1.;/* Concluiu o curso que frequentou */           ;1;0;113;c;TRUE
+114;V4001;$1.;/* Trabalhou 1 hr em ativ. remunerd. */          ;1;0;114;c;TRUE
+115;V4002;$1.;/* Trabalhou 1 hr em produtos etc... */          ;1;0;115;c;TRUE
+116;V4003;$1.;/* Fez algum bico pelo menos de 1 hr */        ;1;0;116;c;TRUE
+117;V4004;$1.;/* Ajudou sem receber no domic. 1 hr */         ;1;0;117;c;TRUE
+118;V4005;$1.;/* Afastado trabalho remunerado */             ;1;0;118;c;TRUE
+119;V4006A;$1.;/* Motivo de estar afastado */            ;1;0;119;c;TRUE
+120;V4008;$1.;/* Quanto tempo que estava afastado */           ;1;0;120;c;TRUE
+121;V40081;$2.;/* Tempo de afastamenento até 1 ano */          ;2;0;122;c;TRUE
+123;V40082;$2.;/* Tempo de afastamen. de 1 a 2 anos */        ;2;0;124;c;TRUE
+125;V40083;$2.;/* Tempo de afastamen. mais d 2 anos */         ;2;0;126;c;TRUE
+127;V4009;$1.;/* Quantos trabalhos tinhana semana */            ;1;0;127;c;TRUE
+128;V4010;$4.;/* Ocupação no trab. principal */            ;4;0;131;c;TRUE
+132;V4012;$1.;/* Posição na ocupação */             ;1;0;132;c;TRUE
+133;V40121;$1.;/* Tipo trabalhador não remunerado */            ;1;0;133;c;TRUE
+134;V4013;$5.;/* Atividade no trab. principal */            ;5;0;138;c;TRUE
+139;V40132A;$1.;/* Seção da atividade */             ;1;0;139;c;TRUE
+140;V4014;$1.;/* Esse trabalho era na área */           ;1;0;140;c;TRUE
+141;V4015;$1.;/* Teve ajuda de pelo menos um trabalhador não remunerado */       ;1;0;141;c;TRUE
+142;V40151;$1.;/* Qnts trabalhadores não remunerados */            ;1;0;142;c;TRUE
+143;V401511;$1.;/* 1 a 5 trabalhadores não remunerados */          ;1;0;143;c;TRUE
+144;V401512;$2.;/* 6 a 10 trabalhadores não remunerados */          ;2;0;145;c;TRUE
+146;V4016;$1.;/* Qnts empregados trabalhavam nesse negócio/empresa*/            ;1;0;146;c;TRUE
+147;V40161;$1.;/* 1 a 5 empregados */            ;1;0;147;c;TRUE
+148;V40162;$2.;/* 6 a 10 empregados */            ;2;0;149;c;TRUE
+150;V40163;$2.;/* 11 a 50 empregados */            ;2;0;151;c;TRUE
+152;V4017;$1.;/* Tinha pelo menos um sócio que trab. nesse negócio/empresa*/        ;1;0;152;c;TRUE
+153;V40171;$1.;/* Quantos sócios */              ;1;0;153;c;TRUE
+154;V401711;$1.;/* 1 a 5 sócios */            ;1;0;154;c;TRUE
+155;V4018;$1.;/* Qnts pessoas trabalhavam nesse negócio/empresa */           ;1;0;155;c;TRUE
+156;V40181;$1.;/* 1 a 5pessoas */             ;1;0;156;c;TRUE
+157;V40182;$2.;/* 6 a 10pessoas */             ;2;0;158;c;TRUE
+159;V40183;$2.;/* 11 a 50pessoas */             ;2;0;160;c;TRUE
+161;V4019;$1.;/* Negócio/empresa registrado no CNPJ*/             ;1;0;161;c;TRUE
+162;V4024;$1.;/* Serv. domést. em mais de 1 domic. */         ;1;0;162;c;TRUE
+163;V4025;$1.;/* Contratado como empreg. temporário*/             ;1;0;163;c;TRUE
+164;V4026;$1.;/* Era contratado somente por pessoa responsável pelo negócio */        ;1;0;164;c;TRUE
+165;V4027;$1.;/* Era contratado somente por intermediário */           ;1;0;165;c;TRUE
+166;V4028;$1.;/* Servidor público estatutário */             ;1;0;166;c;TRUE
+167;V4029;$1.;/* Carteira de trabalho assinada */            ;1;0;167;c;TRUE
+168;V4032;$1.;/* Contribuinte de instit. d previd. */           ;1;0;168;c;TRUE
+169;V4033;$1.;/* Rendimento habitual var. auxil. */            ;1;0;169;c;TRUE
+170;V40331;$1.;/* Rendimento habitual em dinheiro */            ;1;0;170;c;TRUE
+171;V403311;$1.;/* Faixa do valor do rendimento hab. */          ;1;0;171;c;TRUE
+172;V403312;8.;/* Valor do rend. hab. em dinheiro */          ;8;0;179;i;FALSE
+180;V40332;$1.;/* Rendimento habitual em produtos */            ;1;0;180;c;TRUE
+181;V403321;$1.;/* Faixa do valor do rendimento hab. */          ;1;0;181;c;TRUE
+182;V403322;8.;/* Valor do rend. hab. em produtos */          ;8;0;189;i;FALSE
+190;V40333;$1.;/* Rendimento habitual em benefícios */            ;1;0;190;c;TRUE
+191;V403331;$1.;/* Tipo rend. habitual em benefícios */           ;1;0;191;c;TRUE
+192;V4034;$1.;/* Rendimento efetivo var. auxil. */            ;1;0;192;c;TRUE
+193;V40341;$1.;/* Rendimento efetivo em dinheiro */            ;1;0;193;c;TRUE
+194;V403411;$1.;/* Faixa do valor do rendimento efe. */          ;1;0;194;c;TRUE
+195;V403412;8.;/* Valor do rend. efe. em dinheiro */          ;8;0;202;i;FALSE
+203;V40342;$1.;/* Rendimento efetivo em produtos */            ;1;0;203;c;TRUE
+204;V403421;$1.;/* Faixa do valor do rendimento efe. */          ;1;0;204;c;TRUE
+205;V403422;8.;/* Valor do rend. efe. em produtos */          ;8;0;212;i;FALSE
+213;V4039;3.;/* Hrs habituais no trab. princ. */           ;3;0;215;i;FALSE
+216;V4039C;3.;/* Hrs efetivas no trab. princ. */           ;3;0;218;i;FALSE
+219;V4040;$1.;/* Tempo que estava nesse trabalho */           ;1;0;219;c;TRUE
+220;V40401;2.;/* De 1 mês a menos de 1 ano */        ;2;0;221;i;FALSE
+222;V40402;2.;/* De 1 ano a menos de 2 anos */        ;2;0;223;i;FALSE
+224;V40403;2.;/* De 2 anos ou mais tempo */          ;2;0;225;i;FALSE
+226;V4041;$4.;/* Ocupação no trab. secundário */            ;4;0;229;c;TRUE
+230;V4043;$1.;/* Posição na ocupação */             ;1;0;230;c;TRUE
+231;V40431;$1.;/* Tipo trabalhador não remunerado */            ;1;0;231;c;TRUE
+232;V4044;$5.;/* Atividade no trab. secundário */            ;5;0;236;c;TRUE
+237;V4045;$1.;/* Esse trabalho era na área */           ;1;0;237;c;TRUE
+238;V4046;$1.;/* Negócio/empresa registrado no CNPJ*/             ;1;0;238;c;TRUE
+239;V4047;$1.;/* Servidor público estatutário */             ;1;0;239;c;TRUE
+240;V4048;$1.;/* Carteira de trabalho assinada */            ;1;0;240;c;TRUE
+241;V4049;$1.;/* Contribuinte de instit. d previd. */           ;1;0;241;c;TRUE
+242;V4050;$1.;/* Rendimento habitual var. auxil. */            ;1;0;242;c;TRUE
+243;V40501;$1.;/* Rendimento habitual em dinheiro */            ;1;0;243;c;TRUE
+244;V405011;$1.;/* Faixa do valor do rendimento hab. */          ;1;0;244;c;TRUE
+245;V405012;8.;/* Valor do rend. hab. em dinheiro */          ;8;0;252;i;FALSE
+253;V40502;$1.;/* Rendimento habitual em produtos */            ;1;0;253;c;TRUE
+254;V405021;$1.;/* Faixa do valor do rendimento hab. */          ;1;0;254;c;TRUE
+255;V405022;8.;/* Valor do rend. hab. em produtos */          ;8;0;262;i;FALSE
+263;V40503;$1.;/* Rendimento habitual em benefícios */            ;1;0;263;c;TRUE
+264;V405031;$1.;/* Tipo rend. habitual em benefícios */           ;1;0;264;c;TRUE
+265;V4051;$1.;/* Rendimento efetivo var. auxil. */            ;1;0;265;c;TRUE
+266;V40511;$1.;/* Rendimento efetivo em dinheiro */            ;1;0;266;c;TRUE
+267;V405111;$1.;/* Faixa do valor do rendimento efe. */          ;1;0;267;c;TRUE
+268;V405112;8.;/* Valor do rend. efe. em dinheiro */          ;8;0;275;i;FALSE
+276;V40512;$1.;/* Rendimento efetivo em produtos */            ;1;0;276;c;TRUE
+277;V405121;$1.;/* Faixa do valor do rendimento efe. */          ;1;0;277;c;TRUE
+278;V405122;8.;/* Valor do rend. efe. em produtos */          ;8;0;285;i;FALSE
+286;V4056;3.;/* Hrs habituais no trab. secun. */           ;3;0;288;i;FALSE
+289;V4056C;3.;/* Hrs efetivas no trab. secun. */           ;3;0;291;i;FALSE
+292;V4057;$1.;/* Contribuinte de instit. d previd. */           ;1;0;292;c;TRUE
+293;V4058;$1.;/* Rendimento habitual var. auxil. */            ;1;0;293;c;TRUE
+294;V40581;$1.;/* Rendimento habitual em dinheiro */            ;1;0;294;c;TRUE
+295;V405811;$1.;/* Faixa do valor do rendimento hab. */          ;1;0;295;c;TRUE
+296;V405812;8.;/* Valor do rend. hab. em dinheiro */          ;8;0;303;i;FALSE
+304;V40582;$1.;/* Rendimento habitual em produtos */            ;1;0;304;c;TRUE
+305;V405821;$1.;/* Faixa do valor do rendimento hab. */          ;1;0;305;c;TRUE
+306;V405822;8.;/* Valor do rend. hab. em produtos */          ;8;0;313;i;FALSE
+314;V40583;$1.;/* Rendimento habitual em benefícios */            ;1;0;314;c;TRUE
+315;V405831;$1.;/* Tipo rend. habitual em benefícios */           ;1;0;315;c;TRUE
+316;V40584;$1.;/* Não remunerado */              ;1;0;316;c;TRUE
+317;V4059;$1.;/* Rendimento efetivo var. auxil. */            ;1;0;317;c;TRUE
+318;V40591;$1.;/* Rendimento efetivo em dinheiro */            ;1;0;318;c;TRUE
+319;V405911;$1.;/* Faixa do valor do rendimento efe. */          ;1;0;319;c;TRUE
+320;V405912;8.;/* Valor do rend. efe. em dinheiro */          ;8;0;327;i;FALSE
+328;V40592;$1.;/* Rendimento efetivo em produtos */            ;1;0;328;c;TRUE
+329;V405921;$1.;/* Faixa do valor do rendimento efe. */          ;1;0;329;c;TRUE
+330;V405922;8.;/* Valor do rend. efe. em produtos */          ;8;0;337;i;FALSE
+338;V4062;3.;/* Hrs habituais no(s) outro(s) trab.*/            ;3;0;340;i;FALSE
+341;V4062C;3.;/* Hrs efetivas no(s) outro(s) trab .*/           ;3;0;343;i;FALSE
+344;V4063A;$1.;/* Gostaria trabalhar + hrs habituais*/            ;1;0;344;c;TRUE
+345;V4064A;$1.;/* Dispon. trabalhar + hrs habituais */           ;1;0;345;c;TRUE
+346;V4071;$1.;/* Providência p/ conseg. trab.(30d) */            ;1;0;346;c;TRUE
+347;V4072A;$1.;/* Principal provid. p/conseg. trab. */            ;1;0;347;c;TRUE
+348;V4073;$1.;/* Gostaria de ter trabalhado */            ;1;0;348;c;TRUE
+349;V4074A;$2.;/* Motivo de não ter tomado provid. */          ;2;0;350;c;TRUE
+351;V4075A;$1.;/* Tempo em que irá começar o trab. */         ;1;0;351;c;TRUE
+352;V4075A1;$2.;/* Meses em que irá começar o trab. */         ;2;0;353;c;TRUE
+354;V4076;$1.;/* Tempo tentando conseguir trabalho */            ;1;0;354;c;TRUE
+355;V40761;2.;/* Tempo tentando trab. 1 mes-1 ano */          ;2;0;356;i;FALSE
+357;V40762;2.;/* Tempo tentando trab. 1 ano-2 anos */          ;2;0;358;i;FALSE
+359;V40763;2.;/* Tempo tentando trab. + de 2 anos */         ;2;0;360;i;FALSE
+361;V4077;$1.;/* Poderia ter começado a trabalhar */           ;1;0;361;c;TRUE
+362;V4078A;$1.;/* Motivo p /ñ querer/começar a trab. */          ;1;0;362;c;TRUE
+363;V4082;$1.;/* Trab por pelo menos 1 hora em 1 ano*/        ;1;0;363;c;TRUE
+364;V5001A;$1.;/* Recebeu BPC-LOAS */              ;1;0;364;c;TRUE
+365;V5001A2;8.;/* Rend recebido de BPC-LOAS */            ;8;0;372;i;FALSE
+373;V5002A;$1.;/* Recebeu bolsa família */             ;1;0;373;c;TRUE
+374;V5002A2;8.;/* Rend recebido de bolsa familia */           ;8;0;381;i;FALSE
+382;V5003A;$1.;/* Recebeu outro prog social */            ;1;0;382;c;TRUE
+383;V5003A2;8.;/* Rend recebido de outro prog social */          ;8;0;390;i;FALSE
+391;V5004A;$1.;/* Recebeu aposentadoria e pensão */            ;1;0;391;c;TRUE
+392;V5004A2;8.;/* Rend recebido de aposentadoria e pensão */          ;8;0;399;i;FALSE
+400;V5006A;$1.;/* Recebeu pensão alimentícia, doação, etc */           ;1;0;400;c;TRUE
+401;V5006A2;8.;/* Rend recebido por pensão alimentícia, doação, etc */         ;8;0;408;i;FALSE
+409;V5007A;$1.;/* Recebeu aluguel e arrendamento */            ;1;0;409;c;TRUE
+410;V5007A2;8.;/* Rend recebido aluguel e arrendamento */           ;8;0;417;i;FALSE
+418;S01001;$1.;/* Domicílio é do tipo: */            ;1;0;418;c;TRUE
+419;S01002;$1.;/* Material predominante na construção das paredes externas */         ;1;0;419;c;TRUE
+420;S01003;$1.;/* Material predominante na cobertura (telhado) */           ;1;0;420;c;TRUE
+421;S01004;$1.;/* Material predominante no piso */            ;1;0;421;c;TRUE
+422;S01005;2.;/* Número de cômodos */             ;2;0;423;i;FALSE
+424;S01006;2.;/* Número de cômodos servem permanentemente de dormitório para os moradores */      ;2;0;425;i;FALSE
+426;S01007;$1.;/* Principal forma de abastecimento de água utilizada */         ;1;0;426;c;TRUE
+427;S01008;$1.;/* Frequência que a água proveniente de rede geral esteve disponível */      ;1;0;427;c;TRUE
+428;S01009;$1.;/* Possui ou faz uso de reservatório, caixa d'água, cisterna, para armazenar a água */   ;1;0;428;c;TRUE
+429;S01010;$1.;/* A água utilizada neste domicílio chega: */          ;1;0;429;c;TRUE
+430;S01011A;2.;/* Numero de banheiros (com chuveiro e vaso sanitário) de uso exclusivo dos moradores no domicílio */ ;2;0;431;i;FALSE
+432;S01011B;2.;/* Numero de banheiros (com chuveiro e vaso sanitário) de uso comum dos moradores existem neste domicílio */;2;0;433;i;FALSE
+434;S01011C;$1.;/* Usa sanitário ou buraco para dejeções (cercado por paredes de qualquer material) */    ;1;0;434;c;TRUE
+435;S01012;$1.;/* Forma que é feito o escoadouro deste(s) banheiro(s) ou sanitário(s) ou buracos */    ;1;0;435;c;TRUE
+436;S01013;$1.;/* Qual é o (principal) destino dado ao lixo? */        ;1;0;436;c;TRUE
+437;S01014;$1.;/* Origem da energia elétrica utilizada */           ;1;0;437;c;TRUE
+438;S010141;$1.;/* A origem da energia eletrica é de rede geral? */       ;1;0;438;c;TRUE
+439;S010142;$1.;/* Há outra origem de energia eletrica (gerador, placa solar, eólica)? */      ;1;0;439;c;TRUE
+440;S01015;$1.;/* Frequência que a energia elétrica, proveniente de rede geral, está habitualmente disponível */    ;1;0;440;c;TRUE
+441;S01016;$1.;/* Combustível(is) são utilizados neste domicílio na preparação dos alimentos? */       ;1;0;441;c;TRUE
+442;S010161;$1.;/* Utiliza gás de botijão ou encanado na preparação de alimentos? */      ;1;0;442;c;TRUE
+443;S010162;$1.;/* Utiliza lenha ou carvão na preparação de alimentos? */        ;1;0;443;c;TRUE
+444;S010163;$1.;/* Utiliza energia eletrica na preparação de alimentos? */         ;1;0;444;c;TRUE
+445;S010164;$1.;/* Utiliza outro combustivel na preparação de alimentos? */         ;1;0;445;c;TRUE
+446;S01017;$1.;/* Este domicílio é: */             ;1;0;446;c;TRUE
+447;S01018;8.;/* Valor da prestação paga, ou que deveria ter sido paga, no mês de referência */  ;8;0;454;i;FALSE
+455;S01019;8.;/* Valor do aluguel pago, ou que deveria ter sido pago, no mês de referência */  ;8;0;462;i;FALSE
+463;S01020;$1.;/* O terreno onde está localizado este domicílio é próprio? */       ;1;0;463;c;TRUE
+464;S01021;2.;/* Número de moradores que têm telefone móvel celular para uso pessoal */     ;2;0;465;i;FALSE
+466;S01022;$1.;/* Este domicílio tem telefone fixo convencional? */          ;1;0;466;c;TRUE
+467;S01023;$1.;/* Este domicílio tem geladeira? */            ;1;0;467;c;TRUE
+468;S01024;$1.;/* Este domicílio tem máquina de lavar roupa? */         ;1;0;468;c;TRUE
+469;S01025;$1.;/* Este domicílio tem televisão? */            ;1;0;469;c;TRUE
+470;S01026;$1.;/* Possui serviço de televisão por assinatura */          ;1;0;470;c;TRUE
+471;S01027;$1.;/* Tem televisão com antena parabólica */           ;1;0;471;c;TRUE
+472;S01028;$1.;/* Tem microcomputador (considere inclusive os portáteis) */          ;1;0;472;c;TRUE
+473;S01029;$1.;/* Acessa à Internet por meio de microcomputador, tablet, celular, televisão ou outro equipamento? */   ;1;0;473;c;TRUE
+474;S01030;$1.;/* Utiliza para acessar à Internet: */           ;1;0;474;c;TRUE
+475;S010301;$1.;/* Utiliza microcomputador (de mesa ou portátil) para acessar à Internet */      ;1;0;475;c;TRUE
+476;S010302;$1.;/* Utiliza tablet para acessar à Internet */          ;1;0;476;c;TRUE
+477;S010303;$1.;/* Utiliza telefone móvel celular para acessar à Internet */        ;1;0;477;c;TRUE
+478;S010304;$1.;/* Utiliza televisão para acessar à Internet */          ;1;0;478;c;TRUE
+479;S010305;$1.;/* Utiliza outro equipamento eletrônico para acessar à Internet */        ;1;0;479;c;TRUE
+480;S01031;$1.;/* Possui automóvel ou motocicleta de uso pessoal? */         ;1;0;480;c;TRUE
+481;S010311;$1.;/* Possui automóvel para uso pessoal? */           ;1;0;481;c;TRUE
+482;S010312;$1.;/* Possui motocicleta para uso pessoal? */           ;1;0;482;c;TRUE
+483;VD2002;$2.;/* Condição no domicílio */             ;2;0;484;c;TRUE
+485;VD2003;2.;/* Número de componentes do domic. */           ;2;0;486;i;FALSE
+487;VD2004;$1.;/* Espécie da unidade doméstica*/             ;1;0;487;c;TRUE
+488;VD3001;$1.;/* Nível de instrução */             ;1;0;488;c;TRUE
+489;VD3002;$2.;/* Anos de estudo (5 anos ou mais de idade) */       ;2;0;490;c;TRUE
+491;VD4001;$1.;/* Condição em relação força d trab. */          ;1;0;491;c;TRUE
+492;VD4002;$1.;/* Condição de ocupação */             ;1;0;492;c;TRUE
+493;VD4003;$1.;/* Força de trabalho potencial */            ;1;0;493;c;TRUE
+494;VD4004;$1.;/* Subocupação por insuficiên. de hrs*/            ;1;0;494;c;TRUE
+495;VD4005;$1.;/* Pessoas desalentadas */              ;1;0;495;c;TRUE
+496;VD4007;$1.;/* Posição na ocupação trab. princ. */           ;1;0;496;c;TRUE
+497;VD4008;$1.;/* Posição na ocupação trab. princ. */           ;1;0;497;c;TRUE
+498;VD4009;$2.;/* Posição na ocupação trab. princ. */           ;2;0;499;c;TRUE
+500;VD4010;$2.;/* Grupamen. d ativid. trab. princ. */           ;2;0;501;c;TRUE
+502;VD4011;$2.;/* Grupamen. ocupacion. trab. Princ. */            ;2;0;503;c;TRUE
+504;VD4012;$1.;/* Contrib. instit. previd. qq trab. */           ;1;0;504;c;TRUE
+505;VD4013;$1.;/* Faixa hrs habituais em todos trab. */          ;1;0;505;c;TRUE
+506;VD4014;$1.;/* Faixa hrs efetivas em todos trab. */          ;1;0;506;c;TRUE
+507;VD4015;$1.;/* Tipo d remuneração trab. princ. */           ;1;0;507;c;TRUE
+508;VD4016;8.;/* Rendim. habitual trab. princ. */            ;8;0;515;i;FALSE
+516;VD4017;8.;/* Rendim. efetivo trab. princ. */            ;8;0;523;i;FALSE
+524;VD4018;$1.;/* Tipo d remuneração em qq trabalho */          ;1;0;524;c;TRUE
+525;VD4019;8.;/* Rendim. habitual qq trabalho */            ;8;0;532;i;FALSE
+533;VD4020;8.;/* Rendim. efetivo qq trabalho */            ;8;0;540;i;FALSE
+541;VD4030;$1.;/* Pq ñ proc./ñ gost./ñ disp.p/trab. */           ;1;0;541;c;TRUE
+542;VD4031;3.;/* Hrs habituais em todos trab. */           ;3;0;544;i;FALSE
+545;VD4035;3.;/* Hrs efetivas em todos trab. */           ;3;0;547;i;FALSE
+548;VD4036;$1.;/* Faixa hrs habituais trab. princ. */           ;1;0;548;c;TRUE
+549;VD4037;$1.;/* Faixa hrs efetivas trab. princ. */           ;1;0;549;c;TRUE
+550;VD4047;8.;/* Rend efetivo de progr sociais, seguro-desemprego, etc */         ;8;0;557;i;FALSE
+558;VD4048;8.;/* Rend efetivo recebido de outras fontes */          ;8;0;565;i;FALSE
+566;VD5001;8.;/* Rend efetivo domiciliar */             ;8;0;573;i;FALSE
+574;VD5002;8.;/* Rend efetivo domiciliar per capita */           ;8;0;581;i;FALSE
+582;VD5003;$1.;/* Faixa de rend efetivo domiciliar per capita */         ;1;0;582;c;TRUE
+583;VD5004;8.;/* Rend efetivo domiciliar */             ;8;0;590;i;FALSE
+591;VD5005;8.;/* Rend efetivo domiciliar per capita */           ;8;0;598;i;FALSE
+599;VD5006;$1.;/* Faixa de rend efetivo domiciliar per capita */         ;1;0;599;c;TRUE
