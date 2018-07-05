@@ -29,6 +29,7 @@ Currently the package includes import functions for:
 | Source | Dataset                 | Import\_function            | Period             | Subdataset                |
 |:-------|:------------------------|:----------------------------|:-------------------|:--------------------------|
 | IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014       | domicilios, pessoas       |
+| IBGE   | PnadContinua            | read\_PNADContinua          | 2012-1q to 2017-4q | pessoas                   |
 | IBGE   | Censo Demográfico       | read\_CENSO                 | 2000               | domicilios, pessoas       |
 | IBGE   | PME                     | read\_PME                   | 2002.01 to 2015.12 | vinculos                  |
 | IBGE   | POF                     | read\_POF                   | 2008               | several, see details      |
@@ -58,13 +59,13 @@ Basic Usage
 ##############
 # Censo Demográfico 2000
 download_sourceData("CENSO", 2000, unzip = T)
-d <- read_CENSO('domicilios',2000)
-d <- read_CENSO('pessoas',2000)
+d <- read_CENSO('domicilios', 2000)
+d <- read_CENSO('pessoas', 2000)
 
 #To import data from a specific path in your machine use:
 d <- read_CENSO('domicilios',2000, root_path ="C:/....")
 #To restrict the import to only one State use:
-d <- read_CENSO('pessoas',2000, UF = "DF")
+d <- read_CENSO('pessoas', 2000, UF = "DF")
 
 
 ##############
@@ -74,10 +75,19 @@ d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
 
 ##############
+# PNAD Continua - quarterly version
+download_sourceData("PnadContinua", i = "2014-4q", unzip = T)
+d <- read_PNADcontinua("pessoas", i = "2014-4q")
+
+# yearly version
+download_sourceData("PnadContinua", i = "2016-anual-1v", unzip = T)
+d <- read_PNADcontinua("pessoas", i = "2016-anual-1v")
+
+##############
 # Censo Escolar
-download_sourceData('CensoEscolar', 2005, unzip=T)
-d <- read_CensoEscolar('escola',2005)
-d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
+download_sourceData('CensoEscolar', 2005, unzip = T)
+d <- read_CensoEscolar('escola', 2005)
+d <- read_CensoEscolar('escola', 2005, harmonize_varnames = T)
 
 ##############
 #RAIS
