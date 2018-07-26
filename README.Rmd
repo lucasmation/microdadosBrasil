@@ -43,11 +43,11 @@ Currently the package includes import functions for:
   
 ```{r echo=FALSE}
 d <- data.frame(
-  Source=c('IBGE','IBGE','IBGE','IBGE','INEP','INEP','MTE','MTE'),
-  Dataset=c('PNAD','Censo Demográfico','PME','POF','Censo Escolar','Censo da Educ. Superior','CAGED','RAIS'),
-  Import_function=c('read_PNAD','read_CENSO','read_PME','read_POF','read_CensoEscolar','read_CensoEducacaoSuperior','read_CAGED','read_RAIS'),
-  Period=c('2001 to 2014','2000','2002.01 to 2015.12','2008','1995 to 2014','1995 to 2014','2009.01 to 2016.05','1998 to 2014'),
-  Subdataset=c('domicilios, pessoas','domicilios, pessoas','vinculos','several, see details','escolas, ..., see details','see details','vinculos','estabelecimentos,vinculos')
+  Source = c('IBGE','IBGE','IBGE','IBGE','IBGE','INEP','INEP','MTE','MTE'),
+  Dataset = c('PNAD', 'Pnad Contínua', 'Censo Demográfico','PME','POF','Censo Escolar','Censo da Educ. Superior','CAGED','RAIS'),
+  Import_function = c('read_PNAD', 'read_PNADContinua', 'read_CENSO', 'read_PME', 'read_POF', 'read_CensoEscolar', 'read_CensoEducacaoSuperior', 'read_CAGED', 'read_RAIS'),
+  Period = c('1976 to 2015', '2012-1q to 2017-4q', '2000', '2002.01 to 2015.12', '2008', '1995 to 2014', '1995 to 2014', '2009.01 to 2016.05', '1998 to 2014'),
+  Subdataset = c('domicilios, pessoas', 'pessoas', 'domicilios, pessoas', 'vinculos', 'several, see details', 'escolas, ..., see details', 'see details', 'vinculos', 'estabelecimentos, vinculos')
   )
 library(printr)
 d
@@ -73,13 +73,13 @@ library('microdadosBrasil')
 ##############
 # Censo Demográfico 2000
 download_sourceData("CENSO", 2000, unzip = T)
-d <- read_CENSO('domicilios',2000)
-d <- read_CENSO('pessoas',2000)
+d <- read_CENSO('domicilios', 2000)
+d <- read_CENSO('pessoas', 2000)
 
 #To import data from a specific path in your machine use:
-d <- read_CENSO('domicilios',2000, root_path ="C:/....")
+d <- read_CENSO('domicilios', 2000, root_path ="C:/....")
 #To restrict the import to only one State use:
-d <- read_CENSO('pessoas',2000, UF = "DF")
+d <- read_CENSO('pessoas', 2000, UF = "DF")
 
 
 ##############
@@ -87,6 +87,20 @@ d <- read_CENSO('pessoas',2000, UF = "DF")
 download_sourceData("PNAD", 2002, unzip = T)
 d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
+
+##############
+# PNAD Continua
+# quarterly version
+download_sourceData("PnadContinua", i = "2014-4q", unzip = T)
+d <- read_PNADcontinua("pessoas", i = "2014-4q")
+
+# yearly version - 1st interview
+download_sourceData("PnadContinua", i = "2016-anual-1v", unzip = T)
+d <- read_PNADcontinua("pessoas", i = "2016-anual-1v")
+
+# yearly version - 5th interview (available for some years, check get_available_periods)
+download_sourceData("PnadContinua", i = "2016-anual-5v", unzip = T)
+d <- read_PNADcontinua("pessoas", i = "2016-anual-5v")
 
 ##############
 # Censo Escolar

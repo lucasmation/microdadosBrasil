@@ -26,17 +26,19 @@ this package contains functions to read most commonly used Brazilian microdata e
 
 Currently the package includes import functions for:
 
-| Source | Dataset                 | Import\_function            | Period             | Subdataset                |
-|:-------|:------------------------|:----------------------------|:-------------------|:--------------------------|
-| IBGE   | PNAD                    | read\_PNAD                  | 2001 to 2014       | domicilios, pessoas       |
-| IBGE   | PnadContinua            | read\_PNADContinua          | 2012-1q to 2017-4q | pessoas                   |
-| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000               | domicilios, pessoas       |
-| IBGE   | PME                     | read\_PME                   | 2002.01 to 2015.12 | vinculos                  |
-| IBGE   | POF                     | read\_POF                   | 2008               | several, see details      |
-| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014       | escolas, ..., see details |
-| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014       | see details               |
-| MTE    | CAGED                   | read\_CAGED                 | 2009.01 to 2016.05 | vinculos                  |
-| MTE    | RAIS                    | read\_RAIS                  | 1998 to 2014       | estabelecimentos,vinculos |
+    #> Warning: package 'printr' was built under R version 3.4.4
+
+| Source | Dataset                 | Import\_function            | Period             | Subdataset                 |
+|:-------|:------------------------|:----------------------------|:-------------------|:---------------------------|
+| IBGE   | PNAD                    | read\_PNAD                  | 1976 to 2015       | domicilios, pessoas        |
+| IBGE   | Pnad Contínua           | read\_PNADContinua          | 2012-1q to 2017-4q | pessoas                    |
+| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000               | domicilios, pessoas        |
+| IBGE   | PME                     | read\_PME                   | 2002.01 to 2015.12 | vinculos                   |
+| IBGE   | POF                     | read\_POF                   | 2008               | several, see details       |
+| INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014       | escolas, ..., see details  |
+| INEP   | Censo da Educ. Superior | read\_CensoEducacaoSuperior | 1995 to 2014       | see details                |
+| MTE    | CAGED                   | read\_CAGED                 | 2009.01 to 2016.05 | vinculos                   |
+| MTE    | RAIS                    | read\_RAIS                  | 1998 to 2014       | estabelecimentos, vinculos |
 
 For the datasets in fwf format, the package includes, internally, a list of import dictionaries. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function.
 
@@ -63,7 +65,7 @@ d <- read_CENSO('domicilios', 2000)
 d <- read_CENSO('pessoas', 2000)
 
 #To import data from a specific path in your machine use:
-d <- read_CENSO('domicilios',2000, root_path ="C:/....")
+d <- read_CENSO('domicilios', 2000, root_path ="C:/....")
 #To restrict the import to only one State use:
 d <- read_CENSO('pessoas', 2000, UF = "DF")
 
@@ -75,19 +77,24 @@ d  <- read_PNAD("domicilios", 2002)
 d2 <- read_PNAD("pessoas", 2002)
 
 ##############
-# PNAD Continua - quarterly version
+# PNAD Continua
+# quarterly version
 download_sourceData("PnadContinua", i = "2014-4q", unzip = T)
 d <- read_PNADcontinua("pessoas", i = "2014-4q")
 
-# yearly version
+# yearly version - 1st interview
 download_sourceData("PnadContinua", i = "2016-anual-1v", unzip = T)
 d <- read_PNADcontinua("pessoas", i = "2016-anual-1v")
 
+# yearly version - 5th interview (available for some years, check get_available_periods)
+download_sourceData("PnadContinua", i = "2016-anual-5v", unzip = T)
+d <- read_PNADcontinua("pessoas", i = "2016-anual-5v")
+
 ##############
 # Censo Escolar
-download_sourceData('CensoEscolar', 2005, unzip = T)
-d <- read_CensoEscolar('escola', 2005)
-d <- read_CensoEscolar('escola', 2005, harmonize_varnames = T)
+download_sourceData('CensoEscolar', 2005, unzip=T)
+d <- read_CensoEscolar('escola',2005)
+d <- read_CensoEscolar('escola',2005,harmonize_varnames=T)
 
 ##############
 #RAIS
