@@ -132,10 +132,10 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
   data_path <-  paste(c(root_path,md$path,md$data_folder)[!is.na(c(root_path,md$path,md$data_folder))] ,collapse = "/")
   if(data_path == ""){data_path <- getwd()}
 
-  #print(file_name)
-  #print(data_path)
+  print(file_name)
+  print(data_path)
   files <- list.files(path=data_path,recursive = TRUE, full.names = TRUE) %>% grep(pattern = paste0(file_name, "$"), value = T, ignore.case = T)
-  #print(files)
+  print(files)
 
 
   if (!any(file.exists(files)) & status != 3) { stop("Data not found. Check if you have unziped the data" )  }
