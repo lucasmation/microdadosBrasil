@@ -16,8 +16,7 @@
 \title{Functions to read most common Brazillian dataset}
 \usage{
 read_CensoEscolar(ft, i, harmonize_varnames = F, root_path = NULL,
-  file = NULL, vars_subset = NULL, nrows = -1L,
-  source_file_mark = F)
+  file = NULL, vars_subset = NULL, nrows = -1L, source_file_mark = F)
 
 read_CensoEducacaoSuperior(ft, i, root_path = NULL, file = NULL,
   vars_subset = NULL, nrows = -1L, source_file_mark = F)
