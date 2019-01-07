@@ -1,4 +1,4 @@
-#library(testthat)
-#library(microdadosBrasil)
+library(testthat)
+library(microdadosBrasil)
 
-#test_check("microdadosBrasil")
+test_check("microdadosBrasil")
