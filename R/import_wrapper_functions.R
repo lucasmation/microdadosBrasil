@@ -200,10 +200,11 @@ read_POF <- function(ft,i, root_path = NULL,file = NULL, vars_subset = NULL, nro
         write.table(out[[i]],paste0(data_path,names(out)[[i]],".txt"),quote = FALSE,row.names = FALSE, col.names = FALSE)
       )
     )
+
+    invisible(file.remove(paste0(data_path,names(out),".txt")))
+
   }
   data <- read_data(dataset= "POF", ft = ft,i = i, root_path = root_path,file = file, vars_subset = vars_subset, nrows = nrows, source_file_mark = source_file_mark)
-
-  invisible(file.remove(paste0(data_path,names(out),".txt")))
 
   return(data)
 
