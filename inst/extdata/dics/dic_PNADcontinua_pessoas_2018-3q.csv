@@ -184,34 +184,35 @@ int_pos;var_name;x;label;length;decimal_places;fin_pos;col_type;CHAR
 386;VD2002;$2.;/* Condição no domicílio */           ;2;0;387;c;TRUE
 388;VD2003;2.;/* Número de componentes do domic. */         ;2;0;389;i;FALSE
 390;VD2004;$1.;/* Espécie da unidade doméstica*/           ;1;0;390;c;TRUE
-391;VD3001;$1.;/* Nível de instrução */           ;1;0;391;c;TRUE
-392;VD3002;$2.;/* Anos de estudo (5 anos ou mais de idade) p/ fundamental de 9 anos */;2;0;393;c;TRUE
-394;VD4001;$1.;/* Condição em relação força d trab. */        ;1;0;394;c;TRUE
-395;VD4002;$1.;/* Condição de ocupação */           ;1;0;395;c;TRUE
-396;VD4003;$1.;/* Força de trabalho potencial */          ;1;0;396;c;TRUE
-397;VD4004;$1.;/* Subocupação por insuficiên. de hrs efet*/         ;1;0;397;c;TRUE
-398;VD4004A;$1.;/* Subocupação por insuficiên. de hrs hab*/         ;1;0;398;c;TRUE
-399;VD4005;$1.;/* Pessoas desalentadas */            ;1;0;399;c;TRUE
-400;VD4007;$1.;/* Posição na ocupação trab. princ. */         ;1;0;400;c;TRUE
-401;VD4008;$1.;/* Posição na ocupação trab. princ. */         ;1;0;401;c;TRUE
-402;VD4009;$2.;/* Posição na ocupação trab. princ. */         ;2;0;403;c;TRUE
-404;VD4010;$2.;/* Grupamen. d ativid. trab. princ. */         ;2;0;405;c;TRUE
-406;VD4011;$2.;/* Grupamen. ocupacion. trab. Princ. */          ;2;0;407;c;TRUE
-408;VD4012;$1.;/* Contrib. instit. previd. qq trab. */         ;1;0;408;c;TRUE
-409;VD4013;$1.;/* Faixa hrs habituais em todos trab. */        ;1;0;409;c;TRUE
-410;VD4014;$1.;/* Faixa hrs efetivas em todos trab. */        ;1;0;410;c;TRUE
-411;VD4015;$1.;/* Tipo d remuneração trab. princ. */         ;1;0;411;c;TRUE
-412;VD4016;8.;/* Rendim. habitual trab. princ. */          ;8;0;419;i;FALSE
-420;VD4017;8.;/* Rendim. efetivo trab. princ. */          ;8;0;427;i;FALSE
-428;VD4018;$1.;/* Tipo d remuneração em qq trabalho */        ;1;0;428;c;TRUE
-429;VD4019;8.;/* Rendim. habitual qq trabalho */          ;8;0;436;i;FALSE
-437;VD4020;8.;/* Rendim. efetivo qq trabalho */          ;8;0;444;i;FALSE
-445;VD4023;$1.;/* Pq ñ proc./ñ gost./ñ disp.p/trab. */         ;1;0;445;c;TRUE
-446;VD4030;$1.;/* Pq ñ proc./ñ gost./ñ disp.p/trab. */         ;1;0;446;c;TRUE
-447;VD4031;3.;/* Hrs habituais em todos trab. */         ;3;0;449;i;FALSE
-450;VD4032;3.;/* Hrs efetivas no trab. princ. */         ;3;0;452;i;FALSE
-453;VD4033;3.;/* Hrs efetivas no trab. secun. */         ;3;0;455;i;FALSE
-456;VD4034;3.;/* Hrs efetivas no(s) outro(s) trab .*/         ;3;0;458;i;FALSE
-459;VD4035;3.;/* Hrs efetivas em todos trab. */         ;3;0;461;i;FALSE
-462;VD4036;$1.;/* Faixa hrs habituais trab. princ. */         ;1;0;462;c;TRUE
-463;VD4037;$1.;/* Faixa hrs efetivas trab. princ. */         ;1;0;463;c;TRUE
+391;VD3004;$1.;/* Nivel instrucao mais elevado - sis 9 anos */;1;0;391;c;TRUE
+392;VD3005;$2.;/* anos de estudo padronizado p ens fund */;2;0;393;c;TRUE
+394;VD3006;$1;/* grupo de anos de estudo padronizado para o ens fund */;1;0;394;c;TRUE
+395;VD4001;$1.;/* Condição em relação força d trab. */        ;1;0;395;c;TRUE
+396;VD4002;$1.;/* Condição de ocupação */           ;1;0;396;c;TRUE
+397;VD4003;$1.;/* Força de trabalho potencial */          ;1;0;397;c;TRUE
+398;VD4004;$1.;/* Subocupação por insuficiên. de hrs efet*/         ;1;0;398;c;TRUE
+399;VD4004A;$1.;/* Subocupação por insuficiên. de hrs hab*/         ;1;0;399;c;TRUE
+400;VD4005;$1.;/* Pessoas desalentadas */            ;1;0;400;c;TRUE
+401;VD4007;$1.;/* Posição na ocupação trab. princ. */         ;1;0;401;c;TRUE
+402;VD4008;$1.;/* Posição na ocupação trab. princ. */         ;1;0;402;c;TRUE
+403;VD4009;$2.;/* Posição na ocupação trab. princ. */         ;2;0;404;c;TRUE
+405;VD4010;$2.;/* Grupamen. d ativid. trab. princ. */         ;2;0;406;c;TRUE
+407;VD4011;$2.;/* Grupamen. ocupacion. trab. Princ. */          ;2;0;408;c;TRUE
+409;VD4012;$1.;/* Contrib. instit. previd. qq trab. */         ;1;0;409;c;TRUE
+410;VD4013;$1.;/* Faixa hrs habituais em todos trab. */        ;1;0;410;c;TRUE
+411;VD4014;$1.;/* Faixa hrs efetivas em todos trab. */        ;1;0;411;c;TRUE
+412;VD4015;$1.;/* Tipo d remuneração trab. princ. */         ;1;0;412;c;TRUE
+413;VD4016;8.;/* Rendim. habitual trab. princ. */          ;8;0;420;i;FALSE
+421;VD4017;8.;/* Rendim. efetivo trab. princ. */          ;8;0;428;i;FALSE
+429;VD4018;$1.;/* Tipo d remuneração em qq trabalho */        ;1;0;429;c;TRUE
+430;VD4019;8.;/* Rendim. habitual qq trabalho */          ;8;0;437;i;FALSE
+438;VD4020;8.;/* Rendim. efetivo qq trabalho */          ;8;0;445;i;FALSE
+446;VD4023;$1.;/* Pq ñ proc./ñ gost./ñ disp.p/trab. */         ;1;0;446;c;TRUE
+447;VD4030;$1.;/* Pq ñ proc./ñ gost./ñ disp.p/trab. */         ;1;0;447;c;TRUE
+448;VD4031;3.;/* Hrs habituais em todos trab. */         ;3;0;450;i;FALSE
+451;VD4032;3.;/* Hrs efetivas no trab. princ. */         ;3;0;453;i;FALSE
+454;VD4033;3.;/* Hrs efetivas no trab. secun. */         ;3;0;456;i;FALSE
+457;VD4034;3.;/* Hrs efetivas no(s) outro(s) trab .*/         ;3;0;459;i;FALSE
+460;VD4035;3.;/* Hrs efetivas em todos trab. */         ;3;0;462;i;FALSE
+463;VD4036;$1.;/* Faixa hrs habituais trab. princ. */         ;1;0;463;c;TRUE
+464;VD4037;$1.;/* Faixa hrs efetivas trab. princ. */         ;1;0;464;c;TRUE
