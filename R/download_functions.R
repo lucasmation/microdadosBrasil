@@ -66,7 +66,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
 
   if(!is.null(root_path)){
-    if(!file.exists(root_path)){
+    if(!dir.exists(root_path)){ # file.exists fails when path has a trailing slash
       stop(paste0("Can't find ",root_path))
     }}
 
