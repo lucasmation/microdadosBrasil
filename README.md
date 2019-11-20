@@ -11,18 +11,18 @@ work in progress
 
 ### COMMING SOON:
 
--   vignettes and Portuguese documentation
+-   Vignettes and Portuguese documentation
 -   Censo 1991, PNADs before 2001
 -   Support for data not fitting into memory.
 
-IN near the future:
+In the near future:
 
--   variable name harmonization
+-   Variable name harmonization
 
 Description
 -----------
 
-this package contains functions to read most commonly used Brazilian microdata easily and quickly. Importing these microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. The Data sometimes comes subdivided into serveral files, by state or macro regions. Also, it is common for file and variable names of the same dataset to vary overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
+This package contains functions to read the most commonly used Brazilian microdata easily and quickly, given that importing these microdata can be tedious. Most data is provided in fixed width files (fwf) with import instructions only for SAS and SPSS. The Data sometimes comes subdivided into serveral files, by state or macro regions. Also, it is common for file and variable names of the same dataset to vary overtime. `microdadoBrasil` handles all these idiosyncrasies for you. In the background the package is running `readr` for fwf data and `data.table` for .csv data. Therefore reading is reasonably fast.
 
 Currently the package includes import functions for:
 
@@ -32,7 +32,7 @@ Currently the package includes import functions for:
 |:-------|:------------------------|:----------------------------|:-------------------|:---------------------------|
 | IBGE   | PNAD                    | read\_PNAD                  | 1976 to 2015       | domicilios, pessoas        |
 | IBGE   | Pnad Contínua           | read\_PNADContinua          | 2012-1q to 2017-4q | pessoas                    |
-| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000               | domicilios, pessoas        |
+| IBGE   | Censo Demográfico       | read\_CENSO                 | 2000 and 2010      | domicilios, pessoas        |
 | IBGE   | PME                     | read\_PME                   | 2002.01 to 2015.12 | vinculos                   |
 | IBGE   | POF                     | read\_POF                   | 2008               | several, see details       |
 | INEP   | Censo Escolar           | read\_CensoEscolar          | 1995 to 2014       | escolas, ..., see details  |
@@ -42,14 +42,13 @@ Currently the package includes import functions for:
 
 For the datasets in fwf format, the package includes, internally, a list of import dictionaries. These were constructed with the `import_SASdictionary` function, which users can use to import dictionaries from datasets not included here. Import dictionaries for the datasets included in the package can be accessed with the `get_import_dictionary` function.
 
-The package also harmonizes folder names, folder structure and file name that change overtime through a metadata table.It also unifies data that comes subdivides by regional subgroups (UF or região) into a single data object.
+The package also harmonizes folder names, folder structure and file name that change overtime through a metadata table. It also unifies data that comes subdivides by regional subgroups (UF or região) into a single data object.
 
 Installation
 ------------
 
 ``` r
 install.packages("devtools")
-install.packages("stringi") 
 devtools::install_github("lucasmation/microdadosBrasil")
 library('microdadosBrasil')
 ```
@@ -131,13 +130,13 @@ d<- read_PNAD("pessoas",i = 2014, root_path = path.expand("~/Datasets/PNAD"),
 
 ### Ignore metadata and read the dataset directly from selected file
 
-If for some reason you renamed a file or folder, our metadata won't work for you and you will need to use the argument `file` to point wich file is to be imported.
+If for some reason you renamed a file or folder, our metadata won't work for you and you will need to use the argument `file` to point to which file is to be imported.
 
 In this situation, the command would look like this:
 
 ``` r
 
-d<- read_PNAD("pessoas",i = 2014, file = path.expand("~/Datasets/PNAD/pnad_pes.txt"))
+d <- read_PNAD("pessoas",i = 2014, file = path.expand("~/Datasets/PNAD/pnad_pes.txt"))
 ```
 
 In this case you will also receive a warning:
@@ -167,7 +166,7 @@ This package is highly influenced by similar efforts, which are great time saver
 
 -   updates import functions to more recent years
 -   includes non-IBGE data, such as INEP Education Census and MTE RAIS (de-identified)
--   separates import code from dataset specific metadata, as explained bellow.
+-   separates import code from dataset specific metadata, as explained below.
 
 How the package works
 ---------------------
@@ -197,6 +196,6 @@ Users then normally manually reconstruct the import dictionaries in R by hand. T
 
 #### Design principles
 
-The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the of original data - into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with list of import dictionaries extracted from the SAS import instructions from the data provider, serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.
+The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries - from the original data and placing these into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with the list of import dictionaries extracted from the SAS import instructions from the data provider, serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code shorter and easier to extend to new packages.
 
 ergonomics over speed (develop)
