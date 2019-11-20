@@ -21,3 +21,5 @@ period;format;download_path;download_mode;path;inputs_folder;data_folder;missing
 2014;csv;http://download.inep.gov.br/microdados/microdados_educacao_superior_2014.zip;source;microdados_educacao_superior_2014/microdados_educacao_superior_2014;;Dados;;|&DM_CURSO.csv;|&DM_IES.csv;;;;;|&DM_LOCAL_OFERTA.csv;|&DM_ALUNO.csv;|&DM_DOCENTE.csv;;;
 2015;csv;http://download.inep.gov.br/microdados/microdados_censo_superior_2015.zip;source;microdados_censo_superior_2015/microdados_censo_superior_2015;;DADOS;;|&DM_CURSO.csv;|&DM_IES.csv;;;;;|&DM_LOCAL_OFERTA.csv;|&DM_ALUNO.csv;|&DM_DOCENTE.csv;;;
 2016;csv;http://download.inep.gov.br/microdados/microdados_censo_superior_2016.zip;source;microdados_censo_superior_2016;;DADOS;;|&DM_CURSO.csv;|&DM_IES.csv;;;;;|&DM_LOCAL_OFERTA.csv;|&DM_ALUNO.csv;|&DM_DOCENTE.csv;;;
+2017;csv;http://download.inep.gov.br/microdados/microdados_educacao_superior_2017.zip;source;microdados_educacao_superior_2017/Microdados_Educacao_Superior_2017;;DADOS;;|&DM_CURSO.csv;|&DM_IES.csv;;;;;|&DM_LOCAL_OFERTA.csv;|&DM_ALUNO.csv;|&DM_DOCENTE.csv;;;
+

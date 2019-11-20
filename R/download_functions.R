@@ -22,7 +22,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
 
 
-  sucess = FALSE
+  success = FALSE
   size = NA
 
   dataset_list<- get_available_datasets()
@@ -80,24 +80,24 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     filenames<- strsplit(filenames, "\r*\n")[[1]]
     file_links <- paste(link, filenames, sep = "")
 
-    download_sucess <- rep(FALSE, length(filenames))
+    download_success <- rep(FALSE, length(filenames))
 
     max_loops  = 20
     loop_counter = 1
 
-    while(!all(download_sucess) & loop_counter< max_loops ){
+    while(!all(download_success) & loop_counter< max_loops ){
 
       dest.files.all = sapply(filenames, function(x) {paste(c(root_path,file_dir, x),collapse = "/")})
 
-    for(y in seq_along(filenames)[!download_sucess]){
+    for(y in seq_along(filenames)[!download_success]){
 
       dest.files = paste(c(root_path,file_dir, filenames[y]),collapse = "/")
       print(dest.files)
       print(file_links[y])
-      download_sucess[y] = FALSE
+      download_success[y] = FALSE
       try({
           download.file(file_links[y],destfile = dest.files, mode = "wb")
-          download_sucess[y] = TRUE
+          download_success[y] = TRUE
 
 
         })
@@ -107,7 +107,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
       if(sum(file.info(dest.files.all)$size) < 100000){
 
-        sucess = F
+        success = F
         if(loop_counter == max_loops - 1){
           message(paste0("Downloaded files for period ", i," on the ", loop_counter, "th try were too small. Possible corruption." ))
 
@@ -117,7 +117,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
         }
       }else{
-        sucess = T
+        success = T
       }
     }
 
@@ -125,8 +125,8 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     loop_counter = loop_counter + 1
 
 
-    if(!all(download_sucess)){ message(paste0("The download of the following files failed:\n"),
-                                       paste(filenames[!download_sucess], collapse = "\n"))}
+    if(!all(download_success)){ message(paste0("The download of the following files failed:\n"),
+                                       paste(filenames[!download_success], collapse = "\n"))}
 
   }else{
 
@@ -142,19 +142,19 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     max_loops  = 4
     loop_counter = 1
 
-    while(!(sucess) & loop_counter< max_loops){
+    while(!(success) & loop_counter< max_loops){
 
     try({ download.file(link,destfile = dest.files, mode = "wb")
 
-      sucess = TRUE
+      success = TRUE
 
     })
 
 
-    if(sucess == T){
+    if(success == T){
     if(sum(file.info(dest.files)$size) < 100000){
 
-      sucess = F
+      success = F
       if(loop_counter == max_loops - 1){
       message(paste0("Downloaded files for period ", i," on the ", loop_counter, "th try were too small. Possible corruption." ))
 
@@ -167,7 +167,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
 
       loop_counter = loop_counter + 1
     }}
-    if (unzip==T & sucess == T){
+    if (unzip==T & success == T){
       #Won't use 'archive' in the main download function until its on CRAN
       #Unzipping main source file:
       #if(grepl(filename, pattern = "\\.7z")){
@@ -182,7 +182,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
   }
 
 
-    if (unzip==T & sucess == T){
+    if (unzip==T & success == T){
     ##unzipping the data files (in case not unziped above)
     intern_files<- list.files(paste(c(root_path,file_dir),collapse = "/"), recursive = TRUE,all.files = TRUE, full.names = TRUE)
     zip_files<- intern_files[grepl(pattern = "\\.zip$",x = intern_files)]
@@ -219,7 +219,7 @@ download_sourceData <- function(dataset, i, unzip=T , root_path = NULL, replace 
     size = as.object_size(file.size(paste(c(root_path,filename),collapse = "/"))) %>%
       format(units = "Mb")
   }
-    info.output<- data.frame(name = filename, link = link, sucess = sucess, size =  size, stringsAsFactors = F)
+    info.output<- data.frame(name = filename, link = link, success = success, size =  size, stringsAsFactors = F)
 
   return(info.output)
 
