@@ -31,3 +31,5 @@ period;format;download_path;download_mode;path;inputs_folder;data_folder;missing
 2014;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2014/;ftp;;;;{&{ñ&{ñ&{ñc&{ñcl&{ñclas&{ñclass&{ñclass};";&ESTB2014.txt";";&(^|/)[A-Z]{2}2014.txt";
 2015;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2015/;ftp;;;;{&{ñ&{ñ&{ñc&{ñcl&{ñclas&{ñclass&{ñclass};";&ESTB2015.txt";";&(^|/)[A-Z]{2}2015.txt";
 2016;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2016/;ftp;;;;{&{ñ&{ñ&{ñc&{ñcl&{ñclas&{ñclass&{ñclass};";&ESTB2016.txt";";&(^|/)[A-Z]{2}2016.txt";
+2017;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2017/;ftp;;;;{&{ñ&{ñ&{ñc&{ñcl&{ñclas&{ñclass&{ñclass};";&ESTB2017.txt";";&(^|/)[A-Z]{2}2017.txt";
+2018;csv;ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2018/;ftp;;;;{&{ñ&{ñ&{ñc&{ñcl&{ñclas&{ñclass&{ñclass};";&ESTB2018.txt";";&(^|/)[A-Z]{2}2018.txt";
