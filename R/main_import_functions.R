@@ -162,7 +162,8 @@ read_data <- function(dataset,ft,i, metadata = NULL,var_translator=NULL,root_pat
 
     lapply(files,function(x,...) aux_read_fwf(x, ...)%>% data.table %>% .[, source_file:= x], dic=dic, nrows = nrows, na = missing_symbol) %>% rbindlist  -> d
     #It could be removed after pull request https://github.com/tidyverse/readr/pull/632 be accepted
-    if(any(dic$decimal_places) & dataset == "CENSO"){
+    # Potentially solves #185, don't know if it might break other things
+    if(any(dic$decimal_places, na.rm = TRUE) & dataset == "CENSO"){
       sapply(which(as.logical(dic$decimal_places)), function(x){
         if(dic$col_type[x] == "d"){
           var <- dic$var_name[x]
