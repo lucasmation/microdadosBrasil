@@ -132,9 +132,9 @@ d <- read_PME("vinculos", "2012.01")
 
 ### Subsetting datasets
 
-To read only a selected subset of the data, use the argument `vars_subset`, the default is `vars_subset = NULL`, this would result in no subseting.
+To read only a selected subset of the data, use the argument `vars_subset`, the default is `vars_subset = NULL`, this would result in no subsetting.
 
-Example, To read only sex and *percapita* income variable of PNAD 2014, type:
+Example, to read only sex and *percapita* income variable of PNAD 2014, type:
 
 
 ```{r, eval = FALSE}
@@ -147,7 +147,7 @@ d<- read_PNAD("pessoas",i = 2014, root_path = path.expand("~/Datasets/PNAD"),
 
 ### Ignore metadata and read the dataset directly from selected file
 
-If for some reason you renamed a file or folder, our metadata won't work for you and you will need to use the argument `file` to point wich file is to be imported.
+If for some reason you renamed a file or folder, our metadata won't work for you and you will need to use the argument `file` to point which file is to be imported.
 
 In this situation, the command would look like this:
 
@@ -166,7 +166,7 @@ In this case you will also receive a warning:
 
 ### Get import dictionaries
 
-If you only need the import dictionaries and don't want to use the import functions of the package. Use the function `get_import_dictionary`
+If you only need to import dictionaries and don't want to use the import functions of the package. Use the function `get_import_dictionary`
 
 ```{r, eval = FALSE}
 
@@ -178,12 +178,12 @@ pnad_dic<- get_import_dictionary(dataset = "PNAD",i = 2014, ft = "pessoas")
 
 ## Related efforts
 
-This package is highly influenced by similar efforts, which are great time savers, vastly used  and often unrecognized:
+This package is highly influenced by similar efforts, which are great time savers, vastly used and often unrecognized:
 
 * Anthony Damico's [scripts to read most IBGE surveys](http://www.asdfree.com/). Great if you your data does not fit into memory and you want speed when working with complex survey design data. 
 * [Data Zoom](http://www.econ.puc-rio.br/datazoom/) by Gustavo Gonzaga, Cláudio Ferraz and Juliano Assunção.  Similar ease of use and harmonization of Brazilian microdada for Stata. 
-* [dicionariosIBGE](https://cran.r-project.org/web/packages/dicionariosIBGE/index.html), by 	Alexandre Rademaker. A set of data.frames containing the information from SAS import dictionaries for IBGE datasets.
-* [IPUMS](https://international.ipums.org/international/). Harmonization of Census data from several countries, including Brasil. Import functions for R, Stata, SAS and SPSS. 
+* [dicionariosIBGE](https://cran.r-project.org/web/packages/dicionariosIBGE/index.html), by Alexandre Rademaker. A set of data.frames containing the information from SAS import dictionaries for IBGE datasets.
+* [IPUMS](https://international.ipums.org/international/). Harmonization of Census data from several countries, including Brazil. Import functions for R, Stata, SAS and SPSS. 
 
 `microdadosBrasil` differs from those packages in that it: 
 
@@ -212,7 +212,7 @@ dataset_year.zip
     - ADITIONAL DOCUMENTATION
         - subdatasetA_variables_and_cathegories_dictionary.xls
 
-Users then normally manually reconstruct the import dictionaries in R by hand. Then, using this dictionary, run the import function, pointing to the DATA folder. Larger datasets (such as CENSUS or RAIS) come subdivided by state (or region), so the function must be repeated for all states. Then if the user needs more than one year of the dataset, the user repeats all the above, adjuting for changes fine and folder names. 
+Users then normally manually reconstruct the import dictionaries in R by hand. Then, using this dictionary, run the import function, pointing to the DATA folder. Larger datasets (such as CENSUS or RAIS) come subdivided by state (or region), so the function must be repeated for all states. Then if the user needs more than one year of the dataset, the user repeats all the above, adjusting for changes fine and folder names. 
 
 
 ### microdadosBrasil aproach
@@ -221,7 +221,7 @@ Users then normally manually reconstruct the import dictionaries in R by hand. T
 
 #### Design principles
 
-The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the of original data - into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with list of import dictionaries extracted from the SAS import instructions from the data provider,  serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.   
+The main design principle was separating details of each dataset in each year - such as folder structure, data files and import dictionaries of the original data - into metadata tables (saved as csv files at the `extdata` folder). The elements in these tables, along with list of import dictionaries extracted from the SAS import instructions from the data provider, serve as parameters to import a dataset for a specific year. This separation of dataset specific details from the actual code makes code short and easier to extend to new packages.   
 
 ergonomics over speed (develop)
 
